@@ -1,0 +1,90 @@
+{
+  "type": "FeatureCollection",
+  "name": "Noise logger locations",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "OBJECTID": 1,
+        "SourceDate": 20250513.0,
+        "Supplier": "MOTTM",
+        "ELEVATION": 44.781898498535156,
+        "NAME": "Logger 1",
+        "Type": "Logger",
+        "multi_reader_type": "GEODATABASE_FILE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [150.58463314451248, -34.996401975496923]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "OBJECTID": 2,
+        "SourceDate": 20250513.0,
+        "Supplier": "MOTTM",
+        "ELEVATION": null,
+        "NAME": "Logger 2",
+        "Type": "Logger",
+        "multi_reader_type": "GEODATABASE_FILE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [150.580469470491039, -35.012381871202891]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "OBJECTID": 3,
+        "SourceDate": 20250513.0,
+        "Supplier": "MOTTM",
+        "ELEVATION": 105.25800323486328,
+        "NAME": "Logger 3",
+        "Type": "Logger",
+        "multi_reader_type": "GEODATABASE_FILE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [150.578902679970554, -35.028611192593111]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "OBJECTID": 4,
+        "SourceDate": 20250513.0,
+        "Supplier": "MOTTM",
+        "ELEVATION": null,
+        "NAME": "Logger 4",
+        "Type": "Logger",
+        "multi_reader_type": "GEODATABASE_FILE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [150.584837926066456, -35.051330368483988]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "OBJECTID": 5,
+        "SourceDate": null,
+        "Supplier": null,
+        "ELEVATION": null,
+        "NAME": "Logger 1B",
+        "Type": null,
+        "multi_reader_type": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [150.587267351360396, -34.985680979198641]
+      }
+    }
+  ]
+}

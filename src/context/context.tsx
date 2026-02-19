@@ -1,0 +1,123 @@
+import React, { createContext, useState, useEffect, ReactNode } from 'react';
+import { TabActive } from '../components/MapTopbar/MapTopbar';
+import { appMetadata } from '../helpers/constants';
+
+// Define the context state interface
+interface AppState {
+  topicActive: string;
+  tabActive: TabActive;
+  filterOptionsSelected: string[];
+  zoneOptionsSelected: string[];
+}
+
+// Define the context interface
+interface AppContextType {
+  state: AppState;
+  getTopicActive: () => (typeof appMetadata.topics)[0];
+  setTopicActive: (topic: string) => void;
+  setTabActive: (tab: TabActive) => void;
+  setFilterOptionsSelected: (options: string[]) => void;
+  setZoneOptionsSelected: (options: string[]) => void;
+}
+
+// Create the context
+const AppContext = createContext<AppContextType | undefined>(undefined);
+
+/**
+ * NOTE: localStorage was intentionally removed from this implementation.
+ *
+ * Previous implementation attempted to persist state across sessions using localStorage,
+ * but it was causing filter reset issues during development. The current implementation
+ * uses in-memory state only, which resets to default on page reload.
+ *
+ * If persistence is needed in the future:
+ * 1. Save state to localStorage in a useEffect watching state changes
+ * 2. Load from localStorage in getInitialState()
+ * 3. Handle JSON serialization/deserialization errors gracefully
+ * 4. Consider using a debounced save to avoid performance issues
+ *
+ * Default state: 'default' topic with 'concept-design' and 'local-government-area' filters
+ */
+
+// Helper function to expand filters to include nested filtersToShow
+const expandFilters = (filterValues: string[], topicSlug: string): string[] => {
+  const topic = appMetadata.topics.find((t) => t.slug === topicSlug);
+  if (!topic || !topic.filters) return filterValues;
+
+  const expandedFilters = [...filterValues];
+
+  filterValues.forEach((filterValue) => {
+    const filter = topic.filters?.find((f: any) => f.value === filterValue);
+    if (filter && (filter as any).filtersToShow) {
+      (filter as any).filtersToShow.forEach((nestedFilter: any) => {
+        if (!expandedFilters.includes(nestedFilter.value)) {
+          expandedFilters.push(nestedFilter.value);
+        }
+      });
+    }
+  });
+
+  return expandedFilters;
+};
+
+// Helper function to get initial state
+const getInitialState = (): AppState => {
+  const defaultFilters = ['concept-design', 'local-government-area'];
+  return {
+    topicActive: 'default',
+    tabActive: 'satellite',
+    filterOptionsSelected: expandFilters(defaultFilters, 'default'),
+    zoneOptionsSelected: [],
+  };
+};
+
+// Provider component
+interface AppProviderProps {
+  children: ReactNode;
+}
+
+const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
+  const [state, setState] = useState<AppState>(getInitialState);
+
+  console.log('🟣 AppProvider state:', state);
+
+  // State setters
+  const setTopicActive = (topic: string) => {
+    setState((prev) => ({ ...prev, topicActive: topic }));
+  };
+
+  const setTabActive = (tab: TabActive) => {
+    setState((prev) => ({ ...prev, tabActive: tab }));
+  };
+
+  const setFilterOptionsSelected = (options: string[]) => {
+    console.log('🔴 setFilterOptionsSelected called with:', options);
+    setState((prev) => ({ ...prev, filterOptionsSelected: options }));
+  };
+
+  const setZoneOptionsSelected = (options: string[]) => {
+    setState((prev) => ({ ...prev, zoneOptionsSelected: options }));
+  };
+
+  const contextValue: AppContextType = {
+    state,
+    getTopicActive: () => {
+      return (
+        appMetadata.topics.find((item) => item.slug === state.topicActive) ||
+        ({} as any)
+      );
+    },
+    setTopicActive,
+    setTabActive,
+    setFilterOptionsSelected,
+    setZoneOptionsSelected,
+  };
+
+  return (
+    <AppContext.Provider value={contextValue}>{children}</AppContext.Provider>
+  );
+};
+
+export default AppProvider;
+export { AppContext, expandFilters };
+export type { AppContextType };

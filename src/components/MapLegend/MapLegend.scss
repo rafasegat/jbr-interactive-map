@@ -1,0 +1,120 @@
+@import '../../assets/style/variables.scss';
+
+.legends {
+  position: absolute;
+  z-index: 99;
+  bottom: 20px;
+  left: 20px;
+  background: #ffffff;
+  width: 365px;
+  padding: 0;
+  max-width: 365px;
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  transition: all 0.3s ease;
+
+  &.collapsed {
+    width: 365px;
+  }
+
+  .legend-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    padding: $spacing-4;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    .toggle-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease;
+
+      &.rotated {
+        transform: rotate(180deg);
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &.rotated:hover {
+        transform: rotate(180deg) scale(1.1);
+      }
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  h4 {
+    color: #000;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 0 0;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding: 0 $spacing-4 $spacing-4 $spacing-4;
+    li {
+      margin: 0 0 $spacing-2 0;
+      display: flex;
+      padding-left: $spacing-10;
+      align-items: center;
+      font-size: $spacing-4;
+      font-weight: 400;
+      position: relative;
+      min-height: 16px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      svg {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &.legend-title {
+        padding-left: 0;
+        color: $grey02;
+        font-weight: 600;
+        border-top: 1px solid $grey03;
+        margin: $spacing-3 0 $spacing-3 0;
+        padding: $spacing-3 0 0 0;
+        &:first-child {
+          margin: 0 0 $spacing-2 0;
+          padding: 0;
+          border: none;
+        }
+        h3 {
+          margin: 0;
+          font-size: $spacing-4;
+          font-weight: 600;
+          color: $grey02;
+        }
+      }
+    }
+  }
+}
+
+.mapboxgl-ctrl-logo {
+  display: none !important;
+}
+.mapboxgl-ctrl-scale {
+  position: absolute;
+  bottom: 10px;
+  left: 15rem;
+}

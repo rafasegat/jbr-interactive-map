@@ -1,0 +1,31 @@
+@import '../../assets/style/variables.scss';
+
+.ask-a-question {
+  padding: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  a.banner-button {
+    position: absolute;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    bottom: 120px;
+    left: -70px;
+    width: 120px;
+    background: $blue02;
+    color: #ffffff;
+    border: none;
+    border-top: 10px solid $blue02;
+    padding: 0.5rem 1rem;
+    margin: 0;
+    transform: rotate(-90deg);
+    cursor: pointer;
+    border-radius: 0px 0px 5px 5px;
+    &:hover {
+      background: #146cfd99;
+    }
+  }
+}

@@ -1,0 +1,176 @@
+@import '../../assets/style/variables';
+
+/**
+ * Container-aware map layout
+ *
+ * The map is designed to fill its parent container:
+ * - .mapbox uses width: 100% and height: 100%
+ * - .map-container uses absolute positioning to fill the parent
+ * - No fixed widths or heights (except minimum values for usability)
+ * - Mapbox GL automatically resizes based on container dimensions
+ *
+ * This allows the map to be embedded in any container, including:
+ * - Full-page layouts
+ * - Constrained containers with specific dimensions
+ * - Responsive designs that change based on screen size
+ */
+
+.mapbox {
+  width: 100%;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  .map-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+}
+.map-container {
+  .mapboxgl-ctrl-compass {
+    display: none !important;
+  }
+  button.mapboxgl-popup-close-button {
+    width: 28px;
+    height: 28px;
+    font-size: 2rem;
+    cursor: pointer;
+    background: #ffffff80;
+    right: 1.5rem;
+    top: 1.5rem;
+    display: flex;
+    align-items: center;
+    outline: 0;
+    &:hover {
+      background: #ffffff;
+    }
+  }
+  div.mapboxgl-popup-content {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 0;
+    color: #000000;
+    box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1);
+    p {
+      margin-top: 1rem !important;
+      margin-bottom: 1rem !important;
+    }
+    p:last-of-type {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+.map-loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+}
+
+.map-loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  p {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+  }
+
+  .spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid $blue02;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.reset-button {
+  position: absolute;
+  right: 10px;
+  top: 75px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  &:hover {
+    svg {
+      rect {
+        fill: #f4f4f4 !important;
+      }
+    }
+  }
+}
+
+@-moz-keyframes pulse {
+  0% {
+    -moz-transform: scale(0.7, 0.7);
+  }
+  33% {
+    opacity: 0;
+  }
+  65% {
+    opacity: 1;
+  }
+  100% {
+    -moz-transform: scale(1.4, 1.4);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.7, 0.7);
+  }
+  33% {
+    opacity: 0;
+  }
+  65% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.4, 1.4);
+    opacity: 0;
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(0.7, 0.7);
+  }
+  33% {
+    opacity: 0;
+  }
+  65% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4, 1.4);
+    opacity: 0;
+  }
+}

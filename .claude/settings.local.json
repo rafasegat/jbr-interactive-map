@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git remote remove:*)",
+      "Bash(git remote add:*)"
+    ]
+  }
+}
