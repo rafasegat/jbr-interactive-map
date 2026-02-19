@@ -27,7 +27,7 @@ import { defaultFilters } from './topics/default';
 
 export const appMetadata = {
   map: {
-    accessToken: process.env.REACT_APP_MAPBOX_ACCESS_TOKEN || '',
+    accessToken: import.meta.env.VITE_MAPBOX_ACCESS_TOKEN || '',
     satelliteStyle: 'mapbox://styles/mapbox/satellite-v9',
     defaultStyle: 'mapbox://styles/mapbox/streets-v12',
     defaultCenter: [150.58141461633056, -35.00931843740925],

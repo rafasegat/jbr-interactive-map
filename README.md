@@ -39,7 +39,7 @@ npm install
 
 3. Add your token to the `.env` file:
    ```bash
-   REACT_APP_MAPBOX_ACCESS_TOKEN=pk.your_actual_token_here
+   VITE_MAPBOX_ACCESS_TOKEN=pk.your_actual_token_here
    ```
 
 **Note**: Never commit your `.env` file to version control! It's already in `.gitignore`.
@@ -157,7 +157,7 @@ The application uses environment variables for the Mapbox access token (for secu
 
 3. Add it to your `.env` file:
    ```bash
-   REACT_APP_MAPBOX_ACCESS_TOKEN=pk.your_token_here
+   VITE_MAPBOX_ACCESS_TOKEN=pk.your_token_here
    ```
 
 The token is configured in `src/helpers/constants.tsx`:
@@ -165,7 +165,7 @@ The token is configured in `src/helpers/constants.tsx`:
 ```typescript
 export const appMetadata = {
   map: {
-    accessToken: process.env.REACT_APP_MAPBOX_ACCESS_TOKEN || '',
+    accessToken: import.meta.env.VITE_MAPBOX_ACCESS_TOKEN || '',
     defaultCenter: [150.58141, -35.00931],
     defaultZoom: 13,
     // ...
