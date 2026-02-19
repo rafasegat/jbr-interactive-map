@@ -4,7 +4,8 @@ import ArrowDown from '../Icons/ArrowDown';
 import Check from '../Icons/Check';
 import { enumTabs } from '../../helpers/constants';
 import { useAppContext } from '../../context/useAppContext';
-import Filter from '../Icons/Filter';
+import FilterIcon from '../Icons/Filter';
+import { Filter } from '../../types/map';
 
 export type TabActive = 'satellite' | 'default';
 
@@ -47,7 +48,7 @@ const MapTopbar = () => {
           className="filter"
           onClick={() => setIsFilterOpen(!isFilterOpen)}
         >
-          <Filter />
+          <FilterIcon />
           <span>Filter</span>
           <ArrowDown />
         </button>
@@ -56,10 +57,10 @@ const MapTopbar = () => {
             <ul className="list-options media-list">
               {getTopicActive()
                 ?.filters?.sort(
-                  (a: any, b: any) =>
+                  (a: Filter, b: Filter) =>
                     (a.orderLayout || 0) - (b.orderLayout || 0),
                 )
-                ?.map((filter: any, index: number) => {
+                ?.map((filter: Filter, index: number) => {
                   const isChecked = filterOptionsSelected.includes(
                     filter.value,
                   );
@@ -80,7 +81,9 @@ const MapTopbar = () => {
                             let filtersToRemove = [filter.value];
                             if (filter.filtersToShow) {
                               const nestedFilterValues =
-                                filter.filtersToShow.map((f: any) => f.value);
+                                filter.filtersToShow.map(
+                                  (f: Filter) => f.value,
+                                );
                               filtersToRemove = [
                                 ...filtersToRemove,
                                 ...nestedFilterValues,
@@ -97,7 +100,9 @@ const MapTopbar = () => {
                             let filtersToAdd = [filter.value];
                             if (filter.filtersToShow) {
                               const nestedFilterValues =
-                                filter.filtersToShow.map((f: any) => f.value);
+                                filter.filtersToShow.map(
+                                  (f: Filter) => f.value,
+                                );
                               filtersToAdd = [
                                 ...filtersToAdd,
                                 ...nestedFilterValues,

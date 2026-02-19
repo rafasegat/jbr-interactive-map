@@ -1,7 +1,7 @@
 import { appMetadata } from './constants';
 
 // Cache for preloaded GeoJSON data
-const geojsonCache = new Map<string, any>();
+const geojsonCache = new Map<string, Record<string, any>>();
 
 /**
  * Extracts all sourceUrl values from topic filters
@@ -62,7 +62,7 @@ export const preloadAllGeoJSON = async (): Promise<void> => {
 /**
  * Gets cached GeoJSON data if available
  */
-export const getCachedGeoJSON = (url: string): any | null => {
+export const getCachedGeoJSON = (url: string): Record<string, any> | null => {
   return geojsonCache.get(url) || null;
 };
 

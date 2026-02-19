@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useAppContext } from '../../context/useAppContext';
 import ArrowDown from '../Icons/ArrowDown';
+import { Filter, Legend } from '../../types/map';
 
 import './MapLegend.scss';
 
@@ -13,19 +14,19 @@ const MapLegend = () => {
   const legends = topic?.legends ?? [];
 
   // Collect all legends to display (including nested legends from filtersToShow)
-  const allLegendsToShow: any[] = [];
+  const allLegendsToShow: Legend[] = [];
 
   // Then, add legends from filters that have legendsToShow
   const topicFilters = topic?.filters ?? [];
-  topicFilters.forEach((filter: any) => {
+  topicFilters.forEach((filter: Filter) => {
     if (filter.legendsToShow && filterOptionsSelected.includes(filter.value)) {
-      filter.legendsToShow.forEach((nestedLegend: any) => {
+      filter.legendsToShow.forEach((nestedLegend: Legend) => {
         // If it's a title-only item, add it once if we have any matching nested filters
         if (nestedLegend.title && nestedLegend.value === 'title') {
           // Check if we haven't already added it and if we have any selected nested filters
-          if (!allLegendsToShow.find((l: any) => l.value === 'title')) {
+          if (!allLegendsToShow.find((l: Legend) => l.value === 'title')) {
             const hasAnyNestedFilterSelected = filter.filtersToShow?.some(
-              (f: any) => filterOptionsSelected.includes(f.value),
+              (f: Filter) => filterOptionsSelected.includes(f.value),
             );
             if (hasAnyNestedFilterSelected) {
               allLegendsToShow.push(nestedLegend);
@@ -36,7 +37,7 @@ const MapLegend = () => {
 
         // Check if this nested legend's filter is selected
         const nestedFilter = filter.filtersToShow?.find(
-          (f: any) => f.legendAlias === nestedLegend.value,
+          (f: Filter) => f.legendAlias === nestedLegend.value,
         );
         if (
           nestedFilter &&
@@ -44,7 +45,9 @@ const MapLegend = () => {
         ) {
           // Avoid duplicates
           if (
-            !allLegendsToShow.find((l: any) => l.value === nestedLegend.value)
+            !allLegendsToShow.find(
+              (l: Legend) => l.value === nestedLegend.value,
+            )
           ) {
             allLegendsToShow.push(nestedLegend);
           }
@@ -64,7 +67,7 @@ const MapLegend = () => {
     }
 
     const matchingFilter = topicFilters.find(
-      (filter: any) => filter.legendAlias === legend.value,
+      (filter: Filter) => filter.legendAlias === legend.value,
     );
     if (
       matchingFilter &&
@@ -91,7 +94,7 @@ const MapLegend = () => {
       </div>
       {isExpanded && (
         <ul>
-          {allLegendsToShow.map((legend: any, index: number) => {
+          {allLegendsToShow.map((legend: Legend, index: number) => {
             // If it's a title-only item, just render the title
             if (legend.title && legend.value === 'title') {
               return (

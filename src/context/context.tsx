@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect, ReactNode } from 'react';
 import { TabActive } from '../components/MapTopbar/MapTopbar';
 import { appMetadata } from '../helpers/constants';
+import { Topic, Filter } from '../types/map';
 
 // Define the context state interface
 interface AppState {
@@ -13,7 +14,7 @@ interface AppState {
 // Define the context interface
 interface AppContextType {
   state: AppState;
-  getTopicActive: () => (typeof appMetadata.topics)[0];
+  getTopicActive: () => Topic | undefined;
   setTopicActive: (topic: string) => void;
   setTabActive: (tab: TabActive) => void;
   setFilterOptionsSelected: (options: string[]) => void;
@@ -47,9 +48,11 @@ const expandFilters = (filterValues: string[], topicSlug: string): string[] => {
   const expandedFilters = [...filterValues];
 
   filterValues.forEach((filterValue) => {
-    const filter = topic.filters?.find((f: any) => f.value === filterValue);
-    if (filter && (filter as any).filtersToShow) {
-      (filter as any).filtersToShow.forEach((nestedFilter: any) => {
+    const filter = topic.filters?.find(
+      (f: Filter) => f.value === filterValue,
+    ) as Filter | undefined;
+    if (filter && filter.filtersToShow) {
+      filter.filtersToShow.forEach((nestedFilter: Filter) => {
         if (!expandedFilters.includes(nestedFilter.value)) {
           expandedFilters.push(nestedFilter.value);
         }
@@ -102,10 +105,7 @@ const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   const contextValue: AppContextType = {
     state,
     getTopicActive: () => {
-      return (
-        appMetadata.topics.find((item) => item.slug === state.topicActive) ||
-        ({} as any)
-      );
+      return appMetadata.topics.find((item) => item.slug === state.topicActive);
     },
     setTopicActive,
     setTabActive,

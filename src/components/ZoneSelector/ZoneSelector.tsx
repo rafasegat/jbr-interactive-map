@@ -1,12 +1,17 @@
 import { useAppContext } from '../../context/useAppContext';
 import ArrowRight from '../Icons/ArrowRight';
 
+interface ZoneOption {
+  id: string;
+  name: string;
+}
+
 const ZoneSelector = ({
   direction = 'vertical',
   onChange,
 }: {
   direction?: 'vertical' | 'horizontal';
-  onChange: (option: string) => void;
+  onChange: (option: ZoneOption) => void;
 }) => {
   const { state, setZoneOptionsSelected } = useAppContext();
   const { zoneOptionsSelected } = state;
@@ -14,7 +19,7 @@ const ZoneSelector = ({
   return (
     <div className={`zone-layer ${direction}`}>
       <ul className="list-options">
-        {['a'].map((option: any, index: number) => {
+        {([] as ZoneOption[]).map((option: ZoneOption, index: number) => {
           const isChecked = zoneOptionsSelected.includes(option.id);
           return (
             <li

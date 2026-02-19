@@ -8,6 +8,7 @@ import { useAppContext } from '../../context/useAppContext';
 import { expandFilters } from '../../context/context';
 import { enumTabs } from '../../helpers/constants';
 import { listOfTopicsToAddLayer } from '../../helpers/constants';
+import { Filter, GeoJsonLayer } from '../../types/map';
 
 import './Map.scss';
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -35,13 +36,12 @@ const Map: React.FC = () => {
   useEffect(() => {
     try {
       mapRef.current = new mapboxgl.Map({
-        container: mapContainer.current,
+        container: mapContainer?.current || '',
         style: appMetadata.map.satelliteStyle,
-        center: appMetadata.map.defaultCenter,
+        center: (appMetadata?.map?.defaultCenter || [0, 0]) as [number, number],
         zoom: appMetadata.map.defaultZoom,
         maxZoom: appMetadata.map.maxZoom,
         minZoom: appMetadata.map.minZoom,
-        compass: appMetadata.map.showCompass,
       });
     } catch (error) {
       console.error('Error initializing map:', error);
@@ -51,14 +51,15 @@ const Map: React.FC = () => {
     // Add controls when map loads
     mapRef.current.on('load', () => {
       // Add zoom and rotation controls to the map after it's loaded
-      mapRef.current.addControl(new mapboxgl.NavigationControl());
-      mapRef.current.addControl(
-        new mapboxgl.ScaleControl({
-          maxWidth: 80,
-          unit: 'metric',
-          position: 'bottom-right',
-        }),
-      );
+      if (mapRef.current) {
+        mapRef.current.addControl(new mapboxgl.NavigationControl());
+        mapRef.current.addControl(
+          new mapboxgl.ScaleControl({
+            maxWidth: 80,
+            unit: 'metric',
+          }),
+        );
+      }
     });
 
     // Wait for style to load
@@ -91,12 +92,12 @@ const Map: React.FC = () => {
         for (const filter of listOfTopicsToAddLayer) {
           // Process direct GeoJSON in this filter
           for (let index = 0; index < (filter?.geojson?.length || 0); index++) {
-            const geojson = filter.geojson[index];
+            const geojson = filter.geojson[index] as GeoJsonLayer;
             const sourceId = `topic-source-${filter.value}-${index}`;
             const layerId = `topic-layer-${filter.value}-${index}`;
 
             // Support both direct data (source) and lazy loading (sourceUrl)
-            let geojsonData = geojson.source || {};
+            let geojsonData: any = geojson.source || {};
 
             if (geojson.sourceUrl && !geojson.source) {
               // Load GeoJSON from URL
@@ -112,24 +113,35 @@ const Map: React.FC = () => {
               }
             }
 
-            if (!mapRef.current.getSource(sourceId)) {
+            if (mapRef.current && !mapRef.current.getSource(sourceId)) {
               mapRef.current.addSource(sourceId, {
                 type: 'geojson',
                 data: geojsonData,
               });
             }
 
-            if (!mapRef.current.getLayer(layerId)) {
+            if (mapRef.current && !mapRef.current.getLayer(layerId)) {
               mapRef.current.addLayer({
                 id: layerId,
-                type: geojson.type || 'fill',
+                type: (geojson.type || 'fill') as
+                  | 'fill'
+                  | 'line'
+                  | 'circle'
+                  | 'symbol'
+                  | 'raster'
+                  | 'fill-extrusion'
+                  | 'heatmap'
+                  | 'hillshade'
+                  | 'background'
+                  | 'sky'
+                  | 'custom',
                 source: sourceId,
                 layout: {
                   ...(geojson.layout || {}),
                   visibility: 'none', // Start hidden, visibility controlled separately
                 },
                 paint: geojson.paint || {},
-              });
+              } as mapboxgl.AnyLayer);
             }
           }
         }
@@ -188,18 +200,21 @@ const Map: React.FC = () => {
       if (isTopicActive) {
         topic.filters.forEach((filter) => {
           const isFilterSelected = filterOptionsSelected.includes(filter.value);
+          const typedFilter = filter as Filter;
 
-          if (filter.filtersToShow && isFilterSelected) {
-            filter.filtersToShow.forEach((nestedFilter) => {
+          if (typedFilter.filtersToShow && isFilterSelected) {
+            typedFilter.filtersToShow.forEach((nestedFilter: Filter) => {
               const isNestedFilterSelected = filterOptionsSelected.includes(
                 nestedFilter.value,
               );
 
               if (isNestedFilterSelected) {
-                nestedFilter?.geojson?.forEach((geojson, index) => {
-                  const layerId = `topic-layer-${nestedFilter.value}-${index}`;
-                  layersVisibleViaFiltersToShow.add(layerId);
-                });
+                nestedFilter?.geojson?.forEach(
+                  (geojson: GeoJsonLayer, index: number) => {
+                    const layerId = `topic-layer-${nestedFilter.value}-${index}`;
+                    layersVisibleViaFiltersToShow.add(layerId);
+                  },
+                );
               }
             });
           }
@@ -218,13 +233,14 @@ const Map: React.FC = () => {
         topic.filters.forEach((filter) => {
           const isFilterSelected = filterOptionsSelected.includes(filter.value);
           const shouldBeVisible = isTopicActive && isFilterSelected;
+          const typedFilter = filter as Filter;
 
           // Update visibility for direct GeoJSON layers
           // Skip if layer is being shown via filtersToShow
-          filter?.geojson?.forEach((geojson, index) => {
+          filter?.geojson?.forEach((geojson: GeoJsonLayer, index: number) => {
             const layerId = `topic-layer-${filter.value}-${index}`;
 
-            if (mapRef.current.getLayer(layerId)) {
+            if (mapRef.current && mapRef.current.getLayer(layerId)) {
               // Only update if not already visible via filtersToShow
               if (!layersVisibleViaFiltersToShow.has(layerId)) {
                 mapRef.current.setLayoutProperty(
@@ -237,24 +253,26 @@ const Map: React.FC = () => {
           });
 
           // Update visibility for nested filters if filtersToShow exists
-          if (filter.filtersToShow && isTopicActive && isFilterSelected) {
-            filter.filtersToShow.forEach((nestedFilter) => {
+          if (typedFilter.filtersToShow && isTopicActive && isFilterSelected) {
+            typedFilter.filtersToShow.forEach((nestedFilter: Filter) => {
               const isNestedFilterSelected = filterOptionsSelected.includes(
                 nestedFilter.value,
               );
               const shouldNestedBeVisible = isNestedFilterSelected;
 
-              nestedFilter?.geojson?.forEach((geojson, index) => {
-                const layerId = `topic-layer-${nestedFilter.value}-${index}`;
+              nestedFilter?.geojson?.forEach(
+                (geojson: GeoJsonLayer, index: number) => {
+                  const layerId = `topic-layer-${nestedFilter.value}-${index}`;
 
-                if (mapRef.current.getLayer(layerId)) {
-                  mapRef.current.setLayoutProperty(
-                    layerId,
-                    'visibility',
-                    shouldNestedBeVisible ? 'visible' : 'none',
-                  );
-                }
-              });
+                  if (mapRef.current && mapRef.current.getLayer(layerId)) {
+                    mapRef.current.setLayoutProperty(
+                      layerId,
+                      'visibility',
+                      shouldNestedBeVisible ? 'visible' : 'none',
+                    );
+                  }
+                },
+              );
             });
           }
         });
@@ -271,13 +289,14 @@ const Map: React.FC = () => {
         topic.filters.forEach((filter) => {
           const isFilterSelected = filterOptionsSelected.includes(filter.value);
           const shouldBeVisible = isTopicActive && isFilterSelected;
+          const typedFilter = filter as Filter;
 
           // Update visibility for direct GeoJSON layers
           // Skip if layer is being shown via filtersToShow
-          filter?.geojson?.forEach((geojson, index) => {
+          filter?.geojson?.forEach((geojson: GeoJsonLayer, index: number) => {
             const layerId = `topic-layer-${filter.value}-${index}`;
 
-            if (mapRef.current.getLayer(layerId)) {
+            if (mapRef.current && mapRef.current.getLayer(layerId)) {
               // Only update if not already visible via filtersToShow
               if (!layersVisibleViaFiltersToShow.has(layerId)) {
                 mapRef.current.setLayoutProperty(
@@ -290,24 +309,26 @@ const Map: React.FC = () => {
           });
 
           // Update visibility for nested filters if filtersToShow exists
-          if (filter.filtersToShow && isTopicActive && isFilterSelected) {
-            filter.filtersToShow.forEach((nestedFilter) => {
+          if (typedFilter.filtersToShow && isTopicActive && isFilterSelected) {
+            typedFilter.filtersToShow.forEach((nestedFilter: Filter) => {
               const isNestedFilterSelected = filterOptionsSelected.includes(
                 nestedFilter.value,
               );
               const shouldNestedBeVisible = isNestedFilterSelected;
 
-              nestedFilter?.geojson?.forEach((geojson, index) => {
-                const layerId = `topic-layer-${nestedFilter.value}-${index}`;
+              nestedFilter?.geojson?.forEach(
+                (geojson: GeoJsonLayer, index: number) => {
+                  const layerId = `topic-layer-${nestedFilter.value}-${index}`;
 
-                if (mapRef.current.getLayer(layerId)) {
-                  mapRef.current.setLayoutProperty(
-                    layerId,
-                    'visibility',
-                    shouldNestedBeVisible ? 'visible' : 'none',
-                  );
-                }
-              });
+                  if (mapRef.current && mapRef.current.getLayer(layerId)) {
+                    mapRef.current.setLayoutProperty(
+                      layerId,
+                      'visibility',
+                      shouldNestedBeVisible ? 'visible' : 'none',
+                    );
+                  }
+                },
+              );
             });
           }
         });
@@ -316,8 +337,12 @@ const Map: React.FC = () => {
 
   const resetMap = () => {
     // reset map to center
-    mapRef.current.setCenter(appMetadata.map.defaultCenter);
-    mapRef.current.setZoom(appMetadata.map.defaultZoom);
+    if (mapRef.current) {
+      mapRef.current.setCenter(
+        appMetadata.map.defaultCenter as [number, number],
+      );
+      mapRef.current.setZoom(appMetadata.map.defaultZoom);
+    }
     // Clear active topic to remove layers
     setTopicActive('default');
     const defaultFilters = ['concept-design', 'local-government-area'];

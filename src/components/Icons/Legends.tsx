@@ -64,13 +64,13 @@ export const OperationalBoundary = () => (
 );
 export const ConceptDesign = () => (
   <svg
-    width="283"
-    height="24"
-    viewBox="0 0 283 24"
+    width="24"
+    height="2"
+    viewBox="0 0 24 2"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path d="M0 12H24" stroke="#A4A7A9" strokeWidth="2" />
+    <path d="M0 1H24" stroke="#A4A7A9" strokeWidth="2" />
   </svg>
 );
 export const LocalGovernmentArea = () => (
@@ -379,7 +379,7 @@ export const ContoursVibrationBuffers = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="24" height="12" fill="#F3631B" fill-opacity="0.5" />
+    <rect width="24" height="12" fill="#F3631B" fillOpacity="0.5" />
   </svg>
 );
 
@@ -391,7 +391,7 @@ export const OperationalNoiseContours2030Day = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="24" height="12" fill="#65004D" fill-opacity="0.5" />
+    <rect width="24" height="12" fill="#65004D" fillOpacity="0.5" />
   </svg>
 );
 export const OperationalNoiseContours2030Night = () => (
@@ -402,7 +402,7 @@ export const OperationalNoiseContours2030Night = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="24" height="12" fill="#65004D" fill-opacity="0.75" />
+    <rect width="24" height="12" fill="#65004D" fillOpacity="0.75" />
   </svg>
 );
 export const OperationalNoiseContours2040Day = () => (
@@ -424,7 +424,7 @@ export const OperationalNoiseContours2040Night = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="24" height="12" fill="#441170" fill-opacity="0.75" />
+    <rect width="24" height="12" fill="#441170" fillOpacity="0.75" />
   </svg>
 );
 export const OperationalNoiseStudyArea = () => (
@@ -435,7 +435,7 @@ export const OperationalNoiseStudyArea = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="24" height="12" fill="#65004D" fill-opacity="0.5" />
+    <rect width="24" height="12" fill="#65004D" fillOpacity="0.5" />
   </svg>
 );
 export const ConstructionStudyArea = () => (

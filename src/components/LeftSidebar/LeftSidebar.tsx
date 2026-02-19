@@ -9,6 +9,7 @@ import { expandFilters } from '../../context/context';
 import Info from '../Icons/Info';
 import RoundedArrowLeft from '../Icons/RoundedArrowLeft';
 import RoundedArrowRight from '../Icons/RoundedArrowRight';
+import { Topic, Filter } from '../../types/map';
 
 const LeftSidebar = () => {
   const {
@@ -34,11 +35,11 @@ const LeftSidebar = () => {
   const previousTopic = hasPrevious ? menuTopics[currentIndex - 1] : null;
   const nextTopic = hasNext ? menuTopics[currentIndex + 1] : null;
 
-  const navigateToTopic = (topic: any) => {
+  const navigateToTopic = (topic: Topic | null) => {
     if (!topic) return;
     setTopicActive(topic.slug);
     const filterValues =
-      topic.filters?.map((option: any) => option.value) || [];
+      topic.filters?.map((option: Filter) => option.value) || [];
     setFilterOptionsSelected(expandFilters(filterValues, topic.slug));
   };
 
@@ -151,7 +152,7 @@ const LeftSidebar = () => {
                         setTopicActive(item.slug);
                         // set the filter options selected to show the layers on the map
                         const filterValues =
-                          item.filters?.map((option: any) => option.value) ||
+                          item.filters?.map((option: Filter) => option.value) ||
                           [];
                         setFilterOptionsSelected(
                           expandFilters(filterValues, item.slug),
