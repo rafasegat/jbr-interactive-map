@@ -17,6 +17,7 @@ const LeftSidebar = () => {
     setTopicActive,
     setZoneOptionsSelected,
     setFilterOptionsSelected,
+    openModal,
   } = useAppContext();
   const { topicActive } = state;
   const [activeLevel, setActiveLevel] = useState<string>('level-one');
@@ -124,7 +125,10 @@ const LeftSidebar = () => {
               <a
                 href="#"
                 className="how-to-use"
-                onClick={(e) => e.preventDefault()}
+                onClick={(e) => {
+                  e.preventDefault();
+                  openModal();
+                }}
               >
                 <Info />
                 <span>How to use this interactive map</span>

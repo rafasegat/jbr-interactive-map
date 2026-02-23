@@ -17,7 +17,16 @@ export const conceptDesignFilters = [
     label: 'Local government areas',
     value: 'local-government-areas',
     legendAlias: 'local-government-area',
-    geojson: [],
+    geojson: [
+      {
+        sourceUrl: '/data/geojson/extras/Local Government Areas.geojson',
+        type: 'line',
+        // paint: {
+        //   'line-color': '#d7153a',
+        //   'line-width': 3,
+        // },
+      },
+    ],
     orderLayout: 0,
     color: '#F4B5E6',
     tickerColor: '#000000',
@@ -37,7 +46,6 @@ export const conceptDesignFilters = [
           'line-color': '#d7153a',
           'line-width': 3,
         },
-        slot: 'top',
       },
     ],
   },

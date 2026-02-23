@@ -150,8 +150,6 @@ const MapTopbar = () => {
           className={tabActive === enumTabs.satellite ? 'active' : ''}
           onClick={() => {
             setTabActive(enumTabs.satellite);
-            setZoneOptionsSelected([]);
-            setFilterOptionsSelected([]);
           }}
           aria-disabled={tabActive !== enumTabs.satellite}
         >
@@ -161,8 +159,6 @@ const MapTopbar = () => {
           className={tabActive === enumTabs.default ? 'active' : ''}
           onClick={() => {
             setTabActive(enumTabs.default);
-            setZoneOptionsSelected([]);
-            setFilterOptionsSelected([]);
           }}
           aria-disabled={tabActive !== enumTabs.default}
         >

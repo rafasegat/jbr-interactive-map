@@ -22,6 +22,11 @@ import {
   noiseAndVibrationLegends,
 } from './topics/noise-and-vibration';
 
+import {
+  propertyAndLandUseFilters,
+  propertyAndLandUseLegends,
+} from './topics/property-and-land-use';
+
 import { TabActive } from '../components/MapTopbar/MapTopbar';
 import { defaultFilters } from './topics/default';
 
@@ -29,9 +34,11 @@ export const appMetadata = {
   map: {
     accessToken: import.meta.env.VITE_MAPBOX_ACCESS_TOKEN || '',
     satelliteStyle: 'mapbox://styles/mapbox/satellite-v9',
-    defaultStyle: 'mapbox://styles/mapbox/streets-v12',
-    defaultCenter: [150.58141461633056, -35.00931843740925],
-    defaultZoom: 13,
+    defaultStyle: 'mapbox://styles/mapbox/streets-v11',
+    // satelliteStyle: 'mapbox://styles/creative-rps/cmigmjvll004201sthupn0b4n',
+    // defaultStyle: 'mapbox://styles/creative-rps/cmlg2tqwu002101srckxfaww9',
+    defaultCenter: [150.58287373803307, -35.01339575760793],
+    defaultZoom: 12.8,
     maxZoom: 18,
     minZoom: 10,
     showCompass: false,
@@ -68,6 +75,8 @@ export const appMetadata = {
       title: 'Property and land use',
       slug: 'property-and-land-use',
       content: <PropertyAndLandUse />,
+      filters: propertyAndLandUseFilters,
+      legends: propertyAndLandUseLegends,
       isOnMenu: true,
       color: '#D7153A',
     },
@@ -114,6 +123,7 @@ export const listOfTopicsToAddLayer = [
   ...noiseAndVibrationFilters,
   ...trafficAndTransportFilters,
   ...conceptDesignFilters,
+  ...propertyAndLandUseFilters,
 ];
 
 // Enums

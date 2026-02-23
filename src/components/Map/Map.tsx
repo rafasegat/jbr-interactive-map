@@ -23,10 +23,12 @@ const Map: React.FC = () => {
     setTopicActive,
     setZoneOptionsSelected,
   } = useAppContext();
-  const { tabActive, filterOptionsSelected, topicActive, zoneOptionsSelected } =
-    state;
+  const { tabActive, filterOptionsSelected, topicActive } = state;
   const mapContainer = useRef<HTMLDivElement>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
+  const geojsonCache = useRef<globalThis.Map<string, any>>(
+    new globalThis.Map(),
+  );
   const [mapLoaded, setMapLoaded] = useState(false);
   const [styleLoaded, setStyleLoaded] = useState(0); // Counter to trigger re-renders on style changes
   const [layersReady, setLayersReady] = useState(false); // Flag to indicate layers are added and ready
@@ -60,6 +62,11 @@ const Map: React.FC = () => {
           }),
         );
       }
+    });
+
+    // when click console log the coordinates
+    mapRef.current.on('click', (event) => {
+      console.log(`[${event.lngLat.lng}, ${event.lngLat.lat}]`);
     });
 
     // Wait for style to load
@@ -99,17 +106,24 @@ const Map: React.FC = () => {
             // Support both direct data (source) and lazy loading (sourceUrl)
             let geojsonData: any = geojson.source || {};
 
-            if (geojson.sourceUrl && !geojson.source) {
-              // Load GeoJSON from URL
-              try {
-                const response = await fetch(geojson.sourceUrl);
-                geojsonData = await response.json();
-              } catch (error) {
-                console.error(
-                  `Failed to load GeoJSON from ${geojson.sourceUrl}:`,
-                  error,
-                );
-                continue;
+            if (geojson.sourceUrl) {
+              // Check cache first
+              if (geojsonCache.current.has(geojson.sourceUrl)) {
+                geojsonData = geojsonCache.current.get(geojson.sourceUrl);
+              } else if (!geojson.source) {
+                // Load GeoJSON from URL only if not in cache
+                try {
+                  const response = await fetch(geojson.sourceUrl);
+                  geojsonData = await response.json();
+                  // Store in cache
+                  geojsonCache.current.set(geojson.sourceUrl, geojsonData);
+                } catch (error) {
+                  console.error(
+                    `Failed to load GeoJSON from ${geojson.sourceUrl}:`,
+                    error,
+                  );
+                  continue;
+                }
               }
             }
 
@@ -150,13 +164,18 @@ const Map: React.FC = () => {
 
     const loadLayers = async () => {
       setLayersReady(false); // Signal that layers are being updated
-      setIsLoading(true); // Show loading indicator
+      // Only show loading spinner on initial load, not on style changes
+      // if (styleLoaded === 0) {
+      setIsLoading(true);
+      // }
       await addAllTopicLayers();
 
       // Wait for next frame to ensure all layers are fully registered in Mapbox
       requestAnimationFrame(() => {
         setLayersReady(true); // Signal that layers are ready
-        setIsLoading(false); // Hide loading indicator
+        // if (styleLoaded === 0) {
+        setIsLoading(false); // Hide loading indicator only if we showed it
+        // }
       });
     };
 
@@ -174,7 +193,7 @@ const Map: React.FC = () => {
 
     mapRef.current.setStyle(style);
 
-    // Wait for style to load, then trigger layer re-add by incrementing counter
+    // Wait for style to load, then re-add controls and trigger layer re-add
     mapRef.current.once('style.load', () => {
       setStyleLoaded((prev) => prev + 1);
     });
@@ -333,7 +352,7 @@ const Map: React.FC = () => {
           }
         });
       });
-  }, [filterOptionsSelected, mapLoaded, layersReady, topicActive]);
+  }, [filterOptionsSelected, mapLoaded, layersReady, topicActive, styleLoaded]);
 
   const resetMap = () => {
     // reset map to center
@@ -342,6 +361,8 @@ const Map: React.FC = () => {
         appMetadata.map.defaultCenter as [number, number],
       );
       mapRef.current.setZoom(appMetadata.map.defaultZoom);
+      // reset compass orientation
+      mapRef.current.setBearing(0);
     }
     // Clear active topic to remove layers
     setTopicActive('default');

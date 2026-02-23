@@ -1,3 +1,5 @@
+@import '../../assets/style/variables.scss';
+
 $imgWidth: 800px;
 $imgHeight: 425px;
 
@@ -16,6 +18,12 @@ $imgHeight: 425px;
   opacity: 0;
   visibility: hidden;
 
+  .map-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
   .modal-dialog {
     min-height: calc(100% - 3.5rem);
     max-width: $imgWidth;
@@ -29,18 +37,50 @@ $imgHeight: 425px;
     .modal-content {
       position: relative;
       display: flex;
+      padding: $spacing-8;
       flex-direction: column;
       width: 100%;
       pointer-events: auto;
       background-color: #ffffff;
       background-clip: padding-box;
+      border-radius: 10px;
       outline: 0;
+      h2 {
+        margin: 0 0 $spacing-5 0;
+        font-size: $spacing-8;
+      }
+      h3 {
+        margin: 0 0 $spacing-4 0;
+        font-size: $spacing-6;
+      }
+      p {
+        margin: 0 0 $spacing-4 0;
+        font-size: $spacing-4;
+      }
+      .bold {
+        font-weight: bold;
+      }
+      .how-to-use {
+        display: flex;
+        align-items: stretch;
+        flex-direction: row;
+        gap: $spacing-4;
+        & > div {
+          flex: 1;
+          border: 1px solid $grey03;
+          border-radius: 5px;
+          display: flex;
+          align-items: start;
+          gap: $spacing-4;
+          flex-direction: column;
+          padding: $spacing-4;
+        }
+      }
       .btn-close-modal {
         position: absolute;
-        right: 0;
-        top: -35px;
-        background: #002431;
-        color: #ffffff;
+        right: $spacing-4;
+        top: $spacing-4;
+        background: transparent;
         width: 35px;
         height: 35px;
         border: none;
@@ -48,9 +88,6 @@ $imgHeight: 425px;
         display: flex;
         align-items: center;
         justify-content: center;
-        &:hover {
-          background: #048387;
-        }
       }
       .modal-content {
         font-weight: 300;
@@ -77,20 +114,6 @@ $imgHeight: 425px;
           &:hover {
             color: #048387;
           }
-        }
-      }
-      .modal-title {
-        display: flex;
-        background: #a3d063;
-        width: 100%;
-        padding: 15px 0;
-
-        h2 {
-          font-weight: bold;
-          font-size: 17px;
-          margin: 0 0 0 20px;
-          padding: 0;
-          color: #ffffff;
         }
       }
       .tab-content {

@@ -9,6 +9,7 @@ interface AppState {
   tabActive: TabActive;
   filterOptionsSelected: string[];
   zoneOptionsSelected: string[];
+  isModalOpen: boolean;
 }
 
 // Define the context interface
@@ -19,6 +20,8 @@ interface AppContextType {
   setTabActive: (tab: TabActive) => void;
   setFilterOptionsSelected: (options: string[]) => void;
   setZoneOptionsSelected: (options: string[]) => void;
+  openModal: () => void;
+  closeModal: () => void;
 }
 
 // Create the context
@@ -71,6 +74,7 @@ const getInitialState = (): AppState => {
     tabActive: 'satellite',
     filterOptionsSelected: expandFilters(defaultFilters, 'default'),
     zoneOptionsSelected: [],
+    isModalOpen: false,
   };
 };
 
@@ -94,12 +98,19 @@ const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   };
 
   const setFilterOptionsSelected = (options: string[]) => {
-    console.log('🔴 setFilterOptionsSelected called with:', options);
     setState((prev) => ({ ...prev, filterOptionsSelected: options }));
   };
 
   const setZoneOptionsSelected = (options: string[]) => {
     setState((prev) => ({ ...prev, zoneOptionsSelected: options }));
+  };
+
+  const openModal = (content: ReactNode) => {
+    setState((prev) => ({ ...prev, isModalOpen: true }));
+  };
+
+  const closeModal = () => {
+    setState((prev) => ({ ...prev, isModalOpen: false }));
   };
 
   const contextValue: AppContextType = {
@@ -111,6 +122,8 @@ const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     setTabActive,
     setFilterOptionsSelected,
     setZoneOptionsSelected,
+    openModal,
+    closeModal,
   };
 
   return (

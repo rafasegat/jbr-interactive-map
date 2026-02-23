@@ -22,16 +22,6 @@ const content = () => {
         mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis
         semper ac in est.
       </p>
-      <ul>
-        <li>
-          <CarWithHand />
-          <span>Pedestrian and cycle facilities</span>
-        </li>
-        <li>
-          <CarWithHand />
-          <span>Pedestrian and cycle facilities</span>
-        </li>
-      </ul>
     </div>
   );
 };
