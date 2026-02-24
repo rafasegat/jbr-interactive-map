@@ -1,0 +1,56 @@
+@import '../../assets/style/variables.scss';
+
+.search-address {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 100;
+
+  &__input {
+    padding: 8px 12px;
+    border: 1px solid #eeeeee;
+    border-radius: 0;
+    font-size: 14px;
+    outline: none;
+    height: 12px;
+    width: 250px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  &__button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      svg {
+        rect {
+          fill: #f4f4f4 !important;
+        }
+      }
+    }
+
+    svg {
+      display: block;
+    }
+  }
+}
+
+// Google Places Autocomplete dropdown styling
+.pac-container {
+  z-index: 1000 !important;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-top: 4px;
+}

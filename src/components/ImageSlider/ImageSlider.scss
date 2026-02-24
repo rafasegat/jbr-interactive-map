@@ -44,8 +44,9 @@
     transition: all 0.3s ease;
     z-index: 1000;
     pointer-events: all;
-    width: 40px;
-    height: 40px;
+    width: $spacing-8;
+    height: $spacing-8;
+    padding: 0;
 
     &:hover {
       opacity: 0.8;
@@ -60,20 +61,21 @@
     }
 
     &-prev {
-      left: $spacing-1;
+      left: $spacing-2;
     }
 
     &-next {
-      right: $spacing-1;
+      right: $spacing-2;
     }
 
     &.disabled {
-      background-color: red;
+      background-color: transparent;
       cursor: not-allowed;
-      opacity: 0.7;
-
-      &:hover {
-        opacity: 0.7;
+      opacity: 1;
+      svg {
+        rect {
+          fill: #8093b2 !important;
+        }
       }
     }
   }

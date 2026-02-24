@@ -10,6 +10,7 @@ import { expandFilters } from '../../context/context';
 import { enumTabs } from '../../helpers/constants';
 import { listOfTopicsToAddLayer } from '../../helpers/constants';
 import { Filter, GeoJsonLayer } from '../../types/map';
+import SearchAddress from '../SearchAddress/SearchAddress';
 
 import './Map.scss';
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -459,6 +460,16 @@ const Map: React.FC = () => {
       });
   }, [filterOptionsSelected, mapLoaded, layersReady, topicActive, styleLoaded]);
 
+  const handleLocationSelect = (lat: number, lng: number, address: string) => {
+    if (mapRef.current) {
+      mapRef.current.flyTo({
+        center: [lng, lat],
+        zoom: 16, // Zoom in closer for address view
+        duration: 2000,
+      });
+    }
+  };
+
   const resetMap = () => {
     // reset map to center
     if (mapRef.current) {
@@ -510,6 +521,8 @@ const Map: React.FC = () => {
       >
         <Reset />
       </button>
+      <SearchAddress onLocationSelect={handleLocationSelect} />
+
       <MapLegend />
     </section>
   );

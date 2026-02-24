@@ -33,6 +33,7 @@
     &.mapboxgl-ctrl-group {
       border-radius: 0;
       border: 1px solid $grey04;
+      margin: 56px 16px 0 0;
     }
     .mapboxgl-ctrl-zoom-in,
     .mapboxgl-ctrl-zoom-out,
@@ -44,15 +45,17 @@
   }
 
   button.mapboxgl-popup-close-button {
-    width: 28px;
-    height: 28px;
-    font-size: 2rem;
+    width: $spacing-8;
+    height: $spacing-8;
+    padding: 6px;
+    font-size: 2.25rem;
     cursor: pointer;
     background: #ffffff80;
     right: 1.5rem;
     top: 1.5rem;
     display: flex;
     align-items: center;
+    text-align: center;
     outline: 0;
     border-radius: 0;
     &:hover {
@@ -125,8 +128,8 @@
 
 .reset-button {
   position: absolute;
-  right: 10px;
-  top: 115px;
+  right: 16px;
+  top: 161px;
   background: transparent;
   border: none;
   padding: 0;

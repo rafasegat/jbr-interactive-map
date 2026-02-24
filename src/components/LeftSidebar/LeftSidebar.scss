@@ -315,6 +315,7 @@
                   color: $grey01;
                   font-size: 0.875rem;
                   transition: opacity 0.2s ease;
+                  padding: 0;
 
                   &:hover:not(:disabled) {
                     opacity: 0.7;
