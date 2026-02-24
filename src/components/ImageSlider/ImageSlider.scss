@@ -1,0 +1,78 @@
+@import '../../assets/style/variables.scss';
+
+.image-slider {
+  width: 100%;
+  position: relative;
+  isolation: isolate; // Creates new stacking context
+
+  .slick-slider {
+    position: relative;
+    z-index: 1;
+  }
+
+  .slick-list {
+    overflow: hidden;
+  }
+
+  .slider-slide {
+    width: 100%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+
+    img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+    }
+  }
+
+  .slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    pointer-events: all;
+    width: 40px;
+    height: 40px;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      transform: translateY(-50%) scale(0.95);
+    }
+
+    svg {
+      pointer-events: none;
+    }
+
+    &-prev {
+      left: $spacing-1;
+    }
+
+    &-next {
+      right: $spacing-1;
+    }
+  }
+}
+
+.slick-slider .slick-slide > div {
+  padding: 0 !important;
+}
+
+.slick-slider .slick-slide {
+  height: auto !important;
+}

@@ -42,7 +42,7 @@ export const trafficAndTransportFilters = [
         paint: {
           'circle-radius': 4,
           'circle-color': '#ffffff',
-          'circle-stroke-color': '#faaf05',
+          'circle-stroke-color': '#002664',
           'circle-stroke-width': 2,
         },
       },

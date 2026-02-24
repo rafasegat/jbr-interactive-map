@@ -86,8 +86,6 @@ interface AppProviderProps {
 const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   const [state, setState] = useState<AppState>(getInitialState);
 
-  console.log('🟣 AppProvider state:', state);
-
   // State setters
   const setTopicActive = (topic: string) => {
     setState((prev) => ({ ...prev, topicActive: topic }));

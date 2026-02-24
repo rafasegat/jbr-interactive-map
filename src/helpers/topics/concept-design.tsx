@@ -82,9 +82,8 @@ export const conceptDesignFilters = [
         paint: {
           'line-color': '#146cfd',
           'line-width': 3,
-          'line-dasharray': [3, 4],
+          'line-dasharray': [1, 2],
         },
-        slot: 'top',
       },
     ],
   },
@@ -152,15 +151,15 @@ export const conceptDesignFilters = [
     value: 'pavement',
     legendAlias: 'pavement',
     orderLayout: 7,
-    color: '#8C8C8C',
+    color: '#495054',
     tickerColor: '#FFFFFF',
     geojson: [
       {
         sourceUrl: '/data/geojson/concept-design/Pavement.json',
-        type: 'line',
+        type: 'fill',
         paint: {
-          'line-color': '#495054',
-          'line-opacity': 1,
+          'fill-color': '#495054',
+          'fill-opacity': 1,
         },
       },
     ],
@@ -194,10 +193,10 @@ export const conceptDesignFilters = [
       {
         sourceUrl:
           '/data/geojson/concept-design/Proposed Ancillary Facility.json',
-        type: 'line',
+        type: 'fill',
         paint: {
-          'line-color': '#495054',
-          'line-opacity': 1,
+          'fill-color': '#D912AE',
+          'fill-opacity': 1,
         },
       },
     ],

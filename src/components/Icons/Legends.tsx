@@ -449,3 +449,190 @@ export const ConstructionStudyArea = () => (
     <rect width="24" height="12" fill="#F3631B" />
   </svg>
 );
+export const ReportingLocationsCulverts = () => (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      x="1.5"
+      y="1.5"
+      width="13"
+      height="13"
+      rx="6.5"
+      fill="white"
+      stroke="#002664"
+      strokeWidth="3"
+    />
+  </svg>
+);
+
+export const ExistingFloodDepth1AEP = () => (
+  <svg
+    width="24"
+    height="2"
+    viewBox="0 0 24 2"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0 1H24"
+      stroke="#002664"
+      strokeWidth="2"
+      strokeDasharray="3 2.5"
+    />
+  </svg>
+);
+export const ExistingCulverts = () => (
+  <svg
+    width="24"
+    height="2"
+    viewBox="0 0 24 2"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M0 1H24" stroke="#002664" strokeWidth="2" />
+  </svg>
+);
+export const Riverlines = () => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M0 12H24" stroke="#8CE0FF" strokeWidth="2" />
+  </svg>
+);
+export const Watercourses = () => (
+  <svg
+    width="24"
+    height="2"
+    viewBox="0 0 24 2"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0 1H24"
+      stroke="#8CE0FF"
+      strokeWidth="2"
+      strokeDasharray="3 2.5"
+    />
+  </svg>
+);
+export const WaterCatchment = () => (
+  <svg
+    width="24"
+    height="12"
+    viewBox="0 0 24 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect width="24" height="12" fill="#146CFD" fillOpacity="0.8" />
+  </svg>
+);
+export const FloodCatchments = () => (
+  <svg
+    width="24"
+    height="12"
+    viewBox="0 0 24 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect width="24" height="12" fill="#002664" fillOpacity="0.75" />
+  </svg>
+);
+export const HydroArea = () => (
+  <svg
+    width="24"
+    height="12"
+    viewBox="0 0 24 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect width="24" height="12" fill="#8CE0FF" fillOpacity="0.8" />
+  </svg>
+);
+export const TUFLOWModelExtent = () => (
+  <svg
+    width="24"
+    height="12"
+    viewBox="0 0 24 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect width="24" height="12" fill="#002664" fillOpacity="0.5" />
+  </svg>
+);
+
+export const LandUseZoning = () => (
+  <svg
+    width="24"
+    height="12"
+    viewBox="0 0 24 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect width="24" height="12" fill="#EB8A9C" fillOpacity="0.8" />
+  </svg>
+);
+export const LandscapeCharacterAreas = () => (
+  <svg
+    width="24"
+    height="12"
+    viewBox="0 0 24 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect width="24" height="12" fill="#F4B5E6" fillOpacity="0.8" />
+  </svg>
+);
+export const LandscapeViewpoints = () => (
+  <svg
+    width="24"
+    height="12"
+    viewBox="0 0 24 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect width="24" height="12" fill="#d912ae" fillOpacity="0.8" />
+  </svg>
+);
+export const StateForests = () => (
+  <svg
+    width="24"
+    height="12"
+    viewBox="0 0 24 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect width="24" height="12" fill="#00AA45" fillOpacity="0.8" />
+  </svg>
+);
+export const NationalParks = () => (
+  <svg
+    width="24"
+    height="12"
+    viewBox="0 0 24 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect width="24" height="12" fill="#486F75" fillOpacity="0.9" />
+  </svg>
+);
+
+export const AhimsSites = () => (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect width="16" height="16" rx="8" fill="#694800" />
+  </svg>
+);

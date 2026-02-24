@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useRef, useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import mapboxgl from 'mapbox-gl';
 import MapLegend from '../MapLegend/MapLegend';
 import { appMetadata } from '../../helpers/constants';
@@ -24,15 +25,18 @@ const Map: React.FC = () => {
     setZoneOptionsSelected,
   } = useAppContext();
   const { tabActive, filterOptionsSelected, topicActive } = state;
+  const [mapLoaded, setMapLoaded] = useState(false);
+  const [styleLoaded, setStyleLoaded] = useState(0); // Counter to trigger re-renders on style changes
+  const [layersReady, setLayersReady] = useState(false); // Flag to indicate layers are added and ready
+  const [isLoading, setIsLoading] = useState(true); // Loading state for map and GeoJSON
   const mapContainer = useRef<HTMLDivElement>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const geojsonCache = useRef<globalThis.Map<string, any>>(
     new globalThis.Map(),
   );
-  const [mapLoaded, setMapLoaded] = useState(false);
-  const [styleLoaded, setStyleLoaded] = useState(0); // Counter to trigger re-renders on style changes
-  const [layersReady, setLayersReady] = useState(false); // Flag to indicate layers are added and ready
-  const [isLoading, setIsLoading] = useState(true); // Loading state for map and GeoJSON
+  const markersRef = useRef<globalThis.Map<string, mapboxgl.Marker>>(
+    new globalThis.Map(),
+  );
 
   // Initialize map on component mount
   useEffect(() => {
@@ -76,6 +80,12 @@ const Map: React.FC = () => {
     });
 
     return () => {
+      // Remove all markers
+      markersRef.current.forEach((marker) => {
+        marker.remove();
+      });
+      markersRef.current.clear();
+
       if (mapRef.current) {
         mapRef.current.remove();
       }
@@ -98,65 +108,140 @@ const Map: React.FC = () => {
         // Sort in reverse: higher orderLayout added first (bottom), lower added last (top)
         for (const filter of listOfTopicsToAddLayer) {
           // Process direct GeoJSON in this filter
-          for (let index = 0; index < (filter?.geojson?.length || 0); index++) {
-            const geojson = filter.geojson[index] as GeoJsonLayer;
-            const sourceId = `topic-source-${filter.value}-${index}`;
-            const layerId = `topic-layer-${filter.value}-${index}`;
+          if (filter?.geojson?.length) {
+            for (let index = 0; index < filter.geojson.length; index++) {
+              const geojson = filter.geojson[index] as GeoJsonLayer;
+              const sourceId = `topic-source-${filter.value}-${index}`;
+              const layerId = `topic-layer-${filter.value}-${index}`;
 
-            // Support both direct data (source) and lazy loading (sourceUrl)
-            let geojsonData: any = geojson.source || {};
+              // Support both direct data (source) and lazy loading (sourceUrl)
+              let geojsonData: any = geojson.source || {};
 
-            if (geojson.sourceUrl) {
-              // Check cache first
-              if (geojsonCache.current.has(geojson.sourceUrl)) {
-                geojsonData = geojsonCache.current.get(geojson.sourceUrl);
-              } else if (!geojson.source) {
-                // Load GeoJSON from URL only if not in cache
-                try {
-                  const response = await fetch(geojson.sourceUrl);
-                  geojsonData = await response.json();
-                  // Store in cache
-                  geojsonCache.current.set(geojson.sourceUrl, geojsonData);
-                } catch (error) {
-                  console.error(
-                    `Failed to load GeoJSON from ${geojson.sourceUrl}:`,
-                    error,
-                  );
-                  continue;
+              if (geojson.sourceUrl) {
+                // Check cache first
+                if (geojsonCache.current.has(geojson.sourceUrl)) {
+                  geojsonData = geojsonCache.current.get(geojson.sourceUrl);
+                } else if (!geojson.source) {
+                  // Load GeoJSON from URL only if not in cache
+                  try {
+                    const response = await fetch(geojson.sourceUrl);
+                    geojsonData = await response.json();
+                    // Store in cache
+                    geojsonCache.current.set(geojson.sourceUrl, geojsonData);
+                  } catch (error) {
+                    console.error(
+                      `Failed to load GeoJSON from ${geojson.sourceUrl}:`,
+                      error,
+                    );
+                    continue;
+                  }
                 }
               }
-            }
 
-            if (mapRef.current && !mapRef.current.getSource(sourceId)) {
-              mapRef.current.addSource(sourceId, {
-                type: 'geojson',
-                data: geojsonData,
-              });
-            }
+              if (mapRef.current && !mapRef.current.getSource(sourceId)) {
+                mapRef.current.addSource(sourceId, {
+                  type: 'geojson',
+                  data: geojsonData,
+                });
+              }
 
-            if (mapRef.current && !mapRef.current.getLayer(layerId)) {
-              mapRef.current.addLayer({
-                id: layerId,
-                type: (geojson.type || 'fill') as
-                  | 'fill'
-                  | 'line'
-                  | 'circle'
-                  | 'symbol'
-                  | 'raster'
-                  | 'fill-extrusion'
-                  | 'heatmap'
-                  | 'hillshade'
-                  | 'background'
-                  | 'sky'
-                  | 'custom',
-                source: sourceId,
-                layout: {
-                  ...(geojson.layout || {}),
-                  visibility: 'none', // Start hidden, visibility controlled separately
+              if (mapRef.current && !mapRef.current.getLayer(layerId)) {
+                mapRef.current.addLayer({
+                  id: layerId,
+                  type: (geojson.type || 'fill') as
+                    | 'fill'
+                    | 'line'
+                    | 'circle'
+                    | 'symbol'
+                    | 'raster'
+                    | 'fill-extrusion'
+                    | 'heatmap'
+                    | 'hillshade'
+                    | 'background'
+                    | 'sky'
+                    | 'custom',
+                  source: sourceId,
+                  layout: {
+                    ...(geojson.layout || {}),
+                    visibility: 'none', // Start hidden, visibility controlled separately
+                  },
+                  paint: geojson.paint || {},
+                } as mapboxgl.AnyLayer);
+              }
+            }
+          }
+          // Process markers if they exist in this filter
+          const typedFilterForMarkers = filter as Filter;
+          if (typedFilterForMarkers?.markers?.length) {
+            typedFilterForMarkers.markers.forEach((marker) => {
+              const markerId = `marker-${filter.value}-${marker.id}`;
+
+              // Skip if marker already exists
+              if (markersRef.current.has(markerId)) {
+                return;
+              }
+
+              // Create custom element for marker
+              const el = document.createElement('div');
+              el.className = `${filter.value}-marker `;
+              el.style.cursor = 'pointer';
+              el.style.display = 'none'; // Initially hidden
+
+              const img = document.createElement('img');
+              img.src = marker.iconUrl;
+              img.style.width = '32px';
+              img.style.height = '32px';
+              el.appendChild(img);
+
+              // Create marker with custom element
+              const markerCustomEl = new mapboxgl.Marker({
+                element: el,
+              })
+                .setLngLat(marker.coordinates)
+                .addTo(mapRef.current!);
+
+              // Store marker in ref
+              markersRef.current.set(markerId, markerCustomEl);
+
+              // Create popup container
+              const popupContainer = document.createElement('div');
+
+              // Create popup but don't add it to map yet
+              const popup = new mapboxgl.Popup({
+                closeButton: true,
+                closeOnClick: true,
+                maxWidth: '400px',
+                offset: {
+                  top: [0, 15],
+                  'top-left': [0, 15],
+                  'top-right': [0, 15],
+                  bottom: [0, -20],
+                  'bottom-left': [0, -20],
+                  'bottom-right': [0, -20],
+                  left: [15, -5],
+                  right: [-15, -5],
                 },
-                paint: geojson.paint || {},
-              } as mapboxgl.AnyLayer);
-            }
+              }).setDOMContent(popupContainer);
+
+              // Render React content into the popup container (React 17 API)
+              ReactDOM.render(marker?.popupContent || null, popupContainer);
+
+              // Add popup to marker on click
+              markerCustomEl.getElement().addEventListener('click', () => {
+                // Center the map on the clicked marker
+                if (mapRef.current) {
+                  mapRef.current.flyTo({
+                    center: marker.coordinates,
+                    zoom: mapRef.current.getZoom(),
+                    duration: 1000,
+                  });
+
+                  // Set popup to appear above the marker
+                  popup.setOffset([0, -20]);
+                  markerCustomEl.setPopup(popup);
+                }
+              });
+            });
           }
         }
       }
@@ -164,18 +249,12 @@ const Map: React.FC = () => {
 
     const loadLayers = async () => {
       setLayersReady(false); // Signal that layers are being updated
-      // Only show loading spinner on initial load, not on style changes
-      // if (styleLoaded === 0) {
       setIsLoading(true);
-      // }
       await addAllTopicLayers();
-
       // Wait for next frame to ensure all layers are fully registered in Mapbox
       requestAnimationFrame(() => {
         setLayersReady(true); // Signal that layers are ready
-        // if (styleLoaded === 0) {
         setIsLoading(false); // Hide loading indicator only if we showed it
-        // }
       });
     };
 
@@ -294,6 +373,19 @@ const Map: React.FC = () => {
               );
             });
           }
+
+          // Update marker visibility for active topic
+          const typedFilterForMarkers = filter as Filter;
+          if (typedFilterForMarkers?.markers?.length) {
+            typedFilterForMarkers.markers.forEach((marker) => {
+              const markerId = `marker-${filter.value}-${marker.id}`;
+              const markerInstance = markersRef.current.get(markerId);
+              if (markerInstance) {
+                const el = markerInstance.getElement();
+                el.style.display = shouldBeVisible ? 'block' : 'none';
+              }
+            });
+          }
         });
       });
 
@@ -348,6 +440,19 @@ const Map: React.FC = () => {
                   }
                 },
               );
+            });
+          }
+
+          // Update marker visibility
+          const typedFilterForMarkers = filter as Filter;
+          if (typedFilterForMarkers?.markers?.length) {
+            typedFilterForMarkers.markers.forEach((marker) => {
+              const markerId = `marker-${filter.value}-${marker.id}`;
+              const markerInstance = markersRef.current.get(markerId);
+              if (markerInstance) {
+                const el = markerInstance.getElement();
+                el.style.display = shouldBeVisible ? 'block' : 'none';
+              }
             });
           }
         });

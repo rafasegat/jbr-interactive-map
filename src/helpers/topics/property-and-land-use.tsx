@@ -1,9 +1,12 @@
 import { conceptDesignFilters, conceptDesignLegends } from './concept-design';
 import {
-  BusStops,
-  ExistingCrashData,
-  LocalRoads,
+  LandscapeCharacterAreas,
+  LandUseZoning,
+  NationalParks,
+  StateForests,
+  LandscapeViewpoints,
 } from '../../components/Icons/Legends';
+import ImageSlider from '../../components/ImageSlider/ImageSlider';
 
 export const propertyAndLandUseFilters = [
   {
@@ -30,15 +33,15 @@ export const propertyAndLandUseFilters = [
     label: 'Land use zoning',
     value: 'land-use-zoning',
     legendAlias: 'land-use-zoning',
-    color: '#d7153a',
-    tickerColor: '#FFFFFF',
+    color: '#EFA1B0',
+    tickerColor: '#000000',
     geojson: [
       {
         sourceUrl:
           '/data/geojson/property-and-land-use/Land Use Zoning.geojson',
         type: 'line',
         paint: {
-          'line-color': '#ffffff',
+          'line-color': '#EFA1B0',
           'line-width': 2,
         },
       },
@@ -51,14 +54,14 @@ export const propertyAndLandUseFilters = [
     value: 'landscape-character-areas',
     legendAlias: 'landscape-character-areas',
     color: '#f4b5e6',
-    tickerColor: '#FFFFFF',
+    tickerColor: '#000000',
     geojson: [
       {
         sourceUrl:
           '/data/geojson/property-and-land-use/Landscape Character Areas.geojson',
         type: 'line',
         paint: {
-          'line-color': '#ffffff',
+          'line-color': '#f4b5e6',
           'line-width': 2,
         },
       },
@@ -71,17 +74,59 @@ export const propertyAndLandUseFilters = [
     legendAlias: 'landscape-viewpoints',
     color: '#d912ae',
     tickerColor: '#FFFFFF',
-    geojson: [
+    markers: [
       {
-        sourceUrl:
-          '/data/geojson/property-and-land-use/Landscape Viewpoints.geojson',
-        type: 'circle',
-        paint: {
-          'circle-radius': 4,
-          'circle-color': '#ffffff',
-          'circle-stroke-color': '#22272b',
-          'circle-stroke-width': 2,
-        },
+        id: 'VP2',
+        coordinates: [150.5845738079575, -34.99497628563275],
+        // icon: ArtistImpressionIcon,
+        iconUrl: './images/gallery.svg',
+        popupContent: (
+          <>
+            <div>
+              <ImageSlider
+                images={[
+                  '/images/viewpoint/vp2/vp2-1.png',
+                  '/images/viewpoint/vp2/vp2-2.png',
+                  '/images/viewpoint/vp2/vp2-3.png',
+                ]}
+              />
+            </div>
+
+            <p>
+              <span className="bold">Viewpoint 2</span> - Current
+            </p>
+          </>
+        ),
+      },
+      {
+        id: 'VP3',
+        coordinates: [150.58434289804944, -34.9960901756142],
+        iconUrl: './images/gallery.svg',
+        popupContent: (
+          <>
+            <p>TESTING</p>
+          </>
+        ),
+      },
+      {
+        id: 'VP8',
+        coordinates: [150.57981453972766, -35.01862370663883],
+        iconUrl: './images/gallery.svg',
+        popupContent: (
+          <>
+            <p>TESTING</p>
+          </>
+        ),
+      },
+      {
+        id: 'VP11',
+        coordinates: [150.5790955237636, -35.02692075809039],
+        iconUrl: './images/gallery.svg',
+        popupContent: (
+          <>
+            <p>TESTING</p>
+          </>
+        ),
       },
     ],
     orderLayout: 5,
@@ -90,14 +135,14 @@ export const propertyAndLandUseFilters = [
     label: 'State forests',
     value: 'state-forests',
     legendAlias: 'state-forests',
-    color: '#00aa45',
+    color: '#33BB6A',
     tickerColor: '#FFFFFF',
     geojson: [
       {
         sourceUrl: '/data/geojson/property-and-land-use/State Forests.geojson',
         type: 'line',
         paint: {
-          'line-color': '#ffffff',
+          'line-color': '#33BB6A',
           'line-width': 2,
         },
       },
@@ -115,7 +160,7 @@ export const propertyAndLandUseFilters = [
         sourceUrl: '/data/geojson/property-and-land-use/National Parks.geojson',
         type: 'line',
         paint: {
-          'line-color': '#ffffff',
+          'line-color': '#0b3f47',
           'line-width': 2,
         },
       },
@@ -133,26 +178,26 @@ export const propertyAndLandUseLegends = [
   {
     label: 'Land use zoning',
     value: 'land-use-zoning',
-    icon: <LocalRoads />,
+    icon: <LandUseZoning />,
   },
   {
-    label: 'Character areas',
-    value: 'character-areas',
-    icon: <LocalRoads />,
+    label: 'Landscape character areas',
+    value: 'landscape-character-areas',
+    icon: <LandscapeCharacterAreas />,
   },
   {
     label: 'Landscape viewpoints',
     value: 'landscape-viewpoints',
-    icon: <BusStops />,
+    icon: <LandscapeViewpoints />,
   },
   {
     label: 'State forests',
     value: 'state-forests',
-    icon: <ExistingCrashData />,
+    icon: <StateForests />,
   },
   {
     label: 'National parks',
     value: 'national-parks',
-    icon: <ExistingCrashData />,
+    icon: <NationalParks />,
   },
 ];

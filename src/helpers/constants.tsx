@@ -27,8 +27,17 @@ import {
   propertyAndLandUseLegends,
 } from './topics/property-and-land-use';
 
+import {
+  hydrologyAndFloodingFilters,
+  hydrologyAndFloodingLegends,
+} from './topics/hydrology-and-flood';
+
 import { TabActive } from '../components/MapTopbar/MapTopbar';
 import { defaultFilters } from './topics/default';
+import {
+  aboriginalCulturalHeritageFilters,
+  aboriginalCulturalHeritageLegends,
+} from './topics/aboriginal-cultural-heritage';
 
 export const appMetadata = {
   map: {
@@ -91,6 +100,8 @@ export const appMetadata = {
       title: 'Hydrology and flooding',
       slug: 'hydrology-and-flooding',
       content: <HydrologyAndFlooding />,
+      filters: hydrologyAndFloodingFilters,
+      legends: hydrologyAndFloodingLegends,
       isOnMenu: true,
       color: '#2E808E',
     },
@@ -99,6 +110,8 @@ export const appMetadata = {
       slug: 'aboriginal-cultural-heritage',
       content: <AboriginalCulturalHeritage />,
       isOnMenu: true,
+      filters: aboriginalCulturalHeritageFilters,
+      legends: aboriginalCulturalHeritageLegends,
       color: '#694800',
     },
     {
@@ -124,6 +137,8 @@ export const listOfTopicsToAddLayer = [
   ...trafficAndTransportFilters,
   ...conceptDesignFilters,
   ...propertyAndLandUseFilters,
+  ...hydrologyAndFloodingFilters,
+  ...aboriginalCulturalHeritageFilters,
 ];
 
 // Enums

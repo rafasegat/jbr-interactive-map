@@ -23,7 +23,13 @@ export interface Filter {
   orderLayout?: number;
   color: string;
   tickerColor: string;
-  geojson: GeoJsonLayer[];
+  geojson?: GeoJsonLayer[];
+  markers?: {
+    id: string;
+    coordinates: [number, number];
+    popupContent: ReactElement;
+    iconUrl: string;
+  }[];
   filtersToShow?: Filter[];
   legendsToShow?: Legend[];
   hasLineDivider?: boolean;
