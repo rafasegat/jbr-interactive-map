@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Slider from 'react-slick';
 import './ImageSlider.scss';
 import '../../assets/style/slick.scss';
@@ -11,6 +11,7 @@ interface ImageSliderProps {
 
 const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
   const sliderRef = useRef<Slider>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   if (!images || images.length === 0) {
     return null;
@@ -24,6 +25,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
     slidesToScroll: 1,
     arrows: false, // We'll use custom buttons instead
     adaptiveHeight: false,
+    beforeChange: (current: number, next: number) => setCurrentSlide(next),
   };
 
   const goToPrevious = () => {
@@ -48,7 +50,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
         <>
           <button
             type="button"
-            className="slider-button slider-button-prev"
+            className={`slider-button slider-button-prev ${currentSlide === 0 ? 'disabled' : ''}`}
             onClick={goToPrevious}
             aria-label="Previous image"
           >
@@ -57,7 +59,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
 
           <button
             type="button"
-            className="slider-button slider-button-next"
+            className={`slider-button slider-button-next ${currentSlide === images.length - 1 ? 'disabled' : ''}`}
             onClick={goToNext}
             aria-label="Next image"
           >

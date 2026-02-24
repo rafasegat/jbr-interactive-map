@@ -104,7 +104,19 @@ export const propertyAndLandUseFilters = [
         iconUrl: './images/gallery.svg',
         popupContent: (
           <>
-            <p>TESTING</p>
+            <div>
+              <ImageSlider
+                images={[
+                  '/images/viewpoint/vp2/vp2-1.png',
+                  '/images/viewpoint/vp2/vp2-2.png',
+                  '/images/viewpoint/vp2/vp2-3.png',
+                ]}
+              />
+            </div>
+
+            <p>
+              <span className="bold">Viewpoint 3</span> - Current
+            </p>
           </>
         ),
       },
@@ -114,7 +126,19 @@ export const propertyAndLandUseFilters = [
         iconUrl: './images/gallery.svg',
         popupContent: (
           <>
-            <p>TESTING</p>
+            <div>
+              <ImageSlider
+                images={[
+                  '/images/viewpoint/vp2/vp2-1.png',
+                  '/images/viewpoint/vp2/vp2-2.png',
+                  '/images/viewpoint/vp2/vp2-3.png',
+                ]}
+              />
+            </div>
+
+            <p>
+              <span className="bold">Viewpoint 8</span> - Current
+            </p>
           </>
         ),
       },
@@ -124,7 +148,19 @@ export const propertyAndLandUseFilters = [
         iconUrl: './images/gallery.svg',
         popupContent: (
           <>
-            <p>TESTING</p>
+            <div>
+              <ImageSlider
+                images={[
+                  '/images/viewpoint/vp2/vp2-1.png',
+                  '/images/viewpoint/vp2/vp2-2.png',
+                  '/images/viewpoint/vp2/vp2-3.png',
+                ]}
+              />
+            </div>
+
+            <p>
+              <span className="bold">Viewpoint 11</span> - Current
+            </p>
           </>
         ),
       },
