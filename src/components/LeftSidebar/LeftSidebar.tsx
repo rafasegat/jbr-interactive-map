@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ArrowRight from '../Icons/ArrowRight';
 import ArrowLeft from '../Icons/ArrowLeft';
 import './LeftSidebar.scss';
@@ -25,6 +25,12 @@ const LeftSidebar = () => {
   const topicActiveData = appMetadata.topics.find(
     (item) => item.slug === topicActive,
   );
+
+  useEffect(() => {
+    if (topicActive === 'default') {
+      setActiveLevel('level-one');
+    }
+  }, [topicActive]);
 
   // Get menu topics only
   const menuTopics = appMetadata.topics.filter((item) => item.isOnMenu);
