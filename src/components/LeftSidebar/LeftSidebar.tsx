@@ -52,10 +52,6 @@ const LeftSidebar = () => {
 
   return (
     <aside className={`left-sidebar ${activeLevel}`}>
-      <div className="title-topic">
-        <h2>Select a topic</h2>
-      </div>
-
       <div className="left-sidebar-container">
         <div className="left-sidebar-wrapper">
           {/* LEVEL TWO */}
@@ -127,6 +123,9 @@ const LeftSidebar = () => {
 
           {/* LEVEL ONE */}
           <div className="sidebar-level sidebar-level-one">
+            <div className="title-topic">
+              <h2>Select a topic</h2>
+            </div>
             <div className="sidebar-level-one-header">
               <a
                 href="#"
