@@ -245,19 +245,9 @@ export const conceptDesignLegends = [
     icon: '-',
   },
   {
-    label: 'Local government area',
-    value: 'local-government-area',
-    icon: <LocalGovernmentArea />,
-  },
-  {
-    label: 'Proposal boundary',
-    value: 'proposal-boundary',
-    icon: <ProposalBoundary />,
-  },
-  {
-    label: 'Operational boundary',
-    value: 'operational-boundary',
-    icon: <OperationalBoundary />,
+    label: 'Chainages',
+    value: 'chainages',
+    icon: <Chainage />,
   },
   {
     label: 'Drainage',
@@ -270,9 +260,14 @@ export const conceptDesignLegends = [
     icon: <DesignCulverts />,
   },
   {
-    label: 'Chainages',
-    value: 'chainages',
-    icon: <Chainage />,
+    label: 'Proposal boundary',
+    value: 'proposal-boundary',
+    icon: <ProposalBoundary />,
+  },
+  {
+    label: 'Operational boundary',
+    value: 'operational-boundary',
+    icon: <OperationalBoundary />,
   },
   {
     label: 'Concept design',
@@ -280,14 +275,9 @@ export const conceptDesignLegends = [
     icon: <ConceptDesign />,
   },
   {
-    label: 'Pavement',
-    value: 'pavement',
-    icon: <Pavement />,
-  },
-  {
-    label: 'Cut and fill',
-    value: 'cut-and-fill',
-    icon: <CutAndFill />,
+    label: 'Local government area',
+    value: 'local-government-area',
+    icon: <LocalGovernmentArea />,
   },
   {
     label: 'Proposed ancillary facility',
@@ -298,5 +288,15 @@ export const conceptDesignLegends = [
     label: 'Drainage basins',
     value: 'drainage-basins',
     icon: <DrainageBasins />,
+  },
+  {
+    label: 'Pavement',
+    value: 'pavement',
+    icon: <Pavement />,
+  },
+  {
+    label: 'Cut and fill',
+    value: 'cut-and-fill',
+    icon: <CutAndFill />,
   },
 ];
