@@ -121,10 +121,10 @@ export const hydrologyAndFloodingFilters = [
       {
         sourceUrl:
           '/data/geojson/hydrology-and-flooding/Water Catchment.geojson',
-        type: 'line',
+        type: 'fill',
         paint: {
-          'line-color': '#146CFD',
-          'line-width': 2,
+          'fill-color': '#146CFD',
+          'fill-opacity': 0.8,
         },
       },
     ],
@@ -143,7 +143,7 @@ export const hydrologyAndFloodingFilters = [
         type: 'fill',
         paint: {
           'fill-color': '#405c8b',
-          'fill-opacity': 1,
+          'fill-opacity': 0.8,
         },
       },
     ],
@@ -161,7 +161,7 @@ export const hydrologyAndFloodingFilters = [
         type: 'fill',
         paint: {
           'fill-color': '#8ce0ff',
-          'fill-opacity': 1,
+          'fill-opacity': 0.8,
         },
       },
     ],
@@ -180,7 +180,7 @@ export const hydrologyAndFloodingFilters = [
         type: 'fill',
         paint: {
           'fill-color': '#8092b1',
-          'fill-opacity': 1,
+          'fill-opacity': 0.8,
         },
       },
     ],
