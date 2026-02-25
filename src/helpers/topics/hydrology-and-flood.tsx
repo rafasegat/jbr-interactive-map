@@ -143,7 +143,7 @@ export const hydrologyAndFloodingFilters = [
         type: 'fill',
         paint: {
           'fill-color': '#002664',
-          'fill-opacity': 0.8,
+          'fill-opacity': 0.75,
         },
       },
     ],
@@ -171,7 +171,7 @@ export const hydrologyAndFloodingFilters = [
     label: 'TUFLOW model extent',
     value: 'tuflow-model-extent',
     legendAlias: 'tuflow-model-extent',
-    color: '#8092b1',
+    color: '#002664',
     tickerColor: '#000000',
     geojson: [
       {
