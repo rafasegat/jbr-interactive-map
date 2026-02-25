@@ -1,4 +1,4 @@
-@import '../../assets/style/variables.scss';
+@use '../../assets/style/variables.scss' as *;
 
 .image-slider {
   width: 100%;
@@ -20,6 +20,16 @@
     align-items: center;
     justify-content: center;
     outline: none;
+
+    .slider-slide-content {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      width: 100%;
+      img {
+        margin-bottom: $spacing-2;
+      }
+    }
 
     img {
       width: 100%;

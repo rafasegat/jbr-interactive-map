@@ -2,11 +2,13 @@ import React, { useRef, useState } from 'react';
 import Slider from 'react-slick';
 import './ImageSlider.scss';
 import '../../assets/style/slick.scss';
+// import 'slick-carousel/slick/slick.css';
+// import 'slick-carousel/slick/slick-theme.css';
 import RoundedArrowLeft from '../Icons/RoundedArrowLeft';
 import RoundedArrowRight from '../Icons/RoundedArrowRight';
 
 interface ImageSliderProps {
-  images: string[];
+  images: { url: string; title?: React.ReactNode }[];
 }
 
 const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
@@ -41,7 +43,12 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
       <Slider ref={sliderRef} {...settings}>
         {images.map((image, index) => (
           <div key={`slide-${index}`} className="slider-slide">
-            <img src={image} alt={`Slide ${index + 1}`} />
+            <div className="slider-slide-content">
+              <img src={image.url} alt={`Slide ${index + 1}`} />
+              {image.title && (
+                <div className="slider-slide-title">{image.title}</div>
+              )}
+            </div>
           </div>
         ))}
       </Slider>

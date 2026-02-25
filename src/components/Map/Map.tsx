@@ -188,11 +188,15 @@ const Map: React.FC = () => {
               el.style.cursor = 'pointer';
               el.style.display = 'none'; // Initially hidden
 
-              const img = document.createElement('img');
-              img.src = marker.iconUrl;
-              img.style.width = '32px';
-              img.style.height = '32px';
-              el.appendChild(img);
+              if (marker.iconComponent) {
+                ReactDOM.render(marker.iconComponent, el);
+              } else if (marker.iconUrl) {
+                const img = document.createElement('img');
+                img.src = marker.iconUrl;
+                img.style.width = '32px';
+                img.style.height = '32px';
+                el.appendChild(img);
+              }
 
               // Create marker with custom element
               const markerCustomEl = new mapboxgl.Marker({
@@ -204,44 +208,40 @@ const Map: React.FC = () => {
               // Store marker in ref
               markersRef.current.set(markerId, markerCustomEl);
 
-              // Create popup container
-              const popupContainer = document.createElement('div');
+              // Add popup to marker on click (only if popupContent exists)
+              if (marker.popupContent) {
+                const popupContainer = document.createElement('div');
 
-              // Create popup but don't add it to map yet
-              const popup = new mapboxgl.Popup({
-                closeButton: true,
-                closeOnClick: true,
-                maxWidth: '400px',
-                offset: {
-                  top: [0, 15],
-                  'top-left': [0, 15],
-                  'top-right': [0, 15],
-                  bottom: [0, -20],
-                  'bottom-left': [0, -20],
-                  'bottom-right': [0, -20],
-                  left: [15, -5],
-                  right: [-15, -5],
-                },
-              }).setDOMContent(popupContainer);
+                const popup = new mapboxgl.Popup({
+                  closeButton: true,
+                  closeOnClick: true,
+                  maxWidth: '400px',
+                  offset: {
+                    top: [0, 15],
+                    'top-left': [0, 15],
+                    'top-right': [0, 15],
+                    bottom: [0, -20],
+                    'bottom-left': [0, -20],
+                    'bottom-right': [0, -20],
+                    left: [15, -5],
+                    right: [-15, -5],
+                  },
+                }).setDOMContent(popupContainer);
 
-              // Render React content into the popup container (React 17 API)
-              ReactDOM.render(marker?.popupContent || null, popupContainer);
+                ReactDOM.render(marker.popupContent, popupContainer);
 
-              // Add popup to marker on click
-              markerCustomEl.getElement().addEventListener('click', () => {
-                // Center the map on the clicked marker
-                if (mapRef.current) {
-                  mapRef.current.flyTo({
-                    center: marker.coordinates,
-                    zoom: mapRef.current.getZoom(),
-                    duration: 1000,
-                  });
-
-                  // Set popup to appear above the marker
-                  popup.setOffset([0, -20]);
-                  markerCustomEl.setPopup(popup);
-                }
-              });
+                markerCustomEl.getElement().addEventListener('click', () => {
+                  if (mapRef.current) {
+                    mapRef.current.flyTo({
+                      center: marker.coordinates,
+                      zoom: mapRef.current.getZoom(),
+                      duration: 1000,
+                    });
+                    popup.setOffset([0, -20]);
+                    markerCustomEl.setPopup(popup);
+                  }
+                });
+              }
             });
           }
         }

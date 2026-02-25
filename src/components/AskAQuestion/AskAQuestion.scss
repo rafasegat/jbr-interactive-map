@@ -1,4 +1,4 @@
-@import '../../assets/style/variables.scss';
+@use '../../assets/style/variables.scss' as *;
 
 .ask-a-question {
   padding: 5px;

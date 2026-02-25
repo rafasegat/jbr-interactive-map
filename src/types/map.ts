@@ -4,7 +4,6 @@ export interface GeoJsonLayer {
   sourceUrl: string;
   type: string;
   paint: Record<string, any>;
-  slot?: string;
   layout?: Record<string, any>;
   source?: Record<string, any>;
 }
@@ -28,12 +27,15 @@ export interface Filter {
     id: string;
     coordinates: [number, number];
     popupContent: ReactElement;
-    iconUrl: string;
+    iconUrl?: string;
+    iconComponent?: ReactElement;
   }[];
   filtersToShow?: Filter[];
   legendsToShow?: Legend[];
   hasLineDivider?: boolean;
   iconUrl?: string;
+  dontShowInLegend?: boolean;
+  dontShowInFilters?: boolean;
 }
 
 export interface Topic {

@@ -14,17 +14,19 @@ import {
 
 export const conceptDesignFilters = [
   {
-    label: 'Local government areas',
-    value: 'local-government-areas',
+    label: 'Local government area',
+    value: 'local-government-area',
     legendAlias: 'local-government-area',
     geojson: [
       {
-        sourceUrl: '/data/geojson/extras/Local Government Areas.geojson',
+        sourceUrl:
+          '/data/geojson/local-government-area/LocalGovernmentArea.geojson',
         type: 'line',
-        // paint: {
-        //   'line-color': '#d7153a',
-        //   'line-width': 3,
-        // },
+        paint: {
+          'line-color': '#F4B5E6',
+          'line-opacity': 1,
+          'line-width': 2,
+        },
       },
     ],
     orderLayout: 0,
@@ -64,7 +66,6 @@ export const conceptDesignFilters = [
           'line-color': '#faaf05',
           'line-width': 3,
         },
-        slot: 'top',
       },
     ],
   },
@@ -102,7 +103,6 @@ export const conceptDesignFilters = [
           'line-color': '#002664',
           'line-width': 2,
         },
-        slot: 'top',
       },
     ],
   },
@@ -123,7 +123,6 @@ export const conceptDesignFilters = [
           'circle-stroke-color': '#f3631b',
           'circle-stroke-width': 2,
         },
-        slot: 'top',
       },
     ],
   },
@@ -142,7 +141,6 @@ export const conceptDesignFilters = [
           'line-color': '#495054',
           'line-opacity': 1,
         },
-        slot: 'top',
       },
     ],
   },
@@ -247,19 +245,9 @@ export const conceptDesignLegends = [
     icon: '-',
   },
   {
-    label: 'Chainages',
-    value: 'chainages',
-    icon: <Chainage />,
-  },
-  {
-    label: 'Drainage',
-    value: 'drainage',
-    icon: <Drainage />,
-  },
-  {
-    label: 'Design culverts',
-    value: 'design-culverts',
-    icon: <DesignCulverts />,
+    label: 'Local government area',
+    value: 'local-government-area',
+    icon: <LocalGovernmentArea />,
   },
   {
     label: 'Proposal boundary',
@@ -272,24 +260,24 @@ export const conceptDesignLegends = [
     icon: <OperationalBoundary />,
   },
   {
+    label: 'Drainage',
+    value: 'drainage',
+    icon: <Drainage />,
+  },
+  {
+    label: 'Design culverts',
+    value: 'design-culverts',
+    icon: <DesignCulverts />,
+  },
+  {
+    label: 'Chainages',
+    value: 'chainages',
+    icon: <Chainage />,
+  },
+  {
     label: 'Concept design',
     value: 'concept-design',
     icon: <ConceptDesign />,
-  },
-  {
-    label: 'Local government area',
-    value: 'local-government-area',
-    icon: <LocalGovernmentArea />,
-  },
-  {
-    label: 'Proposed ancillary facility',
-    value: 'proposed-ancillary-facility',
-    icon: <ProposedAncillaryFacility />,
-  },
-  {
-    label: 'Drainage basins',
-    value: 'drainage-basins',
-    icon: <DrainageBasins />,
   },
   {
     label: 'Pavement',
@@ -300,5 +288,15 @@ export const conceptDesignLegends = [
     label: 'Cut and fill',
     value: 'cut-and-fill',
     icon: <CutAndFill />,
+  },
+  {
+    label: 'Proposed ancillary facility',
+    value: 'proposed-ancillary-facility',
+    icon: <ProposedAncillaryFacility />,
+  },
+  {
+    label: 'Drainage basins',
+    value: 'drainage-basins',
+    icon: <DrainageBasins />,
   },
 ];

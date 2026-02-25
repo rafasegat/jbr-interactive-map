@@ -1,4 +1,4 @@
-import { conceptDesignFilters, conceptDesignLegends } from './concept-design';
+import { defaultFilters } from '../topics/default';
 import {
   ContoursBridge,
   ContoursCompound,
@@ -20,33 +20,10 @@ import {
   OperationalNoiseContours2040Night,
   OperationalNoiseStudyArea,
   ConstructionStudyArea,
-  LocalGovernmentArea,
-  ConceptDesign,
 } from '../../components/Icons/Legends';
 
 export const noiseAndVibrationFilters = [
-  {
-    label: 'Concept design',
-    value: 'concept-design',
-    legendAlias: 'concept-design',
-    icon: <ConceptDesign />,
-    geojson: [],
-    filtersToShow: [...conceptDesignFilters],
-    legendsToShow: [...conceptDesignLegends],
-    orderLayout: 1,
-    color: '#002664',
-    tickerColor: '#FFFFFF',
-  },
-  {
-    label: 'Local government area',
-    value: 'local-government-area',
-    legendAlias: 'local-government-area',
-    icon: <LocalGovernmentArea />,
-    geojson: [],
-    orderLayout: 2,
-    color: '#F4B5E6',
-    tickerColor: '#000000',
-  },
+  ...defaultFilters,
   {
     label: 'Noise logger locations',
     value: 'noise-logger-locations',

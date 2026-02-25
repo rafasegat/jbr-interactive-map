@@ -1,4 +1,4 @@
-@import '../../assets/style/variables';
+@use '../../assets/style/variables' as *;
 
 /**
  * Container-aware map layout
@@ -70,6 +70,7 @@
     border-radius: 0;
     color: #000000;
     box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1);
+    min-width: 350px;
     p {
       margin-top: 1rem !important;
       margin-bottom: 1rem !important;

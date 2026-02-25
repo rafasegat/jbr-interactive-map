@@ -10,13 +10,8 @@ import { Filter } from '../../types/map';
 export type TabActive = 'satellite' | 'default';
 
 const MapTopbar = () => {
-  const {
-    state,
-    getTopicActive,
-    setTabActive,
-    setFilterOptionsSelected,
-    setZoneOptionsSelected,
-  } = useAppContext();
+  const { state, getTopicActive, setTabActive, setFilterOptionsSelected } =
+    useAppContext();
   const { tabActive, filterOptionsSelected } = state;
   const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
   const filterRef = useRef<HTMLDivElement>(null);
@@ -60,6 +55,7 @@ const MapTopbar = () => {
                   (a: Filter, b: Filter) =>
                     (a.orderLayout || 0) - (b.orderLayout || 0),
                 )
+                ?.filter((filter: Filter) => !filter.dontShowInFilters)
                 ?.map((filter: Filter, index: number) => {
                   const isChecked = filterOptionsSelected.includes(
                     filter.value,

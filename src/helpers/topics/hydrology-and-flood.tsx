@@ -1,4 +1,3 @@
-import { conceptDesignFilters, conceptDesignLegends } from './concept-design';
 import {
   ReportingLocationsCulverts,
   Riverlines,
@@ -10,28 +9,10 @@ import {
   HydroArea,
   TUFLOWModelExtent,
 } from '../../components/Icons/Legends';
+import { defaultFilters } from './default';
 
 export const hydrologyAndFloodingFilters = [
-  {
-    label: 'Concept design',
-    value: 'concept-design',
-    legendAlias: 'concept-design',
-    geojson: [],
-    filtersToShow: [...conceptDesignFilters],
-    legendsToShow: [...conceptDesignLegends],
-    orderLayout: 1,
-    color: '#002664',
-    tickerColor: '#FFFFFF',
-  },
-  {
-    label: 'Local government area',
-    value: 'local-government-area',
-    legendAlias: 'local-government-area',
-    geojson: [],
-    orderLayout: 2,
-    color: '#F4B5E6',
-    tickerColor: '#000000',
-  },
+  ...defaultFilters,
   {
     label: 'Reporting locations/existing culverts',
     value: 'reporting-locations-existing-culverts',

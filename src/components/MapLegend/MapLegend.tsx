@@ -66,6 +66,17 @@ const MapLegend = () => {
       return;
     }
 
+    // Special logic for Drainage basins legend
+    if (legend.value === 'drainage-basins') {
+      const bothDrainageBasinsSelected =
+        filterOptionsSelected.includes('drainage-basins-15-9') &&
+        filterOptionsSelected.includes('drainage-basins-22-9');
+      if (bothDrainageBasinsSelected) {
+        allLegendsToShow.push(legend);
+      }
+      return;
+    }
+
     const matchingFilter = topicFilters.find(
       (filter: Filter) => filter.legendAlias === legend.value,
     );
