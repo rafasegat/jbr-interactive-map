@@ -99,8 +99,6 @@ const Map: React.FC = () => {
 
     // Add ALL layers for the active topic (visibility controlled separately)
     const addAllLayers = async () => {
-      console.log(`Adding layers for topic:`, listOfTopicsToAddLayer);
-
       // Step 1: Collect all GeoJSON URLs that need to be fetched (not in cache)
       const fetchPromises: Promise<{ url: string; data: any } | null>[] = [];
 
@@ -144,7 +142,7 @@ const Map: React.FC = () => {
             geojsonCache.current.set(result.url, result.data);
           }
         });
-        console.log(`All GeoJSON files loaded and cached`);
+        // console.log(`All GeoJSON files loaded and cached`);
       }
 
       // Step 3: Add layers for direct GeoJSON in filters
