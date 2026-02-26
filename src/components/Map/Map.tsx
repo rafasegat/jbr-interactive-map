@@ -101,7 +101,53 @@ const Map: React.FC = () => {
     const addAllLayers = async () => {
       console.log(`Adding layers for topic:`, listOfTopicsToAddLayer);
 
-      // Add layers for direct GeoJSON in filters
+      // Step 1: Collect all GeoJSON URLs that need to be fetched (not in cache)
+      const fetchPromises: Promise<{ url: string; data: any } | null>[] = [];
+
+      for (const filter of listOfTopicsToAddLayer) {
+        if (filter?.geojson?.length) {
+          for (let index = 0; index < filter.geojson.length; index++) {
+            const geojson = filter.geojson[index] as GeoJsonLayer;
+
+            if (
+              geojson.sourceUrl &&
+              !geojsonCache.current.has(geojson.sourceUrl) &&
+              !geojson.source
+            ) {
+              // Create fetch promise for this URL
+              const fetchPromise = fetch(geojson.sourceUrl)
+                .then((response) => response.json())
+                .then((data) => ({ url: geojson.sourceUrl!, data }))
+                .catch((error) => {
+                  console.error(
+                    `Failed to load GeoJSON from ${geojson.sourceUrl}:`,
+                    error,
+                  );
+                  return null;
+                });
+              fetchPromises.push(fetchPromise);
+            }
+          }
+        }
+      }
+
+      // Step 2: Fetch all GeoJSON files in parallel
+      if (fetchPromises.length > 0) {
+        console.log(
+          `Fetching ${fetchPromises.length} GeoJSON files in parallel...`,
+        );
+        const results = await Promise.all(fetchPromises);
+
+        // Store all results in cache
+        results.forEach((result) => {
+          if (result) {
+            geojsonCache.current.set(result.url, result.data);
+          }
+        });
+        console.log(`All GeoJSON files loaded and cached`);
+      }
+
+      // Step 3: Add layers for direct GeoJSON in filters
       // Sort in reverse: higher orderLayout added first (bottom), lower added last (top)
       for (const filter of listOfTopicsToAddLayer) {
         // Process direct GeoJSON in this filter
@@ -111,28 +157,14 @@ const Map: React.FC = () => {
             const sourceId = `topic-source-${filter.value}-${index}`;
             const layerId = `topic-layer-${filter.value}-${index}`;
 
-            // Support both direct data (source) and lazy loading (sourceUrl)
+            // Get data from source or cache
             let geojsonData: any = geojson.source || {};
 
-            if (geojson.sourceUrl) {
-              // Check cache first
-              if (geojsonCache.current.has(geojson.sourceUrl)) {
-                geojsonData = geojsonCache.current.get(geojson.sourceUrl);
-              } else if (!geojson.source) {
-                // Load GeoJSON from URL only if not in cache
-                try {
-                  const response = await fetch(geojson.sourceUrl);
-                  geojsonData = await response.json();
-                  // Store in cache
-                  geojsonCache.current.set(geojson.sourceUrl, geojsonData);
-                } catch (error) {
-                  console.error(
-                    `Failed to load GeoJSON from ${geojson.sourceUrl}:`,
-                    error,
-                  );
-                  continue;
-                }
-              }
+            if (
+              geojson.sourceUrl &&
+              geojsonCache.current.has(geojson.sourceUrl)
+            ) {
+              geojsonData = geojsonCache.current.get(geojson.sourceUrl);
             }
 
             if (mapRef.current && !mapRef.current.getSource(sourceId)) {
