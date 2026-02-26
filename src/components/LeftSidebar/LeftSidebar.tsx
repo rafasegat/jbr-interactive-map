@@ -46,7 +46,7 @@ const LeftSidebar = () => {
     if (!topic) return;
     setTopicActive(topic.slug);
     const filterValues =
-      topic.filters?.map((option: Filter) => option.value) || [];
+      (topic.filters as Filter[])?.map((option: Filter) => option.value) || [];
     setFilterOptionsSelected(expandFilters(filterValues, topic.slug));
   };
 
@@ -58,7 +58,12 @@ const LeftSidebar = () => {
           <div className="sidebar-level sidebar-level-two">
             <div className="sidebar-level-two-core">
               <div className="sidebar-level-two-core-inner">
-                <div className="header">
+                <div
+                  className="header"
+                  style={{
+                    borderLeft: `6px solid ${topicActiveData?.color || '#000'}`,
+                  }}
+                >
                   <a
                     rel="nofollow"
                     href="#"
@@ -90,7 +95,9 @@ const LeftSidebar = () => {
                   <div className="footer-inner">
                     <div className="footer-wrapper">
                       <button
-                        onClick={() => navigateToTopic(previousTopic)}
+                        onClick={() =>
+                          navigateToTopic(previousTopic as Topic | null)
+                        }
                         disabled={!hasPrevious}
                         aria-label={
                           previousTopic
@@ -102,7 +109,9 @@ const LeftSidebar = () => {
                         <span>Previous Topic</span>
                       </button>
                       <button
-                        onClick={() => navigateToTopic(nextTopic)}
+                        onClick={() =>
+                          navigateToTopic(nextTopic as Topic | null)
+                        }
                         disabled={!hasNext}
                         aria-label={
                           nextTopic
@@ -161,8 +170,9 @@ const LeftSidebar = () => {
                         setTopicActive(item.slug);
                         // set the filter options selected to show the layers on the map
                         const filterValues =
-                          item.filters?.map((option: Filter) => option.value) ||
-                          [];
+                          (item.filters as Filter[])?.map(
+                            (option: Filter) => option.value,
+                          ) || [];
                         setFilterOptionsSelected(
                           expandFilters(filterValues, item.slug),
                         );

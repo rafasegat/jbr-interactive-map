@@ -76,8 +76,8 @@ export const hydrologyAndFloodingFilters = [
   },
   {
     label: 'Riverlines',
-    value: 'river-lines',
-    legendAlias: 'river-lines',
+    value: 'riverlines',
+    legendAlias: 'riverlines',
     color: '#8CE0FF',
     tickerColor: '#000000',
     geojson: [
@@ -211,7 +211,7 @@ export const hydrologyAndFloodingLegends = [
   },
   {
     label: 'Riverlines',
-    value: 'river-lines',
+    value: 'riverlines',
     icon: <Riverlines />,
   },
   {

@@ -88,7 +88,7 @@ export const noiseAndVibrationFilters = [
     ],
   },
   {
-    label: 'Contours-bridge',
+    label: 'Contours - bridge',
     value: 'contours-bridge',
     legendAlias: 'contours-bridge',
     icon: <ContoursBridge />,
@@ -107,7 +107,7 @@ export const noiseAndVibrationFilters = [
     ],
   },
   {
-    label: 'Contours-compound',
+    label: 'Contours - compound',
     value: 'contours-compound',
     legendAlias: 'contours-compound',
     icon: <ContoursCompound />,
@@ -126,7 +126,7 @@ export const noiseAndVibrationFilters = [
     ],
   },
   {
-    label: 'Contours-corridor',
+    label: 'Contours - corridor',
     value: 'contours-corridor',
     legendAlias: 'contours-corridor',
     icon: <ContoursCorridor />,
@@ -145,7 +145,7 @@ export const noiseAndVibrationFilters = [
     ],
   },
   {
-    label: 'Contours-drainage',
+    label: 'Contours - drainage',
     value: 'contours-drainage',
     legendAlias: 'contours-drainage',
     icon: <ContoursDrainage />,
@@ -164,7 +164,7 @@ export const noiseAndVibrationFilters = [
     ],
   },
   {
-    label: 'Contours-earthworks',
+    label: 'Contours - earthworks',
     value: 'contours-earthworks',
     legendAlias: 'contours-earthworks',
     icon: <ContoursEarthworks />,
@@ -183,7 +183,7 @@ export const noiseAndVibrationFilters = [
     ],
   },
   {
-    label: 'Contours-paving',
+    label: 'Contours - paving',
     value: 'contours-paving',
     legendAlias: 'contours-paving',
     icon: <ContoursPaving />,
@@ -202,7 +202,7 @@ export const noiseAndVibrationFilters = [
     ],
   },
   {
-    label: 'Contours-resurfacing',
+    label: 'Contours - resurfacing',
     value: 'contours-resurfacing',
     legendAlias: 'contours-resurfacing',
     icon: <ContoursResurfacing />,
@@ -222,7 +222,7 @@ export const noiseAndVibrationFilters = [
     ],
   },
   {
-    label: 'Contours-road furniture',
+    label: 'Contours - road furniture',
     value: 'contours-road-furniture',
     legendAlias: 'contours-road-furniture',
     icon: <ContoursRoadFurniture />,
@@ -242,7 +242,7 @@ export const noiseAndVibrationFilters = [
     ],
   },
   {
-    label: 'Contours-site',
+    label: 'Contours - site',
     value: 'contours-site',
     legendAlias: 'contours-site',
     icon: <ContoursSite />,
@@ -261,7 +261,7 @@ export const noiseAndVibrationFilters = [
     ],
   },
   {
-    label: 'Contours-utility',
+    label: 'Contours - utility',
     value: 'contours-utility',
     legendAlias: 'contours-utility',
     icon: <ContoursUtility />,
@@ -280,7 +280,7 @@ export const noiseAndVibrationFilters = [
     ],
   },
   {
-    label: 'Contours-vibration buffers',
+    label: 'Contours - vibration buffers',
     value: 'contours-vibration-buffers',
     legendAlias: 'contours-vibration-buffers',
     icon: <ContoursVibrationBuffers />,
@@ -363,77 +363,77 @@ export const noiseAndVibrationLegends = [
     icon: <NoiseReceivers />,
   },
   {
-    label: 'Contours-bridge',
+    label: 'Contours - bridge',
     value: 'contours-bridge',
     icon: <ContoursBridge />,
   },
   {
-    label: 'Contours-compound',
+    label: 'Contours - compound',
     value: 'contours-compound',
     icon: <ContoursCompound />,
   },
   {
-    label: 'Contours-corridor',
+    label: 'Contours - corridor',
     value: 'contours-corridor',
     icon: <ContoursCorridor />,
   },
   {
-    label: 'Contours-drainage',
+    label: 'Contours - drainage',
     value: 'contours-drainage',
     icon: <ContoursDrainage />,
   },
   {
-    label: 'Contours-earthworks',
+    label: 'Contours - earthworks',
     value: 'contours-earthworks',
     icon: <ContoursEarthworks />,
   },
   {
-    label: 'Contours-paving',
+    label: 'Contours - paving',
     value: 'contours-paving',
     icon: <ContoursPaving />,
   },
   {
-    label: 'Contours-resurfacing',
+    label: 'Contours - resurfacing',
     value: 'contours-resurfacing',
     icon: <ContoursResurfacing />,
   },
   {
-    label: 'Contours-road-furniture',
+    label: 'Contours - road furniture',
     value: 'contours-road-furniture',
     icon: <ContoursRoadFurniture />,
   },
   {
-    label: 'Contours-site',
+    label: 'Contours - site',
     value: 'contours-site',
     icon: <ContoursSite />,
   },
   {
-    label: 'Contours-utility',
+    label: 'Contours - utility',
     value: 'contours-utility',
     icon: <ContoursUtility />,
   },
   {
-    label: 'Contours-vibration-buffers',
+    label: 'Contours - vibration buffers',
     value: 'contours-vibration-buffers',
     icon: <ContoursVibrationBuffers />,
   },
   {
-    label: 'Operational noise contours-2030 Day',
+    label: 'Operational noise contours - Day 2030',
     value: 'operational-noise-contours-2030-day',
     icon: <OperationalNoiseContours2030Day />,
   },
   {
-    label: 'Operational noise contours-2030 Night',
+    label: 'Operational noise contours - Night 2030',
     value: 'operational-noise-contours-2030-night',
     icon: <OperationalNoiseContours2030Night />,
   },
   {
-    label: 'Operational noise contours-2040 Day',
+    label: 'Operational noise contours - Day 2040',
     value: 'operational-noise-contours-2040-day',
     icon: <OperationalNoiseContours2040Day />,
   },
   {
-    label: 'Operational noise contours-2040 Night',
+    label: 'Operational noise contours - Night 2040',
     value: 'operational-noise-contours-2040-night',
     icon: <OperationalNoiseContours2040Night />,
   },

@@ -70,14 +70,13 @@ const Map: React.FC = () => {
     });
 
     // when click console log the coordinates
-    mapRef.current.on('click', (event) => {
-      console.log(`[${event.lngLat.lng}, ${event.lngLat.lat}]`);
-    });
+    // mapRef.current.on('click', (event) => {
+    //   console.log(`[${event.lngLat.lng}, ${event.lngLat.lat}]`);
+    // });
 
     // Wait for style to load
     mapRef.current.on('load', () => {
       setMapLoaded(true);
-      // Initial loading will be handled by layersReady state
     });
 
     return () => {
@@ -99,151 +98,155 @@ const Map: React.FC = () => {
     if (!mapRef.current || !mapLoaded) return;
 
     // Add ALL layers for the active topic (visibility controlled separately)
-    const addAllTopicLayers = async () => {
-      if (!appMetadata.topics) return;
+    const addAllLayers = async () => {
+      console.log(`Adding layers for topic:`, listOfTopicsToAddLayer);
 
-      for (const topic of appMetadata.topics) {
-        if (!topic.filters) continue;
+      // Add layers for direct GeoJSON in filters
+      // Sort in reverse: higher orderLayout added first (bottom), lower added last (top)
+      for (const filter of listOfTopicsToAddLayer) {
+        // Process direct GeoJSON in this filter
+        if (filter?.geojson?.length) {
+          for (let index = 0; index < filter.geojson.length; index++) {
+            const geojson = filter.geojson[index] as GeoJsonLayer;
+            const sourceId = `topic-source-${filter.value}-${index}`;
+            const layerId = `topic-layer-${filter.value}-${index}`;
 
-        // Add layers for direct GeoJSON in filters
-        // Sort in reverse: higher orderLayout added first (bottom), lower added last (top)
-        for (const filter of listOfTopicsToAddLayer) {
-          // Process direct GeoJSON in this filter
-          if (filter?.geojson?.length) {
-            for (let index = 0; index < filter.geojson.length; index++) {
-              const geojson = filter.geojson[index] as GeoJsonLayer;
-              const sourceId = `topic-source-${filter.value}-${index}`;
-              const layerId = `topic-layer-${filter.value}-${index}`;
+            // Support both direct data (source) and lazy loading (sourceUrl)
+            let geojsonData: any = geojson.source || {};
 
-              // Support both direct data (source) and lazy loading (sourceUrl)
-              let geojsonData: any = geojson.source || {};
-
-              if (geojson.sourceUrl) {
-                // Check cache first
-                if (geojsonCache.current.has(geojson.sourceUrl)) {
-                  geojsonData = geojsonCache.current.get(geojson.sourceUrl);
-                } else if (!geojson.source) {
-                  // Load GeoJSON from URL only if not in cache
-                  try {
-                    const response = await fetch(geojson.sourceUrl);
-                    geojsonData = await response.json();
-                    // Store in cache
-                    geojsonCache.current.set(geojson.sourceUrl, geojsonData);
-                  } catch (error) {
-                    console.error(
-                      `Failed to load GeoJSON from ${geojson.sourceUrl}:`,
-                      error,
-                    );
-                    continue;
-                  }
+            if (geojson.sourceUrl) {
+              // Check cache first
+              if (geojsonCache.current.has(geojson.sourceUrl)) {
+                geojsonData = geojsonCache.current.get(geojson.sourceUrl);
+              } else if (!geojson.source) {
+                // Load GeoJSON from URL only if not in cache
+                try {
+                  const response = await fetch(geojson.sourceUrl);
+                  geojsonData = await response.json();
+                  // Store in cache
+                  geojsonCache.current.set(geojson.sourceUrl, geojsonData);
+                } catch (error) {
+                  console.error(
+                    `Failed to load GeoJSON from ${geojson.sourceUrl}:`,
+                    error,
+                  );
+                  continue;
                 }
               }
+            }
 
-              if (mapRef.current && !mapRef.current.getSource(sourceId)) {
-                mapRef.current.addSource(sourceId, {
-                  type: 'geojson',
-                  data: geojsonData,
-                });
-              }
+            if (mapRef.current && !mapRef.current.getSource(sourceId)) {
+              mapRef.current.addSource(sourceId, {
+                type: 'geojson',
+                data: geojsonData,
+              });
+            }
 
-              if (mapRef.current && !mapRef.current.getLayer(layerId)) {
-                mapRef.current.addLayer({
-                  id: layerId,
-                  type: (geojson.type || 'fill') as
-                    | 'fill'
-                    | 'line'
-                    | 'circle'
-                    | 'symbol'
-                    | 'raster'
-                    | 'fill-extrusion'
-                    | 'heatmap'
-                    | 'hillshade'
-                    | 'background'
-                    | 'sky'
-                    | 'custom',
-                  source: sourceId,
-                  layout: {
-                    ...(geojson.layout || {}),
-                    visibility: 'none', // Start hidden, visibility controlled separately
-                  },
-                  paint: geojson.paint || {},
-                } as mapboxgl.AnyLayer);
-              }
+            if (mapRef.current && !mapRef.current.getLayer(layerId)) {
+              mapRef.current.addLayer({
+                id: layerId,
+                type: (geojson.type || 'fill') as
+                  | 'fill'
+                  | 'line'
+                  | 'circle'
+                  | 'symbol'
+                  | 'raster'
+                  | 'fill-extrusion'
+                  | 'heatmap'
+                  | 'hillshade'
+                  | 'background'
+                  | 'sky'
+                  | 'custom',
+                source: sourceId,
+                layout: {
+                  ...(geojson.layout || {}),
+                  visibility: 'none', // Start hidden, visibility controlled separately
+                },
+                paint: geojson.paint || {},
+              } as mapboxgl.AnyLayer);
             }
           }
-          // Process markers if they exist in this filter
-          const typedFilterForMarkers = filter as Filter;
-          if (typedFilterForMarkers?.markers?.length) {
-            typedFilterForMarkers.markers.forEach((marker) => {
-              const markerId = `marker-${filter.value}-${marker.id}`;
+        }
+        // Process markers if they exist in this filter
+        const typedFilterForMarkers = filter as Filter;
+        if (typedFilterForMarkers?.markers?.length) {
+          typedFilterForMarkers.markers.forEach((marker) => {
+            const markerId = `marker-${filter.value}-${marker.id}`;
 
-              // Skip if marker already exists
-              if (markersRef.current.has(markerId)) {
-                return;
-              }
+            // Skip if marker already exists
+            if (markersRef.current.has(markerId)) {
+              return;
+            }
 
-              // Create custom element for marker
-              const el = document.createElement('div');
-              el.className = `${filter.value}-marker `;
-              el.style.cursor = 'pointer';
-              el.style.display = 'none'; // Initially hidden
+            // Calculate z-index based on position in ordering list
+            // Higher index = rendered on top
+            const orderIndex = listOfTopicsToAddLayer.findIndex(
+              (f) => f.value === filter.value
+            );
+            const zIndex = orderIndex !== -1 ? 100 + orderIndex : 100;
 
-              if (marker.iconComponent) {
-                ReactDOM.render(marker.iconComponent, el);
-              } else if (marker.iconUrl) {
-                const img = document.createElement('img');
-                img.src = marker.iconUrl;
-                img.style.width = '32px';
-                img.style.height = '32px';
-                el.appendChild(img);
-              }
+            // Create custom element for marker
+            const el = document.createElement('div');
+            el.className = `${filter.value}-marker `;
+            el.style.cursor = 'pointer';
+            el.style.display = 'none'; // Initially hidden
+            el.style.zIndex = zIndex.toString(); // Set z-index for proper stacking
 
-              // Create marker with custom element
-              const markerCustomEl = new mapboxgl.Marker({
-                element: el,
-              })
-                .setLngLat(marker.coordinates)
-                .addTo(mapRef.current!);
+            if (marker.iconComponent) {
+              ReactDOM.render(marker.iconComponent, el);
+            } else if (marker.iconUrl) {
+              const img = document.createElement('img');
+              img.src = marker.iconUrl;
+              img.style.width = '32px';
+              img.style.height = '32px';
+              el.appendChild(img);
+            }
 
-              // Store marker in ref
-              markersRef.current.set(markerId, markerCustomEl);
+            // Create marker with custom element
+            const markerCustomEl = new mapboxgl.Marker({
+              element: el,
+            })
+              .setLngLat(marker.coordinates)
+              .addTo(mapRef.current!);
 
-              // Add popup to marker on click (only if popupContent exists)
-              if (marker.popupContent) {
-                const popupContainer = document.createElement('div');
+            // Store marker in ref
+            markersRef.current.set(markerId, markerCustomEl);
 
-                const popup = new mapboxgl.Popup({
-                  closeButton: true,
-                  closeOnClick: true,
-                  maxWidth: '400px',
-                  offset: {
-                    top: [0, 15],
-                    'top-left': [0, 15],
-                    'top-right': [0, 15],
-                    bottom: [0, -20],
-                    'bottom-left': [0, -20],
-                    'bottom-right': [0, -20],
-                    left: [15, -5],
-                    right: [-15, -5],
-                  },
-                }).setDOMContent(popupContainer);
+            // Add popup to marker on click (only if popupContent exists)
+            if (marker.popupContent) {
+              const popupContainer = document.createElement('div');
 
-                ReactDOM.render(marker.popupContent, popupContainer);
+              const popup = new mapboxgl.Popup({
+                closeButton: true,
+                closeOnClick: true,
+                maxWidth: '400px',
+                offset: {
+                  top: [0, 15],
+                  'top-left': [0, 15],
+                  'top-right': [0, 15],
+                  bottom: [0, -20],
+                  'bottom-left': [0, -20],
+                  'bottom-right': [0, -20],
+                  left: [15, -5],
+                  right: [-15, -5],
+                },
+              }).setDOMContent(popupContainer);
 
-                markerCustomEl.getElement().addEventListener('click', () => {
-                  if (mapRef.current) {
-                    mapRef.current.flyTo({
-                      center: marker.coordinates,
-                      zoom: mapRef.current.getZoom(),
-                      duration: 1000,
-                    });
-                    popup.setOffset([0, -20]);
-                    markerCustomEl.setPopup(popup);
-                  }
-                });
-              }
-            });
-          }
+              ReactDOM.render(marker.popupContent, popupContainer);
+
+              markerCustomEl.getElement().addEventListener('click', () => {
+                if (mapRef.current) {
+                  mapRef.current.flyTo({
+                    center: marker.coordinates,
+                    zoom: mapRef.current.getZoom(),
+                    duration: 1000,
+                  });
+                  popup.setOffset([0, -20]);
+                  markerCustomEl.setPopup(popup);
+                }
+              });
+            }
+          });
         }
       }
     };
@@ -251,7 +254,7 @@ const Map: React.FC = () => {
     const loadLayers = async () => {
       setLayersReady(false); // Signal that layers are being updated
       setIsLoading(true);
-      await addAllTopicLayers();
+      await addAllLayers();
       // Wait for next frame to ensure all layers are fully registered in Mapbox
       requestAnimationFrame(() => {
         setLayersReady(true); // Signal that layers are ready

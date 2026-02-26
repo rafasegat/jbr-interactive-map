@@ -118,11 +118,6 @@ const MapLegend = () => {
             // Otherwise render the regular legend item with optional title
             return (
               <React.Fragment key={`${legend.value}-${index}`}>
-                {legend.title && (
-                  <li className="legend-title">
-                    <h3>{legend.title}</h3>
-                  </li>
-                )}
                 <li>
                   {legend.icon}
                   <span>{legend.label}</span>

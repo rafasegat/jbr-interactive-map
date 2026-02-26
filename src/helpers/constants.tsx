@@ -132,6 +132,76 @@ export const appMetadata = {
   ],
 };
 
+const listOfTopicsToOrderLayer = [
+  // Base layers - bottom (added first, rendered on bottom)
+  'local-government-area',
+  'land-use-zoning',
+  'state-forests',
+  'national-parks',
+  'landscape-character-areas',
+  'landscape-viewpoints',
+
+  // Study areas and flooding
+  'operational-noise-study-area',
+  'construction-study-area',
+  'tuflow-model-extent',
+  'water-catchment',
+  'hydro-area',
+  'flood-catchments',
+  'existing-flood-depth-1-aep',
+
+  // Operational noise contours
+  'operational-noise-contours-2040-night',
+  'operational-noise-contours-2040-day',
+  'operational-noise-contours-2030-night',
+  'operational-noise-contours-2030-day',
+
+  // Contours
+  'contours-vibration-buffers',
+  'contours-utility',
+  'contours-site',
+  'contours-road-furniture',
+  'contours-resurfacing',
+  'contours-paving',
+  'contours-earthworks',
+  'contours-drainage',
+  'contours-corridor',
+  'contours-compound',
+  'contours-bridge',
+
+  // Infrastructure and roads
+  'state-roads',
+  'regional-roads',
+  'local-roads',
+  'cut-and-fill',
+  'pavement',
+  'proposed-ancillary-facility',
+  'concept-design',
+
+  // Drainage and boundaries
+  'drainage-basins',
+  'drainage-basins-22-9',
+  'drainage-basins-15-9',
+  'operational-boundary',
+  'proposal-boundary',
+  'watercourses',
+  'riverlines',
+  'existing-culverts',
+  'design-culverts',
+  'drainage',
+
+  // Point/marker layers - top (added last, rendered on top)
+  'noise-receivers',
+  'noise-catchment-areas',
+  'reporting-locations-existing-culverts',
+  'existing-crash-data',
+  'ahims-sites',
+  'noise-logger-locations',
+  'bus-stops',
+  'traffic-counter-locations',
+  'chainages',
+];
+
 export const listOfTopicsToAddLayer = [
   ...noiseAndVibrationFilters,
   ...trafficAndTransportFilters,
@@ -139,7 +209,17 @@ export const listOfTopicsToAddLayer = [
   ...propertyAndLandUseFilters,
   ...hydrologyAndFloodingFilters,
   ...aboriginalCulturalHeritageFilters,
-];
+].sort((a, b) => {
+  const orderA = listOfTopicsToOrderLayer.indexOf(a.value);
+  const orderB = listOfTopicsToOrderLayer.indexOf(b.value);
+
+  // Items not in the ordering list go to the end
+  if (orderA === -1) return 1;
+  if (orderB === -1) return -1;
+
+  // Sort in ascending order to match listOfTopicsToOrderLayer
+  return orderA - orderB;
+});
 
 // Enums
 
