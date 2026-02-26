@@ -142,7 +142,6 @@ const Map: React.FC = () => {
             geojsonCache.current.set(result.url, result.data);
           }
         });
-        // console.log(`All GeoJSON files loaded and cached`);
       }
 
       // Step 3: Add layers for direct GeoJSON in filters

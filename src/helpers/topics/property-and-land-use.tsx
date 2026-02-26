@@ -8,6 +8,7 @@ import {
 } from '../../components/Icons/Legends';
 import ImageSlider from '../../components/ImageSlider/ImageSlider';
 import { defaultFilters } from './default';
+import { doesNotThrow } from 'assert';
 
 export const propertyAndLandUseFilters = [
   ...defaultFilters,
@@ -205,6 +206,7 @@ export const propertyAndLandUseFilters = [
     orderLayout: 5,
     dontShowInLegend: true,
     dontShowInFilters: true,
+    defaultSelected: true,
   },
   {
     label: 'State forests',

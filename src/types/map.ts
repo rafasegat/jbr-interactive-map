@@ -36,6 +36,7 @@ export interface Filter {
   iconUrl?: string;
   dontShowInLegend?: boolean;
   dontShowInFilters?: boolean;
+  defaultSelected?: boolean;
 }
 
 export interface Topic {

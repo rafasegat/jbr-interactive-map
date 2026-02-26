@@ -175,7 +175,9 @@ const LeftSidebar = () => {
                         const filterValues =
                           (item.filters as Filter[])
                             ?.filter(
-                              (option: Filter) => !option?.dontShowInFilters,
+                              (option: Filter) =>
+                                !option?.dontShowInFilters ||
+                                option?.defaultSelected,
                             )
                             ?.map((option: Filter) => option.value) || [];
                         setFilterOptionsSelected(
