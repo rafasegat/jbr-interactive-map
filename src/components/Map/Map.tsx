@@ -181,7 +181,7 @@ const Map: React.FC = () => {
             // Calculate z-index based on position in ordering list
             // Higher index = rendered on top
             const orderIndex = listOfTopicsToAddLayer.findIndex(
-              (f) => f.value === filter.value
+              (f) => f.value === filter.value,
             );
             const zIndex = orderIndex !== -1 ? 100 + orderIndex : 100;
 

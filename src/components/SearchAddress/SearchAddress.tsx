@@ -40,11 +40,19 @@ const SearchAddress: React.FC<SearchAddressProps> = ({ onLocationSelect }) => {
     const initAutocomplete = () => {
       if (!inputRef.current) return;
 
+      // NSW bounding box (approx coordinates)
+      const nswBounds = new google.maps.LatLngBounds(
+        new google.maps.LatLng(-37.5, 141.0), // Southwest corner
+        new google.maps.LatLng(-28.15, 153.6), // Northeast corner
+      );
+
       autocompleteRef.current = new google.maps.places.Autocomplete(
         inputRef.current,
         {
           types: ['address'],
           componentRestrictions: { country: 'au' }, // Restrict to Australia
+          bounds: nswBounds, // Bias results to NSW
+          strictBounds: true, // Only return results within NSW bounds
         },
       );
 
