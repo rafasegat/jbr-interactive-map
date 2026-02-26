@@ -45,6 +45,10 @@
     }
   }
 
+  .mapboxgl-popup {
+    z-index: 200;
+  }
+
   button.mapboxgl-popup-close-button {
     width: $spacing-8;
     height: $spacing-8;
