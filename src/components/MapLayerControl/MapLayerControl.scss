@@ -1,0 +1,130 @@
+@use '../../assets/style/variables.scss' as *;
+
+.map-layer-control {
+  background: $grey04;
+  padding: 16px;
+  margin: 0 $spacing-8;
+  max-width: 600px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h4 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: bold;
+      color: #22272b;
+    }
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+
+      &.expanded {
+        transform: rotate(180deg);
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  &__content {
+    animation: slideDown 0.3s ease;
+  }
+
+  &__rows {
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__row {
+    &:first-child {
+      margin-bottom: $spacing-4;
+      padding-bottom: $spacing-4;
+      border-bottom: 1px solid $grey03;
+    }
+    margin-top: $spacing-4;
+    h5 {
+      margin: 0 0 $spacing-3 0;
+      font-size: $spacing-4;
+      font-weight: 600;
+      color: $grey02;
+    }
+  }
+
+  &__radio-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+
+    input[type='radio'] {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      width: 0;
+      height: 0;
+
+      &:checked
+        ~ .map-layer-control__radio-circle
+        .map-layer-control__radio-inner {
+        opacity: 1;
+      }
+    }
+
+    span {
+      font-size: 14px;
+      color: #000000;
+      user-select: none;
+    }
+  }
+
+  &__radio-circle {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__radio-inner {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
+  to {
+    opacity: 1;
+    max-height: 1000px;
+  }
+}

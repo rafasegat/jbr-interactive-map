@@ -322,7 +322,22 @@
                   padding: 0;
 
                   &:hover:not(:disabled) {
-                    opacity: 0.7;
+                    svg {
+                      rect {
+                        fill: $blue02 !important;
+                      }
+                    }
+                  }
+
+                  &:active:not(:disabled) {
+                    svg {
+                      rect {
+                        fill: transparent !important;
+                      }
+                      path {
+                        fill: #000 !important;
+                      }
+                    }
                   }
 
                   &:disabled {

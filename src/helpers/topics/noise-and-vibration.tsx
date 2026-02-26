@@ -95,6 +95,7 @@ export const noiseAndVibrationFilters = [
     orderLayout: 6,
     color: '#002664',
     tickerColor: '#FFFFFF',
+    dontShowInFilters: true,
     geojson: [
       {
         sourceUrl: '/data/geojson/noise-and-vibration/Contours_Bridge.json',
@@ -112,8 +113,9 @@ export const noiseAndVibrationFilters = [
     legendAlias: 'contours-compound',
     icon: <ContoursCompound />,
     orderLayout: 7,
-    color: '#002664',
+    color: '#8092b1',
     tickerColor: '#FFFFFF',
+    dontShowInFilters: true,
     geojson: [
       {
         sourceUrl: '/data/geojson/noise-and-vibration/Contours_Compound.json',
@@ -133,6 +135,7 @@ export const noiseAndVibrationFilters = [
     orderLayout: 8,
     color: '#8CE0FF',
     tickerColor: '#000000',
+    dontShowInFilters: true,
     geojson: [
       {
         sourceUrl: '/data/geojson/noise-and-vibration/Contours_Corridor.json',
@@ -152,6 +155,7 @@ export const noiseAndVibrationFilters = [
     color: '#CBEDFD',
     tickerColor: '#000000',
     orderLayout: 9,
+    dontShowInFilters: true,
     geojson: [
       {
         sourceUrl: '/data/geojson/noise-and-vibration/Contours_Drainage.json',
@@ -171,6 +175,7 @@ export const noiseAndVibrationFilters = [
     color: '#004000',
     tickerColor: '#FFFFFF',
     orderLayout: 10,
+    dontShowInFilters: true,
     geojson: [
       {
         sourceUrl: '/data/geojson/noise-and-vibration/Contours_Earthworks.json',
@@ -190,6 +195,7 @@ export const noiseAndVibrationFilters = [
     orderLayout: 11,
     color: '#00AA45',
     tickerColor: '#FFFFFF',
+    dontShowInFilters: true,
     geojson: [
       {
         sourceUrl: '/data/geojson/noise-and-vibration/Contours_Paving.json',
@@ -202,6 +208,90 @@ export const noiseAndVibrationFilters = [
     ],
   },
   {
+    label: 'Day 2030',
+    value: 'operational-noise-contours-2030-day',
+    legendAlias: 'operational-noise-contours-2030-day',
+    icon: <OperationalNoiseContours2030Day />,
+    orderLayout: 11.1,
+    color: '#B280A6',
+    tickerColor: '#000000',
+    dontShowInFilters: true,
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Operational Noise Contours_2030_Day.json',
+        type: 'fill',
+        paint: {
+          'fill-color': '#B280A6',
+          'fill-opacity': 0.2,
+        },
+      },
+    ],
+  },
+  {
+    label: 'Night 2030',
+    value: 'operational-noise-contours-2030-night',
+    legendAlias: 'operational-noise-contours-2030-night',
+    icon: <OperationalNoiseContours2030Night />,
+    orderLayout: 11.2,
+    color: '#8B4079',
+    tickerColor: '#FFFFFF',
+    dontShowInFilters: true,
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Operational Noise Contours_2030_Night.json',
+        type: 'fill',
+        paint: {
+          'fill-color': '#8B4079',
+          'fill-opacity': 0.2,
+        },
+      },
+    ],
+  },
+  {
+    label: 'Day 2040',
+    value: 'operational-noise-contours-2040-day',
+    legendAlias: 'operational-noise-contours-2040-day',
+    icon: <OperationalNoiseContours2040Day />,
+    orderLayout: 11.3,
+    color: '#8055F1',
+    tickerColor: '#FFFFFF',
+    dontShowInFilters: true,
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Operational Noise Contours_2040_Day.json',
+        type: 'fill',
+        paint: {
+          'fill-color': '#8055F1',
+          'fill-opacity': 0.2,
+        },
+      },
+    ],
+  },
+  {
+    label: 'Night 2040',
+    value: 'operational-noise-contours-2040-night',
+    legendAlias: 'operational-noise-contours-2040-night',
+    icon: <OperationalNoiseContours2040Night />,
+    orderLayout: 11.4,
+    color: '#734C94',
+    tickerColor: '#FFFFFF',
+    dontShowInFilters: true,
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Operational Noise Contours_2040_Night.json',
+        type: 'fill',
+        paint: {
+          'fill-color': '#734C94',
+          'fill-opacity': 0.2,
+        },
+      },
+    ],
+  },
+  {
     label: 'Contours - resurfacing',
     value: 'contours-resurfacing',
     legendAlias: 'contours-resurfacing',
@@ -209,6 +299,7 @@ export const noiseAndVibrationFilters = [
     orderLayout: 12,
     color: '#A8EDB3',
     tickerColor: '#000000',
+    dontShowInFilters: true,
     geojson: [
       {
         sourceUrl:
@@ -229,6 +320,7 @@ export const noiseAndVibrationFilters = [
     color: '#DBFADF',
     tickerColor: '#000000',
     orderLayout: 13,
+    dontShowInFilters: true,
     geojson: [
       {
         sourceUrl:
@@ -249,6 +341,7 @@ export const noiseAndVibrationFilters = [
     color: '#22272B',
     tickerColor: '#FFFFFF',
     orderLayout: 14,
+    dontShowInFilters: true,
     geojson: [
       {
         sourceUrl: '/data/geojson/noise-and-vibration/Contours_Site.json',
@@ -268,6 +361,7 @@ export const noiseAndVibrationFilters = [
     color: '#CDD3D6',
     tickerColor: '#000000',
     orderLayout: 15,
+    dontShowInFilters: true,
     geojson: [
       {
         sourceUrl: '/data/geojson/noise-and-vibration/Contours_Utility.json',
@@ -287,6 +381,7 @@ export const noiseAndVibrationFilters = [
     color: '#F9B18D',
     tickerColor: '#000000',
     orderLayout: 16,
+    dontShowInFilters: true,
     geojson: [
       {
         sourceUrl:
@@ -418,22 +513,22 @@ export const noiseAndVibrationLegends = [
     icon: <ContoursVibrationBuffers />,
   },
   {
-    label: 'Operational noise contours - Day 2030',
+    label: 'Day 2030',
     value: 'operational-noise-contours-2030-day',
     icon: <OperationalNoiseContours2030Day />,
   },
   {
-    label: 'Operational noise contours - Night 2030',
+    label: 'Night 2030',
     value: 'operational-noise-contours-2030-night',
     icon: <OperationalNoiseContours2030Night />,
   },
   {
-    label: 'Operational noise contours - Day 2040',
+    label: 'Day 2040',
     value: 'operational-noise-contours-2040-day',
     icon: <OperationalNoiseContours2040Day />,
   },
   {
-    label: 'Operational noise contours - Night 2040',
+    label: 'Night 2040',
     value: 'operational-noise-contours-2040-night',
     icon: <OperationalNoiseContours2040Night />,
   },

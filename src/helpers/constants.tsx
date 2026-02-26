@@ -7,6 +7,7 @@ import Biodiversity from '../components/ContentTopics/Biodiversity';
 import HydrologyAndFlooding from '../components/ContentTopics/HydrologyAndFlooding';
 import AboriginalCulturalHeritage from '../components/ContentTopics/AboriginalCulturalHeritage';
 import Cumulative from '../components/ContentTopics/Cumulative';
+import MapLayerControl from '../components/MapLayerControl/MapLayerControl';
 
 // Mapbox configuration and other constants
 import {
@@ -79,6 +80,7 @@ export const appMetadata = {
       legends: noiseAndVibrationLegends,
       isOnMenu: true,
       color: '#F3631B',
+      footer: <MapLayerControl />,
     },
     {
       title: 'Property and land use',

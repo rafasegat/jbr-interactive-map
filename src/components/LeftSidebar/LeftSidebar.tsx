@@ -46,7 +46,9 @@ const LeftSidebar = () => {
     if (!topic) return;
     setTopicActive(topic.slug);
     const filterValues =
-      (topic.filters as Filter[])?.map((option: Filter) => option.value) || [];
+      (topic.filters as Filter[])
+        ?.filter((option: Filter) => !option?.dontShowInFilters)
+        ?.map((option: Filter) => option.value) || [];
     setFilterOptionsSelected(expandFilters(filterValues, topic.slug));
   };
 
@@ -92,6 +94,7 @@ const LeftSidebar = () => {
                 </div>
                 <div className="content">{topicActiveData?.content}</div>
                 <div className="footer">
+                  {topicActiveData?.footer || null}
                   <div className="footer-inner">
                     <div className="footer-wrapper">
                       <button
@@ -170,9 +173,11 @@ const LeftSidebar = () => {
                         setTopicActive(item.slug);
                         // set the filter options selected to show the layers on the map
                         const filterValues =
-                          (item.filters as Filter[])?.map(
-                            (option: Filter) => option.value,
-                          ) || [];
+                          (item.filters as Filter[])
+                            ?.filter(
+                              (option: Filter) => !option?.dontShowInFilters,
+                            )
+                            ?.map((option: Filter) => option.value) || [];
                         setFilterOptionsSelected(
                           expandFilters(filterValues, item.slug),
                         );

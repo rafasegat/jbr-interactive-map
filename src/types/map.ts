@@ -46,4 +46,5 @@ export interface Topic {
   legends?: Legend[];
   isOnMenu: boolean;
   color?: string;
+  footer?: ReactElement | null;
 }
