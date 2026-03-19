@@ -1,8 +1,10 @@
 @use '../../assets/style/variables.scss' as *;
 
+$width-left-sidebar: 410px;
+
 .left-sidebar {
   background: #ffffff;
-  width: 400px;
+  width: $width-left-sidebar;
   height: 100vh;
   position: relative;
   z-index: 2;
@@ -25,7 +27,7 @@
     padding: 0;
     float: left;
     min-height: 1px;
-    width: 400px;
+    width: $width-left-sidebar;
     .content {
       padding: 1.25rem;
       font-weight: 300;
@@ -61,7 +63,7 @@
     .left-sidebar-wrapper {
       position: relative;
       height: 100%;
-      width: 400px;
+      width: $width-left-sidebar;
       -webkit-transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
       -moz-transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
       -ms-transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
@@ -157,7 +159,7 @@
         position: absolute;
         background: #fff;
         top: 0;
-        right: 400px;
+        right: $width-left-sidebar;
         width: 100%;
         height: 100%;
         background: #ffffff;

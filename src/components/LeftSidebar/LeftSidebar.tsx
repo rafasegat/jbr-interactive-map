@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect, useState } from 'react';
-import ArrowRight from '../Icons/ArrowRight';
+import { useEffect, useState } from 'react';
 import ArrowLeft from '../Icons/ArrowLeft';
 import './LeftSidebar.scss';
 import { appMetadata } from '../../helpers/constants';
@@ -77,8 +76,8 @@ const LeftSidebar = () => {
                       setTimeout(() => {
                         setTopicActive('default');
                         const defaultFilters = [
-                          'concept-design',
-                          'local-government-area',
+                          'key-features',
+                          'construction-activities',
                         ];
                         setFilterOptionsSelected(
                           expandFilters(defaultFilters, 'default'),

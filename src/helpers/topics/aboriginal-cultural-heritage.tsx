@@ -30,8 +30,8 @@ export const aboriginalCulturalHeritageFilters = [
 export const aboriginalCulturalHeritageLegends = [
   {
     title: 'Aboriginal cultural heritage',
-    label: 'title',
-    value: 'title',
+    label: 'Aboriginal cultural heritage',
+    value: 'title-aboriginal-cultural-heritage',
   },
   {
     label: 'AHIMS sites',

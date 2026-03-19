@@ -1,45 +1,238 @@
-import { conceptDesignFilters, conceptDesignLegends } from './concept-design';
-import {
-  LandscapeCharacterAreas,
-  LandUseZoning,
-  NationalParks,
-  StateForests,
-  LandscapeViewpoints,
-} from '../../components/Icons/Legends';
 import ImageSlider from '../../components/ImageSlider/ImageSlider';
 import { defaultFilters } from './default';
-import { doesNotThrow } from 'assert';
+
+const rectangleIcon = (color: string) => {
+  return (
+    <svg
+      width="24"
+      height="12"
+      viewBox="0 0 24 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="24" height="12" fill={color} />
+    </svg>
+  );
+};
+
+export const propertyAndLandUseLegends = [
+  {
+    title: 'Landscape and visual',
+    label: 'Landscape and visual',
+    value: 'title-property-and-land-use',
+  },
+  {
+    label: 'National parks',
+    value: 'national-parks',
+    icon: rectangleIcon('#00AA454D'),
+  },
+  {
+    label: 'State forests',
+    value: 'state-forests',
+    icon: rectangleIcon('#0040004D'),
+  },
+];
+
+const lcaLegends = [
+  {
+    title: 'LCAs',
+    label: 'LCAs',
+    value: 'title-lcas',
+  },
+  {
+    label: 'Rural residential',
+    value: 'Rural residential',
+    icon: rectangleIcon('#FAAF05B2'),
+  },
+  {
+    label: 'Road infrastructure',
+    value: 'Road infrastructure',
+    icon: rectangleIcon('#D7153AB2'),
+  },
+  {
+    label: 'Forested land',
+    value: 'Forested land',
+    icon: rectangleIcon('#146CFD'),
+  },
+];
+
+export const landUseZoningLegends = [
+  {
+    title: 'Land use zoning',
+    label: 'Land use zoning',
+    value: 'title-land-use-zoning',
+  },
+  {
+    label: 'W2 - Recreational waterways',
+    value: 'W2 - Recreational waterways',
+    icon: rectangleIcon('#8CE0FF'),
+  },
+  {
+    label: 'W1 - Natural waterways',
+    value: 'W1 - Natural waterways',
+    icon: rectangleIcon('#CBEDFD'),
+  },
+  {
+    label: 'SP3 - Tourist',
+    value: 'SP3 - Tourist',
+    icon: rectangleIcon('#22272BB2'),
+  },
+  {
+    label: 'SP2 - Infrastructure',
+    value: 'SP2 - Infrastructure',
+    icon: rectangleIcon('#CDD3D699'),
+  },
+  {
+    label: 'SP1 - Special activities',
+    value: 'SP1 - Special activities',
+    icon: rectangleIcon('#49505480'),
+  },
+  {
+    label: 'RU5 - Village',
+    value: 'RU5 - Village',
+    icon: rectangleIcon('#523719'),
+  },
+  {
+    label: 'RU4 - Primary production small lots',
+    value: 'RU4 - Primary production small lots',
+    icon: rectangleIcon('#523719'),
+  },
+  {
+    label: 'RU3 - Forestry',
+    value: 'RU3 - Forestry',
+    icon: rectangleIcon('#004000'),
+  },
+  {
+    label: 'RU2 - Rural landscape',
+    value: 'RU2 - Rural landscape',
+    icon: rectangleIcon('#E8D0B5'),
+  },
+  {
+    label: 'RU1 - Primary production',
+    value: 'RU1 - Primary production',
+    icon: rectangleIcon('#EDE3D7'),
+  },
+  {
+    label: 'RE2 - Private recreation',
+    value: 'RE2 - Private recreation',
+    icon: rectangleIcon('#FAAF05'),
+  },
+  {
+    label: 'RE1 - Public recreation',
+    value: 'RE1 - Public recreation',
+    icon: rectangleIcon('#FDE79A'),
+  },
+  {
+    label: 'R5 - Large lot residential',
+    value: 'R5 - Large lot residential',
+    icon: rectangleIcon('#941B00'),
+  },
+  {
+    label: 'R3 - Medium density residential',
+    value: 'R3 - Medium density residential',
+    icon: rectangleIcon('#F3631B'),
+  },
+  {
+    label: 'R2 - Low density residential',
+    value: 'R2 - Low density residential',
+    icon: rectangleIcon('#FFCE99'),
+  },
+  {
+    label: 'R1 - General residential',
+    value: 'R1 - General residential',
+    icon: rectangleIcon('#FDEDDF'),
+  },
+  {
+    label: 'E4 - General industrial',
+    value: 'E4 - General industrial',
+    icon: rectangleIcon('#FDDEF2'),
+  },
+  {
+    label: 'E3 - Productivity support',
+    value: 'E3 - Productivity support',
+    icon: rectangleIcon('#F4B5E6'),
+  },
+  {
+    label: 'E1 - Local centre',
+    value: 'E1 - Local centre',
+    icon: rectangleIcon('#D912AE'),
+  },
+  {
+    label: 'MU1 - Mixed use',
+    value: 'MU1 - Mixed use',
+    icon: rectangleIcon('#65004D'),
+  },
+  {
+    label: 'C4 - Environmental living',
+    value: 'C4 - Environmental living',
+    icon: rectangleIcon('#0B3F47'),
+  },
+  {
+    label: 'C3 - Environmental management',
+    value: 'C3 - Environmental management',
+    icon: rectangleIcon('#DBFADF'),
+  },
+  {
+    label: 'C2 - Environmental conservation',
+    value: 'C2 - Environmental conservation',
+    icon: rectangleIcon('#A8EDB3'),
+  },
+  {
+    label: 'C1 - National parks and nature reserves',
+    value: 'C1 - National parks and nature reserves',
+    icon: rectangleIcon('#00AA454D'),
+  },
+];
 
 export const propertyAndLandUseFilters = [
   ...defaultFilters,
   {
-    label: 'Land use zoning',
-    value: 'land-use-zoning',
-    legendAlias: 'land-use-zoning',
-    color: '#EB8A9C',
-    tickerColor: '#000000',
+    label: 'National parks',
+    value: 'national-parks',
+    legendAlias: 'national-parks',
+    color: '#00AA45',
+    tickerColor: '#FFFFFF',
     geojson: [
       {
-        sourceUrl:
-          '/data/geojson/property-and-land-use/Land Use Zoning.geojson',
+        sourceUrl: '/data/geojson/property-and-land-use/National Parks.geojson',
         type: 'fill',
         paint: {
-          'fill-color': '#EB8A9C',
+          'fill-color': '#486F75',
           'fill-opacity': 0.8,
         },
       },
     ],
+    orderLayout: 1,
     hasLineDivider: true,
-    orderLayout: 3,
     dontShowInLegend: false,
+    dontShowInFilters: false,
+  },
+  {
+    label: 'State forests',
+    value: 'state-forests',
+    legendAlias: 'state-forests',
+    color: '#004000',
+    tickerColor: '#FFFFFF',
+    geojson: [
+      {
+        sourceUrl: '/data/geojson/property-and-land-use/State Forests.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#004000',
+          'fill-opacity': 0.8,
+        },
+      },
+    ],
+    orderLayout: 2,
     dontShowInFilters: false,
   },
   {
     label: 'Landscape character areas',
     value: 'landscape-character-areas',
     legendAlias: 'landscape-character-areas',
-    color: '#F4B5E6',
-    tickerColor: '#000000',
+    color: '#495054',
+    tickerColor: '#FFFFFF',
+    legendsToShow: [...lcaLegends],
     geojson: [
       {
         sourceUrl:
@@ -47,6 +240,28 @@ export const propertyAndLandUseFilters = [
         type: 'fill',
         paint: {
           'fill-color': '#F4B5E6',
+          'fill-opacity': 0.8,
+        },
+      },
+    ],
+    orderLayout: 3,
+    dontShowInLegend: false,
+    dontShowInFilters: false,
+  },
+  {
+    label: 'Land use zoning',
+    value: 'land-use-zoning',
+    legendAlias: 'land-use-zoning',
+    color: '#495054',
+    tickerColor: '#FFFFFF',
+    legendsToShow: [...landUseZoningLegends],
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/property-and-land-use/Land Use Zoning.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#EB8A9C',
           'fill-opacity': 0.8,
         },
       },
@@ -207,72 +422,5 @@ export const propertyAndLandUseFilters = [
     dontShowInLegend: true,
     dontShowInFilters: true,
     defaultSelected: true,
-  },
-  {
-    label: 'State forests',
-    value: 'state-forests',
-    legendAlias: 'state-forests',
-    color: '#00AA45',
-    tickerColor: '#FFFFFF',
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/property-and-land-use/State Forests.geojson',
-        type: 'fill',
-        paint: {
-          'fill-color': '#00AA45',
-          'fill-opacity': 0.8,
-        },
-      },
-    ],
-    orderLayout: 6,
-    dontShowInFilters: false,
-  },
-  {
-    label: 'National parks',
-    value: 'national-parks',
-    legendAlias: 'national-parks',
-    color: '#486F75',
-    tickerColor: '#FFFFFF',
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/property-and-land-use/National Parks.geojson',
-        type: 'fill',
-        paint: {
-          'fill-color': '#486F75',
-          'fill-opacity': 0.8,
-        },
-      },
-    ],
-    orderLayout: 7,
-    dontShowInLegend: false,
-    dontShowInFilters: false,
-  },
-];
-
-export const propertyAndLandUseLegends = [
-  {
-    title: 'Property and land use',
-    label: 'title',
-    value: 'title',
-  },
-  {
-    label: 'Land use zoning',
-    value: 'land-use-zoning',
-    icon: <LandUseZoning />,
-  },
-  {
-    label: 'Landscape character areas',
-    value: 'landscape-character-areas',
-    icon: <LandscapeCharacterAreas />,
-  },
-  {
-    label: 'State forests',
-    value: 'state-forests',
-    icon: <StateForests />,
-  },
-  {
-    label: 'National parks',
-    value: 'national-parks',
-    icon: <NationalParks />,
   },
 ];

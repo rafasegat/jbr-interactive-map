@@ -14,9 +14,9 @@ import { defaultFilters } from './default';
 export const hydrologyAndFloodingFilters = [
   ...defaultFilters,
   {
-    label: 'Reporting locations/existing culverts',
-    value: 'reporting-locations-existing-culverts',
-    legendAlias: 'reporting-locations-existing-culverts',
+    label: 'Reporting locations',
+    value: 'reporting-locations',
+    legendAlias: 'reporting-locations',
     color: '#002664',
     tickerColor: '#FFFFFF',
     geojson: [
@@ -49,7 +49,6 @@ export const hydrologyAndFloodingFilters = [
         paint: {
           'line-color': '#002664',
           'line-width': 3,
-          'line-dasharray': [1, 2],
         },
       },
     ],
@@ -191,12 +190,12 @@ export const hydrologyAndFloodingFilters = [
 export const hydrologyAndFloodingLegends = [
   {
     title: 'Hydrology and flooding',
-    label: 'title',
-    value: 'title',
+    label: 'Hydrology and flooding',
+    value: 'title-hydrology-and-flooding',
   },
   {
-    label: 'Reporting locations/existing culverts',
-    value: 'reporting-locations-existing-culverts',
+    label: 'Reporting locations',
+    value: 'reporting-locations',
     icon: <ReportingLocationsCulverts />,
   },
   {

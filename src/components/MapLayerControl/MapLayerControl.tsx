@@ -9,17 +9,10 @@ const MapLayerControl = () => {
   const [isExpanded, setIsExpanded] = useState(true);
 
   const contourOptions = [
-    { value: 'contours-bridge', label: 'Bridge' },
-    { value: 'contours-resurfacing', label: 'Resurfacing' },
-    { value: 'contours-compound', label: 'Compound' },
-    { value: 'contours-road-furniture', label: 'Road furniture' },
-    { value: 'contours-corridor', label: 'Corridor' },
-    { value: 'contours-site', label: 'Site' },
-    { value: 'contours-drainage', label: 'Drainage' },
-    { value: 'contours-utility', label: 'Utility' },
-    { value: 'contours-earthworks', label: 'Earthworks' },
-    { value: 'contours-vibration-buffers', label: 'Vibration buffers' },
-    { value: 'contours-paving', label: 'Paving' },
+    {
+      value: 'potential-worst-case-construction-scenario',
+      label: 'Potential worst-case construction scenario',
+    },
   ];
 
   const operationalNoiseOptions = [
@@ -78,7 +71,7 @@ const MapLayerControl = () => {
           <div className="map-layer-control__rows">
             <div className="map-layer-control__row">
               <h5>Contours</h5>
-              <div className="map-layer-control__radio-group">
+              <div className="map-layer-control__radio-groupx">
                 {contourOptions.map((option) => (
                   <label
                     key={option.value}

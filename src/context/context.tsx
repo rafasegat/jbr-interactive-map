@@ -40,7 +40,6 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
  * 3. Handle JSON serialization/deserialization errors gracefully
  * 4. Consider using a debounced save to avoid performance issues
  *
- * Default state: 'default' topic with 'concept-design' and 'local-government-area' filters
  */
 
 // Helper function to expand filters to include nested filtersToShow
@@ -68,7 +67,7 @@ const expandFilters = (filterValues: string[], topicSlug: string): string[] => {
 
 // Helper function to get initial state
 const getInitialState = (): AppState => {
-  const defaultFilters = ['concept-design', 'local-government-area'];
+  const defaultFilters = ['key-features', 'construction-activities'];
   return {
     topicActive: 'default',
     tabActive: 'satellite',

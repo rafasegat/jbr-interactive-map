@@ -1,13 +1,15 @@
 import {
   TrafficCounterLocations,
   BusStops,
-  ExistingCrashData,
   LocalRoads,
   RegionalRoads,
   StateRoads,
+  TruckParking,
+  BusStop,
+  SpeedLimit100,
+  LILOIntersections,
 } from '../../components/Icons/Legends';
 import { defaultFilters } from './default';
-import BusStop from '../../components/Icons/BusStop';
 
 export const trafficAndTransportFilters = [
   ...defaultFilters,
@@ -19,7 +21,8 @@ export const trafficAndTransportFilters = [
     tickerColor: '#FFFFFF',
     geojson: [
       {
-        sourceUrl: '/data/geojson/traffic-and-transport/Traffic counters.json',
+        sourceUrl:
+          '/data/geojson/traffic-and-transport/Traffic counters.geojson',
         type: 'circle',
         paint: {
           'circle-radius': 4,
@@ -31,6 +34,38 @@ export const trafficAndTransportFilters = [
     ],
     hasLineDivider: true,
     orderLayout: 3,
+  },
+  {
+    label: 'Speed limit change',
+    value: 'speed-limit-change',
+    legendAlias: 'speed-limit-change',
+    color: '#D7153A',
+    tickerColor: '#FFFFFF',
+    geojson: [],
+    markers: [
+      {
+        id: '1',
+        coordinates: [150.584166030409648, -35.037257919696373],
+        iconComponent: <SpeedLimit100 />,
+      },
+    ],
+    orderLayout: 3,
+  },
+  {
+    label: 'Truck parking',
+    value: 'truck-parking',
+    legendAlias: 'truck-parking',
+    color: '#0086C4',
+    tickerColor: '#FFFFFF',
+    geojson: [],
+    markers: [
+      {
+        id: '1',
+        coordinates: [150.584166030409648, -35.037257919696373],
+        iconComponent: <TruckParking />,
+      },
+    ],
+    orderLayout: 4,
   },
   {
     label: 'Bus stops',
@@ -246,28 +281,23 @@ export const trafficAndTransportFilters = [
         iconComponent: <BusStop />,
       },
     ],
-    orderLayout: 4,
+    orderLayout: 5,
   },
   {
-    label: 'Existing crash data',
-    value: 'existing-crash-data',
-    legendAlias: 'existing-crash-data',
-    color: '#D7153A',
+    label: 'LILO intersections',
+    value: 'lilo-intersections',
+    legendAlias: 'lilo-intersections',
+    color: '#146CFD',
     tickerColor: '#FFFFFF',
-    geojson: [
+    geojson: [],
+    markers: [
       {
-        sourceUrl:
-          '/data/geojson/traffic-and-transport/Existing crash data.json',
-        type: 'circle',
-        paint: {
-          'circle-radius': 4,
-          'circle-color': '#ffffff',
-          'circle-stroke-color': '#d7153a',
-          'circle-stroke-width': 2,
-        },
+        id: '1',
+        coordinates: [150.584166030409648, -35.037257919696373],
+        iconComponent: <LILOIntersections />,
       },
     ],
-    orderLayout: 5,
+    orderLayout: 6,
   },
   {
     label: 'Local roads',
@@ -286,7 +316,7 @@ export const trafficAndTransportFilters = [
         },
       },
     ],
-    orderLayout: 6,
+    orderLayout: 7,
   },
   {
     label: 'Regional roads',
@@ -305,7 +335,7 @@ export const trafficAndTransportFilters = [
         },
       },
     ],
-    orderLayout: 7,
+    orderLayout: 8,
   },
   {
     label: 'State roads',
@@ -324,15 +354,15 @@ export const trafficAndTransportFilters = [
         },
       },
     ],
-    orderLayout: 8,
+    orderLayout: 9,
   },
 ];
 
 export const trafficAndTransportLegends = [
   {
     title: 'Traffic and transport',
-    label: 'title',
-    value: 'title',
+    label: 'Traffic and transport',
+    value: 'title-traffic-and-transport',
   },
   {
     label: 'Traffic counter locations',
@@ -340,14 +370,19 @@ export const trafficAndTransportLegends = [
     icon: <TrafficCounterLocations />,
   },
   {
+    label: 'Speed limit change',
+    value: 'speed-limit-change',
+    icon: <SpeedLimit100 />,
+  },
+  {
+    label: 'Truck parking',
+    value: 'truck-parking',
+    icon: <TruckParking />,
+  },
+  {
     label: 'Bus stops',
     value: 'bus-stops',
     icon: <BusStops />,
-  },
-  {
-    label: 'Existing crash data',
-    value: 'existing-crash-data',
-    icon: <ExistingCrashData />,
   },
   {
     label: 'Local roads',
@@ -363,5 +398,10 @@ export const trafficAndTransportLegends = [
     label: 'State roads',
     value: 'state-roads',
     icon: <StateRoads />,
+  },
+  {
+    label: 'LILO intersections',
+    value: 'lilo-intersections',
+    icon: <LILOIntersections />,
   },
 ];

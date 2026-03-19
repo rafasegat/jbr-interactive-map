@@ -144,7 +144,39 @@ const Map: React.FC = () => {
         });
       }
 
-      // Step 3: Add layers for direct GeoJSON in filters
+      // Step 3: Add white overlay layer between basemap and data layers
+      if (mapRef.current && !mapRef.current.getSource('white-overlay-source')) {
+        mapRef.current.addSource('white-overlay-source', {
+          type: 'geojson',
+          data: {
+            type: 'Feature',
+            geometry: {
+              type: 'Polygon',
+              coordinates: [
+                [
+                  [-180, -90],
+                  [180, -90],
+                  [180, 90],
+                  [-180, 90],
+                  [-180, -90],
+                ],
+              ],
+            },
+            properties: {},
+          },
+        });
+        mapRef.current.addLayer({
+          id: 'white-overlay-layer',
+          type: 'fill',
+          source: 'white-overlay-source',
+          paint: {
+            'fill-color': '#ffffff',
+            'fill-opacity': 0.5,
+          },
+        } as mapboxgl.AnyLayer);
+      }
+
+      // Step 4: Add layers for direct GeoJSON in filters
       // Sort in reverse: higher orderLayout added first (bottom), lower added last (top)
       for (const filter of listOfTopicsToAddLayer) {
         // Process direct GeoJSON in this filter
@@ -384,12 +416,13 @@ const Map: React.FC = () => {
           });
 
           // Update visibility for nested filters if filtersToShow exists
-          if (typedFilter.filtersToShow && isTopicActive && isFilterSelected) {
+          if (typedFilter.filtersToShow && isTopicActive) {
             typedFilter.filtersToShow.forEach((nestedFilter: Filter) => {
               const isNestedFilterSelected = filterOptionsSelected.includes(
                 nestedFilter.value,
               );
-              const shouldNestedBeVisible = isNestedFilterSelected;
+              const shouldNestedBeVisible =
+                isFilterSelected && isNestedFilterSelected;
 
               nestedFilter?.geojson?.forEach(
                 (geojson: GeoJsonLayer, index: number) => {
@@ -453,12 +486,13 @@ const Map: React.FC = () => {
           });
 
           // Update visibility for nested filters if filtersToShow exists
-          if (typedFilter.filtersToShow && isTopicActive && isFilterSelected) {
+          if (typedFilter.filtersToShow && isTopicActive) {
             typedFilter.filtersToShow.forEach((nestedFilter: Filter) => {
               const isNestedFilterSelected = filterOptionsSelected.includes(
                 nestedFilter.value,
               );
-              const shouldNestedBeVisible = isNestedFilterSelected;
+              const shouldNestedBeVisible =
+                isFilterSelected && isNestedFilterSelected;
 
               nestedFilter?.geojson?.forEach(
                 (geojson: GeoJsonLayer, index: number) => {
@@ -514,7 +548,7 @@ const Map: React.FC = () => {
     }
     // Clear active topic to remove layers
     setTopicActive('default');
-    const defaultFilters = ['concept-design', 'local-government-area'];
+    const defaultFilters = ['key-features', 'construction-activities'];
     setFilterOptionsSelected(expandFilters(defaultFilters, 'default'));
     setZoneOptionsSelected([]);
     // Close all popups

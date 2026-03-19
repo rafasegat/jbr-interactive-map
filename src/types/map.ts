@@ -13,6 +13,7 @@ export interface Legend {
   value: string;
   icon?: ReactElement | string;
   title?: string;
+  twoColumnLayout?: boolean;
 }
 
 export interface Filter {

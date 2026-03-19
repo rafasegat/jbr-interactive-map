@@ -1,26 +1,222 @@
 import { defaultFilters } from '../topics/default';
 import {
-  ContoursBridge,
-  ContoursCompound,
-  ContoursCorridor,
-  ContoursDrainage,
-  ContoursEarthworks,
-  ContoursRoadFurniture,
-  ContoursResurfacing,
   NoiseCatchmentAreas,
   NoiseLoggerLocations,
   NoiseReceivers,
-  ContoursPaving,
-  ContoursUtility,
-  ContoursSite,
-  ContoursVibrationBuffers,
-  OperationalNoiseContours2030Day,
-  OperationalNoiseContours2030Night,
-  OperationalNoiseContours2040Day,
-  OperationalNoiseContours2040Night,
   OperationalNoiseStudyArea,
   ConstructionStudyArea,
 } from '../../components/Icons/Legends';
+
+const dbaRect = (color: string) => (
+  <svg
+    width="24"
+    height="12"
+    viewBox="0 0 24 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect width="24" height="12" fill={color} />
+  </svg>
+);
+
+// dBA level colour ramps – update hex values to match the GeoJSON styling
+const worstCaseDbaColors: Record<string, string> = {
+  '35': '#A8E6A3',
+  '40': '#5DC85A',
+  '45': '#FFEC6E',
+  '50': '#FFC84A',
+  '55': '#FF9447',
+  '60': '#FF5733',
+  '65': '#D63020',
+  '70': '#A01A10',
+  '75': '#6B1008',
+  '80': '#3A0604',
+};
+
+const opNoiseDayDbaColors: Record<string, string> = {
+  '35': '#BDE9F8',
+  '40': '#7DCEF3',
+  '45': '#4F97E8',
+  '50': '#2563CC',
+  '55': '#1A44A9',
+  '60': '#132E7F',
+  '65': '#0D1E57',
+  '70': '#080F2C',
+  '75': '#04081A',
+};
+
+const opNoiseNightDbaColors: Record<string, string> = {
+  '35': '#ECB8D9',
+  '40': '#D87DB5',
+  '45': '#C14A92',
+  '50': '#9E2770',
+  '55': '#7A1353',
+  '60': '#580B3B',
+  '65': '#3A0527',
+  '70': '#1F0215',
+};
+
+const worstCaseLegends = [
+  {
+    title: 'Worst-case scenario noise contours',
+    label: 'title',
+    value: 'title-worst-case-contours',
+    twoColumnLayout: true,
+  },
+  {
+    label: '35 dBA',
+    value: 'wc-35-dba',
+    icon: dbaRect(worstCaseDbaColors['35']),
+  },
+  {
+    label: '60 dBA',
+    value: 'wc-60-dba',
+    icon: dbaRect(worstCaseDbaColors['60']),
+  },
+  {
+    label: '40 dBA',
+    value: 'wc-40-dba',
+    icon: dbaRect(worstCaseDbaColors['40']),
+  },
+  {
+    label: '65 dBA',
+    value: 'wc-65-dba',
+    icon: dbaRect(worstCaseDbaColors['65']),
+  },
+  {
+    label: '45 dBA',
+    value: 'wc-45-dba',
+    icon: dbaRect(worstCaseDbaColors['45']),
+  },
+  {
+    label: '70 dBA',
+    value: 'wc-70-dba',
+    icon: dbaRect(worstCaseDbaColors['70']),
+  },
+  {
+    label: '50 dBA',
+    value: 'wc-50-dba',
+    icon: dbaRect(worstCaseDbaColors['50']),
+  },
+  {
+    label: '75 dBA',
+    value: 'wc-75-dba',
+    icon: dbaRect(worstCaseDbaColors['75']),
+  },
+  {
+    label: '55 dBA',
+    value: 'wc-55-dba',
+    icon: dbaRect(worstCaseDbaColors['55']),
+  },
+  {
+    label: '80 dBA',
+    value: 'wc-80-dba',
+    icon: dbaRect(worstCaseDbaColors['80']),
+  },
+];
+
+const opNoiseDayLegends = [
+  {
+    title: 'Operational noise contours \u2013 Day 2030/40',
+    label: 'title',
+    value: 'title-op-noise-day',
+    twoColumnLayout: true,
+  },
+  {
+    label: '35 dBA',
+    value: 'op-day-35-dba',
+    icon: dbaRect(opNoiseDayDbaColors['35']),
+  },
+  {
+    label: '60 dBA',
+    value: 'op-day-60-dba',
+    icon: dbaRect(opNoiseDayDbaColors['60']),
+  },
+  {
+    label: '40 dBA',
+    value: 'op-day-40-dba',
+    icon: dbaRect(opNoiseDayDbaColors['40']),
+  },
+  {
+    label: '65 dBA',
+    value: 'op-day-65-dba',
+    icon: dbaRect(opNoiseDayDbaColors['65']),
+  },
+  {
+    label: '45 dBA',
+    value: 'op-day-45-dba',
+    icon: dbaRect(opNoiseDayDbaColors['45']),
+  },
+  {
+    label: '70 dBA',
+    value: 'op-day-70-dba',
+    icon: dbaRect(opNoiseDayDbaColors['70']),
+  },
+  {
+    label: '50 dBA',
+    value: 'op-day-50-dba',
+    icon: dbaRect(opNoiseDayDbaColors['50']),
+  },
+  {
+    label: '75 dBA',
+    value: 'op-day-75-dba',
+    icon: dbaRect(opNoiseDayDbaColors['75']),
+  },
+  {
+    label: '55 dBA',
+    value: 'op-day-55-dba',
+    icon: dbaRect(opNoiseDayDbaColors['55']),
+  },
+];
+
+const opNoiseNightLegends = [
+  {
+    title: 'Operational noise contours \u2013 Night 2030/40',
+    label: 'title',
+    value: 'title-op-noise-night',
+    twoColumnLayout: true,
+  },
+  {
+    label: '35 dBA',
+    value: 'op-night-35-dba',
+    icon: dbaRect(opNoiseNightDbaColors['35']),
+  },
+  {
+    label: '55 dBA',
+    value: 'op-night-55-dba',
+    icon: dbaRect(opNoiseNightDbaColors['55']),
+  },
+  {
+    label: '40 dBA',
+    value: 'op-night-40-dba',
+    icon: dbaRect(opNoiseNightDbaColors['40']),
+  },
+  {
+    label: '60 dBA',
+    value: 'op-night-60-dba',
+    icon: dbaRect(opNoiseNightDbaColors['60']),
+  },
+  {
+    label: '45 dBA',
+    value: 'op-night-45-dba',
+    icon: dbaRect(opNoiseNightDbaColors['45']),
+  },
+  {
+    label: '65 dBA',
+    value: 'op-night-65-dba',
+    icon: dbaRect(opNoiseNightDbaColors['65']),
+  },
+  {
+    label: '50 dBA',
+    value: 'op-night-50-dba',
+    icon: dbaRect(opNoiseNightDbaColors['50']),
+  },
+  {
+    label: '70 dBA',
+    value: 'op-night-70-dba',
+    icon: dbaRect(opNoiseNightDbaColors['70']),
+  },
+];
 
 export const noiseAndVibrationFilters = [
   ...defaultFilters,
@@ -35,7 +231,7 @@ export const noiseAndVibrationFilters = [
     geojson: [
       {
         sourceUrl:
-          '/data/geojson/noise-and-vibration/Noise logger locations.json',
+          '/data/geojson/noise-and-vibration/Noise logger locations.geojson',
         type: 'circle',
         paint: {
           'circle-radius': 4,
@@ -58,7 +254,7 @@ export const noiseAndVibrationFilters = [
     geojson: [
       {
         sourceUrl:
-          '/data/geojson/noise-and-vibration/Noise catchment areas.json',
+          '/data/geojson/noise-and-vibration/Noise catchment areas.geojson',
         type: 'line',
         paint: {
           'line-color': '#faaf05',
@@ -78,7 +274,7 @@ export const noiseAndVibrationFilters = [
     tickerColor: '#FFFFFF',
     geojson: [
       {
-        sourceUrl: '/data/geojson/noise-and-vibration/Noise Receivers.json',
+        sourceUrl: '/data/geojson/noise-and-vibration/Noise Receivers.geojson',
         type: 'fill',
         paint: {
           'fill-color': '#941b00',
@@ -88,324 +284,17 @@ export const noiseAndVibrationFilters = [
     ],
   },
   {
-    label: 'Contours - bridge',
-    value: 'contours-bridge',
-    legendAlias: 'contours-bridge',
-    icon: <ContoursBridge />,
-    orderLayout: 6,
-    color: '#002664',
-    tickerColor: '#FFFFFF',
-    dontShowInFilters: true,
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/noise-and-vibration/Contours_Bridge.json',
-        type: 'fill',
-        paint: {
-          'fill-color': '#22272b',
-          'fill-opacity': 0.2,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Contours - compound',
-    value: 'contours-compound',
-    legendAlias: 'contours-compound',
-    icon: <ContoursCompound />,
-    orderLayout: 7,
-    color: '#8092b1',
-    tickerColor: '#FFFFFF',
-    dontShowInFilters: true,
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/noise-and-vibration/Contours_Compound.json',
-        type: 'fill',
-        paint: {
-          'fill-color': '#8092b1',
-          'fill-opacity': 0.2,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Contours - corridor',
-    value: 'contours-corridor',
-    legendAlias: 'contours-corridor',
-    icon: <ContoursCorridor />,
-    orderLayout: 8,
-    color: '#8CE0FF',
-    tickerColor: '#000000',
-    dontShowInFilters: true,
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/noise-and-vibration/Contours_Corridor.json',
-        type: 'fill',
-        paint: {
-          'fill-color': '#8Ce0ff',
-          'fill-opacity': 0.15,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Contours - drainage',
-    value: 'contours-drainage',
-    legendAlias: 'contours-drainage',
-    icon: <ContoursDrainage />,
-    color: '#CBEDFD',
-    tickerColor: '#000000',
-    orderLayout: 9,
-    dontShowInFilters: true,
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/noise-and-vibration/Contours_Drainage.json',
-        type: 'fill',
-        paint: {
-          'fill-color': '#CBEDFD',
-          'fill-opacity': 0.15,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Contours - earthworks',
-    value: 'contours-earthworks',
-    legendAlias: 'contours-earthworks',
-    icon: <ContoursEarthworks />,
-    color: '#004000',
-    tickerColor: '#FFFFFF',
-    orderLayout: 10,
-    dontShowInFilters: true,
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/noise-and-vibration/Contours_Earthworks.json',
-        type: 'fill',
-        paint: {
-          'fill-color': '#004000',
-          'fill-opacity': 0.15,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Contours - paving',
-    value: 'contours-paving',
-    legendAlias: 'contours-paving',
-    icon: <ContoursPaving />,
-    orderLayout: 11,
-    color: '#00AA45',
-    tickerColor: '#FFFFFF',
-    dontShowInFilters: true,
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/noise-and-vibration/Contours_Paving.json',
-        type: 'fill',
-        paint: {
-          'fill-color': '#00AA45',
-          'fill-opacity': 0.15,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Day 2030',
-    value: 'operational-noise-contours-2030-day',
-    legendAlias: 'operational-noise-contours-2030-day',
-    icon: <OperationalNoiseContours2030Day />,
-    orderLayout: 11.1,
-    color: '#B280A6',
-    tickerColor: '#000000',
-    dontShowInFilters: true,
-    geojson: [
-      {
-        sourceUrl:
-          '/data/geojson/noise-and-vibration/Operational Noise Contours_2030_Day.json',
-        type: 'fill',
-        paint: {
-          'fill-color': '#B280A6',
-          'fill-opacity': 0.2,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Night 2030',
-    value: 'operational-noise-contours-2030-night',
-    legendAlias: 'operational-noise-contours-2030-night',
-    icon: <OperationalNoiseContours2030Night />,
-    orderLayout: 11.2,
-    color: '#8B4079',
-    tickerColor: '#FFFFFF',
-    dontShowInFilters: true,
-    geojson: [
-      {
-        sourceUrl:
-          '/data/geojson/noise-and-vibration/Operational Noise Contours_2030_Night.json',
-        type: 'fill',
-        paint: {
-          'fill-color': '#8B4079',
-          'fill-opacity': 0.2,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Day 2040',
-    value: 'operational-noise-contours-2040-day',
-    legendAlias: 'operational-noise-contours-2040-day',
-    icon: <OperationalNoiseContours2040Day />,
-    orderLayout: 11.3,
-    color: '#8055F1',
-    tickerColor: '#FFFFFF',
-    dontShowInFilters: true,
-    geojson: [
-      {
-        sourceUrl:
-          '/data/geojson/noise-and-vibration/Operational Noise Contours_2040_Day.json',
-        type: 'fill',
-        paint: {
-          'fill-color': '#8055F1',
-          'fill-opacity': 0.2,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Night 2040',
-    value: 'operational-noise-contours-2040-night',
-    legendAlias: 'operational-noise-contours-2040-night',
-    icon: <OperationalNoiseContours2040Night />,
-    orderLayout: 11.4,
-    color: '#734C94',
-    tickerColor: '#FFFFFF',
-    dontShowInFilters: true,
-    geojson: [
-      {
-        sourceUrl:
-          '/data/geojson/noise-and-vibration/Operational Noise Contours_2040_Night.json',
-        type: 'fill',
-        paint: {
-          'fill-color': '#734C94',
-          'fill-opacity': 0.2,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Contours - resurfacing',
-    value: 'contours-resurfacing',
-    legendAlias: 'contours-resurfacing',
-    icon: <ContoursResurfacing />,
-    orderLayout: 12,
-    color: '#A8EDB3',
-    tickerColor: '#000000',
-    dontShowInFilters: true,
-    geojson: [
-      {
-        sourceUrl:
-          '/data/geojson/noise-and-vibration/Contours_Resurfacing.json',
-        type: 'fill',
-        paint: {
-          'fill-color': '#A8EDB3',
-          'fill-opacity': 0.15,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Contours - road furniture',
-    value: 'contours-road-furniture',
-    legendAlias: 'contours-road-furniture',
-    icon: <ContoursRoadFurniture />,
-    color: '#DBFADF',
-    tickerColor: '#000000',
-    orderLayout: 13,
-    dontShowInFilters: true,
-    geojson: [
-      {
-        sourceUrl:
-          '/data/geojson/noise-and-vibration/Contours_Road Furniture.json',
-        type: 'fill',
-        paint: {
-          'fill-color': '#DBFADF',
-          'fill-opacity': 0.2,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Contours - site',
-    value: 'contours-site',
-    legendAlias: 'contours-site',
-    icon: <ContoursSite />,
-    color: '#22272B',
-    tickerColor: '#FFFFFF',
-    orderLayout: 14,
-    dontShowInFilters: true,
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/noise-and-vibration/Contours_Site.json',
-        type: 'fill',
-        paint: {
-          'fill-color': '#22272B',
-          'fill-opacity': 0.3,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Contours - utility',
-    value: 'contours-utility',
-    legendAlias: 'contours-utility',
-    icon: <ContoursUtility />,
-    color: '#CDD3D6',
-    tickerColor: '#000000',
-    orderLayout: 15,
-    dontShowInFilters: true,
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/noise-and-vibration/Contours_Utility.json',
-        type: 'fill',
-        paint: {
-          'fill-color': '#CDD3D6',
-          'fill-opacity': 0.2,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Contours - vibration buffers',
-    value: 'contours-vibration-buffers',
-    legendAlias: 'contours-vibration-buffers',
-    icon: <ContoursVibrationBuffers />,
-    color: '#F9B18D',
-    tickerColor: '#000000',
-    orderLayout: 16,
-    dontShowInFilters: true,
-    geojson: [
-      {
-        sourceUrl:
-          '/data/geojson/noise-and-vibration/Contours_Vibration Buffers.json',
-        type: 'fill',
-        paint: {
-          'fill-color': '#F9B18D',
-          'fill-opacity': 0.2,
-        },
-      },
-    ],
-  },
-  {
     label: 'Operational noise study area',
     value: 'operational-noise-study-area',
     legendAlias: 'operational-noise-study-area',
     icon: <OperationalNoiseStudyArea />,
-    orderLayout: 17,
+    orderLayout: 5.1,
     color: '#F3631B',
     tickerColor: '#000000',
     geojson: [
       {
         sourceUrl:
-          '/data/geojson/noise-and-vibration/Operational Noise Study Area.json',
+          '/data/geojson/noise-and-vibration/Operational Noise Study Area.geojson',
         type: 'fill',
         paint: {
           'fill-color': '#f3631b',
@@ -419,16 +308,327 @@ export const noiseAndVibrationFilters = [
     value: 'construction-study-area',
     legendAlias: 'construction-study-area',
     icon: <ConstructionStudyArea />,
-    orderLayout: 18,
+    orderLayout: 5.2,
     color: '#EB8A9C',
     tickerColor: '#FFFFFF',
     geojson: [
       {
         sourceUrl:
-          '/data/geojson/noise-and-vibration/Construction Study Area.json',
+          '/data/geojson/noise-and-vibration/Construction Study Area.geojson',
         type: 'fill',
         paint: {
           'fill-color': '#eb8a9c',
+          'fill-opacity': 0.2,
+        },
+      },
+    ],
+  },
+  {
+    label: 'Contours - bridge',
+    value: 'contours-bridge',
+    legendAlias: 'contours-bridge',
+    orderLayout: 6,
+    color: '#002664',
+    tickerColor: '#FFFFFF',
+    dontShowInFilters: true,
+    geojson: [
+      {
+        sourceUrl: '/data/geojson/noise-and-vibration/Contours_Bridge.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#22272b',
+          'fill-opacity': 0.2,
+        },
+      },
+    ],
+  },
+  {
+    label: 'Contours - compound',
+    value: 'contours-compound',
+    legendAlias: 'contours-compound',
+    orderLayout: 7,
+    color: '#8092b1',
+    tickerColor: '#FFFFFF',
+    dontShowInFilters: true,
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Contours_Compound.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#8092b1',
+          'fill-opacity': 0.2,
+        },
+      },
+    ],
+  },
+  {
+    label: 'Contours - corridor',
+    value: 'contours-corridor',
+    legendAlias: 'contours-corridor',
+    orderLayout: 8,
+    color: '#8CE0FF',
+    tickerColor: '#000000',
+    dontShowInFilters: true,
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Contours_Corridor.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#8Ce0ff',
+          'fill-opacity': 0.15,
+        },
+      },
+    ],
+  },
+  {
+    label: 'Contours - drainage',
+    value: 'contours-drainage',
+    legendAlias: 'contours-drainage',
+    color: '#CBEDFD',
+    tickerColor: '#000000',
+    orderLayout: 9,
+    dontShowInFilters: true,
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Contours_Drainage.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#CBEDFD',
+          'fill-opacity': 0.15,
+        },
+      },
+    ],
+  },
+  {
+    label: 'Contours - earthworks',
+    value: 'contours-earthworks',
+    legendAlias: 'contours-earthworks',
+    color: '#004000',
+    tickerColor: '#FFFFFF',
+    orderLayout: 10,
+    dontShowInFilters: true,
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Contours_Earthworks.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#004000',
+          'fill-opacity': 0.15,
+        },
+      },
+    ],
+  },
+  {
+    label: 'Contours - paving',
+    value: 'contours-paving',
+    legendAlias: 'contours-paving',
+    orderLayout: 11,
+    color: '#00AA45',
+    tickerColor: '#FFFFFF',
+    dontShowInFilters: true,
+    geojson: [
+      {
+        sourceUrl: '/data/geojson/noise-and-vibration/Contours_Paving.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#00AA45',
+          'fill-opacity': 0.15,
+        },
+      },
+    ],
+  },
+  {
+    label: 'Day 2030',
+    value: 'operational-noise-contours-2030-day',
+    legendAlias: 'operational-noise-contours-2030-day',
+    orderLayout: 11.1,
+    color: '#B280A6',
+    tickerColor: '#000000',
+    dontShowInFilters: true,
+    legendsToShow: [...opNoiseDayLegends],
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Operational Noise Contours_2030_Day.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#B280A6',
+          'fill-opacity': 0.2,
+        },
+      },
+    ],
+  },
+  {
+    label: 'Night 2030',
+    value: 'operational-noise-contours-2030-night',
+    legendAlias: 'operational-noise-contours-2030-night',
+    orderLayout: 11.2,
+    color: '#8B4079',
+    tickerColor: '#FFFFFF',
+    dontShowInFilters: true,
+    legendsToShow: [...opNoiseNightLegends],
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Operational Noise Contours_2030_Night.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#8B4079',
+          'fill-opacity': 0.2,
+        },
+      },
+    ],
+  },
+  {
+    label: 'Day 2040',
+    value: 'operational-noise-contours-2040-day',
+    legendAlias: 'operational-noise-contours-2040-day',
+    orderLayout: 11.3,
+    color: '#8055F1',
+    tickerColor: '#FFFFFF',
+    dontShowInFilters: true,
+    legendsToShow: [...opNoiseDayLegends],
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Operational Noise Contours_2040_Day.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#8055F1',
+          'fill-opacity': 0.2,
+        },
+      },
+    ],
+  },
+  {
+    label: 'Night 2040',
+    value: 'operational-noise-contours-2040-night',
+    legendAlias: 'operational-noise-contours-2040-night',
+    orderLayout: 11.4,
+    color: '#734C94',
+    tickerColor: '#FFFFFF',
+    dontShowInFilters: true,
+    legendsToShow: [...opNoiseNightLegends],
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Operational Noise Contours_2040_Night.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#734C94',
+          'fill-opacity': 0.2,
+        },
+      },
+    ],
+  },
+  {
+    label: 'Potential worst-case construction scenario',
+    value: 'potential-worst-case-construction-scenario',
+    legendAlias: 'potential-worst-case-construction-scenario',
+    orderLayout: 11.5,
+    color: '#002664',
+    tickerColor: '#FFFFFF',
+    dontShowInFilters: true,
+    legendsToShow: [...worstCaseLegends],
+    geojson: [],
+  },
+  {
+    label: 'Contours - resurfacing',
+    value: 'contours-resurfacing',
+    legendAlias: 'contours-resurfacing',
+    orderLayout: 12,
+    color: '#A8EDB3',
+    tickerColor: '#000000',
+    dontShowInFilters: true,
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Contours_Resurfacing.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#A8EDB3',
+          'fill-opacity': 0.15,
+        },
+      },
+    ],
+  },
+  {
+    label: 'Contours - road furniture',
+    value: 'contours-road-furniture',
+    legendAlias: 'contours-road-furniture',
+    color: '#DBFADF',
+    tickerColor: '#000000',
+    orderLayout: 13,
+    dontShowInFilters: true,
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Contours_Road Furniture.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#DBFADF',
+          'fill-opacity': 0.2,
+        },
+      },
+    ],
+  },
+  {
+    label: 'Contours - site',
+    value: 'contours-site',
+    legendAlias: 'contours-site',
+    color: '#22272B',
+    tickerColor: '#FFFFFF',
+    orderLayout: 14,
+    dontShowInFilters: true,
+    geojson: [
+      {
+        sourceUrl: '/data/geojson/noise-and-vibration/Contours_Site.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#22272B',
+          'fill-opacity': 0.3,
+        },
+      },
+    ],
+  },
+  {
+    label: 'Contours - utility',
+    value: 'contours-utility',
+    legendAlias: 'contours-utility',
+    color: '#CDD3D6',
+    tickerColor: '#000000',
+    orderLayout: 15,
+    dontShowInFilters: true,
+    geojson: [
+      {
+        sourceUrl: '/data/geojson/noise-and-vibration/Contours_Utility.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#CDD3D6',
+          'fill-opacity': 0.2,
+        },
+      },
+    ],
+  },
+  {
+    label: 'Contours - vibration buffers',
+    value: 'contours-vibration-buffers',
+    legendAlias: 'contours-vibration-buffers',
+    color: '#F9B18D',
+    tickerColor: '#000000',
+    orderLayout: 16,
+    dontShowInFilters: true,
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Contours_Vibration Buffers.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#F9B18D',
           'fill-opacity': 0.2,
         },
       },
@@ -440,7 +640,7 @@ export const noiseAndVibrationLegends = [
   {
     title: 'Noise and vibration',
     label: 'title',
-    value: 'title',
+    value: 'title-noise-and-vibration',
   },
   {
     label: 'Noise logger locations',
@@ -456,81 +656,6 @@ export const noiseAndVibrationLegends = [
     label: 'Noise receivers',
     value: 'noise-receivers',
     icon: <NoiseReceivers />,
-  },
-  {
-    label: 'Contours - bridge',
-    value: 'contours-bridge',
-    icon: <ContoursBridge />,
-  },
-  {
-    label: 'Contours - compound',
-    value: 'contours-compound',
-    icon: <ContoursCompound />,
-  },
-  {
-    label: 'Contours - corridor',
-    value: 'contours-corridor',
-    icon: <ContoursCorridor />,
-  },
-  {
-    label: 'Contours - drainage',
-    value: 'contours-drainage',
-    icon: <ContoursDrainage />,
-  },
-  {
-    label: 'Contours - earthworks',
-    value: 'contours-earthworks',
-    icon: <ContoursEarthworks />,
-  },
-  {
-    label: 'Contours - paving',
-    value: 'contours-paving',
-    icon: <ContoursPaving />,
-  },
-  {
-    label: 'Contours - resurfacing',
-    value: 'contours-resurfacing',
-    icon: <ContoursResurfacing />,
-  },
-  {
-    label: 'Contours - road furniture',
-    value: 'contours-road-furniture',
-    icon: <ContoursRoadFurniture />,
-  },
-  {
-    label: 'Contours - site',
-    value: 'contours-site',
-    icon: <ContoursSite />,
-  },
-  {
-    label: 'Contours - utility',
-    value: 'contours-utility',
-    icon: <ContoursUtility />,
-  },
-  {
-    label: 'Contours - vibration buffers',
-    value: 'contours-vibration-buffers',
-    icon: <ContoursVibrationBuffers />,
-  },
-  {
-    label: 'Day 2030',
-    value: 'operational-noise-contours-2030-day',
-    icon: <OperationalNoiseContours2030Day />,
-  },
-  {
-    label: 'Night 2030',
-    value: 'operational-noise-contours-2030-night',
-    icon: <OperationalNoiseContours2030Night />,
-  },
-  {
-    label: 'Day 2040',
-    value: 'operational-noise-contours-2040-day',
-    icon: <OperationalNoiseContours2040Day />,
-  },
-  {
-    label: 'Night 2040',
-    value: 'operational-noise-contours-2040-night',
-    icon: <OperationalNoiseContours2040Night />,
   },
   {
     label: 'Operational noise study area',

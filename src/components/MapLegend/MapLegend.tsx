@@ -13,78 +13,100 @@ const MapLegend = () => {
   const topic = getTopicActive();
   const legends = topic?.legends ?? [];
 
-  // Collect all legends to display (including nested legends from filtersToShow)
+  // Collect all legends to display in filter-order via a single pass
   const allLegendsToShow: Legend[] = [];
 
-  // Then, add legends from filters that have legendsToShow
+  // Track whether the topic-level section title has been inserted yet
+  let topicTitleInserted = false;
+
   const topicFilters = topic?.filters ?? [];
   topicFilters.forEach((filter: Filter) => {
-    if (filter.legendsToShow && filterOptionsSelected.includes(filter.value)) {
+    if (filter.legendsToShow) {
+      // --- Filter has its own inline legends (e.g. LCAs, land use zoning, key-features) ---
+      if (!filterOptionsSelected.includes(filter.value)) return;
+
+      const hasFiltersToShow = !!filter.filtersToShow?.length;
+
       filter.legendsToShow.forEach((nestedLegend: Legend) => {
-        // If it's a title-only item, add it once if we have any matching nested filters
-        if (nestedLegend.title && nestedLegend.value === 'title') {
-          // Check if we haven't already added it and if we have any selected nested filters
-          if (!allLegendsToShow.find((l: Legend) => l.value === 'title')) {
+        // Avoid duplicates
+        if (
+          allLegendsToShow.find((l: Legend) => l.value === nestedLegend.value)
+        )
+          return;
+
+        // Title item
+        if (nestedLegend.title && nestedLegend.value.includes('title')) {
+          if (hasFiltersToShow) {
             const hasAnyNestedFilterSelected = filter.filtersToShow?.some(
               (f: Filter) => filterOptionsSelected.includes(f.value),
             );
-            if (hasAnyNestedFilterSelected) {
-              allLegendsToShow.push(nestedLegend);
-            }
+            if (hasAnyNestedFilterSelected) allLegendsToShow.push(nestedLegend);
+          } else {
+            allLegendsToShow.push(nestedLegend);
           }
           return;
         }
 
-        // Check if this nested legend's filter is selected
-        const nestedFilter = filter.filtersToShow?.find(
-          (f: Filter) => f.legendAlias === nestedLegend.value,
-        );
-        if (
-          nestedFilter &&
-          filterOptionsSelected.includes(nestedFilter.value)
-        ) {
-          // Avoid duplicates
+        if (hasFiltersToShow) {
+          const nestedFilter = filter.filtersToShow?.find(
+            (f: Filter) => f.legendAlias === nestedLegend.value,
+          );
           if (
-            !allLegendsToShow.find(
-              (l: Legend) => l.value === nestedLegend.value,
-            )
+            nestedFilter &&
+            filterOptionsSelected.includes(nestedFilter.value)
           ) {
             allLegendsToShow.push(nestedLegend);
           }
+        } else {
+          allLegendsToShow.push(nestedLegend);
         }
       });
-    }
-  });
+    } else {
+      // --- Filter uses topic-level legends (matched by legendAlias) ---
+      if (!filterOptionsSelected.includes(filter.value)) return;
 
-  // First, add legends for directly selected filters
-  legends.forEach((legend) => {
-    const topicFilters = topic?.filters ?? [];
-
-    // If it's a title-only item, add it if we have any matching filters
-    if (legend.title && legend.value === 'title') {
-      allLegendsToShow.push(legend);
-      return;
-    }
-
-    // Special logic for Drainage basins legend
-    if (legend.value === 'drainage-basins') {
-      const bothDrainageBasinsSelected =
-        filterOptionsSelected.includes('drainage-basins-15-9') &&
-        filterOptionsSelected.includes('drainage-basins-22-9');
-      if (bothDrainageBasinsSelected) {
-        allLegendsToShow.push(legend);
+      // Insert topic-level section title once, before the first matching entry
+      if (!topicTitleInserted) {
+        const titleLegend = legends.find(
+          (l: Legend) => l.title && l.value?.includes('title'),
+        );
+        if (
+          titleLegend &&
+          !allLegendsToShow.find((l: Legend) => l.value === titleLegend.value)
+        ) {
+          allLegendsToShow.push(titleLegend);
+        }
+        topicTitleInserted = true;
       }
-      return;
-    }
 
-    const matchingFilter = topicFilters.find(
-      (filter: Filter) => filter.legendAlias === legend.value,
-    );
-    if (
-      matchingFilter &&
-      filterOptionsSelected.includes(matchingFilter.value)
-    ) {
-      allLegendsToShow.push(legend);
+      // Special logic for Drainage basins legend
+      if (filter.legendAlias === 'drainage-basins') {
+        const bothSelected =
+          filterOptionsSelected.includes('drainage-basins-15-9') &&
+          filterOptionsSelected.includes('drainage-basins-22-9');
+        if (bothSelected) {
+          const legend = legends.find(
+            (l: Legend) => l.value === 'drainage-basins',
+          );
+          if (
+            legend &&
+            !allLegendsToShow.find((l: Legend) => l.value === legend.value)
+          ) {
+            allLegendsToShow.push(legend);
+          }
+        }
+        return;
+      }
+
+      const matchingLegend = legends.find(
+        (l: Legend) => l.value === filter.legendAlias,
+      );
+      if (
+        matchingLegend &&
+        !allLegendsToShow.find((l: Legend) => l.value === matchingLegend.value)
+      ) {
+        allLegendsToShow.push(matchingLegend);
+      }
     }
   });
 
@@ -103,30 +125,55 @@ const MapLegend = () => {
           <ArrowDown />
         </button>
       </div>
-      {isExpanded && (
-        <ul>
-          {allLegendsToShow.map((legend: Legend, index: number) => {
-            // If it's a title-only item, just render the title
-            if (legend.title && legend.value === 'title') {
-              return (
-                <li key={`${legend.value}-${index}`} className="legend-title">
-                  <h3>{legend.title}</h3>
-                </li>
-              );
+      {isExpanded &&
+        (() => {
+          // Group flat legend list into sections by title entries
+          const sections: { title: Legend | null; items: Legend[] }[] = [];
+          let cur: { title: Legend | null; items: Legend[] } | null = null;
+          allLegendsToShow.forEach((l) => {
+            if (l.value.includes('title')) {
+              cur = { title: l, items: [] };
+              sections.push(cur);
+            } else {
+              if (!cur) {
+                cur = { title: null, items: [] };
+                sections.push(cur);
+              }
+              cur.items.push(l);
             }
-
-            // Otherwise render the regular legend item with optional title
-            return (
-              <React.Fragment key={`${legend.value}-${index}`}>
-                <li>
-                  {legend.icon}
-                  <span>{legend.label}</span>
-                </li>
-              </React.Fragment>
-            );
-          })}
-        </ul>
-      )}
+          });
+          return (
+            <div className="legend-sections">
+              {sections.map((section, si) => (
+                <React.Fragment key={si}>
+                  {section.title && (
+                    <div
+                      className={`legend-title${si === 0 ? ' legend-title--first' : ''}`}
+                    >
+                      <h3>{section.title.title || section.title.label}</h3>
+                    </div>
+                  )}
+                  {section.items.length > 0 && (
+                    <ul
+                      className={
+                        section.title?.twoColumnLayout
+                          ? 'legend-items legend-items--two-col'
+                          : 'legend-items'
+                      }
+                    >
+                      {section.items.map((legend, i) => (
+                        <li key={`${legend.value}-${i}`}>
+                          {legend.icon}
+                          <span>{legend.label}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+          );
+        })()}
     </div>
   );
 };

@@ -2,7 +2,7 @@
 
 .legends {
   position: absolute;
-  z-index: 99;
+  z-index: 120;
   bottom: $spacing-4;
   left: $spacing-4;
   background: #ffffff;
@@ -12,6 +12,7 @@
   box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   transition: all 0.3s ease;
+  // z-index: 9999;
 
   &.collapsed {
     width: 365px;
@@ -64,46 +65,75 @@
     font-weight: 700;
     margin: 0 0 0 0;
   }
-  ul {
+  > ul,
+  .legend-sections {
     margin: 0;
     padding: 0;
     list-style: none;
     padding: 0 $spacing-4 $spacing-4 $spacing-4;
-    li {
-      margin: 0 0 $spacing-2 0;
-      display: flex;
-      padding-left: $spacing-10;
-      align-items: center;
-      font-size: $spacing-4;
-      font-weight: 400;
-      position: relative;
-      min-height: 16px;
-      &:last-child {
-        margin-bottom: 0;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+  }
+
+  .legend-sections {
+    padding: 0 $spacing-4 $spacing-4 $spacing-4;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+
+    .legend-title {
+      color: $grey02;
+      font-weight: 600;
+      border-top: 1px solid $grey03;
+      margin: $spacing-3 0 $spacing-3 0;
+      padding: $spacing-3 0 0 0;
+      &.legend-title--first {
+        margin: 0 0 $spacing-2 0;
+        padding: 0;
+        border: none;
       }
-      svg {
-        position: absolute;
-        left: 1rem;
-        top: 50%;
-        transform: translate(-50%, -50%);
-      }
-      &.legend-title {
-        padding-left: 0;
-        color: $grey02;
+      h3 {
+        margin: 0;
+        font-size: $spacing-4;
         font-weight: 600;
-        border-top: 1px solid $grey03;
-        margin: $spacing-3 0 $spacing-3 0;
-        padding: $spacing-3 0 0 0;
-        &:first-child {
-          margin: 0 0 $spacing-2 0;
-          padding: 0;
-          border: none;
+        color: $grey02;
+      }
+    }
+
+    .legend-items {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin: 0 0 $spacing-2 0;
+        display: flex;
+        padding-left: $spacing-10;
+        align-items: center;
+        font-size: $spacing-4;
+        font-weight: 400;
+        position: relative;
+        min-height: 16px;
+        &:last-child {
+          margin-bottom: 0;
         }
-        h3 {
-          margin: 0;
-          font-size: $spacing-4;
-          font-weight: 600;
-          color: $grey02;
+        svg {
+          position: absolute;
+          left: 1rem;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      &.legend-items--two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: $spacing-2;
+
+        li {
+          padding-left: $spacing-8;
+          svg {
+            left: 0.75rem;
+          }
         }
       }
     }
