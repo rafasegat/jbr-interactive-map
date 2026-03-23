@@ -27,8 +27,8 @@ export const proposalOverviewFilters = [
         sourceUrl: '/data/geojson/proposal-overview/Concept design.geojson',
         type: 'line',
         paint: {
-          'line-color': '#495054',
-          'line-opacity': 1,
+          'line-color': '#A4A7A9',
+          'line-width': 3,
         },
       },
     ],
@@ -45,9 +45,8 @@ export const proposalOverviewFilters = [
         sourceUrl: '/data/geojson/proposal-overview/Drainage.geojson',
         type: 'line',
         paint: {
-          'line-color': '#146cfd',
+          'line-color': '#146CFD',
           'line-width': 3,
-          'line-dasharray': [1, 2],
         },
       },
     ],
@@ -62,10 +61,10 @@ export const proposalOverviewFilters = [
     geojson: [
       {
         sourceUrl: '/data/geojson/proposal-overview/Basins 1509.geojson',
-        type: 'line',
+        type: 'fill',
         paint: {
-          'line-color': '#146cfd',
-          'line-width': 2,
+          'fill-color': '#146CFD',
+          'fill-opacity': 1,
         },
       },
     ],
@@ -116,10 +115,10 @@ export const proposalOverviewFilters = [
     geojson: [
       {
         sourceUrl: '/data/geojson/proposal-overview/Cut and fill.geojson',
-        type: 'line',
+        type: 'fill',
         paint: {
-          'line-color': '#faaf05',
-          'line-opacity': 1,
+          'fill-color': '#FAAF05',
+          'fill-opacity': 0.6,
         },
       },
     ],
@@ -129,16 +128,16 @@ export const proposalOverviewFilters = [
     value: 'visual-envelope-map',
     legendAlias: 'visual-envelope-map',
     orderLayout: 9,
-    color: '#00AA45',
+    color: '#8055F166',
     tickerColor: '#FFFFFF',
     geojson: [
       {
         sourceUrl:
           '/data/geojson/proposal-overview/Visual envelope map.geojson',
-        type: 'line',
+        type: 'fill',
         paint: {
-          'line-color': '#00aa45',
-          'line-opacity': 1,
+          'fill-color': '#8055F1',
+          'fill-opacity': 0.4,
         },
       },
     ],
@@ -197,6 +196,7 @@ export const constructionActivitiesFilters = [
         paint: {
           'line-color': '#002664',
           'line-width': 2,
+          'line-dasharray': [1, 3],
         },
       },
     ],
@@ -213,7 +213,7 @@ export const constructionActivitiesFilters = [
         sourceUrl: '/data/geojson/proposal-overview/Proposal boundary.geojson',
         type: 'line',
         paint: {
-          'line-color': '#d7153a',
+          'line-color': '#D7153A',
           'line-width': 3,
         },
       },
@@ -232,7 +232,7 @@ export const constructionActivitiesFilters = [
           '/data/geojson/proposal-overview/Operational boundary.geojson',
         type: 'line',
         paint: {
-          'line-color': '#faaf05',
+          'line-color': '#FAAF05',
           'line-width': 3,
         },
       },
@@ -243,17 +243,15 @@ export const constructionActivitiesFilters = [
     value: 'construction-zones',
     legendAlias: 'construction-zones',
     orderLayout: 5,
-    color: '#F3631B',
+    color: '#8CE0FF66',
     tickerColor: '#000000',
     geojson: [
       {
         sourceUrl: '/data/geojson/proposal-overview/Construction zones.geojson',
-        type: 'circle',
+        type: 'fill',
         paint: {
-          'circle-radius': 4,
-          'circle-color': '#ffffff',
-          'circle-stroke-color': '#f3631b',
-          'circle-stroke-width': 2,
+          'fill-color': '#8CE0FF',
+          'fill-opacity': 0.4,
         },
       },
     ],
@@ -263,7 +261,7 @@ export const constructionActivitiesFilters = [
     value: 'proposed-ancillary-facility',
     legendAlias: 'proposed-ancillary-facility',
     orderLayout: 9,
-    color: '#D912AE',
+    color: '#767C7F',
     tickerColor: '#FFFFFF',
     geojson: [
       {
@@ -271,8 +269,8 @@ export const constructionActivitiesFilters = [
           '/data/geojson/proposal-overview/Proposed Ancillary Facility.geojson',
         type: 'fill',
         paint: {
-          'fill-color': '#D912AE',
-          'fill-opacity': 1,
+          'fill-color': '#767C7F',
+          'fill-opacity': 0.4,
         },
       },
     ],

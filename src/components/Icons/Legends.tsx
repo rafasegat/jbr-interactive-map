@@ -103,7 +103,7 @@ export const DrainageBasins = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="24" height="12" fill="#0B3F47" />
+    <rect width="24" height="12" fill="#0B3F47" fillOpacity="0.6" />
   </svg>
 );
 export const Pavement = () => (
@@ -125,7 +125,7 @@ export const CutAndFill = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="24" height="12" fill="#FAAF05" />
+    <rect width="24" height="12" fill="#FAAF05" fillOpacity="0.6" />
   </svg>
 );
 export const VisualEnvelopeMap = () => (
@@ -490,14 +490,7 @@ export const OperationalNoiseStudyArea = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect
-      x="1"
-      y="7"
-      width="22"
-      height="10"
-      stroke="#694800"
-      stroke-width="2"
-    />
+    <rect x="1" y="7" width="22" height="10" stroke="#694800" strokeWidth="2" />
   </svg>
 );
 export const ConstructionStudyArea = () => (
@@ -508,14 +501,7 @@ export const ConstructionStudyArea = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect
-      x="1"
-      y="1"
-      width="22"
-      height="10"
-      stroke="#22272B"
-      stroke-width="2"
-    />
+    <rect x="1" y="1" width="22" height="10" stroke="#22272B" strokeWidth="2" />
   </svg>
 );
 export const ReportingLocationsCulverts = () => (
@@ -547,7 +533,18 @@ export const ExistingFloodDepth1AEP = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path d="M0 1H24" stroke="#22272B" stroke-width="2" />
+    <path d="M0 1H24" stroke="#22272B" strokeWidth="2" />
+  </svg>
+);
+export const OperationalFloodDepth1AEP = () => (
+  <svg
+    width="24"
+    height="2"
+    viewBox="0 0 24 2"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M0 1H24" stroke="#D912AE" strokeWidth="2" />
   </svg>
 );
 export const ExistingCulverts = () => (
@@ -558,7 +555,18 @@ export const ExistingCulverts = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path d="M0 1H24" stroke="#002664" strokeWidth="2" />
+    <path d="M0 1H24" stroke="#F3631B" strokeWidth="2" />
+  </svg>
+);
+export const NewCulverts = () => (
+  <svg
+    width="24"
+    height="2"
+    viewBox="0 0 24 2"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M0 1H24" stroke="#8055F1" stroke-width="2" />
   </svg>
 );
 export const Riverlines = () => (
@@ -569,7 +577,7 @@ export const Riverlines = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path d="M0 12H24" stroke="#8CE0FF" strokeWidth="2" />
+    <path d="M0 12H24" stroke="#2E808E" strokeWidth="2" />
   </svg>
 );
 export const Watercourses = () => (
@@ -582,7 +590,7 @@ export const Watercourses = () => (
   >
     <path
       d="M0 1H24"
-      stroke="#8CE0FF"
+      stroke="#0B3F47"
       strokeWidth="2"
       strokeDasharray="3 2.5"
     />
@@ -596,7 +604,16 @@ export const WaterCatchment = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="24" height="12" fill="#146CFD" fillOpacity="0.8" />
+    <rect
+      opacity="0.4"
+      x="1"
+      y="1"
+      width="22"
+      height="10"
+      fill="#CBEDFD"
+      stroke="#8CE0FF"
+      stroke-width="2"
+    />
   </svg>
 );
 export const FloodCatchments = () => (
@@ -607,7 +624,7 @@ export const FloodCatchments = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="24" height="12" fill="#002664" fillOpacity="0.75" />
+    <rect width="24" height="12" fill="#8CDBE5" fill-opacity="0.4" />
   </svg>
 );
 export const HydroArea = () => (
@@ -618,7 +635,7 @@ export const HydroArea = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="24" height="12" fill="#8CE0FF" fillOpacity="0.8" />
+    <rect width="24" height="12" fill="#146CFD" fill-opacity="0.4" />
   </svg>
 );
 export const TUFLOWModelExtent = () => (
@@ -629,7 +646,7 @@ export const TUFLOWModelExtent = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="24" height="12" fill="#002664" fillOpacity="0.5" />
+    <rect width="24" height="12" fill="#2E808E" fill-opacity="0.4" />
   </svg>
 );
 
@@ -894,7 +911,7 @@ export const SpeedLimit100 = () => (
       height="21.5"
       rx="10.75"
       stroke="#D7153A"
-      stroke-width="2.5"
+      strokeWidth="2.5"
     />
     <path
       d="M5.59703 15V10.2615H4.47653V9.4335C5.02253 9.4335 5.42603 9.348 5.68703 9.177C5.95103 9.006 6.10253 8.778 6.14153 8.493H7.14053V15H5.59703ZM11.0238 15.099C10.2048 15.099 9.56732 14.8095 9.11132 14.2305C8.65532 13.6485 8.42732 12.8265 8.42732 11.7645C8.42732 10.6935 8.65832 9.8655 9.12032 9.2805C9.58232 8.6955 10.2183 8.403 11.0283 8.403C11.8323 8.403 12.4623 8.6955 12.9183 9.2805C13.3773 9.8655 13.6068 10.692 13.6068 11.76C13.6068 12.825 13.3803 13.6485 12.9273 14.2305C12.4773 14.8095 11.8428 15.099 11.0238 15.099ZM11.0193 13.866C11.3763 13.866 11.6313 13.707 11.7843 13.389C11.9373 13.071 12.0138 12.531 12.0138 11.769C12.0138 10.986 11.9343 10.428 11.7753 10.095C11.6193 9.759 11.3673 9.591 11.0193 9.591C10.6683 9.591 10.4133 9.759 10.2543 10.095C10.0953 10.431 10.0158 10.989 10.0158 11.769C10.0158 12.525 10.0938 13.0635 10.2498 13.3845C10.4088 13.7055 10.6653 13.866 11.0193 13.866ZM16.9389 15.099C16.1199 15.099 15.4824 14.8095 15.0264 14.2305C14.5704 13.6485 14.3424 12.8265 14.3424 11.7645C14.3424 10.6935 14.5734 9.8655 15.0354 9.2805C15.4974 8.6955 16.1334 8.403 16.9434 8.403C17.7474 8.403 18.3774 8.6955 18.8334 9.2805C19.2924 9.8655 19.5219 10.692 19.5219 11.76C19.5219 12.825 19.2954 13.6485 18.8424 14.2305C18.3924 14.8095 17.7579 15.099 16.9389 15.099ZM16.9344 13.866C17.2914 13.866 17.5464 13.707 17.6994 13.389C17.8524 13.071 17.9289 12.531 17.9289 11.769C17.9289 10.986 17.8494 10.428 17.6904 10.095C17.5344 9.759 17.2824 9.591 16.9344 9.591C16.5834 9.591 16.3284 9.759 16.1694 10.095C16.0104 10.431 15.9309 10.989 15.9309 11.769C15.9309 12.525 16.0089 13.0635 16.1649 13.3845C16.3239 13.7055 16.5804 13.866 16.9344 13.866Z"
@@ -944,7 +961,7 @@ export const LILOIntersections = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <g clip-path="url(#clip0_2156_152088)">
+    <g clipPath="url(#clip0_2156_152088)">
       <rect
         x="1.5"
         y="1.5"
@@ -952,9 +969,9 @@ export const LILOIntersections = () => (
         height="21"
         rx="10.5"
         fill="#146CFD"
-        fill-opacity="0.2"
+        fillOpacity="0.2"
         stroke="#146CFD"
-        stroke-width="3"
+        strokeWidth="3"
       />
     </g>
     <defs>

@@ -283,22 +283,7 @@ export const trafficAndTransportFilters = [
     ],
     orderLayout: 5,
   },
-  {
-    label: 'LILO intersections',
-    value: 'lilo-intersections',
-    legendAlias: 'lilo-intersections',
-    color: '#146CFD',
-    tickerColor: '#FFFFFF',
-    geojson: [],
-    markers: [
-      {
-        id: '1',
-        coordinates: [150.584166030409648, -35.037257919696373],
-        iconComponent: <LILOIntersections />,
-      },
-    ],
-    orderLayout: 6,
-  },
+
   {
     label: 'Local roads',
     value: 'local-roads',
@@ -355,6 +340,22 @@ export const trafficAndTransportFilters = [
       },
     ],
     orderLayout: 9,
+  },
+  {
+    label: 'LILO intersections',
+    value: 'lilo-intersections',
+    legendAlias: 'lilo-intersections',
+    color: '#146CFD',
+    tickerColor: '#FFFFFF',
+    geojson: [],
+    markers: [
+      {
+        id: '1',
+        coordinates: [150.584166030409648, -35.037257919696373],
+        iconComponent: <LILOIntersections />,
+      },
+    ],
+    orderLayout: 10,
   },
 ];
 

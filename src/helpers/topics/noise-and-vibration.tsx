@@ -21,39 +21,39 @@ const dbaRect = (color: string) => (
 
 // dBA level colour ramps – update hex values to match the GeoJSON styling
 const worstCaseDbaColors: Record<string, string> = {
-  '35': '#A8E6A3',
-  '40': '#5DC85A',
-  '45': '#FFEC6E',
-  '50': '#FFC84A',
-  '55': '#FF9447',
-  '60': '#FF5733',
-  '65': '#D63020',
-  '70': '#A01A10',
-  '75': '#6B1008',
-  '80': '#3A0604',
+  '35': '#ADCCFE',
+  '40': '#ACE5CA',
+  '45': '#D8F1B0',
+  '50': '#FAEDB1',
+  '55': '#FBDBA7',
+  '60': '#F9C3A5',
+  '65': '#EFB0A5',
+  '70': '#D98B8F',
+  '75': '#C4848C',
+  '80': '#A16675',
 };
 
 const opNoiseDayDbaColors: Record<string, string> = {
-  '35': '#BDE9F8',
-  '40': '#7DCEF3',
-  '45': '#4F97E8',
-  '50': '#2563CC',
-  '55': '#1A44A9',
-  '60': '#132E7F',
-  '65': '#0D1E57',
-  '70': '#080F2C',
-  '75': '#04081A',
+  '35': '#ADCCFE',
+  '40': '#ACE5CA',
+  '45': '#D8F1B0',
+  '50': '#FAEDB1',
+  '55': '#FBDBA7',
+  '60': '#F9C3A5',
+  '65': '#EFB0A5',
+  '70': '#D98B8F',
+  '75': '#C4848C',
 };
 
 const opNoiseNightDbaColors: Record<string, string> = {
-  '35': '#ECB8D9',
-  '40': '#D87DB5',
-  '45': '#C14A92',
-  '50': '#9E2770',
-  '55': '#7A1353',
-  '60': '#580B3B',
-  '65': '#3A0527',
-  '70': '#1F0215',
+  '35': '#ADCCFE',
+  '40': '#ACE5CA',
+  '45': '#D8F1B0',
+  '50': '#FAEDB1',
+  '55': '#FBDBA7',
+  '60': '#F9C3A5',
+  '65': '#EFB0A5',
+  '70': '#D98B8F',
 };
 
 const worstCaseLegends = [
