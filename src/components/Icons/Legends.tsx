@@ -566,7 +566,7 @@ export const NewCulverts = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path d="M0 1H24" stroke="#8055F1" stroke-width="2" />
+    <path d="M0 1H24" stroke="#8055F1" strokeWidth="2" />
   </svg>
 );
 export const Riverlines = () => (
@@ -612,7 +612,7 @@ export const WaterCatchment = () => (
       height="10"
       fill="#CBEDFD"
       stroke="#8CE0FF"
-      stroke-width="2"
+      strokeWidth="2"
     />
   </svg>
 );
@@ -624,7 +624,7 @@ export const FloodCatchments = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="24" height="12" fill="#8CDBE5" fill-opacity="0.4" />
+    <rect width="24" height="12" fill="#8CDBE5" fillOpacity="0.4" />
   </svg>
 );
 export const HydroArea = () => (
@@ -635,7 +635,7 @@ export const HydroArea = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="24" height="12" fill="#146CFD" fill-opacity="0.4" />
+    <rect width="24" height="12" fill="#146CFD" fillOpacity="0.4" />
   </svg>
 );
 export const TUFLOWModelExtent = () => (
@@ -646,7 +646,7 @@ export const TUFLOWModelExtent = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="24" height="12" fill="#2E808E" fill-opacity="0.4" />
+    <rect width="24" height="12" fill="#2E808E" fillOpacity="0.4" />
   </svg>
 );
 
