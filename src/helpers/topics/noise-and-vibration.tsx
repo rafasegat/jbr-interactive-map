@@ -236,7 +236,7 @@ export const noiseAndVibrationFilters = [
         paint: {
           'circle-radius': 4,
           'circle-color': '#ffffff',
-          'circle-stroke-color': '#22272b',
+          'circle-stroke-color': '#941B00',
           'circle-stroke-width': 2,
         },
       },
@@ -255,11 +255,10 @@ export const noiseAndVibrationFilters = [
       {
         sourceUrl:
           '/data/geojson/noise-and-vibration/Noise catchment areas.geojson',
-        type: 'line',
+        type: 'fill',
         paint: {
-          'line-color': '#faaf05',
-          'line-opacity': 1,
-          'line-width': 2,
+          'fill-color': '#faaf05',
+          'fill-opacity': 0.5,
         },
       },
     ],
@@ -295,10 +294,10 @@ export const noiseAndVibrationFilters = [
       {
         sourceUrl:
           '/data/geojson/noise-and-vibration/Operational Noise Study Area.geojson',
-        type: 'fill',
+        type: 'line',
         paint: {
-          'fill-color': '#f3631b',
-          'fill-opacity': 0.2,
+          'line-color': '#694800',
+          'line-width': 2,
         },
       },
     ],
@@ -315,136 +314,18 @@ export const noiseAndVibrationFilters = [
       {
         sourceUrl:
           '/data/geojson/noise-and-vibration/Construction Study Area.geojson',
-        type: 'fill',
+        type: 'line',
         paint: {
-          'fill-color': '#eb8a9c',
-          'fill-opacity': 0.2,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Contours - bridge',
-    value: 'contours-bridge',
-    legendAlias: 'contours-bridge',
-    orderLayout: 6,
-    color: '#002664',
-    tickerColor: '#FFFFFF',
-    dontShowInFilters: true,
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/noise-and-vibration/Contours_Bridge.geojson',
-        type: 'fill',
-        paint: {
-          'fill-color': '#22272b',
-          'fill-opacity': 0.2,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Contours - compound',
-    value: 'contours-compound',
-    legendAlias: 'contours-compound',
-    orderLayout: 7,
-    color: '#8092b1',
-    tickerColor: '#FFFFFF',
-    dontShowInFilters: true,
-    geojson: [
-      {
-        sourceUrl:
-          '/data/geojson/noise-and-vibration/Contours_Compound.geojson',
-        type: 'fill',
-        paint: {
-          'fill-color': '#8092b1',
-          'fill-opacity': 0.2,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Contours - corridor',
-    value: 'contours-corridor',
-    legendAlias: 'contours-corridor',
-    orderLayout: 8,
-    color: '#8CE0FF',
-    tickerColor: '#000000',
-    dontShowInFilters: true,
-    geojson: [
-      {
-        sourceUrl:
-          '/data/geojson/noise-and-vibration/Contours_Corridor.geojson',
-        type: 'fill',
-        paint: {
-          'fill-color': '#8Ce0ff',
-          'fill-opacity': 0.15,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Contours - drainage',
-    value: 'contours-drainage',
-    legendAlias: 'contours-drainage',
-    color: '#CBEDFD',
-    tickerColor: '#000000',
-    orderLayout: 9,
-    dontShowInFilters: true,
-    geojson: [
-      {
-        sourceUrl:
-          '/data/geojson/noise-and-vibration/Contours_Drainage.geojson',
-        type: 'fill',
-        paint: {
-          'fill-color': '#CBEDFD',
-          'fill-opacity': 0.15,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Contours - earthworks',
-    value: 'contours-earthworks',
-    legendAlias: 'contours-earthworks',
-    color: '#004000',
-    tickerColor: '#FFFFFF',
-    orderLayout: 10,
-    dontShowInFilters: true,
-    geojson: [
-      {
-        sourceUrl:
-          '/data/geojson/noise-and-vibration/Contours_Earthworks.geojson',
-        type: 'fill',
-        paint: {
-          'fill-color': '#004000',
-          'fill-opacity': 0.15,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Contours - paving',
-    value: 'contours-paving',
-    legendAlias: 'contours-paving',
-    orderLayout: 11,
-    color: '#00AA45',
-    tickerColor: '#FFFFFF',
-    dontShowInFilters: true,
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/noise-and-vibration/Contours_Paving.geojson',
-        type: 'fill',
-        paint: {
-          'fill-color': '#00AA45',
-          'fill-opacity': 0.15,
+          'line-color': '#22272B',
+          'line-width': 2,
         },
       },
     ],
   },
   {
     label: 'Day 2030',
-    value: 'operational-noise-contours-2030-day',
-    legendAlias: 'operational-noise-contours-2030-day',
+    value: 'day-2030',
+    legendAlias: 'day-2030',
     orderLayout: 11.1,
     color: '#B280A6',
     tickerColor: '#000000',
@@ -453,19 +334,91 @@ export const noiseAndVibrationFilters = [
     geojson: [
       {
         sourceUrl:
-          '/data/geojson/noise-and-vibration/Operational Noise Contours_2030_Day.geojson',
+          '/data/geojson/noise-and-vibration/Day 2030/OpCntrs_Day_2030_35dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': '#B280A6',
-          'fill-opacity': 0.2,
+          'fill-color': opNoiseDayDbaColors['35'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Day 2030/OpCntrs_Day_2030_40dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseDayDbaColors['40'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Day 2030/OpCntrs_Day_2030_45dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseDayDbaColors['45'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Day 2030/OpCntrs_Day_2030_50dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseDayDbaColors['50'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Day 2030/OpCntrs_Day_2030_55dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseDayDbaColors['55'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Day 2030/OpCntrs_Day_2030_60dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseDayDbaColors['60'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Day 2030/OpCntrs_Day_2030_65dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseDayDbaColors['65'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Day 2030/OpCntrs_Day_2030_70dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseDayDbaColors['70'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Day 2030/OpCntrs_Day_2030_75dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseDayDbaColors['75'],
+          'fill-opacity': 0.4,
         },
       },
     ],
   },
   {
     label: 'Night 2030',
-    value: 'operational-noise-contours-2030-night',
-    legendAlias: 'operational-noise-contours-2030-night',
+    value: 'night-2030',
+    legendAlias: 'night-2030',
     orderLayout: 11.2,
     color: '#8B4079',
     tickerColor: '#FFFFFF',
@@ -474,19 +427,82 @@ export const noiseAndVibrationFilters = [
     geojson: [
       {
         sourceUrl:
-          '/data/geojson/noise-and-vibration/Operational Noise Contours_2030_Night.geojson',
+          '/data/geojson/noise-and-vibration/Night 2030/OpCntrs_Night_2030_35dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': '#8B4079',
-          'fill-opacity': 0.2,
+          'fill-color': opNoiseNightDbaColors['35'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Night 2030/OpCntrs_Night_2030_40dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseNightDbaColors['40'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Night 2030/OpCntrs_Night_2030_45dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseNightDbaColors['45'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Night 2030/OpCntrs_Night_2030_50dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseNightDbaColors['50'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Night 2030/OpCntrs_Night_2030_55dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseNightDbaColors['55'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Night 2030/OpCntrs_Night_2030_60dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseNightDbaColors['60'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Night 2030/OpCntrs_Night_2030_65dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseNightDbaColors['65'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Night 2030/OpCntrs_Night_2030_70dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseNightDbaColors['70'],
+          'fill-opacity': 0.4,
         },
       },
     ],
   },
   {
     label: 'Day 2040',
-    value: 'operational-noise-contours-2040-day',
-    legendAlias: 'operational-noise-contours-2040-day',
+    value: 'day-2040',
+    legendAlias: 'day-2040',
     orderLayout: 11.3,
     color: '#8055F1',
     tickerColor: '#FFFFFF',
@@ -495,19 +511,91 @@ export const noiseAndVibrationFilters = [
     geojson: [
       {
         sourceUrl:
-          '/data/geojson/noise-and-vibration/Operational Noise Contours_2040_Day.geojson',
+          '/data/geojson/noise-and-vibration/Day 2040/OpCntrs_Day_2040_35dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': '#8055F1',
-          'fill-opacity': 0.2,
+          'fill-color': opNoiseDayDbaColors['35'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Day 2040/OpCntrs_Day_2040_40dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseDayDbaColors['40'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Day 2040/OpCntrs_Day_2040_45dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseDayDbaColors['45'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Day 2040/OpCntrs_Day_2040_50dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseDayDbaColors['50'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Day 2040/OpCntrs_Day_2040_55dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseDayDbaColors['55'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Day 2040/OpCntrs_Day_2040_60dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseDayDbaColors['60'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Day 2040/OpCntrs_Day_2040_65dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseDayDbaColors['65'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Day 2040/OpCntrs_Day_2040_70dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseDayDbaColors['70'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Day 2040/OpCntrs_Day_2040_75dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseDayDbaColors['75'],
+          'fill-opacity': 0.4,
         },
       },
     ],
   },
   {
     label: 'Night 2040',
-    value: 'operational-noise-contours-2040-night',
-    legendAlias: 'operational-noise-contours-2040-night',
+    value: 'night-2040',
+    legendAlias: 'night-2040',
     orderLayout: 11.4,
     color: '#734C94',
     tickerColor: '#FFFFFF',
@@ -516,11 +604,74 @@ export const noiseAndVibrationFilters = [
     geojson: [
       {
         sourceUrl:
-          '/data/geojson/noise-and-vibration/Operational Noise Contours_2040_Night.geojson',
+          '/data/geojson/noise-and-vibration/Night 2040/OpCntrs_Night_2040_35dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': '#734C94',
-          'fill-opacity': 0.2,
+          'fill-color': opNoiseNightDbaColors['35'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Night 2040/OpCntrs_Night_2040_40dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseNightDbaColors['40'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Night 2040/OpCntrs_Night_2040_45dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseNightDbaColors['45'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Night 2040/OpCntrs_Night_2040_50dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseNightDbaColors['50'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Night 2040/OpCntrs_Night_2040_55dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseNightDbaColors['55'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Night 2040/OpCntrs_Night_2040_60dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseNightDbaColors['60'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Night 2040/OpCntrs_Night_2040_65dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseNightDbaColors['65'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/Night 2040/OpCntrs_Night_2040_70dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': opNoiseNightDbaColors['70'],
+          'fill-opacity': 0.4,
         },
       },
     ],
@@ -533,103 +684,97 @@ export const noiseAndVibrationFilters = [
     color: '#002664',
     tickerColor: '#FFFFFF',
     dontShowInFilters: true,
+    defaultSelected: true,
     legendsToShow: [...worstCaseLegends],
-    geojson: [],
-  },
-  {
-    label: 'Contours - resurfacing',
-    value: 'contours-resurfacing',
-    legendAlias: 'contours-resurfacing',
-    orderLayout: 12,
-    color: '#A8EDB3',
-    tickerColor: '#000000',
-    dontShowInFilters: true,
     geojson: [
       {
         sourceUrl:
-          '/data/geojson/noise-and-vibration/Contours_Resurfacing.geojson',
+          '/data/geojson/noise-and-vibration/worst-case-scenario/Worst-case_35dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': '#A8EDB3',
-          'fill-opacity': 0.15,
+          'fill-color': worstCaseDbaColors['35'],
+          'fill-opacity': 0.4,
         },
       },
-    ],
-  },
-  {
-    label: 'Contours - road furniture',
-    value: 'contours-road-furniture',
-    legendAlias: 'contours-road-furniture',
-    color: '#DBFADF',
-    tickerColor: '#000000',
-    orderLayout: 13,
-    dontShowInFilters: true,
-    geojson: [
       {
         sourceUrl:
-          '/data/geojson/noise-and-vibration/Contours_Road Furniture.geojson',
+          '/data/geojson/noise-and-vibration/worst-case-scenario/Worst-case_40dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': '#DBFADF',
-          'fill-opacity': 0.2,
+          'fill-color': worstCaseDbaColors['40'],
+          'fill-opacity': 0.4,
         },
       },
-    ],
-  },
-  {
-    label: 'Contours - site',
-    value: 'contours-site',
-    legendAlias: 'contours-site',
-    color: '#22272B',
-    tickerColor: '#FFFFFF',
-    orderLayout: 14,
-    dontShowInFilters: true,
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/noise-and-vibration/Contours_Site.geojson',
-        type: 'fill',
-        paint: {
-          'fill-color': '#22272B',
-          'fill-opacity': 0.3,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Contours - utility',
-    value: 'contours-utility',
-    legendAlias: 'contours-utility',
-    color: '#CDD3D6',
-    tickerColor: '#000000',
-    orderLayout: 15,
-    dontShowInFilters: true,
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/noise-and-vibration/Contours_Utility.geojson',
-        type: 'fill',
-        paint: {
-          'fill-color': '#CDD3D6',
-          'fill-opacity': 0.2,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Contours - vibration buffers',
-    value: 'contours-vibration-buffers',
-    legendAlias: 'contours-vibration-buffers',
-    color: '#F9B18D',
-    tickerColor: '#000000',
-    orderLayout: 16,
-    dontShowInFilters: true,
-    geojson: [
       {
         sourceUrl:
-          '/data/geojson/noise-and-vibration/Contours_Vibration Buffers.geojson',
+          '/data/geojson/noise-and-vibration/worst-case-scenario/Worst-case_45dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': '#F9B18D',
-          'fill-opacity': 0.2,
+          'fill-color': worstCaseDbaColors['45'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/worst-case-scenario/Worst-case_50dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': worstCaseDbaColors['50'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/worst-case-scenario/Worst-case_55dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': worstCaseDbaColors['55'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/worst-case-scenario/Worst-case_60dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': worstCaseDbaColors['60'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/worst-case-scenario/Worst-case_65dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': worstCaseDbaColors['65'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/worst-case-scenario/Worst-case_70dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': worstCaseDbaColors['70'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/worst-case-scenario/Worst-case_75dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': worstCaseDbaColors['75'],
+          'fill-opacity': 0.4,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/noise-and-vibration/worst-case-scenario/Worst-case_80dBA.GeoJSON',
+        type: 'fill',
+        paint: {
+          'fill-color': worstCaseDbaColors['80'],
+          'fill-opacity': 0.4,
         },
       },
     ],

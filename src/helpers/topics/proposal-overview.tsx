@@ -167,15 +167,152 @@ export const constructionActivitiesFilters = [
     label: 'Site access gates',
     value: 'site-access-gates',
     legendAlias: 'site-access-gates',
-    geojson: [
+    geojson: [],
+    markers: [
       {
-        sourceUrl: '/data/geojson/proposal-overview/SiteAccessGates.geojson',
-        type: 'line',
-        paint: {
-          'line-color': '#F4B5E6',
-          'line-opacity': 1,
-          'line-width': 2,
-        },
+        id: '1',
+        coordinates: [150.58594451848754, -34.98751595209948],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '2',
+        coordinates: [150.58607049706316, -34.988613403303674],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '3',
+        coordinates: [150.58411924289803, -35.00184021267098],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '4',
+        coordinates: [150.5841309767508, -35.00200104458662],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '5',
+        coordinates: [150.58207150457864, -35.0076939901544],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '6',
+        coordinates: [150.58065338399587, -35.01483279615576],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '7',
+        coordinates: [150.58060626809805, -35.01499746279667],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '8',
+        coordinates: [150.57989221906513, -35.014985146962935],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '9',
+        coordinates: [150.57970621463028, -35.01808759329666],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '10',
+        coordinates: [150.5795419791515, -35.018923915836666],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '11',
+        coordinates: [150.57931042343802, -35.020213035071514],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '12',
+        coordinates: [150.5787648086496, -35.02312893421585],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '13',
+        coordinates: [150.5790597561627, -35.02396866228171],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '14',
+        coordinates: [150.58000137551682, -35.04140003465797],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '15',
+        coordinates: [150.58313850983933, -35.00258912793856],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '16',
+        coordinates: [150.58603972378455, -34.98855539994083],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '17',
+        coordinates: [150.58614901763252, -34.98858203194592],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '18',
+        coordinates: [150.58361863813292, -34.998359358839636],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '19',
+        coordinates: [150.58387259937925, -34.999823363925906],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '20',
+        coordinates: [150.58317247551676, -35.00123488825497],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '21',
+        coordinates: [150.58413589908685, -35.002027790889024],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '22',
+        coordinates: [150.58226319715337, -35.007961090303375],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '23',
+        coordinates: [150.57961390023743, -35.01881193054774],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '24',
+        coordinates: [150.5792365937068, -35.02086718841824],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '25',
+        coordinates: [150.58315544075387, -35.00135553305543],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '26',
+        coordinates: [150.57882859989144, -35.0240296277773],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '27',
+        coordinates: [150.57861794233335, -35.026831504226834],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '28',
+        coordinates: [150.58013668685487, -35.04150526996377],
+        iconComponent: <SiteAccessGates />,
+      },
+      {
+        id: '29',
+        coordinates: [150.57930003358572, -35.02122386580915],
+        iconComponent: <SiteAccessGates />,
       },
     ],
     orderLayout: 0,

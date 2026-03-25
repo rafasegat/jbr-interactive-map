@@ -16,28 +16,30 @@ const MapLayerControl = () => {
   ];
 
   const operationalNoiseOptions = [
-    { value: 'operational-noise-contours-2030-day', label: 'Day 2030' },
-    { value: 'operational-noise-contours-2030-night', label: 'Night 2030' },
-    { value: 'operational-noise-contours-2040-day', label: 'Day 2040' },
-    { value: 'operational-noise-contours-2040-night', label: 'Night 2040' },
+    { value: 'day-2030', label: 'Day 2030' },
+    { value: 'night-2030', label: 'Night 2030' },
+    { value: 'day-2040', label: 'Day 2040' },
+    { value: 'night-2040', label: 'Night 2040' },
   ];
 
   const handleContourChange = (value: string) => {
-    // Remove all contour options first
-    const withoutContours = filterOptionsSelected.filter(
-      (opt) => !contourOptions.some((c) => c.value === opt),
+    // Remove all contour and operational noise options, then add selected contour
+    const filtered = filterOptionsSelected.filter(
+      (opt) =>
+        !contourOptions.some((c) => c.value === opt) &&
+        !operationalNoiseOptions.some((o) => o.value === opt),
     );
-    // Add the selected contour
-    setFilterOptionsSelected([...withoutContours, value]);
+    setFilterOptionsSelected([...filtered, value]);
   };
 
   const handleOperationalNoiseChange = (value: string) => {
-    // Remove all operational noise options first
-    const withoutOperationalNoise = filterOptionsSelected.filter(
-      (opt) => !operationalNoiseOptions.some((o) => o.value === opt),
+    // Remove all operational noise and contour options, then add selected operational noise
+    const filtered = filterOptionsSelected.filter(
+      (opt) =>
+        !operationalNoiseOptions.some((o) => o.value === opt) &&
+        !contourOptions.some((c) => c.value === opt),
     );
-    // Add the selected operational noise contour
-    setFilterOptionsSelected([...withoutOperationalNoise, value]);
+    setFilterOptionsSelected([...filtered, value]);
   };
 
   const getSelectedContour = () => {

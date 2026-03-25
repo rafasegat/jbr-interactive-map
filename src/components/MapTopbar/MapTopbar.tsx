@@ -149,7 +149,7 @@ const MapTopbar = () => {
           }}
           aria-disabled={tabActive !== enumTabs.satellite}
         >
-          Design
+          Satellite
         </button>
         <button
           className={tabActive === enumTabs.default ? 'active' : ''}

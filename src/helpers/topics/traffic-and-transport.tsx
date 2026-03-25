@@ -7,6 +7,8 @@ import {
   TruckParking,
   BusStop,
   SpeedLimit100,
+  SpeedLimit80,
+  SpeedLimit60,
   LILOIntersections,
 } from '../../components/Icons/Legends';
 import { defaultFilters } from './default';
@@ -45,8 +47,48 @@ export const trafficAndTransportFilters = [
     markers: [
       {
         id: '1',
-        coordinates: [150.584166030409648, -35.037257919696373],
+        coordinates: [150.58671981484127, -34.98626138754421],
         iconComponent: <SpeedLimit100 />,
+      },
+      {
+        id: '2',
+        coordinates: [150.584594215511, -34.993788663581554],
+        iconComponent: <SpeedLimit100 />,
+      },
+      {
+        id: '3',
+        coordinates: [150.58111885977118, -35.01231059852982],
+        iconComponent: <SpeedLimit100 />,
+      },
+      {
+        id: '4',
+        coordinates: [150.57797297255797, -35.02497119522187],
+        iconComponent: <SpeedLimit100 />,
+      },
+      {
+        id: '5',
+        coordinates: [150.58245266909677, -35.039244590585355],
+        iconComponent: <SpeedLimit100 />,
+      },
+      {
+        id: '6',
+        coordinates: [150.57922707513515, -35.02817819230388],
+        iconComponent: <SpeedLimit80 />,
+      },
+      {
+        id: '7',
+        coordinates: [150.58595991304597, -34.98921065560642],
+        iconComponent: <SpeedLimit60 />,
+      },
+      {
+        id: '8',
+        coordinates: [150.57623529597524, -35.02464969826758],
+        iconComponent: <SpeedLimit60 />,
+      },
+      {
+        id: '9',
+        coordinates: [150.57907562631323, -35.02774377306538],
+        iconComponent: <SpeedLimit60 />,
       },
     ],
     orderLayout: 3,
@@ -280,6 +322,11 @@ export const trafficAndTransportFilters = [
         coordinates: [150.584287049798519, -34.996153570046737],
         iconComponent: <BusStop />,
       },
+      {
+        id: '42',
+        coordinates: [150.57849356178897, -35.02662729594235],
+        iconComponent: <BusStop />,
+      },
     ],
     orderLayout: 5,
   },
@@ -292,7 +339,7 @@ export const trafficAndTransportFilters = [
     tickerColor: '#000000',
     geojson: [
       {
-        sourceUrl: '/data/geojson/traffic-and-transport/Local roads.json',
+        sourceUrl: '/data/geojson/traffic-and-transport/Local roads.geojson',
         type: 'line',
         paint: {
           'line-color': '#cdd3d6',
@@ -311,7 +358,7 @@ export const trafficAndTransportFilters = [
     tickerColor: '#000000',
     geojson: [
       {
-        sourceUrl: '/data/geojson/traffic-and-transport/Regional roads.json',
+        sourceUrl: '/data/geojson/traffic-and-transport/Regional roads.geojson',
         type: 'line',
         paint: {
           'line-color': '#cdd3d6',
@@ -330,7 +377,7 @@ export const trafficAndTransportFilters = [
     tickerColor: '#000000',
     geojson: [
       {
-        sourceUrl: '/data/geojson/traffic-and-transport/State roads.json',
+        sourceUrl: '/data/geojson/traffic-and-transport/State roads.geojson',
         type: 'line',
         paint: {
           'line-color': '#cdd3d6',

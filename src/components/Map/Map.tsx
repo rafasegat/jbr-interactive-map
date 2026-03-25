@@ -117,10 +117,7 @@ const Map: React.FC = () => {
                 .then((response) => response.json())
                 .then((data) => ({ url: geojson.sourceUrl!, data }))
                 .catch((error) => {
-                  console.error(
-                    `Failed to load GeoJSON from ${geojson.sourceUrl}:`,
-                    error,
-                  );
+                  console.log(`GeoJSON missing ${geojson.sourceUrl}`);
                   return null;
                 });
               fetchPromises.push(fetchPromise);
@@ -416,13 +413,13 @@ const Map: React.FC = () => {
           });
 
           // Update visibility for nested filters if filtersToShow exists
-          if (typedFilter.filtersToShow && isTopicActive) {
+          if (typedFilter.filtersToShow) {
             typedFilter.filtersToShow.forEach((nestedFilter: Filter) => {
               const isNestedFilterSelected = filterOptionsSelected.includes(
                 nestedFilter.value,
               );
               const shouldNestedBeVisible =
-                isFilterSelected && isNestedFilterSelected;
+                isTopicActive && isFilterSelected && isNestedFilterSelected;
 
               nestedFilter?.geojson?.forEach(
                 (geojson: GeoJsonLayer, index: number) => {
@@ -437,6 +434,19 @@ const Map: React.FC = () => {
                   }
                 },
               );
+
+              // Update marker visibility for nested filters
+              const nestedTyped = nestedFilter as Filter;
+              if (nestedTyped?.markers?.length) {
+                nestedTyped.markers.forEach((marker) => {
+                  const markerId = `marker-${nestedFilter.value}-${marker.id}`;
+                  const markerInstance = markersRef.current.get(markerId);
+                  if (markerInstance) {
+                    const el = markerInstance.getElement();
+                    el.style.display = shouldNestedBeVisible ? 'block' : 'none';
+                  }
+                });
+              }
             });
           }
 
@@ -507,6 +517,19 @@ const Map: React.FC = () => {
                   }
                 },
               );
+
+              // Update marker visibility for nested filters
+              const nestedTyped = nestedFilter as Filter;
+              if (nestedTyped?.markers?.length) {
+                nestedTyped.markers.forEach((marker) => {
+                  const markerId = `marker-${nestedFilter.value}-${marker.id}`;
+                  const markerInstance = markersRef.current.get(markerId);
+                  if (markerInstance) {
+                    const el = markerInstance.getElement();
+                    el.style.display = shouldNestedBeVisible ? 'block' : 'none';
+                  }
+                });
+              }
             });
           }
 

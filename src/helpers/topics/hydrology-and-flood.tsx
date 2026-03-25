@@ -79,8 +79,8 @@ export const hydrologyAndFloodingFilters = [
     label: 'Existing culverts',
     value: 'existing-culverts',
     legendAlias: 'existing-culverts',
-    color: '',
-    tickerColor: '#F3631B',
+    color: '#F3631B',
+    tickerColor: '#FFFFFF',
     geojson: [
       {
         sourceUrl:
@@ -98,8 +98,8 @@ export const hydrologyAndFloodingFilters = [
     label: 'New culverts',
     value: 'new-culverts',
     legendAlias: 'new-culverts',
-    color: '',
-    tickerColor: '#8055F1',
+    color: '#8055F1',
+    tickerColor: '#FFFFFF',
     geojson: [
       {
         sourceUrl: '/data/geojson/hydrology-and-flooding/New Culverts.geojson',
@@ -117,7 +117,7 @@ export const hydrologyAndFloodingFilters = [
     value: 'water-courses',
     legendAlias: 'water-courses',
     color: '#0B3F47',
-    tickerColor: '#000000',
+    tickerColor: '#FFFFFF',
     geojson: [
       {
         sourceUrl: '/data/geojson/hydrology-and-flooding/Water Courses.geojson',
@@ -136,7 +136,7 @@ export const hydrologyAndFloodingFilters = [
     value: 'riverlines',
     legendAlias: 'riverlines',
     color: '#2E808E',
-    tickerColor: '#000000',
+    tickerColor: '#FFFFFF',
     geojson: [
       {
         sourceUrl: '/data/geojson/hydrology-and-flooding/River Lines.geojson',
@@ -153,16 +153,16 @@ export const hydrologyAndFloodingFilters = [
     label: 'TUFLOW model extent',
     value: 'tuflow-model-extent',
     legendAlias: 'tuflow-model-extent',
-    color: '#002664',
-    tickerColor: '#000000',
+    color: '#22272B',
+    tickerColor: '#FFFFFF',
     geojson: [
       {
         sourceUrl:
           '/data/geojson/hydrology-and-flooding/TUFLOW Model Extent.geojson',
         type: 'fill',
         paint: {
-          'fill-color': '#002664',
-          'fill-opacity': 0.5,
+          'fill-color': '#22272B',
+          'fill-opacity': 0.4,
         },
       },
     ],
@@ -172,15 +172,15 @@ export const hydrologyAndFloodingFilters = [
     label: 'Hydro area',
     value: 'hydro-area',
     legendAlias: 'hydro-area',
-    color: '#8CE0FF',
-    tickerColor: '#000000',
+    color: '#146CFD',
+    tickerColor: '#FFFFFF',
     geojson: [
       {
         sourceUrl: '/data/geojson/hydrology-and-flooding/Hydro Area.geojson',
         type: 'fill',
         paint: {
-          'fill-color': '#8CE0FF',
-          'fill-opacity': 0.8,
+          'fill-color': '#146CFD',
+          'fill-opacity': 0.4,
         },
       },
     ],
@@ -190,7 +190,7 @@ export const hydrologyAndFloodingFilters = [
     label: 'Flood catchments',
     value: 'flood-catchments',
     legendAlias: 'flood-catchments',
-    color: '#002664',
+    color: '#8CDBE5',
     tickerColor: '#FFFFFF',
     geojson: [
       {
@@ -198,8 +198,8 @@ export const hydrologyAndFloodingFilters = [
           '/data/geojson/hydrology-and-flooding/Flood Catchments.geojson',
         type: 'fill',
         paint: {
-          'fill-color': '#002664',
-          'fill-opacity': 0.75,
+          'fill-color': '#8CDBE5',
+          'fill-opacity': 0.4,
         },
       },
     ],
@@ -209,7 +209,7 @@ export const hydrologyAndFloodingFilters = [
     label: 'Water catchment',
     value: 'water-catchment',
     legendAlias: 'water-catchment',
-    color: '#146CFD',
+    color: '#8CE0FF',
     tickerColor: '#FFFFFF',
     geojson: [
       {
@@ -217,12 +217,12 @@ export const hydrologyAndFloodingFilters = [
           '/data/geojson/hydrology-and-flooding/Water Catchment.geojson',
         type: 'fill',
         paint: {
-          'fill-color': '#146CFD',
-          'fill-opacity': 0.8,
+          'fill-color': '#8CE0FF',
+          'fill-opacity': 0.4,
         },
       },
     ],
-    orderLayout: 8,
+    orderLayout: 11,
   },
 ];
 

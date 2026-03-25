@@ -26,6 +26,8 @@ import {
 } from './topics/noise-and-vibration';
 
 import {
+  landUseZoningFilters,
+  lcaFilters,
   propertyAndLandUseFilters,
   propertyAndLandUseLegends,
 } from './topics/property-and-land-use';
@@ -148,73 +150,115 @@ export const appMetadata = {
 };
 
 const listOfTopicsToOrderLayer = [
-  // Base layers - bottom (added first, rendered on bottom)
-  'construction-activities',
-  'land-use-zoning',
-  'state-forests',
-  'national-parks',
-  'landscape-character-areas',
-  'landscape-viewpoints',
-
-  // Study areas and flooding
-  'operational-noise-study-area',
-  'construction-study-area',
-  'tuflow-model-extent',
-  'water-catchment',
+  // Basemap area (lowest z-index, added first, rendered on bottom)
+  'suburbs-and-localities',
   'hydro-area',
   'flood-catchments',
-  'existing-flood-depth-1-aep',
+  'tuflow-model-extent',
+  'water-catchment',
 
-  // Operational noise contours
-  'operational-noise-contours-2040-night',
-  'operational-noise-contours-2040-day',
-  'operational-noise-contours-2030-night',
-  'operational-noise-contours-2030-day',
+  // Operational noise contours – night
+  'night-2040',
+  'night-2030',
 
-  // Contours
-  'contours-vibration-buffers',
-  'contours-utility',
-  'contours-site',
-  'contours-road-furniture',
-  'contours-resurfacing',
-  'contours-paving',
-  'contours-earthworks',
-  'contours-drainage',
-  'contours-corridor',
-  'contours-compound',
-  'contours-bridge',
+  // Operational noise contours – day
+  'day-2040',
+  'day-2030',
 
-  // Infrastructure and roads
+  // Worst-case construction scenario
+  'potential-worst-case-construction-scenario',
+
+  // Roads
   'state-roads',
   'regional-roads',
   'local-roads',
+
+  // Land use zoning
+  'C1 - National parks and nature reserves',
+  'C2 - Environmental conservation',
+  'C3 - Environmental management',
+  'C4 - Environmental living',
+  'MU1 - Mixed use',
+  'E1 - Local centre',
+  'E3 - Productivity support',
+  'E4 - General industrial',
+  'R1 - General residential',
+  'R2 - Low density residential',
+  'R3 - Medium density residential',
+  'R5 - Large lot residential',
+  'RE1 - Public recreation',
+  'RE2 - Private recreation',
+  'RU1 - Primary production',
+  'RU2 - Rural landscape',
+  'RU3 - Forestry',
+  'RU4 - Primary production small lots',
+  'RU5 - Village',
+  'SP1 - Special activities',
+  'SP2 - Infrastructure',
+  'SP3 - Tourist',
+  'W1 - Natural waterways',
+  'W2 - Recreational waterways',
+
+  // Biodiversity – study areas
+  'study-area',
+  'plant-community-types',
+
+  // Proposal and construction elements
+  'visual-envelope-map',
+  'construction-zones',
+  'noise-receivers',
   'cut-and-fill',
   'pavement',
-  'proposed-ancillary-facility',
   'concept-design',
-
-  // Drainage and boundaries
   'drainage-basins',
   'drainage-basins-22-9',
   'drainage-basins-15-9',
-  'operational-boundary',
-  'proposal-boundary',
-  'watercourses',
+  'proposed-ancillary-facility',
+  'state-forests',
+  'national-parks',
+  'Forested land',
+  'Road infrastructure',
+  'Rural residential',
+
+  // Hydrology
+  'water-courses',
   'riverlines',
+  'new-culverts',
   'existing-culverts',
+  'operational-flood-depth-1-aep',
+  'existing-flood-depth-1-aep',
   'design-culverts',
   'drainage',
 
-  // Point/marker layers - top (added last, rendered on top)
-  'noise-receivers',
+  // Noise and study areas
   'noise-catchment-areas',
-  'reporting-locations-existing-culverts',
-  'existing-crash-data',
-  'ahims-sites',
+  'proposed-fauna-underpass',
+  'assessment-area',
+  'construction-study-area',
+  'operational-noise-study-area',
+  'subject-land',
+  'connectivity-zones',
+  'lilo-intersections',
+
+  // Boundaries and linear features
+  'operational-boundary',
+  'proposal-boundary',
+  'reporting-locations',
+
+  // Biodiversity – species
+  'threatened-species',
+  'great-glider',
+  'scattered-trees',
+  'hollow-bearing-trees',
+
+  // Point / marker layers (highest z-index, added last, rendered on top)
+  'site-access-gates',
   'noise-logger-locations',
   'bus-stops',
+  'truck-parking',
+  'speed-limit-change',
+  'ahims-sites',
   'traffic-counter-locations',
-  'chainages',
 ];
 
 export const listOfTopicsToAddLayer = [
@@ -226,6 +270,8 @@ export const listOfTopicsToAddLayer = [
   ...propertyAndLandUseFilters,
   ...hydrologyAndFloodingFilters,
   ...aboriginalCulturalHeritageFilters,
+  ...lcaFilters,
+  ...landUseZoningFilters,
 ].sort((a, b) => {
   const orderA = listOfTopicsToOrderLayer.indexOf(a.value);
   const orderB = listOfTopicsToOrderLayer.indexOf(b.value);

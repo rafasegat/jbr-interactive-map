@@ -22,11 +22,13 @@ export const biodiversityFilters = [
     tickerColor: '#FFFFFF',
     geojson: [
       {
-        sourceUrl: '/data/geojson/biodiversity/Hollow Bearing Trees.geojson',
-        type: 'line',
+        sourceUrl: '/data/geojson/biodiversity/Hollow bearing trees.geojson',
+        type: 'circle',
         paint: {
-          'line-color': '#00AA45',
-          'line-width': 2,
+          'circle-color': '#FFFFFF',
+          'circle-stroke-color': '#523719',
+          'circle-stroke-width': 2,
+          'circle-radius': 5,
         },
       },
     ],
@@ -41,12 +43,13 @@ export const biodiversityFilters = [
     tickerColor: '#FFFFFF',
     geojson: [
       {
-        sourceUrl: '/data/geojson/biodiversity/Scattered Trees.geojson',
-        type: 'line',
+        sourceUrl: '/data/geojson/biodiversity/Scattered trees.geojson',
+        type: 'circle',
         paint: {
-          'line-color': '#00AA45',
-          'line-width': 3,
-          'line-dasharray': [1, 2],
+          'circle-color': '#FFFFFF',
+          'circle-stroke-color': '#B68D5D',
+          'circle-stroke-width': 2,
+          'circle-radius': 5,
         },
       },
     ],
@@ -61,10 +64,12 @@ export const biodiversityFilters = [
     geojson: [
       {
         sourceUrl: '/data/geojson/biodiversity/Great Glider.geojson',
-        type: 'line',
+        type: 'circle',
         paint: {
-          'line-color': '#00AA45',
-          'line-width': 3,
+          'circle-color': '#FFFFFF',
+          'circle-stroke-color': '#FAAF05',
+          'circle-stroke-width': 2,
+          'circle-radius': 5,
         },
       },
     ],
@@ -78,11 +83,13 @@ export const biodiversityFilters = [
     tickerColor: '#FFFFFF',
     geojson: [
       {
-        sourceUrl: '/data/geojson/biodiversity/Threatened Species.geojson',
-        type: 'line',
+        sourceUrl: '/data/geojson/biodiversity/Threatened species.geojson',
+        type: 'circle',
         paint: {
-          'line-color': '#004000',
-          'line-width': 2,
+          'circle-color': '#FFFFFF',
+          'circle-stroke-color': '#004000',
+          'circle-stroke-width': 2,
+          'circle-radius': 5,
         },
       },
     ],
@@ -96,8 +103,7 @@ export const biodiversityFilters = [
     tickerColor: '#FFFFFF',
     geojson: [
       {
-        sourceUrl:
-          '/data/geojson/biodiversity/Proposed Fauna Underpass.geojson',
+        sourceUrl: '/data/geojson/biodiversity/Proposed fauna overpass.geojson',
         type: 'line',
         paint: {
           'line-color': '#004000',
@@ -116,11 +122,11 @@ export const biodiversityFilters = [
     tickerColor: '#FFFFFF',
     geojson: [
       {
-        sourceUrl: '/data/geojson/biodiversity/Subject Land.geojson',
-        type: 'fill',
+        sourceUrl: '/data/geojson/biodiversity/Subject land.geojson',
+        type: 'line',
         paint: {
-          'fill-color': '#F3631B',
-          'fill-opacity': 0.8,
+          'line-color': '#F3631B',
+          'line-width': 2,
         },
       },
     ],
@@ -134,11 +140,19 @@ export const biodiversityFilters = [
     tickerColor: '#FFFFFF',
     geojson: [
       {
-        sourceUrl: '/data/geojson/biodiversity/Connectivity Zones.geojson',
+        sourceUrl: '/data/geojson/biodiversity/Connectivity zones.geojson',
         type: 'fill',
         paint: {
           'fill-color': '#00AA45',
-          'fill-opacity': 0.75,
+          'fill-opacity': 0.2,
+        },
+      },
+      {
+        sourceUrl: '/data/geojson/biodiversity/Connectivity zones.geojson',
+        type: 'line',
+        paint: {
+          'line-color': '#00AA45',
+          'line-width': 2,
         },
       },
     ],
@@ -152,7 +166,7 @@ export const biodiversityFilters = [
     tickerColor: '#FFFFFF',
     geojson: [
       {
-        sourceUrl: '/data/geojson/biodiversity/Plant Community Types.geojson',
+        sourceUrl: '/data/geojson/biodiversity/Plant community types.geojson',
         type: 'fill',
         paint: {
           'fill-color': '#B68D5D',
@@ -170,7 +184,7 @@ export const biodiversityFilters = [
     tickerColor: '#FFFFFF',
     geojson: [
       {
-        sourceUrl: '/data/geojson/biodiversity/Study Area.geojson',
+        sourceUrl: '/data/geojson/biodiversity/Study area.geojson',
         type: 'fill',
         paint: {
           'fill-color': '#E8D0B5',
@@ -188,11 +202,11 @@ export const biodiversityFilters = [
     tickerColor: '#FFFFFF',
     geojson: [
       {
-        sourceUrl: '/data/geojson/biodiversity/Assessment Area.geojson',
-        type: 'fill',
+        sourceUrl: '/data/geojson/biodiversity/Assessment area.geojson',
+        type: 'line',
         paint: {
-          'fill-color': '#495054',
-          'fill-opacity': 0.8,
+          'line-color': '#495054',
+          'line-width': 2,
         },
       },
     ],
