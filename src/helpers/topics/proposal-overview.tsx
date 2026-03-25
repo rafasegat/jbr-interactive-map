@@ -333,7 +333,7 @@ export const constructionActivitiesFilters = [
         paint: {
           'line-color': '#002664',
           'line-width': 2,
-          'line-dasharray': [1, 3],
+          'line-dasharray': [2, 3],
         },
       },
     ],

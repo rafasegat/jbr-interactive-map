@@ -108,7 +108,6 @@ export const biodiversityFilters = [
         paint: {
           'line-color': '#004000',
           'line-width': 3,
-          'line-dasharray': [1, 2],
         },
       },
     ],

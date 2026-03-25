@@ -125,7 +125,7 @@ export const hydrologyAndFloodingFilters = [
         paint: {
           'line-color': '#0B3F47',
           'line-width': 3,
-          'line-dasharray': [1, 2],
+          'line-dasharray': [0.5, 0.75],
         },
       },
     ],
