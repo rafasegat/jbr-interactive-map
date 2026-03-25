@@ -836,7 +836,7 @@ export const ConnectivityZones = () => (
       height="10"
       fill="#A8EDB3"
       stroke="#00AA45"
-      stroke-width="2"
+      strokeWidth="2"
     />
   </svg>
 );
