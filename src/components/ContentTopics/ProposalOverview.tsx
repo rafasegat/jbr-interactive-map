@@ -8,7 +8,7 @@ const content = () => {
       </p>
       <p>
         The proposal is subject to assessment by a review of environmental
-        factors (REF) under the 
+        factors (REF) under the&nbsp;
         <span className="italic">
           Environmental Planning and Assessment Act 1979 (EP&A Act).
         </span>
