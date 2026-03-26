@@ -398,7 +398,22 @@ export const trafficAndTransportFilters = [
     markers: [
       {
         id: '1',
-        coordinates: [150.584166030409648, -35.037257919696373],
+        coordinates: [150.5832266, -35.0012936],
+        iconComponent: <LILOIntersections />,
+      },
+      {
+        id: '2',
+        coordinates: [150.583398, -35.0017733],
+        iconComponent: <LILOIntersections />,
+      },
+      {
+        id: '3',
+        coordinates: [150.580353, -35.0150112],
+        iconComponent: <LILOIntersections />,
+      },
+      {
+        id: '4',
+        coordinates: [150.5806353, -35.0148864],
         iconComponent: <LILOIntersections />,
       },
     ],
