@@ -2,73 +2,66 @@ const content = () => {
   return (
     <div>
       <p>
-        Construction is anticipated to start around 2028, with an overall
-        program of roughly three years and some early enabling works (utility
-        protection/relocation, minor clearing, boundary adjustments and
-        at‑property noise treatments) potentially occurring beforehand.
-      </p>
-      <div className="line"></div>
-      <p>
-        Transport for NSW modelled current and future traffic for the Princes
-        Highway upgrade between Jervis Bay Road (Falls Creek) and Hawken Road
-        (Tomerong) using a 2023 traffic model and local travel data. Today the
-        area relies heavily on private cars, has limited public transport and
-        constrained overtaking in places. Traffic volumes on the Princes Highway
-        and Jervis Bay Road are expected to grow to 2030 and 2040.
+        Construction would be planned to minimise potential impacts on motorists
+        using the Princes Highway between Jervis Bay Road and Hawken Road, as
+        far as possible.
       </p>
       <p>
-        The upgrade is expected to improve traffic flow, reduce delays and make
-        journeys safer. Key benefits include reduced travel times, fewer
-        high‑risk right‑turn and rear‑end crashes, dedicated truck parking, and
-        consolidated bus stops with safer facilities. The project will also add
-        shared paths for walkers and cyclists.
+        Future traffic growth assumptions for the proposal were developed by
+        Transport as part of a wider traffic modelling study of the Princes
+        Highway between Jervis Bay Road and Sussex Inlet Road. These traffic
+        forecasts were based on travel zone projections, population and
+        employment projections and assumed that the Jervis Bay Road intersection
+        upgrade is complete and operational.
+      </p>
+      <div className="line" />
+      <h3>Construction impacts</h3>
+      <p>
+        During construction, additional construction-related traffic at key
+        intersections in the network would increase and may result in localised
+        delays and reduced turning opportunities.
       </p>
       <p>
-        During construction Transport for NSW will manage impacts by staging
-        works, using traffic guidance plans, controlling access to construction
-        sites, and coordinating with other local projects to minimise delays.
-        There will be temporary disruptions and some changes to local access; we
-        will provide advance notifications and maintain safe pedestrian and
-        cyclist routes where possible. Safety, freight movements (including
-        oversized vehicles) and keeping traffic moving will be priorities
-        throughout construction.
+        Access to properties adjoining the proposal boundary would be maintained
+        where possible. Where temporary disruption to access cannot be avoided,
+        consultation would be carried out to confirm access requirements and
+        determine alternative arrangements.
       </p>
-      <p className="bold">Expected benefits of the upgrade:</p>
-      <ul>
-        <li>
-          Improved traffic flow and reduced delays and travel times on the
-          corridor.
-        </li>
-        <li>
-          Safety gains: reduction in high‑risk right‑turn and rear‑end crashes
-          identified in the crash history.
-        </li>
-        <li>
-          Better freight support via new truck parking and improved highway
-          geometry.
-        </li>
-        <li>
-          Safer public transport stops (consolidated, sheltered interchanges)
-          and added shared paths for pedestrians and cyclists.
-        </li>
-      </ul>
-      <p className="bold">Construction impacts and management:</p>
-      <ul>
-        <li>
-          Temporary disruptions, staged works and some local access changes are
-          expected.
-        </li>
-        <li>
-          Measures to minimise impacts: traffic guidance schemes, construction
-          site access controls, incident response plans, and coordination with
-          other local projects.
-        </li>
-        <li>
-          Priority during construction: maintain traffic flow, freight access
-          (including oversize/overmass), and safe pedestrian/cyclist access
-          where possible.
-        </li>
-      </ul>
+      <p>
+        Existing informal bus stops would remain operational during
+        construction. Access to bus stops would be maintained unless an
+        agreement with the relevant bus operator is obtained.
+      </p>
+      <p>Refer to Section 6.3 of the REF for more information.</p>
+      <h3>Operational impacts</h3>
+      <p>
+        Once operational, the highway would operate with a speed limit of 100
+        kilometres per hour, two lanes in each direction, and a median
+        separation. There would be changes to some local road and property
+        access arrangements to maintain connectivity and provide safe left-in,
+        left-out, unsignalised access.
+      </p>
+      <p>
+        The proposal would improve the efficiency and resilience of the road
+        network, with travel time savings along the Princes Highway estimated to
+        be between 1-1.5 minutes.
+      </p>
+      <p>
+        The proposal would improve safety for road users by introducing a median
+        barrier and removing right turns across traffic, reducing the potential
+        for collisions. However, these changes may increase travel distances and
+        travel times for local access movements across the highway, however the
+        operational traffic modelling indicated increases would generally be
+        limited to five minutes or less.
+      </p>
+      <p>
+        A new bus stop and two new shared paths for pedestrians and cyclists
+        would improve connections to the wider active and public transport
+        network. Other improvements include new truck parking areas, an
+        emergency U-turn and heavy vehicle stopping bay and emergency crossover
+        facility to improve access for emergency services.
+      </p>
+      <p>Refer to Section 6.3 of the REF for more information.</p>
     </div>
   );
 };

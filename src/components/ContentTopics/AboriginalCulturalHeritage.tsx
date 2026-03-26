@@ -1,26 +1,37 @@
-import CarWithHand from '../Icons/CarWithHand';
-
 const content = () => {
   return (
     <div>
+      <h3>Overview</h3>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam
-        lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam
-        viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent
-        et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt
-        congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed
-        arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Aenean ut gravida lorem.
+        Aboriginal people have been living on the South Coast for at least
+        20,000 years. An Aboriginal cultural heritage assessment report has been
+        prepared for the proposal in accordance with Transport procedures and
+        industry guidelines, and consultation with registered Aboriginal parties
+        (RAPs).
       </p>
       <p>
-        Ut turpis felis, pulvinar a semper sed, adipiscing id dolor.
-        Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus
-        enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut
-        convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec
-        viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis
-        natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-        mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis
-        semper ac in est.
+        Consultation with Aboriginal stakeholders confirmed a strong, ongoing
+        connection to Country and a cultural responsibility to care for the
+        land, waterways, plants, animals and cultural objects. Archaeological
+        potential across the study area (proposal boundary) is low because of
+        past disturbances from the existing highway, vegetation clearing,
+        utilities and farming.
+      </p>
+      <h3>Construction impacts</h3>
+      <p>
+        Construction would involve excavation and other ground disturbing
+        activities that could impact Aboriginal cultural heritage sites within
+        the proposal boundary. One Aboriginal site within the proposal boundary
+        (AHIMS-58-2-0491) has the potential to be impacted, while AHIMS
+        52-5-0982 is within the existing AHIP 5003 area (Aboriginal Heritage
+        Impact Permit) and so already impacted by the separate Jervis Bay Road
+        intersection upgrade.
+      </p>
+      <p>Refer to Section 6.10 of the REF for more information.</p>
+      <h3>Operational impacts</h3>
+      <p>
+        No additional impacts to Aboriginal cultural heritage are expected
+        during operation.
       </p>
     </div>
   );

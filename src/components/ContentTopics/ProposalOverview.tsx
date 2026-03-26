@@ -1,74 +1,301 @@
-import CarWithHand from '../Icons/CarWithHand';
-
 const content = () => {
   return (
     <div>
       <p>
-        Transport for NSW proposes to upgrade a 6.5 km section of the Princes
-        Highway between Jervis Bay Road (Falls Creek) and Hawken Road
-        (Tomerong).
+        Transport for NSW (Transport) proposes to upgrade the Princes Highway
+        between Jervis Bay Road in Falls Creek and Hawken Road in Tomerong, NSW
+        (the proposal).
+      </p>
+      <p>
+        The proposal is subject to assessment by a review of environmental
+        factors (REF) under the 
+        <span className="italic">
+          Environmental Planning and Assessment Act 1979 (EP&A Act).
+        </span>
       </p>
       <div className="line"></div>
+      <h3>About the proposal</h3>
       <p>
-        The upgrade will convert the existing two‑lane highway into a four‑lane,
-        median‑separated carriageway (two lanes each direction) and raise the
-        posted speed to 100 km/h on the upgraded section. A new grade‑separated
-        intersection at Hawken Road is included, consisting of an underpass to
-        maintain local connectivity with a single‑span bridge carrying the
-        highway over the underpass.
+        Transport for NSW (Transport) proposes to upgrade about 6.5 kilometres
+        of the Princes Highway to be two lanes in each direction between Jervis
+        Bay Road in Falls Creek and Hawken Road in Tomerong (the proposal).
+        Traffic would be separated by a median barrier and there would also be
+        an intersection upgrade at Hawken Road, Tomerong.
       </p>
-      <p>
-        The project includes highway widening, improved intersections,
-        consolidated access arrangements, truck parking, a bus facility and
-        shared paths, environmental and drainage works, utility adjustments, and
-        supporting construction infrastructure.
-      </p>
-      <p>
-        Works are planned to begin around 2028 with an approximate three‑year
-        construction period and some early enabling works.
-      </p>
-      <p>
-        The upgrade aims to improve safety, reliability and freight efficiency
-        on a key regional corridor, reduce crash risk, and support active and
-        public transport. Design and planning have sought to minimise
-        environmental and community impacts, with mitigation measures for
-        biodiversity, noise, visual changes and construction management.
-      </p>
-
-      <h3>Project objectives</h3>
-
-      <ul className="has-image">
+      <p>Refer to Chapter 1 of the REF for more information.</p>
+      <h3>Key features</h3>
+      <p>Key features of the proposal include:</p>
+      <ul>
         <li>
-          <CarWithHand />
-          <span>Improve network safety for all Transport customers</span>
+          realignment and widening of the Princes Highway:
+          <ul>
+            <li>
+              widening the existing two-lane carriageway to four lanes (two
+              lanes in each direction) with median separation, from the Jervis
+              Bay Road intersection to south of the Hawken Road intersection at
+              Tomerong
+            </li>
+            <li>
+              increase the speed limit to 100 kilometres per hour on the
+              upgraded Princes Highway
+            </li>
+            <li>
+              a new grade separated intersection at Hawken Road with an
+              underpass providing connectivity between Hawken Road and Blackbutt
+              Range Road. A single span bridge would be constructed over the
+              underpass 
+            </li>
+          </ul>
         </li>
         <li>
-          <CarWithHand />
-          <span>Improve freight access and efficiency</span>
+          changes to existing local road and property access arrangements
+          to maintain connectivity and provide safe
+          left-in, left-out, unsignalised access. This includes consolidation of
+          property accesses and provision of new property access roads at the
+          following locations: 
+          <ul>
+            <li>
+              property access road one on the western side of the Princes
+              Highway, from about one kilometre south of Willowgreen Road, to
+              the Jervis Bay Road intersection with left-in access from the
+              Princes Highway 
+            </li>
+            <li>
+              property access road two on the eastern side of the Princes
+              Highway, between the Jervis Bay Road intersection and Mortimer
+              Road 
+            </li>
+            <li>
+              property access road three on the western side of the Princes
+              Highway, south of Sinclair Road 
+            </li>
+            <li>
+              property access road four on the western side of the Princes
+              Highway south of the new Hawken Road grade separated intersection 
+            </li>
+          </ul>
         </li>
         <li>
-          <CarWithHand />
-          <span>Improve traffic efficiency and connectivity</span>
+          new northbound truck parking area on the western side of the highway,
+          and a new southbound truck parking area on the eastern side 
+        </li>
+        <li>new bus stop in the vicinity of the Hawken Road intersection </li>
+        <li>emergency U-turn facility along the Princes Highway </li>
+        <li>
+          roadside furniture including safety barriers, signage, line
+          marking, lighting and fencing 
         </li>
         <li>
-          <CarWithHand />
-          <span>
-            Enable an increase in the use of active and public transport
-          </span>
+          adjustments to existing drainage and provision of new drainage
+          infrastructure 
+        </li>
+        <li>temporary and permanent water quality measures  </li>
+        <li>
+          fauna connectivity measures including fauna underpasses and fences 
         </li>
         <li>
-          <CarWithHand />
-          <span>Improve transport network resilience</span>
+          installation of new utilities, and adjustment, protection and
+          relocation of existing utilities 
         </li>
         <li>
-          <CarWithHand />
-          <span>Support sustainability of the region</span>
+          ancillary works and facilities including clearing and grubbing of
+          vegetation, demolition, pavement, retaining walls, intelligent
+          transport systems, lighting, visual mounds and batters 
         </li>
         <li>
-          <CarWithHand />
-          <span>Respect our community and environment</span>
+          property works including acquisition, demolition and adjustments to
+          accesses and fencing, and at-property noise treatments 
+        </li>
+        <li>
+          temporary construction ancillary facilities such as construction
+          compounds, stockpile sites, vehicle turn arounds and access roads,
+          rehabilitation of disturbed areas, landscaping, and a maintenance
+          stockpile site 
+        </li>
+        <li>
+          encapsulation of contaminated material in buried containment cells
+          within the proposal boundary 
+        </li>
+        <li>
+          shared pathways to accommodate cyclists and pedestrians in selected
+          areas along the alignment 
+        </li>
+        <li>
+          tie-in and connecting works to the Jervis Bay Road intersection
+          upgrade project in the north, and to the existing Princes Highway in
+          the south 
+        </li>
+        <li>
+          permanent closure of Gorindah Road between Barron Road and the
+          existing Princes Highway 
+        </li>
+        <li>
+          environmental investigations including geotechnical, contamination and
+          survey. 
         </li>
       </ul>
+      <p>Refer to Chapter 3 of the REF for more information.</p>
+      <h3>Need for the proposal</h3>
+      <p>
+        The Princes Highway is a primary north-south route along the NSW South
+        Coast. This 6.5 kilometre stretch of road between Jervis Bay Road and
+        Hawken Road has been identified as a priority project to improve safety
+        and efficiency for road users. It forms a key part of the transport
+        network servicing residential, tourism, defence and industrial areas
+        within the Shoalhaven local government area, and provides road users
+        access to areas including Falls Creek, Huskisson, Vincentia and other
+        villages. Nearby manufacturing and production industries, agriculture,
+        aquaculture and forestry land uses, as well as retail trade,
+        construction and defence industries all rely on the Princes Highway for
+        freight transport, with efficient movement required to minimise business
+        costs.
+      </p>
+      <p>
+        Traffic volumes along this section of the Princes Highway currently
+        average 13,200 vehicles per day, of which 7.4 per cent are heavy
+        vehicles. These volumes are forecast to grow steadily, and by 2040 peak
+        hourly volumes are expected to exceed the typical carrying capacity.
+        Weekend and holiday peaks already surpass these thresholds.
+      </p>
+      <p>
+        Safety is a critical concern, with persistent crash risks impacting all
+        road users. Between 2019–2023, 21 crashes were recorded including 24
+        casualties, of which 15 were serious injuries. A number of private
+        driveways provide access directly onto the highway, and the most
+        frequent type of crash is right rear, where a right turning vehicle is
+        struck from behind. This crash type also caused the greatest number of
+        injuries.
+      </p>
+      <p>
+        This section of the Princes Highway currently lacks sufficient capacity
+        to support traffic demand during incident clearance or emergency
+        evacuations. These factors make the highway vulnerable and slow to
+        recover from disruptions.
+      </p>
+      <p>
+        The proposal would improve safety for road users by introducing a median
+        barrier and removing right turns across traffic, reducing the potential
+        for collisions. The introduction of dedicated property access roads
+        would allow residents to safely turn into properties without needing to
+        slow down on the highway, which can be a cause of rear end collisions,
+        congestion and slower travel times. The upgrade would also improve
+        efficiency by providing two lanes in each direction, introducing a new
+        grade separated intersection at Hawken Road to reduce congestion, and
+        increasing the speed limit on the upgraded highway to 100 kilometres per
+        hour. The Princes Highway is a designated evacuation route, and the
+        proposal would improve network resilience by increasing network
+        capacity, and by improving access for emergency services by providing a
+        new emergency crossover facility and emergency U-turn facility.
+      </p>
+      <img
+        src="./images/proposal-overview-content-1.png"
+        alt="propose-overview"
+      />
+      <p>Refer to Chapter 2 of the REF for more information.</p>
+      <h3>Staging of the proposal and interfaces with other projects</h3>
+      <p>
+        Construction is expected to start in around 2028 and would take about
+        three years to complete.
+      </p>
+      <p>
+        The proposal would include tie-in and connecting works to the Jervis Bay
+        Road intersection upgrade project in the north (currently under
+        construction) and to the existing Princes Highway in the south.
+      </p>
+      <div className="line" />
+      <h3>Construction</h3>
+      <p>
+        This section describes the indicative construction ancillary facility
+        locations, work hours, plant and equipment, and associated activities
+        that would be used to construct the proposal. The construction
+        information described in this section is indicative and based on the
+        current stage of the design. It provides a preliminary construction
+        methodology that retains flexibility for the construction contractor(s)
+        to refine and optimise aspects of the approach.
+      </p>
+      <p>
+        Subject to approval and construction funding, works are anticipated to
+        start in around 2028 and estimated (at this stage of the design process)
+        to take about three years to complete. Early works, such as utility
+        protection and relocation work, boundary adjustments and at-property
+        noise treatments, may be completed prior to commencement of the main
+        construction work.
+      </p>
+      <h3>Construction footprint</h3>
+      <p>
+        The construction footprint (proposal boundary) includes the area
+        required to construct and operate the proposal, including:
+      </p>
+      <ul>
+        <li>eight ancillary facilities (shown on the map)</li>
+        <li>areas required for construction access</li>
+        <li>
+          sufficient space around the road to provide space to manoeuvre
+          construction plant and equipment and relocate and protect utilities as
+          required.
+        </li>
+      </ul>
+      <p>
+        Proposed ancillary facilities and their access are shown on the map.
+        Refer to Section 3.4 of the REF for more information.
+      </p>
+      <h3>Construction staging</h3>
+      <p>
+        The work methodology for the proposal would be refined during detailed
+        design and construction planning. It would generally include the
+        following sequence:
+      </p>
+      <ul style={{ listStyleType: 'auto', paddingLeft: '20px' }}>
+        <li>
+          construction outside the existing Princes Highway including
+          establishment of ancillary facilities (offline construction)
+        </li>
+        <li>construction on the existing Princes Highway and other areas</li>
+        <li>
+          final layer of asphalt, finishing works and tie-ins at limit of works.
+        </li>
+      </ul>
+      <p>
+        The ultimate sequencing and methodology would be developed and
+        implemented to minimise disruption for road users and to ensure that
+        work can be conducted safely. A detailed program of work would be
+        determined by the construction contractor, after completion of the
+        detailed design in consultation with Transport.
+      </p>
+      <h3>Construction hours</h3>
+      <p>General construction work hours for the proposal would be:</p>
+      <ul>
+        <li>Monday to Friday: 7am to 6pm</li>
+        <li>Saturday: 8am to 1pm</li>
+        <li>Sundays and public holidays: no work.</li>
+      </ul>
+      <p>
+        Certain work would still need to occur outside these hours (known as
+        night or out-of-hours work) to minimise disruption to traffic and
+        disturbance to surrounding landowners and businesses and for the safety
+        of the construction workforce. The community would be advised in advance
+        of out-of-hours works occurring.
+      </p>
+      <p>Refer to Section 3.3.3 of the REF for more information.</p>
+      <h3>Traffic management and access</h3>
+      <p>
+        Traffic is planned to use the Princes Highway continously during
+        construction, and construction staging for the proposal has been
+        carefully considered to minimise impacts on existing traffic, enable
+        safe construction access and to minimise the duration of construction
+        activities. Local road connections to the Princes Highway would remain
+        the same where possible, or become service roads with some temporary and
+        permanent connections in place as required to facilitate construction.
+      </p>
+      <p>
+        During construction, access would be maintained for residents, property
+        occupants and through traffic. Any changes to access to private
+        properties would be carried out in consultation with affected owners. In
+        the case of properties adjoining the road corridor, temporary accesses
+        would be provided as required until the permanent property access roads
+        are ready to use.
+      </p>
+      <p>Refer to Section 3.3.8 of the REF for more information.</p>
     </div>
   );
 };

@@ -258,7 +258,7 @@ export const listOfTopicsToOrderLayer = [
   'riverlines',
   'new-culverts',
   'existing-culverts',
-  'operational-flood-depth-1-aep',
+  '1-percent-peak-afflux',
   'existing-flood-depth-1-aep',
   'design-culverts',
   'drainage',

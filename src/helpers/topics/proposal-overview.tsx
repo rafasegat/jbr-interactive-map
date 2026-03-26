@@ -2,11 +2,9 @@ import {
   ProposalBoundary,
   OperationalBoundary,
   ConceptDesign,
-  DesignCulverts,
   VisualEnvelopeMap,
   SuburbsAndLocalities,
   SiteAccessGates,
-  ConstructionZones,
   Drainage,
   Pavement,
   CutAndFill,
@@ -46,6 +44,25 @@ export const proposalOverviewFilters = [
         type: 'line',
         paint: {
           'line-color': '#146CFD',
+          'line-width': 3,
+        },
+      },
+    ],
+  },
+  {
+    label: 'Operational boundary',
+    value: 'operational-boundary',
+    legendAlias: 'operational-boundary',
+    orderLayout: 4,
+    color: '#FAAF05',
+    tickerColor: '#000000',
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/proposal-overview/Operational boundary.geojson',
+        type: 'line',
+        paint: {
+          'line-color': '#FAAF05',
           'line-width': 3,
         },
       },
@@ -101,43 +118,6 @@ export const proposalOverviewFilters = [
         paint: {
           'fill-color': '#495054',
           'fill-opacity': 1,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Cut and fill',
-    value: 'cut-and-fill',
-    legendAlias: 'cut-and-fill',
-    orderLayout: 8,
-    color: '#FAAF05',
-    tickerColor: '#000000',
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/proposal-overview/Cut and fill.geojson',
-        type: 'fill',
-        paint: {
-          'fill-color': '#FAAF05',
-          'fill-opacity': 0.6,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Visual envelope map',
-    value: 'visual-envelope-map',
-    legendAlias: 'visual-envelope-map',
-    orderLayout: 9,
-    color: '#8055F166',
-    tickerColor: '#FFFFFF',
-    geojson: [
-      {
-        sourceUrl:
-          '/data/geojson/proposal-overview/Visual envelope map.geojson',
-        type: 'fill',
-        paint: {
-          'fill-color': '#8055F1',
-          'fill-opacity': 0.4,
         },
       },
     ],
@@ -320,25 +300,6 @@ export const constructionActivitiesFilters = [
     tickerColor: '#000000',
   },
   {
-    label: 'Design culverts',
-    value: 'design-culverts',
-    legendAlias: 'design-culverts',
-    orderLayout: 4,
-    color: '#002664',
-    tickerColor: '#FFFFFF',
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/proposal-overview/Design culverts.geojson',
-        type: 'line',
-        paint: {
-          'line-color': '#002664',
-          'line-width': 2,
-          'line-dasharray': [2, 3],
-        },
-      },
-    ],
-  },
-  {
     label: 'Proposal boundary',
     value: 'proposal-boundary',
     legendAlias: 'proposal-boundary',
@@ -352,43 +313,6 @@ export const constructionActivitiesFilters = [
         paint: {
           'line-color': '#D7153A',
           'line-width': 3,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Operational boundary',
-    value: 'operational-boundary',
-    legendAlias: 'operational-boundary',
-    orderLayout: 2,
-    color: '#FAAF05',
-    tickerColor: '#000000',
-    geojson: [
-      {
-        sourceUrl:
-          '/data/geojson/proposal-overview/Operational boundary.geojson',
-        type: 'line',
-        paint: {
-          'line-color': '#FAAF05',
-          'line-width': 3,
-        },
-      },
-    ],
-  },
-  {
-    label: 'Construction zones',
-    value: 'construction-zones',
-    legendAlias: 'construction-zones',
-    orderLayout: 5,
-    color: '#8CE0FF66',
-    tickerColor: '#000000',
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/proposal-overview/Construction zones.geojson',
-        type: 'fill',
-        paint: {
-          'fill-color': '#8CE0FF',
-          'fill-opacity': 0.4,
         },
       },
     ],
@@ -408,6 +332,24 @@ export const constructionActivitiesFilters = [
         paint: {
           'fill-color': '#767C7F',
           'fill-opacity': 0.4,
+        },
+      },
+    ],
+  },
+  {
+    label: 'Cut and fill',
+    value: 'cut-and-fill',
+    legendAlias: 'cut-and-fill',
+    orderLayout: 10,
+    color: '#FAAF05',
+    tickerColor: '#000000',
+    geojson: [
+      {
+        sourceUrl: '/data/geojson/proposal-overview/Cut and fill.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#FAAF05',
+          'fill-opacity': 0.6,
         },
       },
     ],
@@ -432,6 +374,11 @@ export const proposalOverviewLegends = [
     icon: <Drainage />,
   },
   {
+    label: 'Operational boundary',
+    value: 'operational-boundary',
+    icon: <OperationalBoundary />,
+  },
+  {
     label: 'Drainage basins',
     value: 'drainage-basins',
     icon: <DrainageBasins />,
@@ -440,16 +387,6 @@ export const proposalOverviewLegends = [
     label: 'Pavement',
     value: 'pavement',
     icon: <Pavement />,
-  },
-  {
-    label: 'Cut and fill',
-    value: 'cut-and-fill',
-    icon: <CutAndFill />,
-  },
-  {
-    label: 'Visual envelope map',
-    value: 'visual-envelope-map',
-    icon: <VisualEnvelopeMap />,
   },
   {
     label: 'Suburbs and localities',
@@ -471,28 +408,18 @@ export const constructionActivitiesLegends = [
     icon: <SiteAccessGates />,
   },
   {
-    label: 'Design culverts',
-    value: 'design-culverts',
-    icon: <DesignCulverts />,
-  },
-  {
     label: 'Proposal boundary',
     value: 'proposal-boundary',
     icon: <ProposalBoundary />,
   },
   {
-    label: 'Operational boundary',
-    value: 'operational-boundary',
-    icon: <OperationalBoundary />,
-  },
-  {
-    label: 'Construction zones',
-    value: 'construction-zones',
-    icon: <ConstructionZones />,
-  },
-  {
     label: 'Proposed ancillary facility',
     value: 'proposed-ancillary-facility',
     icon: <ProposedAncillaryFacility />,
+  },
+  {
+    label: 'Cut and fill',
+    value: 'cut-and-fill',
+    icon: <CutAndFill />,
   },
 ];

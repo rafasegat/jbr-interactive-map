@@ -31,6 +31,11 @@ export const propertyAndLandUseLegends = [
     value: 'state-forests',
     icon: rectangleIcon('#0040004D'),
   },
+  {
+    label: 'Visual envelope map',
+    value: 'visual-envelope-map',
+    icon: rectangleIcon('#8055F166'),
+  },
 ];
 
 const lcaLegends = [
@@ -742,6 +747,26 @@ export const propertyAndLandUseFilters = [
     ],
     orderLayout: 2,
     dontShowInFilters: false,
+  },
+  {
+    label: 'Visual envelope map',
+    value: 'visual-envelope-map',
+    legendAlias: 'visual-envelope-map',
+    orderLayout: 3,
+    color: '#8055F166',
+    tickerColor: '#FFFFFF',
+    dontShowInFilters: false,
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/property-and-land-use/Visual envelope map.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#8055F1',
+          'fill-opacity': 0.4,
+        },
+      },
+    ],
   },
   {
     label: 'Landscape character areas',

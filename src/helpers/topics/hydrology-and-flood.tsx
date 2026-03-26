@@ -57,9 +57,9 @@ export const hydrologyAndFloodingFilters = [
     orderLayout: 4,
   },
   {
-    label: 'Operational flood depth (1% AEP)',
-    value: 'operational-flood-depth-1-aep',
-    legendAlias: 'operational-flood-depth-1-aep',
+    label: '1% peak afflux',
+    value: '1-percent-peak-afflux',
+    legendAlias: '1-percent-peak-afflux',
     color: '#D912AE',
     tickerColor: '#FFFFFF',
     geojson: [
@@ -243,8 +243,8 @@ export const hydrologyAndFloodingLegends = [
     icon: <ExistingFloodDepth1AEP />,
   },
   {
-    label: 'Operational flood depth (1% AEP)',
-    value: 'operational-flood-depth-1-aep',
+    label: '1% peak afflux',
+    value: '1-percent-peak-afflux',
     icon: <OperationalFloodDepth1AEP />,
   },
   {
