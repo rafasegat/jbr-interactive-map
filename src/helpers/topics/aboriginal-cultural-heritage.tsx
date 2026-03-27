@@ -16,7 +16,7 @@ export const aboriginalCulturalHeritageFilters = [
         type: 'circle',
         paint: {
           'circle-radius': 4,
-          'circle-color': '#694800',
+          'circle-color': '#FFF',
           'circle-stroke-color': '#694800',
           'circle-stroke-width': 2,
         },

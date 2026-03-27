@@ -9,6 +9,7 @@ import Info from '../Icons/Info';
 import RoundedArrowLeft from '../Icons/RoundedArrowLeft';
 import RoundedArrowRight from '../Icons/RoundedArrowRight';
 import { Topic, Filter } from '../../types/map';
+import ExternalLink from '../Icons/ExternalLink';
 
 const LeftSidebar = () => {
   const {
@@ -96,34 +97,51 @@ const LeftSidebar = () => {
                   {topicActiveData?.footer || null}
                   <div className="footer-inner">
                     <div className="footer-wrapper">
-                      <button
-                        onClick={() =>
-                          navigateToTopic(previousTopic as Topic | null)
-                        }
-                        disabled={!hasPrevious}
-                        aria-label={
-                          previousTopic
-                            ? `Previous topic: ${previousTopic.title}`
-                            : 'Previous topic'
-                        }
-                      >
-                        <RoundedArrowLeft />
-                        <span>Previous Topic</span>
-                      </button>
-                      <button
-                        onClick={() =>
-                          navigateToTopic(nextTopic as Topic | null)
-                        }
-                        disabled={!hasNext}
-                        aria-label={
-                          nextTopic
-                            ? `Next topic: ${nextTopic.title}`
-                            : 'Next topic'
-                        }
-                      >
-                        <span>Next Topic</span>
-                        <RoundedArrowRight />
-                      </button>
+                      {topicActiveData?.linkRef && (
+                        <div className="btn-link-ref">
+                          <a
+                            href={topicActiveData?.linkRef}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="button-link"
+                          >
+                            <ExternalLink color="#fff" />
+                            <span>Link to REF chapter</span>
+                          </a>
+                        </div>
+                      )}
+                      <div className="navigation-buttons">
+                        <button
+                          onClick={() =>
+                            navigateToTopic(previousTopic as Topic | null)
+                          }
+                          className="navigation-button previous"
+                          disabled={!hasPrevious}
+                          aria-label={
+                            previousTopic
+                              ? `Previous topic: ${previousTopic.title}`
+                              : 'Previous topic'
+                          }
+                        >
+                          <RoundedArrowLeft />
+                          <span>Previous Topic</span>
+                        </button>
+                        <button
+                          onClick={() =>
+                            navigateToTopic(nextTopic as Topic | null)
+                          }
+                          disabled={!hasNext}
+                          aria-label={
+                            nextTopic
+                              ? `Next topic: ${nextTopic.title}`
+                              : 'Next topic'
+                          }
+                          className="navigation-button next"
+                        >
+                          <span>Next Topic</span>
+                          <RoundedArrowRight />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>

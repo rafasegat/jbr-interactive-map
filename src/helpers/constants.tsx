@@ -78,6 +78,7 @@ export const appMetadata = {
       legends: [],
       isOnMenu: true,
       color: '#002664',
+      linkRef: '#proposal-overview',
     },
     {
       title: 'Biodiversity',
@@ -87,6 +88,7 @@ export const appMetadata = {
       legends: biodiversityLegends,
       isOnMenu: true,
       color: '#00AA45',
+      linkRef: '#biodiversity',
     },
     {
       title: 'Landscape character and visual impacts',
@@ -96,6 +98,7 @@ export const appMetadata = {
       legends: propertyAndLandUseLegends,
       isOnMenu: true,
       color: '#D7153A',
+      linkRef: '#landscape-character-and-visual-impacts',
     },
     {
       title: 'Traffic and transport impact assessment',
@@ -105,6 +108,7 @@ export const appMetadata = {
       legends: trafficAndTransportLegends,
       isOnMenu: true,
       color: '#146CFD',
+      linkRef: '#traffic-and-transport-impact-assessment',
     },
     {
       title: 'Noise and vibration impact assessment ',
@@ -115,6 +119,7 @@ export const appMetadata = {
       isOnMenu: true,
       color: '#F3631B',
       footer: <MapLayerControl />,
+      linkRef: '#noise-and-vibration-impact-assessment',
     },
     {
       title: 'Hydrology and flooding',
@@ -124,6 +129,7 @@ export const appMetadata = {
       legends: hydrologyAndFloodingLegends,
       isOnMenu: true,
       color: '#2E808E',
+      linkRef: '#hydrology-and-flooding',
     },
     {
       title: 'Aboriginal cultural heritage',
@@ -133,6 +139,7 @@ export const appMetadata = {
       filters: aboriginalCulturalHeritageFilters,
       legends: aboriginalCulturalHeritageLegends,
       color: '#694800',
+      linkRef: '#aboriginal-cultural-heritage',
     },
     {
       title: 'Cumulative',
@@ -142,6 +149,7 @@ export const appMetadata = {
       // legends: cumulativeLegends,
       isOnMenu: true,
       color: '#FAAF05',
+      linkRef: '#cumulative',
     },
     {
       title: 'Default',

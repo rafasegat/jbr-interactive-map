@@ -106,6 +106,11 @@ export const trafficAndTransportFilters = [
         coordinates: [150.584166030409648, -35.037257919696373],
         iconComponent: <TruckParking />,
       },
+      {
+        id: '2',
+        coordinates: [150.57910751137211, -35.01967579768026],
+        iconComponent: <TruckParking />,
+      },
     ],
     orderLayout: 4,
   },

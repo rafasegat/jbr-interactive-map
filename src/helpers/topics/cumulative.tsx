@@ -1,3 +1,4 @@
+import ExternalLink from '../../components/Icons/ExternalLink';
 import { defaultFilters } from './default';
 
 export const cumulativeFilters = [
@@ -20,8 +21,10 @@ export const cumulativeFilters = [
               href="https://www.transport.nsw.gov.au/projects/current-projects/jervis-bay-road-and-princes-highway-intersection"
               target="_blank"
               rel="noopener noreferrer"
+              className="button-link"
             >
-              Jervis Bay Road and Princes Highway intersection project
+              <ExternalLink color="#fff" />
+              <span>Go to project page</span>
             </a>
           </div>
         ),

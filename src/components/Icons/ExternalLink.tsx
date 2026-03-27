@@ -1,4 +1,4 @@
-const Icon = () => {
+const Icon = ({ color = '#146CFD' }) => {
   return (
     <svg
       width="20"
@@ -9,21 +9,21 @@ const Icon = () => {
     >
       <path
         d="M16.1555 7.89103V19H1V3.24994H11.6857"
-        stroke="#146CFD"
+        stroke={color}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M8.80823 10.8351L19 1"
-        stroke="#146CFD"
+        stroke={color}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M13.3201 1H19V6.48665"
-        stroke="#146CFD"
+        stroke={color}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"

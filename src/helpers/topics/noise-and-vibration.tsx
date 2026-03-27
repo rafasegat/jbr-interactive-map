@@ -218,6 +218,19 @@ const opNoiseNightLegends = [
   },
 ];
 
+const paletteColors = {
+  35: '#146CFD',
+  40: '#2FBF7A',
+  45: '#9EDB3A',
+  50: '#F2D13D',
+  55: '#F5A623',
+  60: '#F06A1E',
+  65: '#D63A1F',
+  70: '#B3161F',
+  75: '#8A0A1A',
+  80: '#630019',
+};
+
 export const noiseAndVibrationFilters = [
   ...defaultFilters,
   {
@@ -430,7 +443,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Night 2030/OpCntrs_Night_2030_35dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseNightDbaColors['35'],
+          'fill-color': paletteColors['35'],
           'fill-opacity': 0.4,
         },
       },
@@ -439,7 +452,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Night 2030/OpCntrs_Night_2030_40dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseNightDbaColors['40'],
+          'fill-color': paletteColors['40'],
           'fill-opacity': 0.4,
         },
       },
@@ -448,7 +461,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Night 2030/OpCntrs_Night_2030_45dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseNightDbaColors['45'],
+          'fill-color': paletteColors['45'],
           'fill-opacity': 0.4,
         },
       },
@@ -457,7 +470,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Night 2030/OpCntrs_Night_2030_50dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseNightDbaColors['50'],
+          'fill-color': paletteColors['50'],
           'fill-opacity': 0.4,
         },
       },
@@ -466,7 +479,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Night 2030/OpCntrs_Night_2030_55dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseNightDbaColors['55'],
+          'fill-color': paletteColors['55'],
           'fill-opacity': 0.4,
         },
       },
@@ -475,7 +488,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Night 2030/OpCntrs_Night_2030_60dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseNightDbaColors['60'],
+          'fill-color': paletteColors['60'],
           'fill-opacity': 0.4,
         },
       },
@@ -484,7 +497,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Night 2030/OpCntrs_Night_2030_65dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseNightDbaColors['65'],
+          'fill-color': paletteColors['65'],
           'fill-opacity': 0.4,
         },
       },
@@ -493,7 +506,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Night 2030/OpCntrs_Night_2030_70dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseNightDbaColors['70'],
+          'fill-color': paletteColors['70'],
           'fill-opacity': 0.4,
         },
       },
@@ -514,7 +527,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Day 2040/OpCntrs_Day_2040_35dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseDayDbaColors['35'],
+          'fill-color': paletteColors['35'],
           'fill-opacity': 0.4,
         },
       },
@@ -523,7 +536,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Day 2040/OpCntrs_Day_2040_40dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseDayDbaColors['40'],
+          'fill-color': paletteColors['40'],
           'fill-opacity': 0.4,
         },
       },
@@ -532,7 +545,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Day 2040/OpCntrs_Day_2040_45dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseDayDbaColors['45'],
+          'fill-color': paletteColors['45'],
           'fill-opacity': 0.4,
         },
       },
@@ -541,7 +554,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Day 2040/OpCntrs_Day_2040_50dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseDayDbaColors['50'],
+          'fill-color': paletteColors['50'],
           'fill-opacity': 0.4,
         },
       },
@@ -550,7 +563,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Day 2040/OpCntrs_Day_2040_55dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseDayDbaColors['55'],
+          'fill-color': paletteColors['55'],
           'fill-opacity': 0.4,
         },
       },
@@ -559,7 +572,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Day 2040/OpCntrs_Day_2040_60dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseDayDbaColors['60'],
+          'fill-color': paletteColors['60'],
           'fill-opacity': 0.4,
         },
       },
@@ -568,7 +581,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Day 2040/OpCntrs_Day_2040_65dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseDayDbaColors['65'],
+          'fill-color': paletteColors['65'],
           'fill-opacity': 0.4,
         },
       },
@@ -577,7 +590,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Day 2040/OpCntrs_Day_2040_70dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseDayDbaColors['70'],
+          'fill-color': paletteColors['70'],
           'fill-opacity': 0.4,
         },
       },
@@ -586,7 +599,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Day 2040/OpCntrs_Day_2040_75dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseDayDbaColors['75'],
+          'fill-color': paletteColors['75'],
           'fill-opacity': 0.4,
         },
       },
@@ -607,7 +620,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Night 2040/OpCntrs_Night_2040_35dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseNightDbaColors['35'],
+          'fill-color': paletteColors['35'],
           'fill-opacity': 0.4,
         },
       },
@@ -616,7 +629,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Night 2040/OpCntrs_Night_2040_40dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseNightDbaColors['40'],
+          'fill-color': paletteColors['40'],
           'fill-opacity': 0.4,
         },
       },
@@ -625,7 +638,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Night 2040/OpCntrs_Night_2040_45dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseNightDbaColors['45'],
+          'fill-color': paletteColors['45'],
           'fill-opacity': 0.4,
         },
       },
@@ -634,7 +647,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Night 2040/OpCntrs_Night_2040_50dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseNightDbaColors['50'],
+          'fill-color': paletteColors['50'],
           'fill-opacity': 0.4,
         },
       },
@@ -643,7 +656,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Night 2040/OpCntrs_Night_2040_55dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseNightDbaColors['55'],
+          'fill-color': paletteColors['55'],
           'fill-opacity': 0.4,
         },
       },
@@ -652,7 +665,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Night 2040/OpCntrs_Night_2040_60dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseNightDbaColors['60'],
+          'fill-color': paletteColors['60'],
           'fill-opacity': 0.4,
         },
       },
@@ -661,7 +674,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Night 2040/OpCntrs_Night_2040_65dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseNightDbaColors['65'],
+          'fill-color': paletteColors['65'],
           'fill-opacity': 0.4,
         },
       },
@@ -670,7 +683,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Night 2040/OpCntrs_Night_2040_70dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseNightDbaColors['70'],
+          'fill-color': paletteColors['70'],
           'fill-opacity': 0.4,
         },
       },
@@ -692,7 +705,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/worst-case-scenario/Worst-case_35dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': worstCaseDbaColors['35'],
+          'fill-color': paletteColors['35'],
           'fill-opacity': 0.4,
         },
       },
@@ -701,7 +714,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/worst-case-scenario/Worst-case_40dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': worstCaseDbaColors['40'],
+          'fill-color': paletteColors['40'],
           'fill-opacity': 0.4,
         },
       },
@@ -710,16 +723,17 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/worst-case-scenario/Worst-case_45dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': worstCaseDbaColors['45'],
+          'fill-color': paletteColors['45'],
           'fill-opacity': 0.4,
         },
       },
+
       {
         sourceUrl:
           '/data/geojson/noise-and-vibration/worst-case-scenario/Worst-case_50dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': worstCaseDbaColors['50'],
+          'fill-color': paletteColors['50'],
           'fill-opacity': 0.4,
         },
       },
@@ -728,7 +742,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/worst-case-scenario/Worst-case_55dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': worstCaseDbaColors['55'],
+          'fill-color': paletteColors['55'],
           'fill-opacity': 0.4,
         },
       },
@@ -737,7 +751,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/worst-case-scenario/Worst-case_60dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': worstCaseDbaColors['60'],
+          'fill-color': paletteColors['60'],
           'fill-opacity': 0.4,
         },
       },
@@ -746,7 +760,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/worst-case-scenario/Worst-case_65dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': worstCaseDbaColors['65'],
+          'fill-color': paletteColors['65'],
           'fill-opacity': 0.4,
         },
       },
@@ -755,7 +769,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/worst-case-scenario/Worst-case_70dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': worstCaseDbaColors['70'],
+          'fill-color': paletteColors['70'],
           'fill-opacity': 0.4,
         },
       },
@@ -764,7 +778,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/worst-case-scenario/Worst-case_75dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': worstCaseDbaColors['75'],
+          'fill-color': paletteColors['75'],
           'fill-opacity': 0.4,
         },
       },
@@ -773,7 +787,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/worst-case-scenario/Worst-case_80dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': worstCaseDbaColors['80'],
+          'fill-color': paletteColors['80'],
           'fill-opacity': 0.4,
         },
       },

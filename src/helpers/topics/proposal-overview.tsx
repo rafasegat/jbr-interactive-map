@@ -26,7 +26,7 @@ export const proposalOverviewFilters = [
         type: 'line',
         paint: {
           'line-color': '#A4A7A9',
-          'line-width': 3,
+          'line-width': 2,
         },
       },
     ],
@@ -73,14 +73,14 @@ export const proposalOverviewFilters = [
     value: 'drainage-basins-15-9',
     legendAlias: 'drainage-basins',
     orderLayout: 10,
-    color: '#146CFD',
+    color: '#0B3F47',
     tickerColor: '#FFFFFF',
     geojson: [
       {
         sourceUrl: '/data/geojson/proposal-overview/Basins 1509.geojson',
         type: 'fill',
         paint: {
-          'fill-color': '#146CFD',
+          'fill-color': '#0B3F47',
           'fill-opacity': 1,
         },
       },
@@ -91,14 +91,14 @@ export const proposalOverviewFilters = [
     value: 'drainage-basins-22-9',
     legendAlias: 'drainage-basins',
     orderLayout: 11,
-    color: '#146CFD',
+    color: '#0B3F47',
     tickerColor: '#FFFFFF',
     geojson: [
       {
         sourceUrl: '/data/geojson/proposal-overview/Basins 2209.geojson',
         type: 'line',
         paint: {
-          'line-color': '#146cfd',
+          'line-color': '#0B3F47',
           'line-width': 2,
         },
       },
@@ -116,7 +116,7 @@ export const proposalOverviewFilters = [
         sourceUrl: '/data/geojson/proposal-overview/Pavement.geojson',
         type: 'fill',
         paint: {
-          'fill-color': '#495054',
+          'fill-color': '#767C7F',
           'fill-opacity': 1,
         },
       },
@@ -330,7 +330,7 @@ export const constructionActivitiesFilters = [
           '/data/geojson/proposal-overview/Proposed Ancillary Facility.geojson',
         type: 'fill',
         paint: {
-          'fill-color': '#767C7F',
+          'fill-color': '#D912AE',
           'fill-opacity': 0.4,
         },
       },
