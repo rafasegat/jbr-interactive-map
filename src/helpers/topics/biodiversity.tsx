@@ -169,7 +169,7 @@ export const biodiversityFilters = [
         type: 'fill',
         paint: {
           'fill-color': '#B68D5D',
-          'fill-opacity': 0.8,
+          'fill-opacity': 0.4,
         },
       },
     ],

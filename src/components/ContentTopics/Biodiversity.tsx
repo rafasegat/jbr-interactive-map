@@ -35,7 +35,8 @@ const content = () => {
           and Golden Bell Frog has been detected
         </li>
         <li>
-          avoiding all direct impacts to Scrub Turpentine (Rhodamnia rubescens)
+          avoiding all direct impacts to Scrub Turpentine (
+          <span className="italic">Rhodamnia rubescens</span>)
         </li>
         <li>
           refining the southern tie-in geometry by bringing the northbound and
@@ -43,8 +44,9 @@ const content = () => {
         </li>
         <li>
           reducing the width of the road corridor at three fauna crossing zones
-          identified in the Greater Glider Connectivity Strategy (Appendix F of
-          the BDAR)
+          identified in the{' '}
+          <span className="italic">Greater Glider Connectivity Strategy</span>{' '}
+          (Appendix F of the BDAR)
         </li>
       </ul>
       <p>
@@ -83,8 +85,12 @@ const content = () => {
         (including an estimated 18 trees that do not conform to a recognised
         plant community type). The proposal is likely to significantly impact
         ecological communities, threatened species or their habitats as listed
-        under the Biodiversity Conservation Act 2016 (NSW) (BC Act) and the
-        Environment Protection and Biodiversity Conservation Act 1999
+        under the{' '}
+        <span className="italic">Biodiversity Conservation Act 2016</span> (NSW)
+        (BC Act)and the{' '}
+        <span className="italic">
+          Environment Protection and Biodiversity Conservation Act 1999
+        </span>{' '}
         (Commonwealth) (EPBC Act). A BDAR is required and has been prepared to
         assess these impacts.
       </p>
@@ -98,11 +104,12 @@ const content = () => {
         </li>
         <li>
           impacts to two threatened flora species detected on site: Leafless
-          Tongue Orchid (Cryptostylis hunteriana; listed vulnerable under the BC
-          Act and EPBC Act) and Hibbertia puberula (listed endangered under the
-          BC Act), plus eight additional threatened flora species assumed to be
-          present in areas that were not able to be surveyed due to property
-          access constraints
+          Tongue Orchid (<span className="italic">Cryptostylis hunteriana</span>
+          ; listed vulnerable under the BC Act and EPBC Act) and{' '}
+          <span className="italic">Hibbertia puberula</span> (listed endangered
+          under the BC Act), plus eight additional threatened flora species
+          assumed to be present in areas that were not able to be surveyed due
+          to property access constraints
         </li>
         <li>
           impacts to 12 threatened fauna species, either detected during surveys
@@ -118,8 +125,15 @@ const content = () => {
         A range of safeguards and management measures are proposed to further
         minimise and mitigate potential impacts, such as through the
         implementation of a flora and fauna management plan and a biodiversity
-        offset strategy developed in accordance with Transport’s No Net Loss
-        Guidelines and Tree and Hollow Replacement Guidelines.
+        offset strategy developed in accordance with Transport’s{' '}
+        <a
+          href="https://www.transport.nsw.gov.au/operations/roads-and-waterways/environment-and-heritage/biodiversity"
+          target="_blank"
+          className="external-link-ahref"
+        >
+          No Net Loss Guidelines and Tree and Hollow Replacement Guidelines
+        </a>
+        .
       </p>
       <p>Refer to Section 6.1 of the REF for more information.</p>
       <h3>Operational impacts</h3>

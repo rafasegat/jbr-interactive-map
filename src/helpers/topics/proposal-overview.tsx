@@ -2,7 +2,6 @@ import {
   ProposalBoundary,
   OperationalBoundary,
   ConceptDesign,
-  VisualEnvelopeMap,
   SuburbsAndLocalities,
   SiteAccessGates,
   Drainage,
@@ -109,7 +108,7 @@ export const proposalOverviewFilters = [
     value: 'pavement',
     legendAlias: 'pavement',
     orderLayout: 7,
-    color: '#495054',
+    color: '#767C7F',
     tickerColor: '#FFFFFF',
     geojson: [
       {

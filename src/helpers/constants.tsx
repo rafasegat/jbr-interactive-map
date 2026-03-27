@@ -65,9 +65,14 @@ export const appMetadata = {
     // defaultStyle: 'mapbox://styles/creative-rps/cmlg2tqwu002101srckxfaww9',
     defaultCenter: [150.58287373803307, -35.01339575760793],
     defaultZoom: 12.8,
-    maxZoom: 18,
-    minZoom: 10,
+    maxZoom: 17,
+    minZoom: 11,
     showCompass: false,
+    // SW corner, NE corner – restricts panning to the project area
+    maxBounds: [
+      [149.96688361706907, -35.434014544168996], // SW
+      [151.0571187, -34.6477599], // NE
+    ] as [[number, number], [number, number]],
   },
   topics: [
     {

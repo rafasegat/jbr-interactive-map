@@ -54,8 +54,12 @@ const content = () => {
       <p>
         Construction noise and vibration impacts would be managed through the
         implementation of a construction noise and vibration management plan to
-        be prepared in accordance with the Interim Construction Noise Guideline
-        (DECC, 2009) and the Construction Noise and Vibration Guideline (Roads)
+        be prepared in accordance with the{' '}
+        <span className="italic">Interim Construction Noise Guideline</span>{' '}
+        (DECC, 2009) and the{' '}
+        <span className="italic">
+          Construction Noise and Vibration Guideline (Roads)
+        </span>{' '}
         (Transport, 2024).
       </p>
       <p>Refer to Section 6.4 of the REF for more information.</p>

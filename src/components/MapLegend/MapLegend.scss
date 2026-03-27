@@ -2,7 +2,7 @@
 
 .legends {
   position: absolute;
-  z-index: 120;
+  z-index: 200;
   bottom: $spacing-4;
   left: $spacing-4;
   background: #ffffff;
@@ -144,7 +144,5 @@
   display: none !important;
 }
 .mapboxgl-ctrl-scale {
-  position: absolute;
-  bottom: 10px;
-  left: 15rem;
+  background: rgba(255, 255, 255, 0.8);
 }

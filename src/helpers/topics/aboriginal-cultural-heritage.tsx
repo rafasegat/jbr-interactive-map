@@ -9,19 +9,19 @@ export const aboriginalCulturalHeritageFilters = [
     legendAlias: 'ahims-sites',
     color: '#694800',
     tickerColor: '#FFFFFF',
-    geojson: [
+    markers: [
       {
-        sourceUrl:
-          '/data/geojson/aboriginal-cultural-heritage/AHIMS Sites.geojson',
-        type: 'circle',
-        paint: {
-          'circle-radius': 4,
-          'circle-color': '#FFF',
-          'circle-stroke-color': '#694800',
-          'circle-stroke-width': 2,
-        },
+        id: '1',
+        coordinates: [150.586548721423782, -34.987819810924002],
+        iconComponent: <AhimsSites />,
+      },
+      {
+        id: '2',
+        coordinates: [150.583389718313242, -35.001747727202449],
+        iconComponent: <AhimsSites />,
       },
     ],
+    geojson: [],
     hasLineDivider: true,
     orderLayout: 3,
   },

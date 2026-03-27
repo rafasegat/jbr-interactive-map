@@ -55,6 +55,15 @@
     }
   }
 
+  .external-link-ahref {
+    color: $blue02;
+    text-decoration: underline;
+
+    // &:hover {
+    //   color: $blue02;
+    // }
+  }
+
   .is-scrollable {
     height: 32vh;
     overflow-y: auto;

@@ -290,6 +290,6 @@ export const listOfTopicsToOrderLayer = [
   'bus-stops',
   'truck-parking',
   'speed-limit-change',
-  'ahims-sites',
   'traffic-counter-locations',
+  'ahims-sites',
 ];

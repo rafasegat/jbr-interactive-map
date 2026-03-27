@@ -49,6 +49,7 @@ const Map: React.FC = () => {
         zoom: appMetadata.map.defaultZoom,
         maxZoom: appMetadata.map.maxZoom,
         minZoom: appMetadata.map.minZoom,
+        maxBounds: appMetadata.map.maxBounds,
       });
     } catch (error) {
       console.error('Error initializing map:', error);
@@ -62,9 +63,10 @@ const Map: React.FC = () => {
         mapRef.current.addControl(new mapboxgl.NavigationControl());
         mapRef.current.addControl(
           new mapboxgl.ScaleControl({
-            maxWidth: 80,
+            maxWidth: 120,
             unit: 'metric',
           }),
+          'bottom-right',
         );
       }
     });
