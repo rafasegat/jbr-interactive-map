@@ -350,7 +350,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Day 2030/OpCntrs_Day_2030_35dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseDayDbaColors['35'],
+          'fill-color': paletteColors['35'],
           'fill-opacity': 0.4,
         },
       },
@@ -359,7 +359,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Day 2030/OpCntrs_Day_2030_40dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseDayDbaColors['40'],
+          'fill-color': paletteColors['40'],
           'fill-opacity': 0.4,
         },
       },
@@ -368,7 +368,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Day 2030/OpCntrs_Day_2030_45dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseDayDbaColors['45'],
+          'fill-color': paletteColors['45'],
           'fill-opacity': 0.4,
         },
       },
@@ -377,7 +377,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Day 2030/OpCntrs_Day_2030_50dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseDayDbaColors['50'],
+          'fill-color': paletteColors['50'],
           'fill-opacity': 0.4,
         },
       },
@@ -386,7 +386,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Day 2030/OpCntrs_Day_2030_55dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseDayDbaColors['55'],
+          'fill-color': paletteColors['55'],
           'fill-opacity': 0.4,
         },
       },
@@ -395,7 +395,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Day 2030/OpCntrs_Day_2030_60dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseDayDbaColors['60'],
+          'fill-color': paletteColors['60'],
           'fill-opacity': 0.4,
         },
       },
@@ -404,7 +404,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Day 2030/OpCntrs_Day_2030_65dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseDayDbaColors['65'],
+          'fill-color': paletteColors['65'],
           'fill-opacity': 0.4,
         },
       },
@@ -413,7 +413,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Day 2030/OpCntrs_Day_2030_70dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseDayDbaColors['70'],
+          'fill-color': paletteColors['70'],
           'fill-opacity': 0.4,
         },
       },
@@ -422,7 +422,7 @@ export const noiseAndVibrationFilters = [
           '/data/geojson/noise-and-vibration/Day 2030/OpCntrs_Day_2030_75dBA.GeoJSON',
         type: 'fill',
         paint: {
-          'fill-color': opNoiseDayDbaColors['75'],
+          'fill-color': paletteColors['75'],
           'fill-opacity': 0.4,
         },
       },
