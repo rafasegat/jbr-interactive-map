@@ -252,14 +252,22 @@ const Map: React.FC = () => {
             el.style.display = 'none'; // Initially hidden
             el.style.zIndex = zIndex.toString(); // Set z-index for proper stacking
 
+            // Inner wrapper: icon + optional tooltip live here.
+            // Keeping the tooltip out of `el` prevents Mapbox from
+            // mis-measuring the anchor element on every scroll repaint.
+            const iconWrapper = document.createElement('div');
+            iconWrapper.style.cssText =
+              'position:relative;display:inline-flex;overflow:visible';
+            el.appendChild(iconWrapper);
+
             if (marker.iconComponent) {
-              ReactDOM.render(marker.iconComponent, el);
+              ReactDOM.render(marker.iconComponent, iconWrapper);
             } else if (marker.iconUrl) {
               const img = document.createElement('img');
               img.src = marker.iconUrl;
               img.style.width = '32px';
               img.style.height = '32px';
-              el.appendChild(img);
+              iconWrapper.appendChild(img);
             }
 
             // Create marker with custom element
@@ -271,6 +279,63 @@ const Map: React.FC = () => {
 
             // Store marker in ref
             markersRef.current.set(markerId, markerCustomEl);
+
+            // Add hover tooltip (only if isTooltip is true and text exists)
+            if (marker.isTooltip && marker.text) {
+              const tooltip = document.createElement('div');
+              tooltip.style.cssText = [
+                'position:absolute',
+                'bottom:calc(100% + 10px)',
+                'left:50%',
+                'transform:translateX(-50%)',
+                'background:#fff',
+                'color:#000',
+                'font-size:1rem',
+                'font-weight:400',
+                'width:300px',
+                'padding:0.5rem',
+                'border-radius:0',
+                'box-shadow:0 2px 6px rgba(0,0,0,0.2)',
+                'pointer-events:none',
+                'display:none',
+                'z-index:9999',
+              ].join(';');
+
+              const tooltipText = document.createElement('span');
+              tooltipText.textContent = marker.text;
+              tooltip.appendChild(tooltipText);
+
+              // Triangle arrow pointing down
+              const arrow = document.createElement('span');
+              arrow.style.cssText = [
+                'position:absolute',
+                'bottom:-6px',
+                'left:50%',
+                'transform:translateX(-50%)',
+                'width:0',
+                'height:0',
+                'border-left:6px solid transparent',
+                'border-right:6px solid transparent',
+                'border-top:6px solid #fff',
+                'display:block',
+                'filter:drop-shadow(0 2px 1px rgba(0,0,0,0.1))',
+              ].join(';');
+              tooltip.appendChild(arrow);
+
+              // Append tooltip to iconWrapper (not el) so el's dimensions stay
+              // exactly the icon size — no drift when Mapbox repositions on scroll
+              iconWrapper.appendChild(tooltip);
+              el.addEventListener('mouseenter', () => {
+                tooltip.style.display = 'block';
+                // Lift this marker's stacking context above all others while hovered
+                el.style.zIndex = '190';
+              });
+              el.addEventListener('mouseleave', () => {
+                tooltip.style.display = 'none';
+                // Restore original z-index
+                el.style.zIndex = zIndex.toString();
+              });
+            }
 
             // Add popup to marker on click (only if popupContent exists)
             if (marker.popupContent) {
@@ -573,7 +638,7 @@ const Map: React.FC = () => {
     }
     // Clear active topic to remove layers
     setTopicActive('default');
-    const defaultFilters = ['key-features', 'construction-activities'];
+    const defaultFilters = ['general', 'key-features'];
     setFilterOptionsSelected(expandFilters(defaultFilters, 'default'));
     setZoneOptionsSelected([]);
     // Close all popups

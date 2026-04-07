@@ -93,12 +93,15 @@ const MapTopbar = () => {
                             );
                           } else {
                             // When checking, add this filter and all nested filters
+                            // (exclude dontShowInFilters unless defaultSelected)
                             let filtersToAdd = [filter.value];
                             if (filter.filtersToShow) {
-                              const nestedFilterValues =
-                                filter.filtersToShow.map(
-                                  (f: Filter) => f.value,
-                                );
+                              const nestedFilterValues = filter.filtersToShow
+                                .filter(
+                                  (f: Filter) =>
+                                    !f.dontShowInFilters || f.defaultSelected,
+                                )
+                                .map((f: Filter) => f.value);
                               filtersToAdd = [
                                 ...filtersToAdd,
                                 ...nestedFilterValues,

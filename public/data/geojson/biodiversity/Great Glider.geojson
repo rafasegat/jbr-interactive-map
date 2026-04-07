@@ -1,8 +1,0 @@
-{
-"type": "FeatureCollection",
-"name": "Great Glider",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "properties": { "OBJECTID": 1, "Source": "iNaturalist (2024)", "Species": "Greater Glider", "Comments": "Adult male caught in barbed wire", "ECMLink": null, "FSource": "iNaturalist (2024)", "SourceDate": "2024-12-31T00:00:00Z", "PlanAccur": null, "Supplier": "Stantec Australia Pty Ltd (3045)" }, "geometry": { "type": "Point", "coordinates": [ 150.600294236322668, -34.994921340500078, 0.0 ] } }
-]
-}

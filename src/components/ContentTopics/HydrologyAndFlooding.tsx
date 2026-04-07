@@ -25,14 +25,6 @@ const content = () => {
         be addressed during detailed design to ensure the project does not
         worsen flooding for nearby properties.
       </p>
-      <p>
-        Modelling for the proposal determined that once operational, the
-        proposal would achieve an overall reduction in gross pollutants (99 per
-        cent) and meet  or exceed the pollution reduction targets with an 85 per
-        cent reduction in total suspended solids, a 70 per cent reduction in
-        total phosphorus and 47 per cent reduction in total nitrogen discharging
-        to the receiving environment.
-      </p>
       <h3>Construction impacts</h3>
       <p>
         Three ancillary facility sites are located partially within the modelled
@@ -54,6 +46,14 @@ const content = () => {
         also be provided to delay and reduce peak flows resulting in lower flood
         levels. Detention basins have been proposed near Willowgreen Road and
         near Sinclair Road (as can been seen on the map).
+      </p>
+      <p>
+        Modelling for the proposal determined that once operational, the
+        proposal would achieve an overall reduction in gross pollutants (99 per
+        cent) and meet  or exceed the pollution reduction targets with an 85 per
+        cent reduction in total suspended solids, a 70 per cent reduction in
+        total phosphorus and 47 per cent reduction in total nitrogen discharging
+        to the receiving environment.
       </p>
       <p>
         The proposed road alignment would result in an increase in the

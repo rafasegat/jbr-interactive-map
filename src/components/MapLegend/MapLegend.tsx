@@ -61,6 +61,32 @@ const MapLegend = () => {
           allLegendsToShow.push(nestedLegend);
         }
       });
+
+      // Handle nested filters that have their own legendsToShow
+      // (e.g. potential-worst-case-construction-scenario, day-2030, night-2030, etc.)
+      if (filter.filtersToShow) {
+        filter.filtersToShow.forEach((nestedFilter: Filter) => {
+          if (!filterOptionsSelected.includes(nestedFilter.value)) return;
+          if (!nestedFilter.legendsToShow?.length) return;
+          nestedFilter.legendsToShow.forEach((legend: Legend) => {
+            if (allLegendsToShow.find((l: Legend) => l.value === legend.value))
+              return;
+            allLegendsToShow.push(legend);
+          });
+        });
+      }
+    } else if (filter.filtersToShow?.length && !filter.legendsToShow) {
+      // --- Filter has only filtersToShow (no top-level legendsToShow, e.g. 'contours') ---
+      if (!filterOptionsSelected.includes(filter.value)) return;
+      filter.filtersToShow.forEach((nestedFilter: Filter) => {
+        if (!filterOptionsSelected.includes(nestedFilter.value)) return;
+        if (!nestedFilter.legendsToShow?.length) return;
+        nestedFilter.legendsToShow.forEach((legend: Legend) => {
+          if (allLegendsToShow.find((l: Legend) => l.value === legend.value))
+            return;
+          allLegendsToShow.push(legend);
+        });
+      });
     } else {
       // --- Filter uses topic-level legends (matched by legendAlias) ---
       if (!filterOptionsSelected.includes(filter.value)) return;

@@ -1,3 +1,17 @@
+export const rectangleIcon = (color: string, opacity: number = 0.6) => {
+  return (
+    <svg
+      width="24"
+      height="12"
+      viewBox="0 0 24 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="24" height="12" fill={color} fillOpacity={opacity} />
+    </svg>
+  );
+};
+
 export const Chainage = () => (
   <svg
     width="16"
@@ -276,21 +290,16 @@ export const StateRoads = () => (
 // Noise and vibration
 export const NoiseLoggerLocations = () => (
   <svg
-    width="16"
-    height="16"
-    viewBox="0 0 16 16"
+    width="24"
+    height="17"
+    viewBox="0 0 24 17"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect
-      x="1.5"
-      y="1.5"
-      width="13"
-      height="13"
-      rx="6.5"
+    <rect width="24" height="17" rx="2" fill="#22272B" fillOpacity="0.75" />
+    <path
+      d="M4.972 13V4.324H6.706L10.666 10.066V4.324H12.418V13H10.84L6.718 7.03V13H4.972ZM13.7587 13V4.324H15.5227V11.518H19.2907V13H13.7587Z"
       fill="white"
-      stroke="#941B00"
-      strokeWidth="3"
     />
   </svg>
 );
@@ -314,6 +323,25 @@ export const NoiseReceivers = () => (
     xmlns="http://www.w3.org/2000/svg"
   >
     <rect width="24" height="12" fill="#941B0099" />
+  </svg>
+);
+export const HumanComfortWorkingDistance = () => (
+  <svg
+    width="24"
+    height="12"
+    viewBox="0 0 24 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      x="1"
+      y="1"
+      width="22"
+      height="10"
+      stroke="#8055F1"
+      strokeWidth="2"
+      strokeDasharray="5 5"
+    />
   </svg>
 );
 export const ContoursBridge = () => (
@@ -708,21 +736,40 @@ export const NationalParks = () => (
 
 export const AhimsSites = () => (
   <svg
-    width="16"
-    height="16"
-    viewBox="0 0 16 16"
+    width="24"
+    height="12"
+    viewBox="0 0 24 12"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
     <rect
-      x="1.5"
-      y="1.5"
-      width="13"
-      height="13"
-      rx="6.5"
+      x="1"
+      y="1"
+      width="22"
+      height="10"
       fill="white"
-      stroke="#895E00"
-      strokeWidth="3"
+      stroke="#9E5332"
+      strokeWidth="2"
+    />
+  </svg>
+);
+
+export const AHIPBoundary = () => (
+  <svg
+    width="24"
+    height="12"
+    viewBox="0 0 24 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      x="1"
+      y="1"
+      width="22"
+      height="10"
+      fill="white"
+      stroke="#9A5E93"
+      strokeWidth="2"
     />
   </svg>
 );
@@ -847,6 +894,17 @@ export const ConnectivityZones = () => (
       stroke="#00AA45"
       strokeWidth="2"
     />
+  </svg>
+);
+export const BiodiversityStudyArea = () => (
+  <svg
+    width="24"
+    height="12"
+    viewBox="0 0 24 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect x="1" y="1" width="22" height="10" stroke="#22272B" strokeWidth="2" />
   </svg>
 );
 export const PlantCommunityTypes = () => (
@@ -988,6 +1046,31 @@ export const SpeedLimit60 = () => (
       d="M9.14268 15.099C8.56368 15.099 8.06718 14.9655 7.65318 14.6985C7.23918 14.4285 6.92118 14.052 6.69918 13.569C6.48018 13.086 6.37068 12.5235 6.37068 11.8815C6.37068 11.1615 6.48468 10.542 6.71268 10.023C6.94068 9.501 7.26468 9.1005 7.68468 8.8215C8.10768 8.5425 8.60868 8.403 9.18768 8.403C9.61368 8.403 10.0082 8.481 10.3712 8.637C10.7372 8.79 11.0327 9.0135 11.2577 9.3075C11.4827 9.5985 11.6012 9.951 11.6132 10.365H10.2227C10.0697 9.852 9.73668 9.5955 9.22368 9.5955C8.94468 9.5955 8.71218 9.6765 8.52618 9.8385C8.34018 9.9975 8.20818 10.2135 8.13018 10.4865C8.05218 10.7595 8.03568 11.064 8.08068 11.4C8.24268 11.238 8.44668 11.1165 8.69268 11.0355C8.94168 10.9515 9.20118 10.9095 9.47118 10.9095C9.91818 10.9095 10.3097 10.992 10.6457 11.157C10.9817 11.322 11.2427 11.5515 11.4287 11.8455C11.6177 12.1395 11.7122 12.483 11.7122 12.876C11.7122 13.296 11.6027 13.674 11.3837 14.01C11.1647 14.346 10.8617 14.6115 10.4747 14.8065C10.0877 15.0015 9.64368 15.099 9.14268 15.099ZM9.08418 13.947C9.35418 13.947 9.58968 13.854 9.79068 13.668C9.99468 13.479 10.0967 13.239 10.0967 12.948C10.0967 12.63 9.99468 12.3975 9.79068 12.2505C9.58668 12.1035 9.35268 12.03 9.08868 12.03C8.92968 12.03 8.77368 12.066 8.62068 12.138C8.46768 12.207 8.34168 12.2925 8.24268 12.3945C8.14368 12.4935 8.09418 12.591 8.09418 12.687C8.09418 13.092 8.18568 13.404 8.36868 13.623C8.55168 13.839 8.79018 13.947 9.08418 13.947ZM15.0492 15.099C14.2302 15.099 13.5927 14.8095 13.1367 14.2305C12.6807 13.6485 12.4527 12.8265 12.4527 11.7645C12.4527 10.6935 12.6837 9.8655 13.1457 9.2805C13.6077 8.6955 14.2437 8.403 15.0537 8.403C15.8577 8.403 16.4877 8.6955 16.9437 9.2805C17.4027 9.8655 17.6322 10.692 17.6322 11.76C17.6322 12.825 17.4057 13.6485 16.9527 14.2305C16.5027 14.8095 15.8682 15.099 15.0492 15.099ZM15.0447 13.866C15.4017 13.866 15.6567 13.707 15.8097 13.389C15.9627 13.071 16.0392 12.531 16.0392 11.769C16.0392 10.986 15.9597 10.428 15.8007 10.095C15.6447 9.759 15.3927 9.591 15.0447 9.591C14.6937 9.591 14.4387 9.759 14.2797 10.095C14.1207 10.431 14.0412 10.989 14.0412 11.769C14.0412 12.525 14.1192 13.0635 14.2752 13.3845C14.4342 13.7055 14.6907 13.866 15.0447 13.866Z"
       fill="#22272B"
     />
+  </svg>
+);
+export const InfoIcon = () => (
+  <svg
+    width="32"
+    height="32"
+    viewBox="0 0 32 32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clipPath="url(#clip0_4065_13427)">
+      <path
+        d="M16 0C7.1619 0 0 7.1619 0 16C0 24.8381 7.1619 32 16 32C24.8381 32 32 24.8381 32 16C32 7.1619 24.8381 0 16 0Z"
+        fill="#146CFD"
+      />
+      <path
+        d="M14.5317 25V12.8353H17.4789V25H14.5317ZM14.5 11.0941V8H17.5V11.0941H14.5Z"
+        fill="white"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_4065_13427">
+        <rect width="32" height="32" fill="white" />
+      </clipPath>
+    </defs>
   </svg>
 );
 export const TruckParking = () => (

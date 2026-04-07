@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "JBR2HR_Proposed fauna underpass",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-15,
+"features": [
+{ "type": "Feature", "properties": { "OBJECTID": 1, "Shape_Leng": 74.269706929199998, "Comments": null, "ECMLink": null, "FSource": "Layer derived from Key Features figure provided by Transport for NSW", "SourceDate": "2026-02-04T00:00:00Z", "PlanAccur": null, "Supplier": "Stantec Australia Pty Ltd (3045)", "Shape_Length": 74.269706929162354 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 150.581438385427901, -35.009194399423436, 0.0 ], [ 150.582234534512651, -35.009331911719975, 0.0 ] ] ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 2, "Shape_Leng": 97.061121705199994, "Comments": null, "ECMLink": null, "FSource": "Layer derived from Key Features figure provided by Transport for NSW", "SourceDate": "2026-02-04T00:00:00Z", "PlanAccur": null, "Supplier": "Stantec Australia Pty Ltd (3045)", "Shape_Length": 97.061121705180412 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 150.583086763049522, -35.035767859532292, 0.0 ], [ 150.584149871794835, -35.035791295473722, 0.0 ] ] ] } }
+]
+}

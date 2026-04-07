@@ -1,100 +1,12 @@
 import {
-  HollowBearingTrees,
-  ScatteredTrees,
-  GreatGlider,
-  ThreatenedSpecies,
   ProposedFaunaUnderpass,
-  SubjectLand,
   ConnectivityZones,
-  PlantCommunityTypes,
-  StudyArea,
-  AssessmentArea,
+  BiodiversityStudyArea,
+  rectangleIcon,
 } from '../../components/Icons/Legends';
 import { defaultFilters } from './default';
 
-export const biodiversityFilters = [
-  ...defaultFilters,
-  {
-    label: 'Hollow bearing trees',
-    value: 'hollow-bearing-trees',
-    legendAlias: 'hollow-bearing-trees',
-    color: '#00AA45',
-    tickerColor: '#FFFFFF',
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/biodiversity/Hollow bearing trees.geojson',
-        type: 'circle',
-        paint: {
-          'circle-color': '#FFFFFF',
-          'circle-stroke-color': '#523719',
-          'circle-stroke-width': 2,
-          'circle-radius': 5,
-        },
-      },
-    ],
-    hasLineDivider: true,
-    orderLayout: 3,
-  },
-  {
-    label: 'Scattered trees',
-    value: 'scattered-trees',
-    legendAlias: 'scattered-trees',
-    color: '#00AA45',
-    tickerColor: '#FFFFFF',
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/biodiversity/Scattered trees.geojson',
-        type: 'circle',
-        paint: {
-          'circle-color': '#FFFFFF',
-          'circle-stroke-color': '#B68D5D',
-          'circle-stroke-width': 2,
-          'circle-radius': 5,
-        },
-      },
-    ],
-    orderLayout: 4,
-  },
-  {
-    label: 'Great Glider',
-    value: 'great-glider',
-    legendAlias: 'great-glider',
-    color: '#00AA45',
-    tickerColor: '#FFFFFF',
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/biodiversity/Great Glider.geojson',
-        type: 'circle',
-        paint: {
-          'circle-color': '#FFFFFF',
-          'circle-stroke-color': '#FAAF05',
-          'circle-stroke-width': 2,
-          'circle-radius': 5,
-        },
-      },
-    ],
-    orderLayout: 5,
-  },
-  {
-    label: 'Threatened species',
-    value: 'threatened-species',
-    legendAlias: 'threatened-species',
-    color: '#004000',
-    tickerColor: '#FFFFFF',
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/biodiversity/Threatened species.geojson',
-        type: 'circle',
-        paint: {
-          'circle-color': '#FFFFFF',
-          'circle-stroke-color': '#004000',
-          'circle-stroke-width': 2,
-          'circle-radius': 5,
-        },
-      },
-    ],
-    orderLayout: 6,
-  },
+export const biodiversityFiltersToShow = [
   {
     label: 'Proposed fauna underpass',
     value: 'proposed-fauna-underpass',
@@ -103,7 +15,8 @@ export const biodiversityFilters = [
     tickerColor: '#FFFFFF',
     geojson: [
       {
-        sourceUrl: '/data/geojson/biodiversity/Proposed fauna overpass.geojson',
+        sourceUrl:
+          '/data/geojson/Biodiversity/JBR2HR_Proposed fauna underpass.geojson',
         type: 'line',
         paint: {
           'line-color': '#004000',
@@ -111,25 +24,7 @@ export const biodiversityFilters = [
         },
       },
     ],
-    orderLayout: 7,
-  },
-  {
-    label: 'Subject land',
-    value: 'subject-land',
-    legendAlias: 'subject-land',
-    color: '#F3631B',
-    tickerColor: '#FFFFFF',
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/biodiversity/Subject land.geojson',
-        type: 'line',
-        paint: {
-          'line-color': '#F3631B',
-          'line-width': 2,
-        },
-      },
-    ],
-    orderLayout: 8,
+    orderLayout: 1,
   },
   {
     label: 'Connectivity zones',
@@ -139,7 +34,8 @@ export const biodiversityFilters = [
     tickerColor: '#FFFFFF',
     geojson: [
       {
-        sourceUrl: '/data/geojson/biodiversity/Connectivity zones.geojson',
+        sourceUrl:
+          '/data/geojson/Biodiversity/JBR2HR_Connectivity zones.geojson',
         type: 'fill',
         paint: {
           'fill-color': '#00AA45',
@@ -147,7 +43,8 @@ export const biodiversityFilters = [
         },
       },
       {
-        sourceUrl: '/data/geojson/biodiversity/Connectivity zones.geojson',
+        sourceUrl:
+          '/data/geojson/Biodiversity/JBR2HR_Connectivity zones.geojson',
         type: 'line',
         paint: {
           'line-color': '#00AA45',
@@ -158,24 +55,6 @@ export const biodiversityFilters = [
     orderLayout: 9,
   },
   {
-    label: 'Plant community types',
-    value: 'plant-community-types',
-    legendAlias: 'plant-community-types',
-    color: '#B68D5D',
-    tickerColor: '#FFFFFF',
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/biodiversity/Plant community types.geojson',
-        type: 'fill',
-        paint: {
-          'fill-color': '#B68D5D',
-          'fill-opacity': 0.4,
-        },
-      },
-    ],
-    orderLayout: 10,
-  },
-  {
     label: 'Study area',
     value: 'study-area',
     legendAlias: 'study-area',
@@ -183,33 +62,15 @@ export const biodiversityFilters = [
     tickerColor: '#FFFFFF',
     geojson: [
       {
-        sourceUrl: '/data/geojson/biodiversity/Study area.geojson',
-        type: 'fill',
-        paint: {
-          'fill-color': '#E8D0B5',
-          'fill-opacity': 0.5,
-        },
-      },
-    ],
-    orderLayout: 11,
-  },
-  {
-    label: 'Assessment area',
-    value: 'assessment-area',
-    legendAlias: 'assessment-area',
-    color: '#495054',
-    tickerColor: '#FFFFFF',
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/biodiversity/Assessment area.geojson',
+        sourceUrl: '/data/geojson/Biodiversity/JBR2HR_Bio_Study area.geojson',
         type: 'line',
         paint: {
-          'line-color': '#495054',
+          'line-color': '#22272B',
           'line-width': 2,
         },
       },
     ],
-    orderLayout: 12,
+    orderLayout: 11,
   },
 ];
 
@@ -221,34 +82,9 @@ export const biodiversityLegends = [
     icon: '',
   },
   {
-    label: 'Hollow bearing trees',
-    value: 'hollow-bearing-trees',
-    icon: <HollowBearingTrees />,
-  },
-  {
-    label: 'Scattered trees',
-    value: 'scattered-trees',
-    icon: <ScatteredTrees />,
-  },
-  {
-    label: 'Great Glider',
-    value: 'great-glider',
-    icon: <GreatGlider />,
-  },
-  {
-    label: 'Threatened species',
-    value: 'threatened-species',
-    icon: <ThreatenedSpecies />,
-  },
-  {
     label: 'Proposed fauna underpass',
     value: 'proposed-fauna-underpass',
     icon: <ProposedFaunaUnderpass />,
-  },
-  {
-    label: 'Subject land',
-    value: 'subject-land',
-    icon: <SubjectLand />,
   },
   {
     label: 'Connectivity zones',
@@ -256,18 +92,201 @@ export const biodiversityLegends = [
     icon: <ConnectivityZones />,
   },
   {
-    label: 'Plant community types',
-    value: 'plant-community-types',
-    icon: <PlantCommunityTypes />,
-  },
-  {
     label: 'Study area',
     value: 'study-area',
-    icon: <StudyArea />,
+    icon: <BiodiversityStudyArea />,
+  },
+];
+
+export const plantCommunityTypesFiltersToShow = [
+  {
+    label: 'PCT 3267',
+    value: 'pct-3267',
+    legendAlias: 'pct-3267',
+    color: '#004000',
+    tickerColor: '#FFFFFF',
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/Biodiversity/PCTs/JBR2HR_EasternPCT_3267.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#004000',
+          'fill-opacity': 0.5,
+        },
+      },
+    ],
+    orderLayout: 1,
   },
   {
-    label: 'Assessment area',
-    value: 'assessment-area',
-    icon: <AssessmentArea />,
+    label: 'PCT 3271',
+    value: 'pct-3271',
+    legendAlias: 'pct-3271',
+    color: '#00AA45',
+    tickerColor: '#FFFFFF',
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/Biodiversity/PCTs/JBR2HR_EasternPCT_3271.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#2E808E',
+          'fill-opacity': 0.5,
+        },
+      },
+    ],
+    orderLayout: 2,
+  },
+  {
+    label: 'PCT 3273',
+    value: 'pct-3273',
+    legendAlias: 'pct-3273',
+    color: '#8055F1',
+    tickerColor: '#FFFFFF',
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/Biodiversity/PCTs/JBR2HR_EasternPCT_3273.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#8055F1',
+          'fill-opacity': 0.5,
+        },
+      },
+    ],
+    orderLayout: 3,
+  },
+  {
+    label: 'PCT 3330 (CE)',
+    value: 'pct-3330-ce',
+    legendAlias: 'pct-3330-ce',
+    color: '#D7153A',
+    tickerColor: '#FFFFFF',
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/Biodiversity/PCTs/JBR2HR_EasternPCT_3330.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#D7153A',
+          'fill-opacity': 0.5,
+        },
+      },
+    ],
+    orderLayout: 4,
+  },
+  {
+    label: 'PCT 3654',
+    value: 'pct-3654',
+    legendAlias: 'pct-3654',
+    color: '#F3631B',
+    tickerColor: '#FFFFFF',
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/Biodiversity/PCTs/JBR2HR_EasternPCT_3654.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#F3631B',
+          'fill-opacity': 0.5,
+        },
+      },
+    ],
+    orderLayout: 5,
+  },
+  {
+    label: 'PCT 3588',
+    value: 'pct-3588',
+    legendAlias: 'pct-3588',
+    color: '#146CFD',
+    tickerColor: '#FFFFFF',
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/Biodiversity/PCTs/JBR2HR_EasternPCT_3588.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#146CFD',
+          'fill-opacity': 0.5,
+        },
+      },
+    ],
+    orderLayout: 6,
+  },
+  {
+    label: '(CE) – Critically endangered',
+    value: 'critically-endangered',
+    legendAlias: 'critically-endangered',
+    color: '#D7153A',
+  },
+];
+
+export const plantCommunityTypesLegends = [
+  {
+    title: 'Plant community types (PCTs)',
+    label: 'Plant community types',
+    value: 'title-plant-community-types',
+    icon: '',
+    twoColumnLayout: true,
+  },
+  {
+    label: 'PCT 3267',
+    value: 'pct-3267',
+    icon: rectangleIcon('#004000'),
+  },
+  {
+    label: 'PCT 3271',
+    value: 'pct-3271',
+    icon: rectangleIcon('#2E808E'),
+  },
+  {
+    label: 'PCT 3273',
+    value: 'pct-3273',
+    icon: rectangleIcon('#8055F1'),
+  },
+  {
+    label: 'PCT 3330 (CE)',
+    value: 'pct-3330-ce',
+    icon: rectangleIcon('#D7153A'),
+  },
+  {
+    label: 'PCT 3654',
+    value: 'pct-3654',
+    icon: rectangleIcon('#F3631B'),
+  },
+  {
+    label: 'PCT 3588',
+    value: 'pct-3588',
+    icon: rectangleIcon('#146CFD'),
+  },
+  {
+    label: '(CE) – Critically endangered',
+    value: 'critically-endangered',
+    icon: '',
+  },
+];
+
+export const biodiversityFilters = [
+  ...defaultFilters,
+  {
+    label: 'Biodiversity',
+    value: 'biodiversity',
+    legendAlias: 'biodiversity',
+    color: '#00AA45',
+    tickerColor: '#FFFFFF',
+    filtersToShow: [...biodiversityFiltersToShow],
+    legendsToShow: [...biodiversityLegends],
+    geojson: [],
+    orderLayout: 2,
+  },
+  {
+    label: 'Plant community types',
+    value: 'plant-community-types',
+    legendAlias: 'plant-community-types',
+    filtersToShow: [...plantCommunityTypesFiltersToShow],
+    legendsToShow: [...plantCommunityTypesLegends],
+    color: '#00AA45',
+    tickerColor: '#FFFFFF',
+    orderLayout: 3,
   },
 ];

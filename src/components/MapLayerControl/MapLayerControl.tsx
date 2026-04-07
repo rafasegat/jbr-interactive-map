@@ -110,7 +110,7 @@ const MapLayerControl = () => {
                         fill={
                           getTopicActive()?.filters?.find(
                             (f) => f.value === option.value,
-                          )?.color || 'red'
+                          )?.color || '#002664'
                         }
                       />
                     </svg>
@@ -160,7 +160,7 @@ const MapLayerControl = () => {
                         fill={
                           getTopicActive()?.filters?.find(
                             (f) => f.value === option.value,
-                          )?.color || 'red'
+                          )?.color || '#002664'
                         }
                       />
                     </svg>

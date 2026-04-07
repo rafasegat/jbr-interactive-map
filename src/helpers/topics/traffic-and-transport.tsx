@@ -1,42 +1,17 @@
 import {
   TrafficCounterLocations,
   BusStops,
-  LocalRoads,
-  RegionalRoads,
-  StateRoads,
   TruckParking,
   BusStop,
   SpeedLimit100,
   SpeedLimit80,
   SpeedLimit60,
   LILOIntersections,
+  InfoIcon,
 } from '../../components/Icons/Legends';
 import { defaultFilters } from './default';
 
-export const trafficAndTransportFilters = [
-  ...defaultFilters,
-  {
-    label: 'Traffic counter locations',
-    value: 'traffic-counter-locations',
-    legendAlias: 'traffic-counter-locations',
-    color: '#002664',
-    tickerColor: '#FFFFFF',
-    geojson: [
-      {
-        sourceUrl:
-          '/data/geojson/traffic-and-transport/Traffic counters.geojson',
-        type: 'circle',
-        paint: {
-          'circle-radius': 4,
-          'circle-color': '#ffffff',
-          'circle-stroke-color': '#002664',
-          'circle-stroke-width': 2,
-        },
-      },
-    ],
-    hasLineDivider: true,
-    orderLayout: 3,
-  },
+export const trafficAndTransportFiltersToShow = [
   {
     label: 'Speed limit change',
     value: 'speed-limit-change',
@@ -91,33 +66,12 @@ export const trafficAndTransportFilters = [
         iconComponent: <SpeedLimit60 />,
       },
     ],
-    orderLayout: 3,
+    orderLayout: 1,
   },
   {
-    label: 'Truck parking',
-    value: 'truck-parking',
-    legendAlias: 'truck-parking',
-    color: '#0086C4',
-    tickerColor: '#FFFFFF',
-    geojson: [],
-    markers: [
-      {
-        id: '1',
-        coordinates: [150.584166030409648, -35.037257919696373],
-        iconComponent: <TruckParking />,
-      },
-      {
-        id: '2',
-        coordinates: [150.57910751137211, -35.01967579768026],
-        iconComponent: <TruckParking />,
-      },
-    ],
-    orderLayout: 4,
-  },
-  {
-    label: 'Bus stops',
-    value: 'bus-stops',
-    legendAlias: 'bus-stops',
+    label: 'New bus stops',
+    value: 'new-bus-stops',
+    legendAlias: 'new-bus-stops',
     color: '#50B0EA',
     tickerColor: '#FFFFFF',
     geojson: [],
@@ -128,65 +82,7 @@ export const trafficAndTransportFilters = [
         iconComponent: <BusStop />,
       },
     ],
-    orderLayout: 5,
-  },
-
-  {
-    label: 'Local roads',
-    value: 'local-roads',
-    legendAlias: 'local-roads',
-    color: '#CDD3D6',
-    tickerColor: '#000000',
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/traffic-and-transport/Local roads.geojson',
-        type: 'line',
-        paint: {
-          'line-color': '#cdd3d6',
-          'line-opacity': 1,
-          'line-width': 1,
-        },
-      },
-    ],
-    orderLayout: 7,
-  },
-  {
-    label: 'Regional roads',
-    value: 'regional-roads',
-    legendAlias: 'regional-roads',
-    color: '#CDD3D6',
-    tickerColor: '#000000',
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/traffic-and-transport/Regional roads.geojson',
-        type: 'line',
-        paint: {
-          'line-color': '#cdd3d6',
-          'line-opacity': 1,
-          'line-width': 2,
-        },
-      },
-    ],
-    orderLayout: 8,
-  },
-  {
-    label: 'State roads',
-    value: 'state-roads',
-    legendAlias: 'state-roads',
-    color: '#CDD3D6',
-    tickerColor: '#000000',
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/traffic-and-transport/State roads.geojson',
-        type: 'line',
-        paint: {
-          'line-color': '#cdd3d6',
-          'line-opacity': 1,
-          'line-width': 3,
-        },
-      },
-    ],
-    orderLayout: 9,
+    orderLayout: 2,
   },
   {
     label: 'LILO intersections',
@@ -217,7 +113,71 @@ export const trafficAndTransportFilters = [
         iconComponent: <LILOIntersections />,
       },
     ],
-    orderLayout: 10,
+    orderLayout: 3,
+  },
+  {
+    label: 'Truck parking',
+    value: 'truck-parking',
+    legendAlias: 'truck-parking',
+    color: '#0086C4',
+    tickerColor: '#FFFFFF',
+    geojson: [],
+    markers: [
+      {
+        id: '1',
+        coordinates: [150.57910751137211, -35.01967579768026],
+        iconComponent: <TruckParking />,
+        text: 'Northbound truck parking area',
+        isTooltip: true,
+      },
+      {
+        id: '2',
+        coordinates: [150.57972791899448, -35.02999823619622],
+        iconComponent: <TruckParking />,
+        text: 'Southbound truck parking area',
+        isTooltip: true,
+      },
+    ],
+    orderLayout: 4,
+  },
+  {
+    label: 'Property access',
+    value: 'property-access',
+    legendAlias: 'property-access',
+    color: '#0086C4',
+    tickerColor: '#FFFFFF',
+    geojson: [],
+    markers: [
+      {
+        id: '1',
+        coordinates: [150.58579573221144, -34.98773133606075],
+        iconComponent: <InfoIcon />,
+        text: 'Property access road one, from south of Willowgreen Road, to the Jervis Bay Road intersection - left-in access from Princes highway',
+        isTooltip: true,
+      },
+      {
+        id: '2',
+        coordinates: [150.58595715064047, -34.98919712302748],
+        iconComponent: <InfoIcon />,
+        text: 'Property access road two, between the Jervis Bay Road intersection and Mortimer Road',
+        isTooltip: true,
+      },
+      {
+        id: '3',
+        coordinates: [150.57986015727823, -35.01664118767905],
+        iconComponent: <InfoIcon />,
+        text: 'Property access road three, south of Sinclair Road',
+        isTooltip: true,
+      },
+      {
+        id: '4',
+        coordinates: [150.5776437809143, -35.02690965493875],
+        iconComponent: <InfoIcon />,
+        text: 'Property access road four, south of the new Hawken Road intersection',
+        isTooltip: true,
+      },
+    ],
+    orderLayout: 5,
   },
 ];
 
@@ -228,43 +188,34 @@ export const trafficAndTransportLegends = [
     value: 'title-traffic-and-transport',
   },
   {
-    label: 'Traffic counter locations',
-    value: 'traffic-counter-locations',
-    icon: <TrafficCounterLocations />,
-  },
-  {
     label: 'Speed limit change',
     value: 'speed-limit-change',
     icon: <SpeedLimit100 />,
   },
   {
-    label: 'Truck parking',
-    value: 'truck-parking',
-    icon: <TruckParking />,
-  },
-  {
-    label: 'Bus stops',
-    value: 'bus-stops',
+    label: 'New bus stops',
+    value: 'new-bus-stops',
     icon: <BusStops />,
   },
   {
-    label: 'Local roads',
-    value: 'local-roads',
-    icon: <LocalRoads />,
-  },
-  {
-    label: 'Regional roads',
-    value: 'regional-roads',
-    icon: <RegionalRoads />,
-  },
-  {
-    label: 'State roads',
-    value: 'state-roads',
-    icon: <StateRoads />,
-  },
-  {
-    label: 'LILO intersections',
+    label: 'Left-in, left-out intersection',
     value: 'lilo-intersections',
     icon: <LILOIntersections />,
+  },
+];
+
+export const trafficAndTransportFilters = [
+  ...defaultFilters,
+  {
+    label: 'Traffic and transport',
+    value: 'traffic-and-transport',
+    legendAlias: 'traffic-and-transport',
+    color: '#146CFD',
+    filtersToShow: [...trafficAndTransportFiltersToShow],
+    legendsToShow: [...trafficAndTransportLegends],
+    tickerColor: '#FFFFFF',
+    geojson: [],
+    markers: [],
+    orderLayout: 3,
   },
 ];

@@ -76,10 +76,7 @@ const LeftSidebar = () => {
                       // Delay clearing the content until after the animation completes
                       setTimeout(() => {
                         setTopicActive('default');
-                        const defaultFilters = [
-                          'key-features',
-                          'construction-activities',
-                        ];
+                        const defaultFilters = ['general', 'key-features'];
                         setFilterOptionsSelected(
                           expandFilters(defaultFilters, 'default'),
                         );

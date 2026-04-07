@@ -27,9 +27,11 @@ export interface Filter {
   markers?: {
     id: string;
     coordinates: [number, number];
-    popupContent: ReactElement;
+    popupContent?: ReactElement;
     iconUrl?: string;
     iconComponent?: ReactElement;
+    text?: string;
+    isTooltip?: boolean;
   }[];
   filtersToShow?: Filter[];
   legendsToShow?: Legend[];

@@ -13,28 +13,31 @@ import {
 } from './topics/constant.helpers';
 
 // Mapbox configuration and other constants
-import {
-  constructionActivitiesFilters,
-  proposalOverviewFilters,
-} from './topics/proposal-overview';
+import { generalFilters, keyFeaturesFilters } from './topics/proposal-overview';
 import {
   trafficAndTransportFilters,
+  trafficAndTransportFiltersToShow,
   trafficAndTransportLegends,
 } from './topics/traffic-and-transport';
 import {
+  contoursFiltersToShow,
   noiseAndVibrationFilters,
+  noiseAndVibrationFiltersToShow,
   noiseAndVibrationLegends,
+  noiseCatchmentAreasFiltersToShow,
 } from './topics/noise-and-vibration';
 
 import {
-  landUseZoningFilters,
+  landscapeAndVisualFiltersToShow,
+  landscapeAndVisualLegends,
   lcaFilters,
   propertyAndLandUseFilters,
-  propertyAndLandUseLegends,
 } from './topics/property-and-land-use';
 
 import {
   hydrologyAndFloodingFilters,
+  hydrologyAndFloodingFiltersToShow,
+  oneAEPAffluxFiltersToShow,
   hydrologyAndFloodingLegends,
 } from './topics/hydrology-and-flood';
 
@@ -42,14 +45,23 @@ import { TabActive } from '../components/MapTopbar/MapTopbar';
 import { defaultFilters } from './topics/default';
 import {
   aboriginalCulturalHeritageFilters,
+  aboriginalCulturalHeritageFiltersToShow,
   aboriginalCulturalHeritageLegends,
 } from './topics/aboriginal-cultural-heritage';
 import {
   biodiversityFilters,
+  biodiversityFiltersToShow,
   biodiversityLegends,
+  plantCommunityTypesFiltersToShow,
 } from './topics/biodiversity';
 
 import { cumulativeFilters } from './topics/cumulative';
+import Construction from '../components/ContentTopics/Construction';
+import {
+  constructionFilters,
+  constructionFiltersToShow,
+  constructionLegends,
+} from './topics/construction';
 
 // Esri World Imagery basemap with Mapbox Streets v8 label overlay.
 // Replaces Mapbox satellite-v9 to use more current Esri imagery.
@@ -86,6 +98,16 @@ export const appMetadata = {
       linkRef: '#proposal-overview',
     },
     {
+      title: 'Construction',
+      slug: 'construction',
+      content: <Construction />,
+      filters: constructionFilters,
+      legends: constructionLegends,
+      isOnMenu: true,
+      color: '#941B00',
+      linkRef: '#construction',
+    },
+    {
       title: 'Biodiversity',
       slug: 'biodiversity',
       content: <Biodiversity />,
@@ -100,7 +122,7 @@ export const appMetadata = {
       slug: 'landscape-character-and-visual-impacts',
       content: <PropertyAndLandUse />,
       filters: propertyAndLandUseFilters,
-      legends: propertyAndLandUseLegends,
+      legends: landscapeAndVisualLegends,
       isOnMenu: true,
       color: '#D7153A',
       linkRef: '#landscape-character-and-visual-impacts',
@@ -168,16 +190,22 @@ export const appMetadata = {
 };
 
 export const listOfTopicsToAddLayer = [
-  ...noiseAndVibrationFilters,
-  ...trafficAndTransportFilters,
-  ...proposalOverviewFilters,
-  ...constructionActivitiesFilters,
-  ...biodiversityFilters,
+  ...noiseAndVibrationFiltersToShow,
+  ...aboriginalCulturalHeritageFiltersToShow,
+  ...noiseCatchmentAreasFiltersToShow,
+  ...trafficAndTransportFiltersToShow,
+  ...contoursFiltersToShow,
+  ...hydrologyAndFloodingFiltersToShow,
+  ...oneAEPAffluxFiltersToShow,
+  ...keyFeaturesFilters,
+  ...constructionFiltersToShow,
+  ...generalFilters,
+  ...biodiversityFiltersToShow,
+  ...plantCommunityTypesFiltersToShow,
+  ...landscapeAndVisualFiltersToShow,
   ...propertyAndLandUseFilters,
   ...hydrologyAndFloodingFilters,
-  ...aboriginalCulturalHeritageFilters,
   ...lcaFilters,
-  ...landUseZoningFilters,
   ...cumulativeFilters,
 ].sort((a, b) => {
   const orderA = listOfTopicsToOrderLayer.indexOf(a.value);

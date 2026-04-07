@@ -55,7 +55,10 @@ const expandFilters = (filterValues: string[], topicSlug: string): string[] => {
     ) as Filter | undefined;
     if (filter && filter.filtersToShow) {
       filter.filtersToShow.forEach((nestedFilter: Filter) => {
-        if (!expandedFilters.includes(nestedFilter.value)) {
+        if (
+          !expandedFilters.includes(nestedFilter.value) &&
+          (!nestedFilter.dontShowInFilters || nestedFilter.defaultSelected)
+        ) {
           expandedFilters.push(nestedFilter.value);
         }
       });
@@ -67,7 +70,7 @@ const expandFilters = (filterValues: string[], topicSlug: string): string[] => {
 
 // Helper function to get initial state
 const getInitialState = (): AppState => {
-  const defaultFilters = ['key-features', 'construction-activities'];
+  const defaultFilters = ['general', 'key-features'];
   return {
     topicActive: 'default',
     tabActive: 'satellite',

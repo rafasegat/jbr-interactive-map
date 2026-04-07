@@ -1,29 +1,46 @@
-import { AhimsSites } from '../../components/Icons/Legends';
+import { AhimsSites, AHIPBoundary } from '../../components/Icons/Legends';
 import { defaultFilters } from './default';
 
-export const aboriginalCulturalHeritageFilters = [
-  ...defaultFilters,
+export const aboriginalCulturalHeritageFiltersToShow = [
   {
-    label: 'AHIMS sites',
-    value: 'ahims-sites',
-    legendAlias: 'ahims-sites',
+    label: 'Aboriginal heritage study boundary',
+    value: 'aboriginal-heritage-study-boundary',
+    legendAlias: 'aboriginal-heritage-study-boundary',
     color: '#694800',
     tickerColor: '#FFFFFF',
-    markers: [
+    geojson: [
       {
-        id: '1',
-        coordinates: [150.586548721423782, -34.987819810924002],
-        iconComponent: <AhimsSites />,
-      },
-      {
-        id: '2',
-        coordinates: [150.583389718313242, -35.001747727202449],
-        iconComponent: <AhimsSites />,
+        sourceUrl:
+          '/data/geojson/Aboriginal cultural heritage/JBR2HR_Aboriginal heritage study boundary.geojson',
+        type: 'line',
+        paint: {
+          'line-color': '#9E5332',
+          'line-width': 3,
+        },
       },
     ],
-    geojson: [],
     hasLineDivider: true,
-    orderLayout: 3,
+    orderLayout: 1,
+  },
+  {
+    label: 'AHIP boundary',
+    value: 'ahip-boundary',
+    legendAlias: 'ahip-boundary',
+    color: '#D7153A',
+    tickerColor: '#FFFFFF',
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/Aboriginal cultural heritage/JBR2HR_AHIP Boundary.geojson',
+        type: 'line',
+        paint: {
+          'line-color': '#9A5E93',
+          'line-width': 3,
+        },
+      },
+    ],
+    hasLineDivider: true,
+    orderLayout: 2,
   },
 ];
 
@@ -34,8 +51,27 @@ export const aboriginalCulturalHeritageLegends = [
     value: 'title-aboriginal-cultural-heritage',
   },
   {
-    label: 'AHIMS sites',
-    value: 'ahims-sites',
+    label: 'Aboriginal heritage study boundary',
+    value: 'aboriginal-heritage-study-boundary',
     icon: <AhimsSites />,
+  },
+  {
+    label: 'AHIP boundary',
+    value: 'ahip-boundary',
+    icon: <AHIPBoundary />,
+  },
+];
+
+export const aboriginalCulturalHeritageFilters = [
+  ...defaultFilters,
+  {
+    label: 'Aboriginal cultural heritage',
+    value: 'aboriginal-cultural-heritage',
+    legendAlias: 'aboriginal-cultural-heritage',
+    color: '#694800',
+    tickerColor: '#FFFFFF',
+    filtersToShow: [...aboriginalCulturalHeritageFiltersToShow],
+    legendsToShow: [...aboriginalCulturalHeritageLegends],
+    orderLayout: 1,
   },
 ];
