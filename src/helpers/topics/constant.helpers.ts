@@ -236,6 +236,15 @@ export const listOfTopicsToOrderLayer = [
   'study-area',
   'plant-community-types',
 
+  // Plant community types (PCTs)
+  'pct-3267',
+  'pct-3271',
+  'pct-3273',
+  'pct-3330-ce',
+  'pct-3654',
+  'pct-3588',
+  'critically-endangered',
+
   // Proposal and construction elements
   'visual-envelope-map',
   'construction-zones',
@@ -259,15 +268,20 @@ export const listOfTopicsToOrderLayer = [
   'new-culverts',
   'existing-culverts',
   '1-percent-peak-afflux',
+  '1-percent-aep-afflux-operational-vs-existing',
   'existing-flood-depth-1-aep',
   'design-culverts',
   'drainage',
 
   // Noise and study areas
-  'noise-catchment-areas',
+  'nca1',
+  'nca2',
+  'nca3',
+  'nca4',
   'proposed-fauna-underpass',
   'assessment-area',
   'construction-study-area',
+  'human-comfort-working-distance',
   'operational-noise-study-area',
   'subject-land',
   'connectivity-zones',
@@ -278,16 +292,25 @@ export const listOfTopicsToOrderLayer = [
   'proposal-boundary',
   'reporting-locations',
 
+  // Aboriginal cultural heritage
+  'aboriginal-heritage-study-boundary',
+  'ahip-boundary',
+
   // Biodiversity – species
   'threatened-species',
   'great-glider',
   'scattered-trees',
   'hollow-bearing-trees',
 
+  // General / key features
+  'general',
+  'key-features',
+
   // Point / marker layers (highest z-index, added last, rendered on top)
   'site-access-gates',
   'noise-logger-locations',
-  'bus-stops',
+  'new-bus-stops',
+  'property-access',
   'truck-parking',
   'speed-limit-change',
   'traffic-counter-locations',
