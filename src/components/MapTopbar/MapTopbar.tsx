@@ -132,7 +132,9 @@ const MapTopbar = () => {
                             : `${filter.color}`,
                         }}
                       >
-                        {isChecked && <Check color={filter.tickerColor} />}
+                        {isChecked && (
+                          <Check color={filter.tickerColor ?? '#FFFFFF'} />
+                        )}
                       </span>
                       <label htmlFor={`optionsLayersSelected-${filter.value}`}>
                         <span className="title">{filter.label}</span>

@@ -116,7 +116,8 @@
         &:last-child {
           margin-bottom: 0;
         }
-        svg {
+        svg,
+        > div {
           position: absolute;
           left: 1rem;
           top: 50%;

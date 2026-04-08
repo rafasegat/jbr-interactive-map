@@ -5,7 +5,6 @@ import {
   OperationalNoiseStudyArea,
   ConstructionStudyArea,
   HumanComfortWorkingDistance,
-  NoiseCatchmentAreas,
   rectangleIcon,
 } from '../../components/Icons/Legends';
 
@@ -238,33 +237,33 @@ export const noiseAndVibrationFiltersToShow = [
     label: 'Noise logger locations',
     value: 'noise-logger-locations',
     legendAlias: 'noise-logger-locations',
-    icon: <NoiseLoggerLocations />,
+    icon: NoiseLoggerLocations('NL'),
     orderLayout: 3,
     markers: [
       {
         id: 'NL1',
         coordinates: [150.58463314451248, -34.996401975496916],
-        iconComponent: <NoiseLoggerLocations />,
+        iconComponent: NoiseLoggerLocations('NL1'),
       },
       {
         id: 'NL1B',
         coordinates: [150.5872673513604, -34.98568097919864],
-        iconComponent: <NoiseLoggerLocations />,
+        iconComponent: NoiseLoggerLocations('NL1B'),
       },
       {
         id: 'NL2',
         coordinates: [150.58046947049104, -35.01238187120289],
-        iconComponent: <NoiseLoggerLocations />,
+        iconComponent: NoiseLoggerLocations('NL2'),
       },
       {
         id: 'NL3',
         coordinates: [150.57890267997055, -35.02861119259311],
-        iconComponent: <NoiseLoggerLocations />,
+        iconComponent: NoiseLoggerLocations('NL3'),
       },
       {
         id: 'NL4',
         coordinates: [150.58483792606646, -35.05133036848399],
-        iconComponent: <NoiseLoggerLocations />,
+        iconComponent: NoiseLoggerLocations('NL4'),
       },
     ],
   },
@@ -360,7 +359,7 @@ export const noiseAndVibrationLegends = [
   {
     label: 'Noise logger locations',
     value: 'noise-logger-locations',
-    icon: <NoiseLoggerLocations />,
+    icon: NoiseLoggerLocations('NL'),
   },
   {
     label: 'Operational noise study area (minimum)',

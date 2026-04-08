@@ -276,7 +276,7 @@ const Map: React.FC = () => {
             const markerCustomEl = new mapboxgl.Marker({
               element: el,
             })
-              .setLngLat(marker.coordinates)
+              .setLngLat(marker.coordinates as [number, number])
               .addTo(mapRef.current!);
 
             // Store marker in ref
@@ -364,7 +364,7 @@ const Map: React.FC = () => {
               markerCustomEl.getElement().addEventListener('click', () => {
                 if (mapRef.current) {
                   mapRef.current.flyTo({
-                    center: marker.coordinates,
+                    center: marker.coordinates as [number, number],
                     zoom: mapRef.current.getZoom(),
                     duration: 1000,
                   });
@@ -466,20 +466,22 @@ const Map: React.FC = () => {
 
           // Update visibility for direct GeoJSON layers
           // Skip if layer is being shown via filtersToShow
-          typedFilter.geojson?.forEach((geojson: GeoJsonLayer, index: number) => {
-            const layerId = `topic-layer-${filter.value}-${index}`;
+          typedFilter.geojson?.forEach(
+            (geojson: GeoJsonLayer, index: number) => {
+              const layerId = `topic-layer-${filter.value}-${index}`;
 
-            if (mapRef.current && mapRef.current.getLayer(layerId)) {
-              // Only update if not already visible via filtersToShow
-              if (!layersVisibleViaFiltersToShow.has(layerId)) {
-                mapRef.current.setLayoutProperty(
-                  layerId,
-                  'visibility',
-                  shouldBeVisible ? 'visible' : 'none',
-                );
+              if (mapRef.current && mapRef.current.getLayer(layerId)) {
+                // Only update if not already visible via filtersToShow
+                if (!layersVisibleViaFiltersToShow.has(layerId)) {
+                  mapRef.current.setLayoutProperty(
+                    layerId,
+                    'visibility',
+                    shouldBeVisible ? 'visible' : 'none',
+                  );
+                }
               }
-            }
-          });
+            },
+          );
 
           // Update visibility for nested filters if filtersToShow exists
           if (typedFilter.filtersToShow) {
@@ -549,20 +551,22 @@ const Map: React.FC = () => {
 
           // Update visibility for direct GeoJSON layers
           // Skip if layer is being shown via filtersToShow
-          typedFilter.geojson?.forEach((geojson: GeoJsonLayer, index: number) => {
-            const layerId = `topic-layer-${filter.value}-${index}`;
+          typedFilter.geojson?.forEach(
+            (geojson: GeoJsonLayer, index: number) => {
+              const layerId = `topic-layer-${filter.value}-${index}`;
 
-            if (mapRef.current && mapRef.current.getLayer(layerId)) {
-              // Only update if not already visible via filtersToShow
-              if (!layersVisibleViaFiltersToShow.has(layerId)) {
-                mapRef.current.setLayoutProperty(
-                  layerId,
-                  'visibility',
-                  shouldBeVisible ? 'visible' : 'none',
-                );
+              if (mapRef.current && mapRef.current.getLayer(layerId)) {
+                // Only update if not already visible via filtersToShow
+                if (!layersVisibleViaFiltersToShow.has(layerId)) {
+                  mapRef.current.setLayoutProperty(
+                    layerId,
+                    'visibility',
+                    shouldBeVisible ? 'visible' : 'none',
+                  );
+                }
               }
-            }
-          });
+            },
+          );
 
           // Update visibility for nested filters if filtersToShow exists
           if (typedFilter.filtersToShow && isTopicActive) {

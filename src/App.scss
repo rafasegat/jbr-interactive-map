@@ -55,6 +55,21 @@
     }
   }
 
+  .nl-icon {
+    display: inline-flex;
+    padding: 4px 6px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    background: rgba(34, 39, 43, 0.75);
+    color: #fff;
+    font-family: 'Public Sans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+  }
+
   .external-link-ahref {
     color: $blue02;
     text-decoration: underline;

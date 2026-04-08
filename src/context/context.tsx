@@ -51,7 +51,8 @@ const expandFilters = (filterValues: string[], topicSlug: string): string[] => {
 
   filterValues.forEach((filterValue) => {
     const filter = topic.filters?.find(
-      (f: Filter) => f.value === filterValue,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (f: any) => f.value === filterValue,
     ) as Filter | undefined;
     if (filter && filter.filtersToShow) {
       filter.filtersToShow.forEach((nestedFilter: Filter) => {
@@ -116,7 +117,9 @@ const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   const contextValue: AppContextType = {
     state,
     getTopicActive: () => {
-      return appMetadata.topics.find((item) => item.slug === state.topicActive);
+      return appMetadata.topics.find(
+        (item) => item.slug === state.topicActive,
+      ) as Topic | undefined;
     },
     setTopicActive,
     setTabActive,

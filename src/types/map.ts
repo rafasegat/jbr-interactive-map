@@ -22,7 +22,7 @@ export interface Filter {
   legendAlias: string;
   orderLayout?: number;
   color: string;
-  tickerColor: string;
+  tickerColor?: string;
   geojson?: GeoJsonLayer[];
   markers?: {
     id: string;

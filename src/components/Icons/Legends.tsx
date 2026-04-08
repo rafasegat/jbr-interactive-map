@@ -288,21 +288,13 @@ export const StateRoads = () => (
 );
 
 // Noise and vibration
-export const NoiseLoggerLocations = () => (
-  <svg
-    width="24"
-    height="17"
-    viewBox="0 0 24 17"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect width="24" height="17" rx="2" fill="#22272B" fillOpacity="0.75" />
-    <path
-      d="M4.972 13V4.324H6.706L10.666 10.066V4.324H12.418V13H10.84L6.718 7.03V13H4.972ZM13.7587 13V4.324H15.5227V11.518H19.2907V13H13.7587Z"
-      fill="white"
-    />
-  </svg>
-);
+export const NoiseLoggerLocations = (text: string = 'NL') => {
+  return (
+    <div className="nl-icon">
+      <span>{text}</span>
+    </div>
+  );
+};
 export const NoiseCatchmentAreas = () => (
   <svg
     width="24"
