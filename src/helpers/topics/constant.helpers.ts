@@ -265,13 +265,13 @@ export const listOfTopicsToOrderLayer = [
   // Hydrology
   'water-courses',
   'riverlines',
-  'new-culverts',
   'existing-culverts',
   '1-percent-peak-afflux',
   '1-percent-aep-afflux-operational-vs-existing',
   'existing-flood-depth-1-aep',
   'design-culverts',
   'drainage',
+  'new-culverts',
 
   // Noise and study areas
 

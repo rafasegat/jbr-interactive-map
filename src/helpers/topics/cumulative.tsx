@@ -16,7 +16,7 @@ export const cumulativeFilters = [
         iconUrl: './images/gallery.svg',
         popupContent: (
           <div>
-            <h3>Jervis Bay Road and Princes Highway intersection</h3>
+            <h3>Jervis Bay Road intersection upgrade</h3>
             <a
               href="https://www.transport.nsw.gov.au/projects/current-projects/jervis-bay-road-and-princes-highway-intersection"
               target="_blank"
