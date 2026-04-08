@@ -105,9 +105,10 @@ const Map: React.FC = () => {
       const fetchPromises: Promise<{ url: string; data: any } | null>[] = [];
 
       for (const filter of listOfTopicsToAddLayer) {
-        if (filter?.geojson?.length) {
-          for (let index = 0; index < filter.geojson.length; index++) {
-            const geojson = filter.geojson[index] as GeoJsonLayer;
+        const f1 = filter as Filter;
+        if (f1.geojson?.length) {
+          for (let index = 0; index < f1.geojson.length; index++) {
+            const geojson = f1.geojson[index] as GeoJsonLayer;
 
             if (
               geojson.sourceUrl &&
@@ -179,9 +180,10 @@ const Map: React.FC = () => {
       // Sort in reverse: higher orderLayout added first (bottom), lower added last (top)
       for (const filter of listOfTopicsToAddLayer) {
         // Process direct GeoJSON in this filter
-        if (filter?.geojson?.length) {
-          for (let index = 0; index < filter.geojson.length; index++) {
-            const geojson = filter.geojson[index] as GeoJsonLayer;
+        const f2 = filter as Filter;
+        if (f2.geojson?.length) {
+          for (let index = 0; index < f2.geojson.length; index++) {
+            const geojson = f2.geojson[index] as GeoJsonLayer;
             const sourceId = `topic-source-${filter.value}-${index}`;
             const layerId = `topic-layer-${filter.value}-${index}`;
 
@@ -464,7 +466,7 @@ const Map: React.FC = () => {
 
           // Update visibility for direct GeoJSON layers
           // Skip if layer is being shown via filtersToShow
-          filter?.geojson?.forEach((geojson: GeoJsonLayer, index: number) => {
+          typedFilter.geojson?.forEach((geojson: GeoJsonLayer, index: number) => {
             const layerId = `topic-layer-${filter.value}-${index}`;
 
             if (mapRef.current && mapRef.current.getLayer(layerId)) {
@@ -547,7 +549,7 @@ const Map: React.FC = () => {
 
           // Update visibility for direct GeoJSON layers
           // Skip if layer is being shown via filtersToShow
-          filter?.geojson?.forEach((geojson: GeoJsonLayer, index: number) => {
+          typedFilter.geojson?.forEach((geojson: GeoJsonLayer, index: number) => {
             const layerId = `topic-layer-${filter.value}-${index}`;
 
             if (mapRef.current && mapRef.current.getLayer(layerId)) {

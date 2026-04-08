@@ -20,7 +20,7 @@ interface AppContextType {
   setTabActive: (tab: TabActive) => void;
   setFilterOptionsSelected: (options: string[]) => void;
   setZoneOptionsSelected: (options: string[]) => void;
-  openModal: () => void;
+  openModal: (content?: any) => void;
   closeModal: () => void;
 }
 
@@ -105,7 +105,7 @@ const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     setState((prev) => ({ ...prev, zoneOptionsSelected: options }));
   };
 
-  const openModal = (content: ReactNode) => {
+  const openModal = () => {
     setState((prev) => ({ ...prev, isModalOpen: true }));
   };
 

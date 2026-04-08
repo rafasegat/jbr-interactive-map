@@ -26,7 +26,7 @@ export interface Filter {
   geojson?: GeoJsonLayer[];
   markers?: {
     id: string;
-    coordinates: [number, number];
+    coordinates: number[];
     popupContent?: ReactElement;
     iconUrl?: string;
     iconComponent?: ReactElement;

@@ -340,7 +340,7 @@ export const noiseAndVibrationFiltersToShow = [
     geojson: [
       {
         sourceUrl:
-          '/data/geojson/Noise and vibration/JBR2HR_Noise Receivers.geojson',
+          '/data/geojson/Noise and vibration/JBR2HR_Noise sensitive receivers.geojson',
         type: 'fill',
         paint: {
           'fill-color': '#941b00',

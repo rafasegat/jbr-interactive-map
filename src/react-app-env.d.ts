@@ -8,6 +8,14 @@ declare global {
 }
 
 declare namespace google.maps {
+  class LatLng {
+    constructor(lat: number, lng: number);
+  }
+
+  class LatLngBounds {
+    constructor(sw?: LatLng, ne?: LatLng);
+  }
+
   namespace places {
     class Autocomplete {
       constructor(inputField: HTMLInputElement, opts?: AutocompleteOptions);
@@ -20,6 +28,8 @@ declare namespace google.maps {
       componentRestrictions?: {
         country: string | string[];
       };
+      bounds?: google.maps.LatLngBounds;
+      strictBounds?: boolean;
     }
 
     interface PlaceResult {
