@@ -48,6 +48,159 @@ export const landscapeAndVisualFiltersToShow = [
       },
     ],
   },
+  {
+    label: 'Landscape viewpoints',
+    value: 'landscape-viewpoints',
+    legendAlias: 'landscape-viewpoints',
+    color: '#d912ae',
+    tickerColor: '#FFFFFF',
+    markers: [
+      {
+        id: 'VP2',
+        coordinates: [150.5845738079575, -34.99497628563275],
+        iconUrl: './images/gallery.svg',
+        popupContent: (
+          <ImageSlider
+            images={[
+              {
+                url: '/images/viewpoint/vp2/1.png',
+                title: (
+                  <>
+                    <span className="bold">Viewpoint 2</span> - Current
+                  </>
+                ),
+              },
+              {
+                url: '/images/viewpoint/vp2/2.png',
+                title: (
+                  <>
+                    <span className="bold">Viewpoint 2</span> - 2-3 years
+                  </>
+                ),
+              },
+              {
+                url: '/images/viewpoint/vp2/3.png',
+                title: (
+                  <>
+                    <span className="bold">Viewpoint 2</span> - 8+ years
+                  </>
+                ),
+              },
+            ]}
+          />
+        ),
+      },
+      {
+        id: 'VP3',
+        coordinates: [150.58434289804944, -34.9960901756142],
+        iconUrl: './images/gallery.svg',
+        popupContent: (
+          <ImageSlider
+            images={[
+              {
+                url: '/images/viewpoint/vp3/1.png',
+                title: (
+                  <>
+                    <span className="bold">Viewpoint 3</span> - Current
+                  </>
+                ),
+              },
+              {
+                url: '/images/viewpoint/vp3/2.png',
+                title: (
+                  <>
+                    <span className="bold">Viewpoint 3</span> - 2-3 years
+                  </>
+                ),
+              },
+              {
+                url: '/images/viewpoint/vp3/3.png',
+                title: (
+                  <>
+                    <span className="bold">Viewpoint 3</span> - 8+ years
+                  </>
+                ),
+              },
+            ]}
+          />
+        ),
+      },
+      {
+        id: 'VP8',
+        coordinates: [150.57981453972766, -35.01862370663883],
+        iconUrl: './images/gallery.svg',
+        popupContent: (
+          <ImageSlider
+            images={[
+              {
+                url: '/images/viewpoint/vp8/1.png',
+                title: (
+                  <>
+                    <span className="bold">Viewpoint 8</span> - Current
+                  </>
+                ),
+              },
+              {
+                url: '/images/viewpoint/vp8/2.png',
+                title: (
+                  <>
+                    <span className="bold">Viewpoint 8</span> - 2-3 years
+                  </>
+                ),
+              },
+              {
+                url: '/images/viewpoint/vp8/3.png',
+                title: (
+                  <>
+                    <span className="bold">Viewpoint 8</span> - 8+ years
+                  </>
+                ),
+              },
+            ]}
+          />
+        ),
+      },
+      {
+        id: 'VP11',
+        coordinates: [150.5790955237636, -35.02692075809039],
+        iconUrl: './images/gallery.svg',
+        popupContent: (
+          <ImageSlider
+            images={[
+              {
+                url: '/images/viewpoint/vp11/1.png',
+                title: (
+                  <>
+                    <span className="bold">Viewpoint 11</span> - Current
+                  </>
+                ),
+              },
+              {
+                url: '/images/viewpoint/vp11/2.png',
+                title: (
+                  <>
+                    <span className="bold">Viewpoint 11</span> - 2-3 years
+                  </>
+                ),
+              },
+              {
+                url: '/images/viewpoint/vp11/3.png',
+                title: (
+                  <>
+                    <span className="bold">Viewpoint 11</span> - 8+ years
+                  </>
+                ),
+              },
+            ]}
+          />
+        ),
+      },
+    ],
+    orderLayout: 5,
+    dontShowInLegend: true,
+    dontShowInFilters: true,
+    defaultSelected: true,
+  },
 ];
 
 export const landscapeAndVisualLegends = [

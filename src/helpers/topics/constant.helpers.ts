@@ -190,16 +190,16 @@ export const listOfTopicsToOrderLayer = [
   'tuflow-model-extent',
   'water-catchment',
 
-  // Operational noise contours – night
+  // Worst-case construction scenario
+  'nca1',
+  'nca2',
+  'nca3',
+  'nca4',
+  'potential-worst-case-construction-scenario',
   'night-2040',
   'night-2030',
-
-  // Operational noise contours – day
   'day-2040',
   'day-2030',
-
-  // Worst-case construction scenario
-  'potential-worst-case-construction-scenario',
 
   // Roads
   'state-roads',
@@ -274,10 +274,7 @@ export const listOfTopicsToOrderLayer = [
   'drainage',
 
   // Noise and study areas
-  'nca1',
-  'nca2',
-  'nca3',
-  'nca4',
+
   'proposed-fauna-underpass',
   'assessment-area',
   'construction-study-area',
