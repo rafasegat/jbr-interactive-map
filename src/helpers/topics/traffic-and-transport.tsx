@@ -1,6 +1,4 @@
 import {
-  TrafficCounterLocations,
-  BusStops,
   TruckParking,
   BusStop,
   SpeedLimit100,
@@ -69,9 +67,9 @@ export const trafficAndTransportFiltersToShow = [
     orderLayout: 1,
   },
   {
-    label: 'New bus stops',
-    value: 'new-bus-stops',
-    legendAlias: 'new-bus-stops',
+    label: 'New bus stop',
+    value: 'new-bus-stop',
+    legendAlias: 'new-bus-stop',
     color: '#50B0EA',
     tickerColor: '#FFFFFF',
     geojson: [],
@@ -116,9 +114,9 @@ export const trafficAndTransportFiltersToShow = [
     orderLayout: 3,
   },
   {
-    label: 'Truck parking',
-    value: 'truck-parking',
-    legendAlias: 'truck-parking',
+    label: 'New truck parking area',
+    value: 'new-truck-parking-area',
+    legendAlias: 'new-truck-parking-area',
     color: '#0086C4',
     tickerColor: '#FFFFFF',
     geojson: [],
@@ -193,9 +191,14 @@ export const trafficAndTransportLegends = [
     icon: <SpeedLimit100 />,
   },
   {
-    label: 'New bus stops',
-    value: 'new-bus-stops',
-    icon: <BusStops />,
+    label: 'New bus stop',
+    value: 'new-bus-stop',
+    icon: <BusStop />,
+  },
+  {
+    label: 'New truck parking area',
+    value: 'new-truck-parking-area',
+    icon: <TruckParking />,
   },
   {
     label: 'Left-in, left-out intersection',

@@ -24,10 +24,10 @@ const content = () => {
       <ul>
         <li>
           refining the road alignment and geometry to reduce the proposal
-          boundary to avoid 12 of the 20 hollow bearing trees identified in the
-          study area, in particular a confirmed breeding hollow for the
-          Glossy-black Cockatoo on the corner of Blackbutt Range Road near the
-          substation
+          boundary to avoid 12 of the 20 hollow bearing trees identified as
+          potential breeding hollows for the Gang-gang Cockatoo, South-eastern
+          Glossy-black Cockatoo and Yellow-bellied Glider on the corner of
+          Blackbutt Range Road near the substation
         </li>
         <li>
           refining the road alignment and geometry to reduce the proposal
@@ -40,13 +40,7 @@ const content = () => {
         </li>
         <li>
           refining the southern tie-in geometry by bringing the northbound and
-          southbound carriageways closer together to reduce vegetation clearing
-        </li>
-        <li>
-          reducing the width of the road corridor at three fauna crossing zones
-          identified in the{' '}
-          <span className="italic">Greater Glider Connectivity Strategy</span>{' '}
-          (Appendix F of the BDAR)
+          southbound carriageways closer together to reduce vegetation clearing.
         </li>
       </ul>
       <p>
@@ -87,7 +81,7 @@ const content = () => {
         ecological communities, threatened species or their habitats as listed
         under the{' '}
         <span className="italic">Biodiversity Conservation Act 2016</span> (NSW)
-        (BC Act)and the{' '}
+        (BC Act) and the{' '}
         <span className="italic">
           Environment Protection and Biodiversity Conservation Act 1999
         </span>{' '}

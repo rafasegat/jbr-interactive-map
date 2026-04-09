@@ -131,9 +131,9 @@ const Map: React.FC = () => {
 
       // Step 2: Fetch all GeoJSON files in parallel
       if (fetchPromises.length > 0) {
-        console.log(
-          `Fetching ${fetchPromises.length} GeoJSON files in parallel...`,
-        );
+        // console.log(
+        //   `Fetching ${fetchPromises.length} GeoJSON files in parallel...`,
+        // );
         const results = await Promise.all(fetchPromises);
 
         // Store all results in cache

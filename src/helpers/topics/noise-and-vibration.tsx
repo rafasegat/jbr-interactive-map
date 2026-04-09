@@ -357,11 +357,6 @@ export const noiseAndVibrationLegends = [
     value: 'title-noise-and-vibration',
   },
   {
-    label: 'Noise logger locations',
-    value: 'noise-logger-locations',
-    icon: NoiseLoggerLocations('NL'),
-  },
-  {
     label: 'Operational noise study area (minimum)',
     value: 'operational-noise-study-area',
     icon: <OperationalNoiseStudyArea />,
@@ -372,14 +367,19 @@ export const noiseAndVibrationLegends = [
     icon: <ConstructionStudyArea />,
   },
   {
-    label: 'Human comfort working distance',
-    value: 'human-comfort-working-distance',
-    icon: <HumanComfortWorkingDistance />,
-  },
-  {
     label: 'Noise receivers',
     value: 'noise-receivers',
     icon: <NoiseReceivers />,
+  },
+  {
+    label: 'Noise logger locations',
+    value: 'noise-logger-locations',
+    icon: NoiseLoggerLocations('NL'),
+  },
+  {
+    label: 'Human comfort working distance',
+    value: 'human-comfort-working-distance',
+    icon: <HumanComfortWorkingDistance />,
   },
 ];
 

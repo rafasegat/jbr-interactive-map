@@ -187,7 +187,6 @@ export const listOfTopicsToOrderLayer = [
   'suburbs-and-localities',
   'hydro-area',
   'flood-catchments',
-  'tuflow-model-extent',
   'water-catchment',
 
   // Worst-case construction scenario
@@ -272,6 +271,7 @@ export const listOfTopicsToOrderLayer = [
   'design-culverts',
   'drainage',
   'new-culverts',
+  'tuflow-model-extent-study-area',
 
   // Noise and study areas
 

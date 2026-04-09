@@ -188,7 +188,14 @@ const MapLegend = () => {
                       }
                     >
                       {section.items.map((legend, i) => (
-                        <li key={`${legend.value}-${i}`}>
+                        <li
+                          key={`${legend.value}-${i}`}
+                          className={
+                            legend.fullWidth
+                              ? 'legend-item--full-width'
+                              : undefined
+                          }
+                        >
                           {legend.icon}
                           <span>{legend.label}</span>
                         </li>

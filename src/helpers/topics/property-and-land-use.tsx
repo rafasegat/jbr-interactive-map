@@ -1,6 +1,9 @@
 import ImageSlider from '../../components/ImageSlider/ImageSlider';
 import { defaultFilters } from './default';
-import { rectangleIcon } from '../../components/Icons/Legends';
+import {
+  rectangleIcon,
+  StudyAreaLandscape,
+} from '../../components/Icons/Legends';
 
 export const landscapeAndVisualFiltersToShow = [
   {
@@ -13,10 +16,10 @@ export const landscapeAndVisualFiltersToShow = [
       {
         sourceUrl:
           '/data/geojson/Landscape and visual/JBR2HR_LV_Study area.geojson',
-        type: 'fill',
+        type: 'line',
         paint: {
-          'fill-color': '#8055F1',
-          'fill-opacity': 0.4,
+          'line-color': '#22272B',
+          'line-width': 2,
         },
       },
     ],
@@ -82,7 +85,7 @@ export const landscapeAndVisualFiltersToShow = [
                 url: '/images/viewpoint/vp2/3.png',
                 title: (
                   <>
-                    <span className="bold">Viewpoint 2</span> - 8+ years
+                    <span className="bold">Viewpoint 2</span> - 10 years
                   </>
                 ),
               },
@@ -117,7 +120,7 @@ export const landscapeAndVisualFiltersToShow = [
                 url: '/images/viewpoint/vp3/3.png',
                 title: (
                   <>
-                    <span className="bold">Viewpoint 3</span> - 8+ years
+                    <span className="bold">Viewpoint 3</span> - 10 years
                   </>
                 ),
               },
@@ -152,7 +155,7 @@ export const landscapeAndVisualFiltersToShow = [
                 url: '/images/viewpoint/vp8/3.png',
                 title: (
                   <>
-                    <span className="bold">Viewpoint 8</span> - 8+ years
+                    <span className="bold">Viewpoint 8</span> - 10 years
                   </>
                 ),
               },
@@ -187,7 +190,7 @@ export const landscapeAndVisualFiltersToShow = [
                 url: '/images/viewpoint/vp11/3.png',
                 title: (
                   <>
-                    <span className="bold">Viewpoint 11</span> - 8+ years
+                    <span className="bold">Viewpoint 11</span> - 10 years
                   </>
                 ),
               },
@@ -212,7 +215,7 @@ export const landscapeAndVisualLegends = [
   {
     label: 'Study area',
     value: 'landscape-and-visual-study-area',
-    icon: rectangleIcon('#8055F1', 0.4),
+    icon: <StudyAreaLandscape />,
   },
 ];
 

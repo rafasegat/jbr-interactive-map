@@ -48,25 +48,25 @@ const content = () => {
         near Sinclair Road (as can been seen on the map).
       </p>
       <p>
-        Modelling for the proposal determined that once operational, the
-        proposal would achieve an overall reduction in gross pollutants (99 per
-        cent) and meet  or exceed the pollution reduction targets with an 85 per
-        cent reduction in total suspended solids, a 70 per cent reduction in
-        total phosphorus and 47 per cent reduction in total nitrogen discharging
-        to the receiving environment.
-      </p>
-      <p>
         The proposed road alignment would result in an increase in the
-        impervious area of the catchment (from four per cent to eight per cent)
+        impervious area of the catchment (from four per cent to eight per cent)
         as well as a shift of local sub catchment flows. These changes would
         cause a variety of flood level impacts within the proposal boundary with
         material non-compliances of flooding criteria identified for the
-        following: 
+        following:
       </p>
       <ul>
         <li>increase in flood levels at two properties</li>
         <li>increases in flow distribution in one area.</li>
       </ul>
+      <p>
+        Modelling for the proposal determined that once operational, the
+        proposal would achieve an overall reduction in gross pollutants (99 per
+        cent) and meet or exceed the pollution reduction targets with an 85 per
+        cent reduction in total suspended solids, a 70 per cent reduction in
+        total phosphorus and 47 per cent reduction in total nitrogen discharging
+        to the receiving environment.
+      </p>
       <p>Refer to Section 6.8 of the REF for more information.</p>
     </div>
   );

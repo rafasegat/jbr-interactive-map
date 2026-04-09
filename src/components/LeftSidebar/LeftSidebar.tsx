@@ -47,7 +47,10 @@ const LeftSidebar = () => {
     setTopicActive(topic.slug);
     const filterValues =
       (topic.filters as Filter[])
-        ?.filter((option: Filter) => !option?.dontShowInFilters)
+        ?.filter(
+          (option: Filter) =>
+            !option?.dontShowInFilters || option?.defaultSelected,
+        )
         ?.map((option: Filter) => option.value) || [];
     setFilterOptionsSelected(expandFilters(filterValues, topic.slug));
   };

@@ -14,6 +14,7 @@ export interface Legend {
   icon?: ReactElement | string;
   title?: string;
   twoColumnLayout?: boolean;
+  fullWidth?: boolean;
 }
 
 export interface Filter {

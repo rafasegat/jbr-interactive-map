@@ -8,53 +8,6 @@ import { defaultFilters } from './default';
 
 export const biodiversityFiltersToShow = [
   {
-    label: 'Proposed fauna underpass',
-    value: 'proposed-fauna-underpass',
-    legendAlias: 'proposed-fauna-underpass',
-    color: '#004000',
-    tickerColor: '#FFFFFF',
-    geojson: [
-      {
-        sourceUrl:
-          '/data/geojson/Biodiversity/JBR2HR_Proposed fauna underpass.geojson',
-        type: 'line',
-        paint: {
-          'line-color': '#004000',
-          'line-width': 3,
-        },
-      },
-    ],
-    orderLayout: 1,
-  },
-  {
-    label: 'Connectivity zones',
-    value: 'connectivity-zones',
-    legendAlias: 'connectivity-zones',
-    color: '#00AA45',
-    tickerColor: '#FFFFFF',
-    geojson: [
-      {
-        sourceUrl:
-          '/data/geojson/Biodiversity/JBR2HR_Connectivity zones.geojson',
-        type: 'fill',
-        paint: {
-          'fill-color': '#00AA45',
-          'fill-opacity': 0.2,
-        },
-      },
-      {
-        sourceUrl:
-          '/data/geojson/Biodiversity/JBR2HR_Connectivity zones.geojson',
-        type: 'line',
-        paint: {
-          'line-color': '#00AA45',
-          'line-width': 2,
-        },
-      },
-    ],
-    orderLayout: 9,
-  },
-  {
     label: 'Study area',
     value: 'study-area',
     legendAlias: 'study-area',
@@ -72,6 +25,63 @@ export const biodiversityFiltersToShow = [
     ],
     orderLayout: 11,
   },
+  {
+    label: 'Fauna connectivity zones',
+    value: 'fauna-connectivity-zones',
+    legendAlias: 'fauna-connectivity-zones',
+    color: '#D912AE',
+    tickerColor: '#FFFFFF',
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/Biodiversity/JBR2HR_Connectivity zones.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#D912AE',
+          'fill-opacity': 0.2,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/Biodiversity/JBR2HR_Connectivity zones.geojson',
+        type: 'line',
+        paint: {
+          'line-color': '#D912AE',
+          'line-width': 2,
+        },
+      },
+    ],
+    orderLayout: 9,
+  },
+  {
+    label: 'Proposed fauna underpass',
+    value: 'proposed-fauna-underpass',
+    legendAlias: 'proposed-fauna-underpass',
+    color: '#441170',
+    tickerColor: '#FFFFFF',
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/Biodiversity/JBR2HR_Proposed fauna underpass.geojson',
+        type: 'line',
+        paint: {
+          'line-color': '#441170',
+          'line-width': 6,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/Biodiversity/JBR2HR_Proposed fauna underpass.geojson',
+        type: 'line',
+        paint: {
+          'line-color': '#CEBFFF',
+          'line-width': 2,
+          'line-dasharray': [4, 4],
+        },
+      },
+    ],
+    orderLayout: 1,
+  },
 ];
 
 export const biodiversityLegends = [
@@ -82,19 +92,19 @@ export const biodiversityLegends = [
     icon: '',
   },
   {
-    label: 'Proposed fauna underpass',
-    value: 'proposed-fauna-underpass',
-    icon: <ProposedFaunaUnderpass />,
-  },
-  {
-    label: 'Connectivity zones',
-    value: 'connectivity-zones',
-    icon: <ConnectivityZones />,
-  },
-  {
     label: 'Study area',
     value: 'study-area',
     icon: <BiodiversityStudyArea />,
+  },
+  {
+    label: 'Fauna connectivity zones',
+    value: 'fauna-connectivity-zones',
+    icon: <ConnectivityZones />,
+  },
+  {
+    label: 'Proposed fauna underpass',
+    value: 'proposed-fauna-underpass',
+    icon: <ProposedFaunaUnderpass />,
   },
 ];
 
@@ -157,9 +167,9 @@ export const plantCommunityTypesFiltersToShow = [
     orderLayout: 3,
   },
   {
-    label: 'PCT 3330 (CE)',
-    value: 'pct-3330-ce',
-    legendAlias: 'pct-3330-ce',
+    label: 'PCT 3330 (TEC)',
+    value: 'pct-3330-tec',
+    legendAlias: 'pct-3330-tec',
     color: '#D7153A',
     tickerColor: '#FFFFFF',
     geojson: [
@@ -179,7 +189,7 @@ export const plantCommunityTypesFiltersToShow = [
     label: 'PCT 3654',
     value: 'pct-3654',
     legendAlias: 'pct-3654',
-    color: '#F3631B',
+    color: '#D912AE',
     tickerColor: '#FFFFFF',
     geojson: [
       {
@@ -187,7 +197,7 @@ export const plantCommunityTypesFiltersToShow = [
           '/data/geojson/Biodiversity/PCTs/JBR2HR_EasternPCT_3654.geojson',
         type: 'fill',
         paint: {
-          'fill-color': '#F3631B',
+          'fill-color': '#D912AE',
           'fill-opacity': 0.5,
         },
       },
@@ -198,7 +208,7 @@ export const plantCommunityTypesFiltersToShow = [
     label: 'PCT 3588',
     value: 'pct-3588',
     legendAlias: 'pct-3588',
-    color: '#146CFD',
+    color: '#FAAF05',
     tickerColor: '#FFFFFF',
     geojson: [
       {
@@ -206,7 +216,7 @@ export const plantCommunityTypesFiltersToShow = [
           '/data/geojson/Biodiversity/PCTs/JBR2HR_EasternPCT_3588.geojson',
         type: 'fill',
         paint: {
-          'fill-color': '#146CFD',
+          'fill-color': '#FAAF05',
           'fill-opacity': 0.5,
         },
       },
@@ -214,9 +224,9 @@ export const plantCommunityTypesFiltersToShow = [
     orderLayout: 6,
   },
   {
-    label: '(CE) – Critically endangered',
-    value: 'critically-endangered',
-    legendAlias: 'critically-endangered',
+    label: '(TEC) – Threatened ecological community',
+    value: 'threatened-ecological-community',
+    legendAlias: 'threatened-ecological-community',
     color: '#D7153A',
   },
 ];
@@ -232,37 +242,38 @@ export const plantCommunityTypesLegends = [
   {
     label: 'PCT 3267',
     value: 'pct-3267',
-    icon: rectangleIcon('#004000'),
+    icon: rectangleIcon('#004000', 0.5),
+  },
+  {
+    label: 'PCT 3330 (TEC)',
+    value: 'pct-3330-tec',
+    icon: rectangleIcon('#D7153A', 0.5),
   },
   {
     label: 'PCT 3271',
     value: 'pct-3271',
-    icon: rectangleIcon('#2E808E'),
-  },
-  {
-    label: 'PCT 3273',
-    value: 'pct-3273',
-    icon: rectangleIcon('#8055F1'),
-  },
-  {
-    label: 'PCT 3330 (CE)',
-    value: 'pct-3330-ce',
-    icon: rectangleIcon('#D7153A'),
+    icon: rectangleIcon('#2E808E', 0.5),
   },
   {
     label: 'PCT 3654',
     value: 'pct-3654',
-    icon: rectangleIcon('#F3631B'),
+    icon: rectangleIcon('#D912AE', 0.5),
+  },
+  {
+    label: 'PCT 3273',
+    value: 'pct-3273',
+    icon: rectangleIcon('#8055F1', 0.5),
   },
   {
     label: 'PCT 3588',
     value: 'pct-3588',
-    icon: rectangleIcon('#146CFD'),
+    icon: rectangleIcon('#FAAF05', 0.5),
   },
   {
-    label: '(CE) – Critically endangered',
-    value: 'critically-endangered',
+    label: '(TEC) – threatened ecological community',
+    value: 'threatened-ecological-community',
     icon: '',
+    fullWidth: true,
   },
 ];
 

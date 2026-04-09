@@ -1,10 +1,8 @@
 import {
   OperationalBoundary,
-  ConceptDesign,
   SuburbsAndLocalities,
   Drainage,
   Pavement,
-  DrainageBasins,
   LocalRoads,
   RegionalRoads,
   StateRoads,
@@ -12,17 +10,46 @@ import {
   Watercourses,
   rectangleIcon,
   HydroArea,
+  DetentionBasins,
+  SharedPath,
 } from '../../components/Icons/Legends';
 
 export const keyFeaturesFilters = [
   {
-    label: 'Concept design',
-    value: 'concept-design',
-    legendAlias: 'concept-design',
-    orderLayout: 6,
-    color: '#A4A7A9',
+    label: 'Operational boundary',
+    value: 'operational-boundary',
+    legendAlias: 'operational-boundary',
+    orderLayout: 1,
+    color: '#FAAF05',
     tickerColor: '#000000',
     geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/Key features/JBR2HR_Operational boundary.geojson',
+        type: 'line',
+        paint: {
+          'line-color': '#FAAF05',
+          'line-width': 3,
+        },
+      },
+    ],
+  },
+  {
+    label: 'Pavement',
+    value: 'pavement',
+    legendAlias: 'pavement',
+    orderLayout: 7,
+    color: '#767C7F',
+    tickerColor: '#FFFFFF',
+    geojson: [
+      {
+        sourceUrl: '/data/geojson/Key features/JBR2HR_Pavement.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#767C7F',
+          'fill-opacity': 1,
+        },
+      },
       {
         sourceUrl: '/data/geojson/Key features/JBR2HR_Concept design.geojson',
         type: 'line',
@@ -52,28 +79,9 @@ export const keyFeaturesFilters = [
     ],
   },
   {
-    label: 'Operational boundary',
-    value: 'operational-boundary',
-    legendAlias: 'operational-boundary',
-    orderLayout: 4,
-    color: '#FAAF05',
-    tickerColor: '#000000',
-    geojson: [
-      {
-        sourceUrl:
-          '/data/geojson/Key features/JBR2HR_Operational boundary.geojson',
-        type: 'line',
-        paint: {
-          'line-color': '#FAAF05',
-          'line-width': 3,
-        },
-      },
-    ],
-  },
-  {
     label: 'Drainage basins 15/9',
     value: 'drainage-basins-15-9',
-    legendAlias: 'drainage-basins',
+    legendAlias: 'detention-basins',
     orderLayout: 10,
     color: '#0B3F47',
     tickerColor: '#FFFFFF',
@@ -84,7 +92,7 @@ export const keyFeaturesFilters = [
         type: 'fill',
         paint: {
           'fill-color': '#0B3F47',
-          'fill-opacity': 1,
+          'fill-opacity': 0.6,
         },
       },
     ],
@@ -92,8 +100,8 @@ export const keyFeaturesFilters = [
   {
     label: 'Drainage basins 22/9',
     value: 'drainage-basins-22-9',
-    legendAlias: 'drainage-basins',
-    orderLayout: 11,
+    legendAlias: 'detention-basins',
+    orderLayout: 4,
     color: '#0B3F47',
     tickerColor: '#FFFFFF',
     geojson: [
@@ -104,24 +112,25 @@ export const keyFeaturesFilters = [
         paint: {
           'line-color': '#0B3F47',
           'line-width': 2,
+          'line-opacity': 0.6,
         },
       },
     ],
   },
   {
-    label: 'Pavement',
-    value: 'pavement',
-    legendAlias: 'pavement',
-    orderLayout: 7,
-    color: '#767C7F',
+    label: 'Shared paths',
+    value: 'shared-paths',
+    legendAlias: 'shared-paths',
+    orderLayout: 5,
+    color: '#D912AE',
     tickerColor: '#FFFFFF',
     geojson: [
       {
-        sourceUrl: '/data/geojson/Key features/JBR2HR_Pavement.geojson',
-        type: 'fill',
+        sourceUrl: '/data/geojson/Key features/JBR2HR_Shared paths.geojson',
+        type: 'line',
         paint: {
-          'fill-color': '#767C7F',
-          'fill-opacity': 1,
+          'line-color': '#D912AE',
+          'line-width': 2,
         },
       },
     ],
@@ -307,24 +316,9 @@ export const keyFeaturesLegends = [
     icon: '',
   },
   {
-    label: 'Concept design',
-    value: 'concept-design',
-    icon: <ConceptDesign />,
-  },
-  {
-    label: 'Drainage',
-    value: 'drainage',
-    icon: <Drainage />,
-  },
-  {
     label: 'Operational boundary',
     value: 'operational-boundary',
     icon: <OperationalBoundary />,
-  },
-  {
-    label: 'Drainage basins',
-    value: 'drainage-basins',
-    icon: <DrainageBasins />,
   },
   {
     label: 'Pavement',
@@ -332,9 +326,19 @@ export const keyFeaturesLegends = [
     icon: <Pavement />,
   },
   {
-    label: 'Suburbs and localities',
-    value: 'suburbs-and-localities',
-    icon: <SuburbsAndLocalities />,
+    label: 'Drainage',
+    value: 'drainage',
+    icon: <Drainage />,
+  },
+  {
+    label: 'Detention basins',
+    value: 'detention-basins',
+    icon: <DetentionBasins />,
+  },
+  {
+    label: 'Shared paths',
+    value: 'shared-paths',
+    icon: <SharedPath />,
   },
 ];
 

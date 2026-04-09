@@ -130,6 +130,11 @@
         grid-template-columns: 1fr 1fr;
         column-gap: $spacing-2;
 
+        .legend-item--full-width {
+          grid-column: 1 / -1;
+          padding-left: 0;
+        }
+
         li {
           padding-left: $spacing-8;
           svg {

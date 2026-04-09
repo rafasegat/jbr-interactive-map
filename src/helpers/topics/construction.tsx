@@ -230,14 +230,14 @@ export const constructionLegends = [
     icon: '',
   },
   {
-    label: 'Site access gates',
-    value: 'site-access-gates',
-    icon: <SiteAccessGates />,
-  },
-  {
     label: 'Proposal boundary',
     value: 'proposal-boundary',
     icon: <ProposalBoundary />,
+  },
+  {
+    label: 'Cut and fill',
+    value: 'cut-and-fill',
+    icon: <CutAndFill />,
   },
   {
     label: 'Proposed ancillary facility',
@@ -245,9 +245,9 @@ export const constructionLegends = [
     icon: <ProposedAncillaryFacility />,
   },
   {
-    label: 'Cut and fill',
-    value: 'cut-and-fill',
-    icon: <CutAndFill />,
+    label: 'Site access gates',
+    value: 'site-access-gates',
+    icon: <SiteAccessGates />,
   },
 ];
 
