@@ -11,9 +11,29 @@ import {
   DetentionBasins,
   SharedPath,
   HouseIcon,
+  ProposalBoundary,
 } from '../../components/Icons/Legends';
 
 export const keyFeaturesFilters = [
+  {
+    label: 'Proposal boundary',
+    value: 'proposal-boundary',
+    legendAlias: 'proposal-boundary',
+    orderLayout: 0,
+    color: '#FAAF05',
+    tickerColor: '#000000',
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/Key features/JBR2HR_Proposal_boundary.geojson',
+        type: 'line',
+        paint: {
+          'line-color': '#D7153A',
+          'line-width': 3,
+        },
+      },
+    ],
+  },
   {
     label: 'Operational boundary',
     value: 'operational-boundary',
@@ -55,6 +75,42 @@ export const keyFeaturesFilters = [
         paint: {
           'line-color': '#A4A7A9',
           'line-width': 2,
+        },
+      },
+    ],
+  },
+  {
+    label: 'Cut',
+    value: 'cut',
+    legendAlias: 'cut',
+    orderLayout: 8,
+    color: '#2E808E',
+    tickerColor: '#FFFFFF',
+    geojson: [
+      {
+        sourceUrl: '/data/geojson/Key features/JBR2HRCut.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#FAAF05',
+          'fill-opacity': 1,
+        },
+      },
+    ],
+  },
+  {
+    label: 'Fill',
+    value: 'fill',
+    legendAlias: 'fill',
+    orderLayout: 9,
+    color: '#59B500',
+    tickerColor: '#FFFFFF',
+    geojson: [
+      {
+        sourceUrl: '/data/geojson/Key features/JBR2HRFill.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#59B500',
+          'fill-opacity': 1,
         },
       },
     ],
@@ -125,7 +181,8 @@ export const keyFeaturesFilters = [
     tickerColor: '#FFFFFF',
     geojson: [
       {
-        sourceUrl: '/data/geojson/Key features/JBR2HR_Shared paths.geojson',
+        sourceUrl:
+          '/data/geojson/Key features/260410 JBR2HRSharedPaths.geojson',
         type: 'line',
         paint: {
           'line-color': '#D912AE',
@@ -318,6 +375,11 @@ export const keyFeaturesLegends = [
     icon: '',
   },
   {
+    label: 'Proposal boundary',
+    value: 'proposal-boundary',
+    icon: <ProposalBoundary />,
+  },
+  {
     label: 'Operational boundary',
     value: 'operational-boundary',
     icon: <OperationalBoundary />,
@@ -326,6 +388,16 @@ export const keyFeaturesLegends = [
     label: 'Pavement',
     value: 'pavement',
     icon: <Pavement />,
+  },
+  {
+    label: 'Cut',
+    value: 'cut',
+    icon: rectangleIcon('#FAAF05', 1),
+  },
+  {
+    label: 'Fill',
+    value: 'fill',
+    icon: rectangleIcon('#59B500', 1),
   },
   {
     label: 'Drainage',
