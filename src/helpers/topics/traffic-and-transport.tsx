@@ -138,45 +138,6 @@ export const trafficAndTransportFiltersToShow = [
     ],
     orderLayout: 4,
   },
-  {
-    label: 'Property access',
-    value: 'property-access',
-    legendAlias: 'property-access',
-    color: '#0086C4',
-    tickerColor: '#FFFFFF',
-    geojson: [],
-    markers: [
-      {
-        id: '1',
-        coordinates: [150.58579573221144, -34.98773133606075],
-        iconComponent: <InfoIcon />,
-        text: 'Property access road one, from south of Willowgreen Road, to the Jervis Bay Road intersection - left-in access from Princes highway',
-        isTooltip: true,
-      },
-      {
-        id: '2',
-        coordinates: [150.58595715064047, -34.98919712302748],
-        iconComponent: <InfoIcon />,
-        text: 'Property access road two, between the Jervis Bay Road intersection and Mortimer Road',
-        isTooltip: true,
-      },
-      {
-        id: '3',
-        coordinates: [150.57986015727823, -35.01664118767905],
-        iconComponent: <InfoIcon />,
-        text: 'Property access road three, south of Sinclair Road',
-        isTooltip: true,
-      },
-      {
-        id: '4',
-        coordinates: [150.5776437809143, -35.02690965493875],
-        iconComponent: <InfoIcon />,
-        text: 'Property access road four, south of the new Hawken Road intersection',
-        isTooltip: true,
-      },
-    ],
-    orderLayout: 5,
-  },
 ];
 
 export const trafficAndTransportLegends = [

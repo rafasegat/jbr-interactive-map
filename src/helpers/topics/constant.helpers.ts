@@ -249,7 +249,6 @@ export const listOfTopicsToOrderLayer = [
 
   // Hydrology
   'water-courses',
-  'riverlines',
   'existing-culverts',
   '1-percent-peak-afflux',
   '1-percent-aep-afflux-operational-vs-existing',
@@ -286,7 +285,7 @@ export const listOfTopicsToOrderLayer = [
   'hollow-bearing-trees',
 
   // General / key features
-  'general',
+  'base-layers',
   'key-features',
 
   // Point / marker layers (highest z-index, added last, rendered on top)

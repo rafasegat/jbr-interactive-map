@@ -81,7 +81,7 @@ const content = () => {
         ecological communities, threatened species or their habitats as listed
         under the{' '}
         <span className="italic">Biodiversity Conservation Act 2016</span> (NSW)
-        (BC Act) and the{' '}
+        (BC Act) and potential significant impacts under the{' '}
         <span className="italic">
           Environment Protection and Biodiversity Conservation Act 1999
         </span>{' '}

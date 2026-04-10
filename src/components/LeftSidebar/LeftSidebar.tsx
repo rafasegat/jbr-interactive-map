@@ -79,7 +79,7 @@ const LeftSidebar = () => {
                       // Delay clearing the content until after the animation completes
                       setTimeout(() => {
                         setTopicActive('default');
-                        const defaultFilters = ['general', 'key-features'];
+                        const defaultFilters = ['base-layers', 'key-features'];
                         setFilterOptionsSelected(
                           expandFilters(defaultFilters, 'default'),
                         );

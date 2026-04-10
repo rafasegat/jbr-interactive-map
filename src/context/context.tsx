@@ -71,7 +71,7 @@ const expandFilters = (filterValues: string[], topicSlug: string): string[] => {
 
 // Helper function to get initial state
 const getInitialState = (): AppState => {
-  const defaultFilters = ['general', 'key-features'];
+  const defaultFilters = ['base-layers', 'key-features'];
   return {
     topicActive: 'default',
     tabActive: 'satellite',

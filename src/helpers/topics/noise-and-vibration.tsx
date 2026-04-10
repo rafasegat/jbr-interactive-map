@@ -383,109 +383,109 @@ export const noiseAndVibrationLegends = [
   },
 ];
 
-export const noiseCatchmentAreasFiltersToShow = [
-  {
-    label: 'NCA1',
-    value: 'nca1',
-    legendAlias: 'nca1',
-    orderLayout: 1,
-    color: '#FFB8C1',
-    tickerColor: '#000000',
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/Noise and vibration/NCAs/JBR2HR_NCA1.geojson',
-        type: 'fill',
-        paint: {
-          'fill-color': '#FFB8C1',
-          'fill-opacity': 0.5,
-        },
-      },
-    ],
-  },
-  {
-    label: 'NCA2',
-    value: 'nca2',
-    legendAlias: 'nca2',
-    orderLayout: 2,
-    color: '#CBF4D1',
-    tickerColor: '#000000',
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/Noise and vibration/NCAs/JBR2HR_NCA2.geojson',
-        type: 'fill',
-        paint: {
-          'fill-color': '#CBF4D1',
-          'fill-opacity': 0.5,
-        },
-      },
-    ],
-  },
-  {
-    label: 'NCA3',
-    value: 'nca3',
-    legendAlias: 'nca3',
-    orderLayout: 3,
-    color: '#FEF1C2',
-    tickerColor: '#000000',
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/Noise and vibration/NCAs/JBR2HR_NCA3.geojson',
-        type: 'fill',
-        paint: {
-          'fill-color': '#FEF1C2',
-          'fill-opacity': 0.5,
-        },
-      },
-    ],
-  },
-  {
-    label: 'NCA4',
-    value: 'nca4',
-    legendAlias: 'nca4',
-    orderLayout: 4,
-    color: '#BAECFF',
-    tickerColor: '#000000',
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/Noise and vibration/NCAs/JBR2HR_NCA4.geojson',
-        type: 'fill',
-        paint: {
-          'fill-color': '#BAECFF',
-          'fill-opacity': 0.5,
-        },
-      },
-    ],
-  },
-];
+// export const noiseCatchmentAreasFiltersToShow = [
+//   {
+//     label: 'NCA1',
+//     value: 'nca1',
+//     legendAlias: 'nca1',
+//     orderLayout: 1,
+//     color: '#FFB8C1',
+//     tickerColor: '#000000',
+//     geojson: [
+//       {
+//         sourceUrl: '/data/geojson/Noise and vibration/NCAs/JBR2HR_NCA1.geojson',
+//         type: 'fill',
+//         paint: {
+//           'fill-color': '#FFB8C1',
+//           'fill-opacity': 0.5,
+//         },
+//       },
+//     ],
+//   },
+//   {
+//     label: 'NCA2',
+//     value: 'nca2',
+//     legendAlias: 'nca2',
+//     orderLayout: 2,
+//     color: '#CBF4D1',
+//     tickerColor: '#000000',
+//     geojson: [
+//       {
+//         sourceUrl: '/data/geojson/Noise and vibration/NCAs/JBR2HR_NCA2.geojson',
+//         type: 'fill',
+//         paint: {
+//           'fill-color': '#CBF4D1',
+//           'fill-opacity': 0.5,
+//         },
+//       },
+//     ],
+//   },
+//   {
+//     label: 'NCA3',
+//     value: 'nca3',
+//     legendAlias: 'nca3',
+//     orderLayout: 3,
+//     color: '#FEF1C2',
+//     tickerColor: '#000000',
+//     geojson: [
+//       {
+//         sourceUrl: '/data/geojson/Noise and vibration/NCAs/JBR2HR_NCA3.geojson',
+//         type: 'fill',
+//         paint: {
+//           'fill-color': '#FEF1C2',
+//           'fill-opacity': 0.5,
+//         },
+//       },
+//     ],
+//   },
+//   {
+//     label: 'NCA4',
+//     value: 'nca4',
+//     legendAlias: 'nca4',
+//     orderLayout: 4,
+//     color: '#BAECFF',
+//     tickerColor: '#000000',
+//     geojson: [
+//       {
+//         sourceUrl: '/data/geojson/Noise and vibration/NCAs/JBR2HR_NCA4.geojson',
+//         type: 'fill',
+//         paint: {
+//           'fill-color': '#BAECFF',
+//           'fill-opacity': 0.5,
+//         },
+//       },
+//     ],
+//   },
+// ];
 
-const noiseCatchmentAreasLegends = [
-  {
-    title: 'Noise catchment areas',
-    label: 'title',
-    value: 'title-noise-catchment-areas',
-    twoColumnLayout: true,
-  },
-  {
-    label: 'NCA1',
-    value: 'nca1',
-    icon: rectangleIcon('#FFB8C1'),
-  },
-  {
-    label: 'NCA3',
-    value: 'nca3',
-    icon: rectangleIcon('#FDE79A'),
-  },
-  {
-    label: 'NCA2',
-    value: 'nca2',
-    icon: rectangleIcon('#A8EDB3'),
-  },
-  {
-    label: 'NCA4',
-    value: 'nca4',
-    icon: rectangleIcon('#8CE0FF'),
-  },
-];
+// const noiseCatchmentAreasLegends = [
+//   {
+//     title: 'Noise catchment areas',
+//     label: 'title',
+//     value: 'title-noise-catchment-areas',
+//     twoColumnLayout: true,
+//   },
+//   {
+//     label: 'NCA1',
+//     value: 'nca1',
+//     icon: rectangleIcon('#FFB8C1'),
+//   },
+//   {
+//     label: 'NCA3',
+//     value: 'nca3',
+//     icon: rectangleIcon('#FDE79A'),
+//   },
+//   {
+//     label: 'NCA2',
+//     value: 'nca2',
+//     icon: rectangleIcon('#A8EDB3'),
+//   },
+//   {
+//     label: 'NCA4',
+//     value: 'nca4',
+//     icon: rectangleIcon('#8CE0FF'),
+//   },
+// ];
 
 export const contoursFiltersToShow = [
   {
@@ -961,17 +961,17 @@ export const noiseAndVibrationFilters = [
     orderLayout: 1,
     geojson: [],
   },
-  {
-    label: 'Noise catchment areas',
-    value: 'noise-catchment-areas',
-    legendAlias: 'noise-catchment-areas',
-    color: '#F3631B',
-    tickerColor: '#FFFFFF',
-    filtersToShow: [...noiseCatchmentAreasFiltersToShow],
-    legendsToShow: [...noiseCatchmentAreasLegends],
-    orderLayout: 2,
-    geojson: [],
-  },
+  // {
+  //   label: 'Noise catchment areas',
+  //   value: 'noise-catchment-areas',
+  //   legendAlias: 'noise-catchment-areas',
+  //   color: '#F3631B',
+  //   tickerColor: '#FFFFFF',
+  //   filtersToShow: [...noiseCatchmentAreasFiltersToShow],
+  //   legendsToShow: [...noiseCatchmentAreasLegends],
+  //   orderLayout: 2,
+  //   geojson: [],
+  // },
   {
     label: 'Contours',
     value: 'contours',

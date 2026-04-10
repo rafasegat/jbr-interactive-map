@@ -1,10 +1,13 @@
 const content = () => {
   return (
     <div>
+      <h3>About the proposal</h3>
       <p>
-        Transport for NSW (Transport) proposes to upgrade the Princes Highway
-        between Jervis Bay Road in Falls Creek and Hawken Road in Tomerong, NSW
-        (the proposal).
+        Transport for NSW (Transport) proposes to upgrade about 6.5 kilometres
+        of the Princes Highway to be two lanes in each direction between Jervis
+        Bay Road in Falls Creek and Hawken Road in Tomerong (the proposal).
+        Traffic would be separated by a median barrier and there would also be
+        an intersection upgrade at Hawken Road, Tomerong.
       </p>
       <p>
         The proposal is subject to assessment by a review of environmental
@@ -13,15 +16,6 @@ const content = () => {
           Environmental Planning and Assessment Act 1979
         </span>{' '}
         (EP&A Act).
-      </p>
-      <div className="line"></div>
-      <h3>About the proposal</h3>
-      <p>
-        Transport for NSW (Transport) proposes to upgrade about 6.5 kilometres
-        of the Princes Highway to be two lanes in each direction between Jervis
-        Bay Road in Falls Creek and Hawken Road in Tomerong (the proposal).
-        Traffic would be separated by a median barrier and there would also be
-        an intersection upgrade at Hawken Road, Tomerong.
       </p>
       <p>Refer to Chapter 1 of the REF for more information.</p>
       <h3>Key features</h3>

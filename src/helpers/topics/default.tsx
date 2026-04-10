@@ -7,9 +7,9 @@ import {
 
 export const defaultFilters = [
   {
-    label: 'General',
-    value: 'general',
-    legendAlias: 'general',
+    label: 'Base layers',
+    value: 'base-layers',
+    legendAlias: 'base-layers',
     filtersToShow: [...generalFilters],
     legendsToShow: [...generalLegends],
     color: '#002664',

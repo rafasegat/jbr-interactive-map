@@ -22,26 +22,26 @@ export const aboriginalCulturalHeritageFiltersToShow = [
     hasLineDivider: true,
     orderLayout: 1,
   },
-  {
-    label: 'AHIP boundary',
-    value: 'ahip-boundary',
-    legendAlias: 'ahip-boundary',
-    color: '#D7153A',
-    tickerColor: '#FFFFFF',
-    geojson: [
-      {
-        sourceUrl:
-          '/data/geojson/Aboriginal cultural heritage/JBR2HR_AHIP Boundary.geojson',
-        type: 'line',
-        paint: {
-          'line-color': '#9A5E93',
-          'line-width': 3,
-        },
-      },
-    ],
-    hasLineDivider: true,
-    orderLayout: 2,
-  },
+  // {
+  //   label: 'AHIP boundary',
+  //   value: 'ahip-boundary',
+  //   legendAlias: 'ahip-boundary',
+  //   color: '#D7153A',
+  //   tickerColor: '#FFFFFF',
+  //   geojson: [
+  //     {
+  //       sourceUrl:
+  //         '/data/geojson/Aboriginal cultural heritage/JBR2HR_AHIP Boundary.geojson',
+  //       type: 'line',
+  //       paint: {
+  //         'line-color': '#9A5E93',
+  //         'line-width': 3,
+  //       },
+  //     },
+  //   ],
+  //   hasLineDivider: true,
+  //   orderLayout: 2,
+  // },
 ];
 
 export const aboriginalCulturalHeritageLegends = [
@@ -55,11 +55,11 @@ export const aboriginalCulturalHeritageLegends = [
     value: 'aboriginal-heritage-study-boundary',
     icon: <AhimsSites />,
   },
-  {
-    label: 'AHIP boundary',
-    value: 'ahip-boundary',
-    icon: <AHIPBoundary />,
-  },
+  // {
+  //   label: 'AHIP boundary',
+  //   value: 'ahip-boundary',
+  //   icon: <AHIPBoundary />,
+  // },
 ];
 
 export const aboriginalCulturalHeritageFilters = [

@@ -50,44 +50,44 @@ export const hydrologyAndFloodingFiltersToShow = [
     ],
     orderLayout: 2,
   },
-  {
-    label: 'Water catchment',
-    value: 'water-catchment',
-    legendAlias: 'water-catchment',
-    color: '#8CE0FF',
-    tickerColor: '#FFFFFF',
-    geojson: [
-      {
-        sourceUrl:
-          '/data/geojson/Hydrology and flooding/JBR2HR_Water catchment.geojson',
-        type: 'fill',
-        paint: {
-          'fill-color': '#8CE0FF',
-          'fill-opacity': 0.2,
-        },
-      },
-    ],
-    orderLayout: 4,
-  },
-  {
-    label: 'Flood catchments',
-    value: 'flood-catchments',
-    legendAlias: 'flood-catchments',
-    color: '#8CDBE5',
-    tickerColor: '#FFFFFF',
-    geojson: [
-      {
-        sourceUrl:
-          '/data/geojson/Hydrology and flooding/JBR2HR_Flood catchments.geojson',
-        type: 'fill',
-        paint: {
-          'fill-color': '#8CDBE5',
-          'fill-opacity': 0.4,
-        },
-      },
-    ],
-    orderLayout: 5,
-  },
+  // {
+  //   label: 'Water catchment',
+  //   value: 'water-catchment',
+  //   legendAlias: 'water-catchment',
+  //   color: '#8CE0FF',
+  //   tickerColor: '#FFFFFF',
+  //   geojson: [
+  //     {
+  //       sourceUrl:
+  //         '/data/geojson/Hydrology and flooding/JBR2HR_Water catchment.geojson',
+  //       type: 'fill',
+  //       paint: {
+  //         'fill-color': '#8CE0FF',
+  //         'fill-opacity': 0.2,
+  //       },
+  //     },
+  //   ],
+  //   orderLayout: 4,
+  // },
+  // {
+  //   label: 'Flood catchments',
+  //   value: 'flood-catchments',
+  //   legendAlias: 'flood-catchments',
+  //   color: '#8CDBE5',
+  //   tickerColor: '#FFFFFF',
+  //   geojson: [
+  //     {
+  //       sourceUrl:
+  //         '/data/geojson/Hydrology and flooding/JBR2HR_Flood catchments.geojson',
+  //       type: 'fill',
+  //       paint: {
+  //         'fill-color': '#8CDBE5',
+  //         'fill-opacity': 0.4,
+  //       },
+  //     },
+  //   ],
+  //   orderLayout: 5,
+  // },
 ];
 
 export const hydrologyAndFloodingLegends = [
@@ -106,16 +106,16 @@ export const hydrologyAndFloodingLegends = [
     value: 'new-culverts',
     icon: <NewCulverts />,
   },
-  {
-    label: 'Water catchment',
-    value: 'water-catchment',
-    icon: <WaterCatchment />,
-  },
-  {
-    label: 'Flood catchments',
-    value: 'flood-catchments',
-    icon: <FloodCatchments />,
-  },
+  // {
+  //   label: 'Water catchment',
+  //   value: 'water-catchment',
+  //   icon: <WaterCatchment />,
+  // },
+  // {
+  //   label: 'Flood catchments',
+  //   value: 'flood-catchments',
+  //   icon: <FloodCatchments />,
+  // },
 ];
 
 export const oneAEPAffluxFiltersToShow = [

@@ -24,7 +24,6 @@ import {
   noiseAndVibrationFilters,
   noiseAndVibrationFiltersToShow,
   noiseAndVibrationLegends,
-  noiseCatchmentAreasFiltersToShow,
 } from './topics/noise-and-vibration';
 
 import {
@@ -192,7 +191,6 @@ export const appMetadata = {
 export const listOfTopicsToAddLayer = [
   ...noiseAndVibrationFiltersToShow,
   ...aboriginalCulturalHeritageFiltersToShow,
-  ...noiseCatchmentAreasFiltersToShow,
   ...trafficAndTransportFiltersToShow,
   ...contoursFiltersToShow,
   ...hydrologyAndFloodingFiltersToShow,

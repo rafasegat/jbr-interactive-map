@@ -6,12 +6,11 @@ import {
   LocalRoads,
   RegionalRoads,
   StateRoads,
-  Riverlines,
   Watercourses,
   rectangleIcon,
-  HydroArea,
   DetentionBasins,
   SharedPath,
+  HouseIcon,
 } from '../../components/Icons/Legends';
 
 export const keyFeaturesFilters = [
@@ -135,6 +134,45 @@ export const keyFeaturesFilters = [
       },
     ],
   },
+  {
+    label: 'Property access',
+    value: 'property-access',
+    legendAlias: 'property-access',
+    color: '#0086C4',
+    tickerColor: '#FFFFFF',
+    geojson: [],
+    markers: [
+      {
+        id: '1',
+        coordinates: [150.58579573221144, -34.98773133606075],
+        iconComponent: <HouseIcon />,
+        text: 'Property access road one, from south of Willowgreen Road, to the Jervis Bay Road intersection - left-in access from Princes highway',
+        isTooltip: true,
+      },
+      {
+        id: '2',
+        coordinates: [150.58595715064047, -34.98919712302748],
+        iconComponent: <HouseIcon />,
+        text: 'Property access road two, between the Jervis Bay Road intersection and Mortimer Road',
+        isTooltip: true,
+      },
+      {
+        id: '3',
+        coordinates: [150.57986015727823, -35.01664118767905],
+        iconComponent: <HouseIcon />,
+        text: 'Property access road three, south of Sinclair Road',
+        isTooltip: true,
+      },
+      {
+        id: '4',
+        coordinates: [150.5776437809143, -35.02690965493875],
+        iconComponent: <HouseIcon />,
+        text: 'Property access road four, south of the new Hawken Road intersection',
+        isTooltip: true,
+      },
+    ],
+    orderLayout: 5,
+  },
 ];
 
 export const generalFilters = [
@@ -215,24 +253,6 @@ export const generalFilters = [
     ],
   },
   {
-    label: 'Riverlines',
-    value: 'riverlines',
-    legendAlias: 'riverlines',
-    color: '#2E808E',
-    tickerColor: '#FFFFFF',
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/General/JBR2HR_River lines.geojson',
-        type: 'line',
-        paint: {
-          'line-color': '#2E808E',
-          'line-width': 2,
-        },
-      },
-    ],
-    orderLayout: 5,
-  },
-  {
     label: 'Watercourses',
     value: 'water-courses',
     legendAlias: 'water-courses',
@@ -288,24 +308,6 @@ export const generalFilters = [
     orderLayout: 8,
     dontShowInFilters: false,
   },
-  {
-    label: 'Hydro area',
-    value: 'hydro-area',
-    legendAlias: 'hydro-area',
-    color: '#146CFD',
-    tickerColor: '#FFFFFF',
-    geojson: [
-      {
-        sourceUrl: '/data/geojson/General/JBR2HR_Hydro area.geojson',
-        type: 'fill',
-        paint: {
-          'fill-color': '#146CFD',
-          'fill-opacity': 0.4,
-        },
-      },
-    ],
-    orderLayout: 9,
-  },
 ];
 
 export const keyFeaturesLegends = [
@@ -344,9 +346,9 @@ export const keyFeaturesLegends = [
 
 export const generalLegends = [
   {
-    title: 'General',
-    label: 'General',
-    value: 'title-general',
+    title: 'Base layers',
+    label: 'base-layers',
+    value: 'title-base-layers',
     icon: '',
   },
   {
@@ -370,11 +372,6 @@ export const generalLegends = [
     icon: <SuburbsAndLocalities />,
   },
   {
-    label: 'Riverlines',
-    value: 'riverlines',
-    icon: <Riverlines />,
-  },
-  {
     label: 'Watercourses',
     value: 'water-courses',
     icon: <Watercourses />,
@@ -388,10 +385,5 @@ export const generalLegends = [
     label: 'State forests',
     value: 'state-forests',
     icon: rectangleIcon('#0040004D'),
-  },
-  {
-    label: 'Hydro area',
-    value: 'hydro-area',
-    icon: <HydroArea />,
   },
 ];

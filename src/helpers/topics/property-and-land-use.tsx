@@ -3,6 +3,7 @@ import { defaultFilters } from './default';
 import {
   rectangleIcon,
   StudyAreaLandscape,
+  VisualEnvelope,
 } from '../../components/Icons/Legends';
 
 export const landscapeAndVisualFiltersToShow = [
@@ -16,10 +17,10 @@ export const landscapeAndVisualFiltersToShow = [
       {
         sourceUrl:
           '/data/geojson/Landscape and visual/JBR2HR_LV_Study area.geojson',
-        type: 'line',
+        type: 'fill',
         paint: {
-          'line-color': '#22272B',
-          'line-width': 2,
+          'fill-color': '#8055F1',
+          'fill-opacity': 0.4,
         },
       },
     ],
@@ -213,9 +214,9 @@ export const landscapeAndVisualLegends = [
     value: 'title-property-and-land-use',
   },
   {
-    label: 'Study area',
+    label: 'Visual envelope map/study area',
     value: 'landscape-and-visual-study-area',
-    icon: <StudyAreaLandscape />,
+    icon: <VisualEnvelope />,
   },
 ];
 
@@ -226,17 +227,17 @@ const lcaLegends = [
     value: 'title-lcas',
   },
   {
-    label: 'Rural residential',
-    value: 'Rural residential',
-    icon: rectangleIcon('#FAAF05B2'),
-  },
-  {
-    label: 'Road infrastructure',
+    label: 'LCZ 1 - Road infrastructure',
     value: 'Road infrastructure',
     icon: rectangleIcon('#D7153AB2'),
   },
   {
-    label: 'Forested land',
+    label: 'LCZ 2 - Rural residential and mixed use',
+    value: 'Rural residential',
+    icon: rectangleIcon('#FAAF05B2'),
+  },
+  {
+    label: 'LCZ 3 - Forested land',
     value: 'Forested land',
     icon: rectangleIcon('#146CFDB2'),
   },
