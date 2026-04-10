@@ -376,6 +376,25 @@ const Map: React.FC = () => {
           });
         }
       }
+
+      // Step 5: Lift road label layers above all dynamic vector layers.
+      // Called after ALL GeoJSON layers are added so the labels always render on top.
+      // 'esri-road-labels'  → satellite (ESRI raster overlay)
+      // 'road-label'        → default map (Mapbox streets-v11 vector label layer)
+      // 'road-number-shield'→ default map (highway route shields)
+      // moveLayer() with no beforeId moves the layer to the very top of the stack.
+      if (mapRef.current) {
+        const roadLabelLayerIds = [
+          'esri-road-labels',
+          'road-label',
+          'road-number-shield',
+        ];
+        for (const id of roadLabelLayerIds) {
+          if (mapRef.current.getLayer(id)) {
+            mapRef.current.moveLayer(id);
+          }
+        }
+      }
     };
 
     const loadLayers = async () => {
