@@ -19,15 +19,15 @@ export const esriSatelliteStyle: MapboxStyle = {
       type: 'vector' as const,
       url: 'mapbox://mapbox.mapbox-streets-v8',
     },
-    // Esri Dark Gray Reference overlay – white road labels on transparent background,
-    // designed to sit on top of Esri World Imagery (satellite).
+    // Esri World Transportation overlay – provides road labels sourced from Esri,
+    // designed to sit on top of Esri World Imagery.
     'esri-transportation': {
       type: 'raster' as const,
       tiles: [
-        'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}',
+        'https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}',
       ],
       tileSize: 256,
-      maxzoom: 16,
+      maxzoom: 19,
       attribution: '&copy; <a href="https://www.esri.com/">Esri</a>',
     },
   },
@@ -234,7 +234,8 @@ export const listOfTopicsToOrderLayer = [
   'visual-envelope-map',
   'construction-zones',
   'noise-receivers',
-  'cut-and-fill',
+  'cut',
+  'fill',
   'pavement',
   'concept-design',
   'drainage-basins',
