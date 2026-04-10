@@ -88,7 +88,7 @@ export const keyFeaturesFilters = [
     tickerColor: '#FFFFFF',
     geojson: [
       {
-        sourceUrl: '/data/geojson/Key features/JBR2HRCut.geojson',
+        sourceUrl: '/data/geojson/Key features/JBR2HR_Cut.geojson',
         type: 'fill',
         paint: {
           'fill-color': '#FAAF05',
@@ -106,7 +106,7 @@ export const keyFeaturesFilters = [
     tickerColor: '#FFFFFF',
     geojson: [
       {
-        sourceUrl: '/data/geojson/Key features/JBR2HRFill.geojson',
+        sourceUrl: '/data/geojson/Key features/JBR2HR_Fill.geojson',
         type: 'fill',
         paint: {
           'fill-color': '#59B500',
@@ -181,8 +181,7 @@ export const keyFeaturesFilters = [
     tickerColor: '#FFFFFF',
     geojson: [
       {
-        sourceUrl:
-          '/data/geojson/Key features/260410 JBR2HRSharedPaths.geojson',
+        sourceUrl: '/data/geojson/Key features/JBR2HR_SharedPaths.geojson',
         type: 'line',
         paint: {
           'line-color': '#D912AE',
