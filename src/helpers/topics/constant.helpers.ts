@@ -19,6 +19,17 @@ export const esriSatelliteStyle: MapboxStyle = {
       type: 'vector' as const,
       url: 'mapbox://mapbox.mapbox-streets-v8',
     },
+    // Esri World Transportation overlay – provides road labels sourced from Esri,
+    // designed to sit on top of Esri World Imagery.
+    'esri-transportation': {
+      type: 'raster' as const,
+      tiles: [
+        'https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}',
+      ],
+      tileSize: 256,
+      maxzoom: 19,
+      attribution: '&copy; <a href="https://www.esri.com/">Esri</a>',
+    },
   },
   layers: [
     // Dark fill for areas outside tile coverage
@@ -32,6 +43,12 @@ export const esriSatelliteStyle: MapboxStyle = {
       id: 'esri-satellite',
       type: 'raster' as const,
       source: 'esri-imagery',
+    },
+    // Esri World Transportation overlay – ESRI-provided road labels (single layer)
+    {
+      id: 'esri-road-labels',
+      type: 'raster' as const,
+      source: 'esri-transportation',
     },
     // Waterway name labels (rivers, creeks)
     {
@@ -84,37 +101,6 @@ export const esriSatelliteStyle: MapboxStyle = {
       paint: {
         'text-color': '#a8e0a8',
         'text-halo-color': 'rgba(0,0,0,0.6)',
-        'text-halo-width': 1.5,
-      },
-    },
-    // Road name labels (visible from zoom 12+)
-    {
-      id: 'road-label',
-      type: 'symbol' as const,
-      source: 'mapbox-streets',
-      'source-layer': 'road',
-      minzoom: 12,
-      filter: ['has', 'name'],
-      layout: {
-        'symbol-placement': 'line' as const,
-        'text-field': ['get', 'name'],
-        'text-font': ['DIN Pro Regular', 'Arial Unicode MS Regular'],
-        'text-max-width': 6,
-        'text-size': [
-          'interpolate',
-          ['linear'],
-          ['zoom'],
-          12,
-          10,
-          18,
-          13,
-        ] as any,
-        'text-padding': 1,
-        'text-rotation-alignment': 'map' as const,
-      },
-      paint: {
-        'text-color': '#ffffff',
-        'text-halo-color': 'rgba(0,0,0,0.7)',
         'text-halo-width': 1.5,
       },
     },
