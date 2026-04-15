@@ -13,7 +13,7 @@ export const esriSatelliteStyle: MapboxStyle = {
       ],
       tileSize: 256,
       maxzoom: 19,
-      attribution: '&copy; <a href="https://www.esri.com/">Esri</a>, ',
+      attribution: '&copy; <a href="https://www.esri.com/">Esri</a>',
     },
     'mapbox-streets': {
       type: 'vector' as const,

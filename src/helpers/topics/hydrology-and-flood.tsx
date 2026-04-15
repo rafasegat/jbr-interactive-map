@@ -44,16 +44,16 @@ export const hydrologyAndFloodingFiltersToShow = [
         type: 'line',
         paint: {
           'line-color': '#22272B',
-          'line-width': 3,
+          'line-width': 12,
         },
       },
       {
         sourceUrl:
           '/data/geojson/Hydrology and flooding/JBR2HR_New culverts.geojson',
-        type: 'fill',
+        type: 'line',
         paint: {
-          'fill-color': '#22272B',
-          'fill-opacity': 0.6,
+          'line-color': '#A8EDB3',
+          'line-width': 4,
         },
       },
     ],

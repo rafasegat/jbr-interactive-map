@@ -20,10 +20,10 @@ const content = () => {
       </p>
 
       <div className="line"></div>
-      <h3>Construction footprint</h3>
+      <h3>Proposal boundary</h3>
       <p>
-        The construction footprint (proposal boundary) includes the area
-        required to construct and operate the proposal, including:
+        The proposal boundary includes the area required to construct and
+        operate the proposal, including:
       </p>
       <ul>
         <li>eight ancillary facilities (shown on the map)</li>
@@ -31,13 +31,11 @@ const content = () => {
         <li>
           sufficient space around the road to provide space to manoeuvre
           construction plant and equipment and relocate and protect utilities as
-          required.
+          required
         </li>
+        <li>proposed ancillary facilities are shown on the map.</li>
       </ul>
-      <p>
-        Proposed ancillary facilities and their access are shown on the map.
-        Refer to Section 3.4 of the REF for more information.
-      </p>
+      <p>Refer to Section 3.4 of the REF for more information.</p>
       <h3>Construction staging</h3>
       <p>
         The work methodology for the proposal would be refined during detailed

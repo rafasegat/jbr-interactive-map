@@ -1,11 +1,9 @@
 import {
-  TruckParking,
-  BusStop,
   SpeedLimit100,
   SpeedLimit80,
   SpeedLimit60,
   LILOIntersections,
-  InfoIcon,
+  LILOIntersectionsIcon,
 } from '../../components/Icons/Legends';
 import { defaultFilters } from './default';
 
@@ -113,7 +111,7 @@ export const trafficAndTransportLegends = [
   {
     label: 'Left-in, left-out intersection',
     value: 'lilo-intersections',
-    icon: <LILOIntersections />,
+    icon: <LILOIntersectionsIcon />,
   },
 ];
 

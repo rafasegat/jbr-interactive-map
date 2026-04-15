@@ -119,13 +119,13 @@ const content = () => {
         A range of safeguards and management measures are proposed to further
         minimise and mitigate potential impacts, such as through the
         implementation of a flora and fauna management plan and a biodiversity
-        offset strategy developed in accordance with Transport’s{' '}
+        offset strategy developed in accordance with{' '}
         <a
           href="https://www.transport.nsw.gov.au/operations/roads-and-waterways/environment-and-heritage/biodiversity"
           target="_blank"
           className="external-link-ahref"
         >
-          No Net Loss Guidelines and Tree and Hollow Replacement Guidelines
+          Transport's Biodiversity Policy
         </a>
         .
       </p>

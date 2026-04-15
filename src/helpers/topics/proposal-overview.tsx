@@ -79,8 +79,8 @@ export const keyFeaturesFilters = [
         sourceUrl: '/data/geojson/Key features/JBR2HR_Concept design.geojson',
         type: 'line',
         paint: {
-          'line-color': '#A4A7A9',
-          'line-width': 2,
+          'line-color': '#CACCCD',
+          'line-width': 1,
         },
       },
     ],
@@ -188,10 +188,10 @@ export const keyFeaturesFilters = [
     geojson: [
       {
         sourceUrl: '/data/geojson/Key features/JBR2HR_SharedPaths.geojson',
-        type: 'line',
+        type: 'fill',
         paint: {
-          'line-color': '#8055F1',
-          'line-width': 2,
+          'fill-color': '#8055F1',
+          'fill-opacity': 1,
         },
       },
     ],
@@ -218,27 +218,27 @@ export const keyFeaturesFilters = [
         isTooltip: true,
       },
     ],
-    // geojson: [
-    //   {
-    //     sourceUrl:
-    //       '/data/geojson/Biodiversity/JBR2HR_Proposed fauna underpass.geojson',
-    //     type: 'line',
-    //     paint: {
-    //       'line-color': '#441170',
-    //       'line-width': 6,
-    //     },
-    //   },
-    //   {
-    //     sourceUrl:
-    //       '/data/geojson/Biodiversity/JBR2HR_Proposed fauna underpass.geojson',
-    //     type: 'line',
-    //     paint: {
-    //       'line-color': '#CEBFFF',
-    //       'line-width': 2,
-    //       'line-dasharray': [4, 4],
-    //     },
-    //   },
-    // ],
+    geojson: [
+      {
+        sourceUrl:
+          '/data/geojson/Biodiversity/JBR2HR_Proposed fauna underpass.geojson',
+        type: 'line',
+        paint: {
+          'line-color': '#65004D',
+          'line-width': 12,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/Biodiversity/JBR2HR_Proposed fauna underpass.geojson',
+        type: 'line',
+        paint: {
+          'line-color': '#D912AE',
+          'line-width': 4,
+          // 'line-dasharray': [4, 4],
+        },
+      },
+    ],
     orderLayout: 6,
   },
   {
@@ -258,7 +258,7 @@ export const keyFeaturesFilters = [
       },
       {
         id: '2',
-        coordinates: [150.58595715064047, -34.98919712302748],
+        coordinates: [150.5860543, -34.9889137],
         iconComponent: <HouseIcon />,
         text: 'Property access road two, between the Jervis Bay Road intersection and Mortimer Road',
         isTooltip: true,
@@ -278,7 +278,7 @@ export const keyFeaturesFilters = [
         isTooltip: true,
       },
     ],
-    orderLayout: 5,
+    orderLayout: 1,
   },
   {
     label: 'New bus stop',
@@ -297,9 +297,9 @@ export const keyFeaturesFilters = [
     orderLayout: 7,
   },
   {
-    label: 'New truck parking area',
-    value: 'new-truck-parking-area',
-    legendAlias: 'new-truck-parking-area',
+    label: 'Truck parking area',
+    value: 'truck-parking-area',
+    legendAlias: 'truck-parking-area',
     color: '#0086C4',
     tickerColor: '#FFFFFF',
     geojson: [],
@@ -336,14 +336,14 @@ export const keyFeaturesFilters = [
       },
       {
         id: '2',
-        coordinates: [150.587675, -34.9872514],
-        iconComponent: <InfoIcon />,
+        coordinates: [150.5870272, -34.9870708],
+        iconComponent: <InfoIcon2 />,
         text: 'Shared path on the eastern side of property access road two, from the bus bay at the Jervis Bay Road intersection to Mortimer Road',
         isTooltip: true,
       },
       {
         id: '3',
-        coordinates: [150.5865482, -34.9874882],
+        coordinates: [150.5862651, -34.987359],
         iconComponent: <InfoIcon2 />,
         text: 'Widening existing two-lane carriageway to four lanes (two lanes in each direction) with median separation',
         isTooltip: true,
@@ -502,7 +502,7 @@ export const generalFilters = [
         type: 'fill',
         paint: {
           'fill-color': '#00AA45',
-          'fill-opacity': 0.2,
+          'fill-opacity': 0.15,
         },
       },
     ],
@@ -520,7 +520,7 @@ export const generalFilters = [
         type: 'fill',
         paint: {
           'fill-color': '#004000',
-          'fill-opacity': 0.2,
+          'fill-opacity': 0.15,
         },
       },
     ],
@@ -587,8 +587,8 @@ export const keyFeaturesLegends = [
     icon: <BusStop />,
   },
   {
-    label: 'New truck parking area',
-    value: 'new-truck-parking-area',
+    label: 'Truck parking area',
+    value: 'truck-parking-area',
     icon: <TruckParking />,
   },
 ];
