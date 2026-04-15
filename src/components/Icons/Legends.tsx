@@ -128,7 +128,51 @@ export const SharedPath = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path d="M0 1H24" stroke="#D912AE" strokeWidth="2" />
+    <path d="M0 1H24" stroke="#8055F1" strokeWidth="2" />
+  </svg>
+);
+export const ProposedFaunaUnderpass = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+  >
+    <path
+      d="M4 12L20 12"
+      stroke="#65004D"
+      strokeWidth="8"
+      strokeLinecap="round"
+    />
+    <path
+      d="M4 12L20 12"
+      stroke="#D912AE"
+      strokeWidth="3"
+      strokeLinecap="round"
+    />
+  </svg>
+);
+export const FaunaUnderPassIcon = () => (
+  <svg
+    width="32"
+    height="32"
+    viewBox="0 0 32 32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M16.0001 30.7647C7.88241 30.7647 1.23535 24.1176 1.23535 16C1.23535 7.88235 7.88241 1.23529 16.0001 1.23529C24.1177 1.23529 30.7648 7.88235 30.7648 16C30.7648 24.1176 24.1177 30.7647 16.0001 30.7647Z"
+      fill="#D912AE"
+    />
+    <path
+      d="M16 2.52941C23.4706 2.52941 29.4706 8.58823 29.4706 16C29.4706 23.4118 23.4118 29.4706 16 29.4706C8.58823 29.4706 2.52941 23.4706 2.52941 16C2.52941 8.52941 8.58823 2.52941 16 2.52941ZM16 0C7.17647 0 0 7.17647 0 16C0 24.8235 7.17647 32 16 32C24.8235 32 32 24.8235 32 16C32 7.17647 24.8235 0 16 0Z"
+      fill="#65004D"
+    />
+    <path
+      d="M11.5673 10.1708C11.6804 10.2914 11.7996 10.7546 11.8415 10.765C12.2002 10.5822 12.7484 10.8192 13.0384 10.7606C13.1861 10.7307 13.4938 10.3668 13.7252 10.3006C14.8799 9.97 14.4387 11.5047 14.3858 12.2266C14.6214 12.03 14.8139 11.5835 14.8661 11.2652C14.8944 11.0917 14.8339 10.7598 14.9333 10.668C17.6746 9.6503 20.8799 10.0169 22.8352 12.5644C24.4214 14.6311 24.201 16.6481 23.2856 18.9876C23.173 19.2753 22.6113 20.6385 22.4835 20.7827C22.3735 20.9069 22.2476 20.9429 22.0959 20.9621C21.229 21.0719 20.1542 20.9034 19.2671 20.9346C18.379 20.143 20.13 19.9829 19.5183 19.0668L17.6036 18.9377C17.446 18.8889 17.5555 18.3712 17.4307 18.3349C17.3195 18.3027 17.3371 18.4268 17.312 18.5052C17.099 19.1727 16.8349 20.6074 16.195 20.8688C15.8447 21.0119 14.7043 21.0069 14.3033 20.962C13.516 20.874 14.3044 20.235 14.278 19.7121C14.2659 19.4736 13.9779 18.8197 13.7923 19.1718C13.4877 19.7497 13.6475 20.4312 12.9063 20.8124C12.5476 20.9968 11.2852 21.0863 11.007 20.7828C10.6153 20.3555 11.3671 19.9838 11.419 19.5833C11.4651 19.2268 11.2285 18.6076 11.3406 18.336C11.4389 18.0978 12.3455 17.6721 12.4646 17.2975C12.0321 17.3355 11.6368 17.5891 11.203 17.6947C10.562 17.8507 9.93678 17.9131 9.3071 17.6657C8.87341 17.4953 8.09617 16.8089 8.02266 16.2853C7.83719 14.9642 8.85311 12.8818 9.66597 11.952C9.78693 11.8136 10.1384 11.5857 10.2174 11.4661C10.3042 11.3345 10.3622 10.9111 10.4593 10.6969C10.6578 10.259 11.1428 9.71823 11.5673 10.1708ZM11.2893 14.7922C11.2893 14.4012 11.0047 14.0843 10.6534 14.0843C10.3022 14.0843 10.0175 14.4012 10.0175 14.7922C10.0175 15.1831 10.3022 15.5 10.6534 15.5C11.0047 15.5 11.2893 15.1831 11.2893 14.7922Z"
+      fill="white"
+    />
   </svg>
 );
 export const HouseIcon = () => (
@@ -162,7 +206,7 @@ export const Pavement = () => (
     xmlns="http://www.w3.org/2000/svg"
   >
     <rect width="24" height="12" fill="#767C7F" />
-    <path d="M0 6H24" stroke="#A4A7A9" strokeWidth="2" />
+    <path d="M0 6H24" stroke="#A4A7A9" />
   </svg>
 );
 export const CutAndFill = () => (
@@ -548,7 +592,7 @@ export const OperationalNoiseStudyArea = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect x="1" y="7" width="22" height="10" stroke="#694800" strokeWidth="2" />
+    <rect x="2" y="8" width="20" height="8" stroke="#941B00" strokeWidth="4" />
   </svg>
 );
 export const ConstructionStudyArea = () => (
@@ -619,12 +663,23 @@ export const ExistingCulverts = () => (
 export const NewCulverts = () => (
   <svg
     width="24"
-    height="2"
-    viewBox="0 0 24 2"
+    height="24"
+    viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path d="M0 1H24" stroke="#8055F1" strokeWidth="2" />
+    <path
+      d="M4 12L20 12"
+      stroke="#22272B"
+      strokeWidth="8"
+      strokeLinecap="round"
+    />
+    <path
+      d="M4 12L20 12"
+      stroke="#A8EDB3"
+      strokeWidth="3"
+      strokeLinecap="round"
+    />
   </svg>
 );
 export const VisualEnvelope = () => (
@@ -652,17 +707,12 @@ export const Riverlines = () => (
 export const Watercourses = () => (
   <svg
     width="24"
-    height="2"
-    viewBox="0 0 24 2"
+    height="1"
+    viewBox="0 0 24 1"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path
-      d="M0 1H24"
-      stroke="#0B3F47"
-      strokeWidth="2"
-      strokeDasharray="3 2.5"
-    />
+    <path d="M0 0.5H24" stroke="#0B3F47" strokeDasharray="3 2.5" />
   </svg>
 );
 export const WaterCatchment = () => (
@@ -896,29 +946,6 @@ export const ThreatenedSpecies = () => (
     />
   </svg>
 );
-export const ProposedFaunaUnderpass = () => (
-  <svg
-    width="24"
-    height="6"
-    viewBox="0 0 24 6"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M3 3L21 3"
-      stroke="#441170"
-      strokeWidth="6"
-      strokeLinecap="round"
-    />
-    <path
-      d="M3 3L21 3"
-      stroke="#CEBFFF"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeDasharray="4 4"
-    />
-  </svg>
-);
 export const StudyAreaLandscape = () => (
   <svg
     width="24"
@@ -949,14 +976,14 @@ export const ConnectivityZones = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="24" height="12" fill="#F4B5E6" fillOpacity="0.4" />
     <rect
       x="1"
       y="1"
       width="22"
       height="10"
-      stroke="#D912AE"
-      strokeOpacity="0.6"
+      fill="#8CE0FF"
+      fillOpacity="0.3"
+      stroke="#8CE0FF"
       strokeWidth="2"
     />
   </svg>
@@ -1138,6 +1165,48 @@ export const InfoIcon = () => (
     />
   </svg>
 );
+export const InfoIcon2 = () => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clipPath="url(#clip0_4196_158922)">
+      <mask
+        id="mask0_4196_158922"
+        maskUnits="userSpaceOnUse"
+        x="0"
+        y="0"
+        width="24"
+        height="24"
+      >
+        <path d="M24 0H0V24H24V0Z" fill="white" />
+      </mask>
+      <g mask="url(#mask0_4196_158922)">
+        <path
+          d="M11.9998 23.0733C5.91156 23.0733 0.92627 18.088 0.92627 11.9998C0.92627 5.91156 5.91156 0.92627 11.9998 0.92627C18.088 0.92627 23.0733 5.91156 23.0733 11.9998C23.0733 18.088 18.088 23.0733 11.9998 23.0733Z"
+          fill="white"
+        />
+        <path
+          d="M12 1.89706C17.6029 1.89706 22.1029 6.44118 22.1029 12C22.1029 17.5588 17.5588 22.1029 12 22.1029C6.44118 22.1029 1.89706 17.6029 1.89706 12C1.89706 6.39706 6.44118 1.89706 12 1.89706ZM12 0C5.38235 0 0 5.38235 0 12C0 18.6176 5.38235 24 12 24C18.6176 24 24 18.6176 24 12C24 5.38235 18.6176 0 12 0Z"
+          fill="#22272B"
+        />
+      </g>
+      <path
+        d="M11.0211 18V9.41315H12.9859V18H11.0211ZM11 8.18408V6H13V8.18408H11Z"
+        fill="#22272B"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_4196_158922">
+        <rect width="24" height="24" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
 export const TruckParking = () => (
   <svg
     width="24"
@@ -1162,22 +1231,52 @@ export const TruckParking = () => (
 );
 export const LILOIntersections = () => (
   <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
+    width="32"
+    height="32"
+    viewBox="0 0 32 32"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect
-      x="1.5"
-      y="1.5"
-      width="21"
-      height="21"
-      rx="10.5"
-      fill="#F3631B"
-      fillOpacity="0.5"
-      stroke="#F3631B"
-      strokeWidth="3"
-    />
+    <g clipPath="url(#clip0_4171_181239)">
+      <mask
+        id="mask0_4171_181239"
+        maskUnits="userSpaceOnUse"
+        x="0"
+        y="0"
+        width="32"
+        height="32"
+      >
+        <path d="M32 0H0V32H32V0Z" fill="white" />
+      </mask>
+      <g mask="url(#mask0_4171_181239)">
+        <path
+          d="M16.0001 30.7647C7.88241 30.7647 1.23535 24.1176 1.23535 16C1.23535 7.88235 7.88241 1.23529 16.0001 1.23529C24.1177 1.23529 30.7648 7.88235 30.7648 16C30.7648 24.1176 24.1177 30.7647 16.0001 30.7647Z"
+          fill="#002664"
+        />
+        <path
+          d="M16 2.52941C23.4706 2.52941 29.4706 8.58823 29.4706 16C29.4706 23.4118 23.4118 29.4706 16 29.4706C8.58823 29.4706 2.52941 23.4706 2.52941 16C2.52941 8.52941 8.58823 2.52941 16 2.52941ZM16 0C7.17647 0 0 7.17647 0 16C0 24.8235 7.17647 32 16 32C24.8235 32 32 24.8235 32 16C32 7.17647 24.8235 0 16 0Z"
+          fill="white"
+        />
+      </g>
+      <path
+        d="M19 27V23C19 20.7909 17.2091 19 15 19H11"
+        stroke="white"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <path d="M13 22V16L9 19L13 22Z" fill="white" />
+      <path
+        d="M10 14L14 14C16.2091 14 18 12.2091 18 10L18 6"
+        stroke="white"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <path d="M15 8L21 8L18 4L15 8Z" fill="white" />
+    </g>
+    <defs>
+      <clipPath id="clip0_4171_181239">
+        <rect width="32" height="32" fill="white" />
+      </clipPath>
+    </defs>
   </svg>
 );

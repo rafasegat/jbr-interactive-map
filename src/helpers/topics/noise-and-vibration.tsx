@@ -281,8 +281,8 @@ export const noiseAndVibrationFiltersToShow = [
           '/data/geojson/Noise and vibration/JBR2HR_Operational noise study area.geojson',
         type: 'line',
         paint: {
-          'line-color': '#694800',
-          'line-width': 2,
+          'line-color': '#941B00',
+          'line-width': 4,
         },
       },
     ],

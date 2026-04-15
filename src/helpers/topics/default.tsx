@@ -16,7 +16,7 @@ export const defaultFilters = [
     tickerColor: '#FFFFFF',
   },
   {
-    label: 'Key features',
+    label: 'Key features of the proposal',
     value: 'key-features',
     legendAlias: 'key-features',
     geojson: [],

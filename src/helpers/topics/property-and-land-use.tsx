@@ -214,7 +214,7 @@ export const landscapeAndVisualLegends = [
     value: 'title-property-and-land-use',
   },
   {
-    label: 'Visual envelope map/study area',
+    label: 'Study area/visual envelope map',
     value: 'landscape-and-visual-study-area',
     icon: <VisualEnvelope />,
   },

@@ -117,14 +117,14 @@ export const appMetadata = {
       linkRef: '#biodiversity',
     },
     {
-      title: 'Landscape character and visual impacts',
-      slug: 'landscape-character-and-visual-impacts',
+      title: 'Landscape character and visual',
+      slug: 'landscape-character-and-visual',
       content: <PropertyAndLandUse />,
       filters: propertyAndLandUseFilters,
       legends: landscapeAndVisualLegends,
       isOnMenu: true,
       color: '#D7153A',
-      linkRef: '#landscape-character-and-visual-impacts',
+      linkRef: '#landscape-character-and-visual',
     },
     {
       title: 'Traffic and transport',

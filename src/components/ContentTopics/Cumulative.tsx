@@ -6,10 +6,9 @@ const content = () => {
         The REF included consideration of the potential cumulative impacts that
         may arise due to construction and operation of the proposal and the
         potential for combined impacts with other projects. The greatest
-        potential for cumulative impacts would be due to the interaction of the
-        proposal where it will tie-in with the Jervis Bay Road intersection
-        upgrade, currently under construction in the northern extent of the
-        proposal boundary in Falls Creek.
+        potential for cumulative impacts would be due to the continuation of
+        construction along the Princes Highway in the Falls Creek and Tomerong
+        area.
       </p>
       <p>
         The Jervis Bay Road intersection upgrade is expected to be completed

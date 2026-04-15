@@ -51,7 +51,7 @@ export const aboriginalCulturalHeritageLegends = [
     value: 'title-aboriginal-cultural-heritage',
   },
   {
-    label: 'Aboriginal heritage study boundary',
+    label: 'Aboriginal cultural heritage study area/proposal boundary',
     value: 'aboriginal-heritage-study-boundary',
     icon: <AhimsSites />,
   },

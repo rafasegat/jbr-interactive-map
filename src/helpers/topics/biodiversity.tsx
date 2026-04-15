@@ -37,7 +37,7 @@ export const biodiversityFiltersToShow = [
           '/data/geojson/Biodiversity/JBR2HR_Connectivity zones.geojson',
         type: 'fill',
         paint: {
-          'fill-color': '#D912AE',
+          'fill-color': '#8CE0FF',
           'fill-opacity': 0.2,
         },
       },
@@ -46,41 +46,12 @@ export const biodiversityFiltersToShow = [
           '/data/geojson/Biodiversity/JBR2HR_Connectivity zones.geojson',
         type: 'line',
         paint: {
-          'line-color': '#D912AE',
+          'line-color': '#8CE0FF',
           'line-width': 2,
         },
       },
     ],
     orderLayout: 9,
-  },
-  {
-    label: 'Proposed fauna underpass',
-    value: 'proposed-fauna-underpass',
-    legendAlias: 'proposed-fauna-underpass',
-    color: '#441170',
-    tickerColor: '#FFFFFF',
-    geojson: [
-      {
-        sourceUrl:
-          '/data/geojson/Biodiversity/JBR2HR_Proposed fauna underpass.geojson',
-        type: 'line',
-        paint: {
-          'line-color': '#441170',
-          'line-width': 6,
-        },
-      },
-      {
-        sourceUrl:
-          '/data/geojson/Biodiversity/JBR2HR_Proposed fauna underpass.geojson',
-        type: 'line',
-        paint: {
-          'line-color': '#CEBFFF',
-          'line-width': 2,
-          'line-dasharray': [4, 4],
-        },
-      },
-    ],
-    orderLayout: 1,
   },
 ];
 
@@ -113,7 +84,7 @@ export const plantCommunityTypesFiltersToShow = [
     label: 'PCT 3267',
     value: 'pct-3267',
     legendAlias: 'pct-3267',
-    color: '#004000',
+    color: '#F3631B',
     tickerColor: '#FFFFFF',
     geojson: [
       {
@@ -121,8 +92,8 @@ export const plantCommunityTypesFiltersToShow = [
           '/data/geojson/Biodiversity/PCTs/JBR2HR_EasternPCT_3267.geojson',
         type: 'fill',
         paint: {
-          'fill-color': '#004000',
-          'fill-opacity': 0.5,
+          'fill-color': '#F3631B',
+          'fill-opacity': 0.4,
         },
       },
     ],
@@ -208,7 +179,7 @@ export const plantCommunityTypesFiltersToShow = [
     label: 'PCT 3588',
     value: 'pct-3588',
     legendAlias: 'pct-3588',
-    color: '#FAAF05',
+    color: '#B68D5D',
     tickerColor: '#FFFFFF',
     geojson: [
       {
@@ -216,8 +187,8 @@ export const plantCommunityTypesFiltersToShow = [
           '/data/geojson/Biodiversity/PCTs/JBR2HR_EasternPCT_3588.geojson',
         type: 'fill',
         paint: {
-          'fill-color': '#FAAF05',
-          'fill-opacity': 0.5,
+          'fill-color': '#B68D5D',
+          'fill-opacity': 0.4,
         },
       },
     ],
@@ -242,7 +213,7 @@ export const plantCommunityTypesLegends = [
   {
     label: 'PCT 3267',
     value: 'pct-3267',
-    icon: rectangleIcon('#004000', 0.5),
+    icon: rectangleIcon('#F3631B', 0.4),
   },
   {
     label: 'PCT 3330 (TEC)',
@@ -267,7 +238,7 @@ export const plantCommunityTypesLegends = [
   {
     label: 'PCT 3588',
     value: 'pct-3588',
-    icon: rectangleIcon('#FAAF05', 0.5),
+    icon: rectangleIcon('#B68D5D', 0.4),
   },
   {
     label: '(TEC) – threatened ecological community',

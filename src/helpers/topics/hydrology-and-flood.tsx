@@ -43,8 +43,17 @@ export const hydrologyAndFloodingFiltersToShow = [
           '/data/geojson/Hydrology and flooding/JBR2HR_New culverts.geojson',
         type: 'line',
         paint: {
-          'line-color': '#8055F1',
+          'line-color': '#22272B',
           'line-width': 3,
+        },
+      },
+      {
+        sourceUrl:
+          '/data/geojson/Hydrology and flooding/JBR2HR_New culverts.geojson',
+        type: 'fill',
+        paint: {
+          'fill-color': '#22272B',
+          'fill-opacity': 0.6,
         },
       },
     ],
@@ -211,7 +220,7 @@ export const oneAEPAffluxFiltersToShow = [
     geojson: [
       {
         sourceUrl:
-          '/data/geojson/Hydrology and flooding/1-aep-afflux/0.02 - 0.1.GeoJSON',
+          '/data/geojson/Hydrology and flooding/1-aep-afflux/0.02 - 0.05.GeoJSON',
         type: 'fill',
         paint: {
           'fill-color': '#FF9200',
@@ -287,7 +296,7 @@ const oneAEPAffluxLegends = [
     icon: rectangleIcon('#1122FF'),
   },
   {
-    label: '0.02 – 0.1',
+    label: '0.02 - 0.05',
     value: 'one-aep-afflux-operational-vs-existing-5',
     icon: rectangleIcon('#FF9200', 0.5),
   },

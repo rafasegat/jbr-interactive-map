@@ -12,6 +12,12 @@ import {
   SharedPath,
   HouseIcon,
   ProposalBoundary,
+  ProposedFaunaUnderpass,
+  FaunaUnderPassIcon,
+  TruckParking,
+  BusStop,
+  InfoIcon2,
+  InfoIcon,
 } from '../../components/Icons/Legends';
 
 export const keyFeaturesFilters = [
@@ -177,18 +183,63 @@ export const keyFeaturesFilters = [
     value: 'shared-paths',
     legendAlias: 'shared-paths',
     orderLayout: 5,
-    color: '#D912AE',
+    color: '#8055F1',
     tickerColor: '#FFFFFF',
     geojson: [
       {
         sourceUrl: '/data/geojson/Key features/JBR2HR_SharedPaths.geojson',
         type: 'line',
         paint: {
-          'line-color': '#D912AE',
+          'line-color': '#8055F1',
           'line-width': 2,
         },
       },
     ],
+  },
+  {
+    label: 'Proposed fauna underpass',
+    value: 'proposed-fauna-underpass',
+    legendAlias: 'proposed-fauna-underpass',
+    color: '#441170',
+    tickerColor: '#FFFFFF',
+    markers: [
+      {
+        id: '1',
+        coordinates: [150.5826765, -35.035773],
+        iconComponent: <FaunaUnderPassIcon />,
+        text: 'Proposed fauna underpass',
+        isTooltip: true,
+      },
+      {
+        id: '2',
+        coordinates: [150.5825799, -35.0093653],
+        iconComponent: <FaunaUnderPassIcon />,
+        text: 'Proposed fauna underpass',
+        isTooltip: true,
+      },
+    ],
+    // geojson: [
+    //   {
+    //     sourceUrl:
+    //       '/data/geojson/Biodiversity/JBR2HR_Proposed fauna underpass.geojson',
+    //     type: 'line',
+    //     paint: {
+    //       'line-color': '#441170',
+    //       'line-width': 6,
+    //     },
+    //   },
+    //   {
+    //     sourceUrl:
+    //       '/data/geojson/Biodiversity/JBR2HR_Proposed fauna underpass.geojson',
+    //     type: 'line',
+    //     paint: {
+    //       'line-color': '#CEBFFF',
+    //       'line-width': 2,
+    //       'line-dasharray': [4, 4],
+    //     },
+    //   },
+    // ],
+    orderLayout: 6,
   },
   {
     label: 'Property access',
@@ -228,6 +279,118 @@ export const keyFeaturesFilters = [
       },
     ],
     orderLayout: 5,
+  },
+  {
+    label: 'New bus stop',
+    value: 'new-bus-stop',
+    legendAlias: 'new-bus-stop',
+    color: '#50B0EA',
+    tickerColor: '#FFFFFF',
+    geojson: [],
+    markers: [
+      {
+        id: '1',
+        coordinates: [150.57849356178897, -35.02662729594235],
+        iconComponent: <BusStop />,
+      },
+    ],
+    orderLayout: 7,
+  },
+  {
+    label: 'New truck parking area',
+    value: 'new-truck-parking-area',
+    legendAlias: 'new-truck-parking-area',
+    color: '#0086C4',
+    tickerColor: '#FFFFFF',
+    geojson: [],
+    markers: [
+      {
+        id: '1',
+        coordinates: [150.57910751137211, -35.01967579768026],
+        iconComponent: <TruckParking />,
+        text: 'Northbound truck parking area',
+        isTooltip: true,
+      },
+      {
+        id: '2',
+        coordinates: [150.57972791899448, -35.02999823619622],
+        iconComponent: <TruckParking />,
+        text: 'Southbound truck parking area',
+        isTooltip: true,
+      },
+    ],
+    orderLayout: 4,
+  },
+  {
+    label: 'Info',
+    value: 'info',
+    legendAlias: 'info',
+    color: '#0086C4',
+    markers: [
+      {
+        id: '1',
+        coordinates: [150.5884895, -34.9833529],
+        iconComponent: <InfoIcon2 />,
+        text: 'Tie in to Jervis Bay Road intersection',
+        isTooltip: true,
+      },
+      {
+        id: '2',
+        coordinates: [150.587675, -34.9872514],
+        iconComponent: <InfoIcon />,
+        text: 'Shared path on the eastern side of property access road two, from the bus bay at the Jervis Bay Road intersection to Mortimer Road',
+        isTooltip: true,
+      },
+      {
+        id: '3',
+        coordinates: [150.5865482, -34.9874882],
+        iconComponent: <InfoIcon2 />,
+        text: 'Widening existing two-lane carriageway to four lanes (two lanes in each direction) with median separation',
+        isTooltip: true,
+      },
+      {
+        id: '4',
+        coordinates: [150.5826627, -35.0042044],
+        iconComponent: <InfoIcon2 />,
+        text: 'Emergency U-Turn facility',
+        isTooltip: true,
+      },
+      {
+        id: '5',
+        coordinates: [150.5835377, -35.0084962],
+        iconComponent: <InfoIcon2 />,
+        text: 'Gorindah Road permanently closed between Barron Road and the existing Princes Highway',
+        isTooltip: true,
+      },
+      {
+        id: '6',
+        coordinates: [150.5771599, -35.0245687],
+        iconComponent: <InfoIcon2 />,
+        text: 'New grade-separated intersection at Hawken Road with an underpass providing connectivity between Hawken Road and Blackbutt Range Road',
+        isTooltip: true,
+      },
+      {
+        id: '7',
+        coordinates: [150.5762206, -35.024592],
+        iconComponent: <InfoIcon2 />,
+        text: 'Link road',
+        isTooltip: true,
+      },
+      {
+        id: '8',
+        coordinates: [150.5774854, -35.0257916],
+        iconComponent: <InfoIcon2 />,
+        text: 'Underpass providing connectivity under the Princes Highway',
+        isTooltip: true,
+      },
+      {
+        id: '9',
+        coordinates: [150.5789868, -35.0425542],
+        iconComponent: <InfoIcon2 />,
+        text: 'Tie in to existing Princes Highway',
+        isTooltip: true,
+      },
+    ],
   },
 ];
 
@@ -320,8 +483,8 @@ export const generalFilters = [
         type: 'line',
         paint: {
           'line-color': '#0B3F47',
-          'line-width': 3,
-          'line-dasharray': [0.9, 0.75],
+          'line-width': 1,
+          'line-dasharray': [3, 2.5],
         },
       },
     ],
@@ -339,7 +502,7 @@ export const generalFilters = [
         type: 'fill',
         paint: {
           'fill-color': '#00AA45',
-          'fill-opacity': 0.3,
+          'fill-opacity': 0.2,
         },
       },
     ],
@@ -357,7 +520,7 @@ export const generalFilters = [
         type: 'fill',
         paint: {
           'fill-color': '#004000',
-          'fill-opacity': 0.3,
+          'fill-opacity': 0.2,
         },
       },
     ],
@@ -368,7 +531,7 @@ export const generalFilters = [
 
 export const keyFeaturesLegends = [
   {
-    title: 'Key features',
+    title: 'Key features of the proposal',
     label: 'Key features',
     value: 'title-key-features',
     icon: '',
@@ -413,6 +576,21 @@ export const keyFeaturesLegends = [
     value: 'shared-paths',
     icon: <SharedPath />,
   },
+  {
+    label: 'Proposed fauna underpass',
+    value: 'proposed-fauna-underpass',
+    icon: <ProposedFaunaUnderpass />,
+  },
+  {
+    label: 'New bus stop',
+    value: 'new-bus-stop',
+    icon: <BusStop />,
+  },
+  {
+    label: 'New truck parking area',
+    value: 'new-truck-parking-area',
+    icon: <TruckParking />,
+  },
 ];
 
 export const generalLegends = [
@@ -450,11 +628,11 @@ export const generalLegends = [
   {
     label: 'National parks',
     value: 'national-parks',
-    icon: rectangleIcon('#00AA454D'),
+    icon: rectangleIcon('#00AA45', 0.2),
   },
   {
     label: 'State forests',
     value: 'state-forests',
-    icon: rectangleIcon('#0040004D'),
+    icon: rectangleIcon('#004000', 0.2),
   },
 ];

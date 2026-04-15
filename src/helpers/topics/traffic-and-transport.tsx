@@ -50,7 +50,7 @@ export const trafficAndTransportFiltersToShow = [
       },
       {
         id: '7',
-        coordinates: [150.58595991304597, -34.98921065560642],
+        coordinates: [150.5858752, -34.9894693],
         iconComponent: <SpeedLimit60 />,
       },
       {
@@ -65,22 +65,6 @@ export const trafficAndTransportFiltersToShow = [
       },
     ],
     orderLayout: 1,
-  },
-  {
-    label: 'New bus stop',
-    value: 'new-bus-stop',
-    legendAlias: 'new-bus-stop',
-    color: '#50B0EA',
-    tickerColor: '#FFFFFF',
-    geojson: [],
-    markers: [
-      {
-        id: '1',
-        coordinates: [150.57849356178897, -35.02662729594235],
-        iconComponent: <BusStop />,
-      },
-    ],
-    orderLayout: 2,
   },
   {
     label: 'LILO intersections',
@@ -113,31 +97,6 @@ export const trafficAndTransportFiltersToShow = [
     ],
     orderLayout: 3,
   },
-  {
-    label: 'New truck parking area',
-    value: 'new-truck-parking-area',
-    legendAlias: 'new-truck-parking-area',
-    color: '#0086C4',
-    tickerColor: '#FFFFFF',
-    geojson: [],
-    markers: [
-      {
-        id: '1',
-        coordinates: [150.57910751137211, -35.01967579768026],
-        iconComponent: <TruckParking />,
-        text: 'Northbound truck parking area',
-        isTooltip: true,
-      },
-      {
-        id: '2',
-        coordinates: [150.57972791899448, -35.02999823619622],
-        iconComponent: <TruckParking />,
-        text: 'Southbound truck parking area',
-        isTooltip: true,
-      },
-    ],
-    orderLayout: 4,
-  },
 ];
 
 export const trafficAndTransportLegends = [
@@ -150,16 +109,6 @@ export const trafficAndTransportLegends = [
     label: 'Speed limit change',
     value: 'speed-limit-change',
     icon: <SpeedLimit100 />,
-  },
-  {
-    label: 'New bus stop',
-    value: 'new-bus-stop',
-    icon: <BusStop />,
-  },
-  {
-    label: 'New truck parking area',
-    value: 'new-truck-parking-area',
-    icon: <TruckParking />,
   },
   {
     label: 'Left-in, left-out intersection',
