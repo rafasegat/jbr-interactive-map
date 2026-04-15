@@ -209,6 +209,7 @@ export const keyFeaturesFilters = [
         iconComponent: <FaunaUnderPassIcon />,
         text: 'Proposed fauna underpass',
         isTooltip: true,
+        stackPriority: 5,
       },
       {
         id: '2',
@@ -216,6 +217,7 @@ export const keyFeaturesFilters = [
         iconComponent: <FaunaUnderPassIcon />,
         text: 'Proposed fauna underpass',
         isTooltip: true,
+        stackPriority: 5,
       },
     ],
     geojson: [
@@ -255,6 +257,7 @@ export const keyFeaturesFilters = [
         iconComponent: <HouseIcon />,
         text: 'Property access road one, from south of Willowgreen Road, to the Jervis Bay Road intersection - left-in access from Princes highway',
         isTooltip: true,
+        stackPriority: 3,
       },
       {
         id: '2',
@@ -262,6 +265,7 @@ export const keyFeaturesFilters = [
         iconComponent: <HouseIcon />,
         text: 'Property access road two, between the Jervis Bay Road intersection and Mortimer Road',
         isTooltip: true,
+        stackPriority: 3,
       },
       {
         id: '3',
@@ -269,6 +273,7 @@ export const keyFeaturesFilters = [
         iconComponent: <HouseIcon />,
         text: 'Property access road three, south of Sinclair Road',
         isTooltip: true,
+        stackPriority: 3,
       },
       {
         id: '4',
@@ -276,6 +281,7 @@ export const keyFeaturesFilters = [
         iconComponent: <HouseIcon />,
         text: 'Property access road four, south of the new Hawken Road intersection',
         isTooltip: true,
+        stackPriority: 3,
       },
     ],
     orderLayout: 1,
@@ -292,6 +298,7 @@ export const keyFeaturesFilters = [
         id: '1',
         coordinates: [150.57849356178897, -35.02662729594235],
         iconComponent: <BusStop />,
+        stackPriority: 12,
       },
     ],
     orderLayout: 7,
@@ -310,6 +317,7 @@ export const keyFeaturesFilters = [
         iconComponent: <TruckParking />,
         text: 'Northbound truck parking area',
         isTooltip: true,
+        stackPriority: 11,
       },
       {
         id: '2',
@@ -317,6 +325,7 @@ export const keyFeaturesFilters = [
         iconComponent: <TruckParking />,
         text: 'Southbound truck parking area',
         isTooltip: true,
+        stackPriority: 11,
       },
     ],
     orderLayout: 4,
@@ -333,6 +342,7 @@ export const keyFeaturesFilters = [
         iconComponent: <InfoIcon2 />,
         text: 'Tie in to Jervis Bay Road intersection',
         isTooltip: true,
+        stackPriority: 4,
       },
       {
         id: '2',
@@ -340,6 +350,7 @@ export const keyFeaturesFilters = [
         iconComponent: <InfoIcon2 />,
         text: 'Shared path on the eastern side of property access road two, from the bus bay at the Jervis Bay Road intersection to Mortimer Road',
         isTooltip: true,
+        stackPriority: 4,
       },
       {
         id: '3',
@@ -347,6 +358,7 @@ export const keyFeaturesFilters = [
         iconComponent: <InfoIcon2 />,
         text: 'Widening existing two-lane carriageway to four lanes (two lanes in each direction) with median separation',
         isTooltip: true,
+        stackPriority: 4,
       },
       {
         id: '4',
@@ -354,6 +366,7 @@ export const keyFeaturesFilters = [
         iconComponent: <InfoIcon2 />,
         text: 'Emergency U-Turn facility',
         isTooltip: true,
+        stackPriority: 4,
       },
       {
         id: '5',
@@ -361,6 +374,7 @@ export const keyFeaturesFilters = [
         iconComponent: <InfoIcon2 />,
         text: 'Gorindah Road permanently closed between Barron Road and the existing Princes Highway',
         isTooltip: true,
+        stackPriority: 4,
       },
       {
         id: '6',
@@ -368,6 +382,7 @@ export const keyFeaturesFilters = [
         iconComponent: <InfoIcon2 />,
         text: 'New grade-separated intersection at Hawken Road with an underpass providing connectivity between Hawken Road and Blackbutt Range Road',
         isTooltip: true,
+        stackPriority: 4,
       },
       {
         id: '7',
@@ -375,6 +390,7 @@ export const keyFeaturesFilters = [
         iconComponent: <InfoIcon2 />,
         text: 'Link road',
         isTooltip: true,
+        stackPriority: 4,
       },
       {
         id: '8',
@@ -382,6 +398,7 @@ export const keyFeaturesFilters = [
         iconComponent: <InfoIcon2 />,
         text: 'Underpass providing connectivity under the Princes Highway',
         isTooltip: true,
+        stackPriority: 4,
       },
       {
         id: '9',
@@ -389,6 +406,7 @@ export const keyFeaturesFilters = [
         iconComponent: <InfoIcon2 />,
         text: 'Tie in to existing Princes Highway',
         isTooltip: true,
+        stackPriority: 4,
       },
     ],
   },

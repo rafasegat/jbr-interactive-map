@@ -240,12 +240,11 @@ const Map: React.FC = () => {
               return;
             }
 
-            // Calculate z-index based on position in ordering list
-            // Higher index = rendered on top
-            const orderIndex = listOfTopicsToAddLayer.findIndex(
-              (f) => f.value === filter.value,
-            );
-            const zIndex = orderIndex !== -1 ? 100 + orderIndex : 100;
+            // Calculate z-index based on position in ordering list.
+            // Higher filter order renders on top. Within a filter, lower
+            // stackPriority numbers render above higher ones, so 1 beats 2.
+
+            const zIndex = 200 - (marker.stackPriority || 0); // Invert stackPriority so lower numbers are higher z-index
 
             // Create custom element for marker
             const el = document.createElement('div');
@@ -332,7 +331,7 @@ const Map: React.FC = () => {
               el.addEventListener('mouseenter', () => {
                 tooltip.style.display = 'block';
                 // Lift this marker's stacking context above all others while hovered
-                el.style.zIndex = '190';
+                el.style.zIndex = '99999';
               });
               el.addEventListener('mouseleave', () => {
                 tooltip.style.display = 'none';

@@ -33,6 +33,7 @@ export interface Filter {
     iconComponent?: ReactElement;
     text?: string;
     isTooltip?: boolean;
+    stackPriority?: number;
   }[];
   filtersToShow?: Filter[];
   legendsToShow?: Legend[];

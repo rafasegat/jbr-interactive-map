@@ -14,6 +14,7 @@ export const cumulativeFilters = [
         id: '1',
         coordinates: [150.587664898039321, -34.983307187439877],
         iconUrl: './images/gallery.svg',
+        stackPriority: 1,
         popupContent: (
           <div>
             <h3>Jervis Bay Road intersection upgrade</h3>

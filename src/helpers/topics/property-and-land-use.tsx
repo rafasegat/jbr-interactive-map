@@ -36,6 +36,7 @@ export const landscapeAndVisualFiltersToShow = [
         id: '1',
         coordinates: [150.5817895, -35.0089387],
         iconUrl: './images/video.svg',
+        stackPriority: 2,
         popupContent: (
           <div>
             <iframe
