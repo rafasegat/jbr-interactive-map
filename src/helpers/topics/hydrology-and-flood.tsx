@@ -115,16 +115,6 @@ export const hydrologyAndFloodingLegends = [
     value: 'new-culverts',
     icon: <NewCulverts />,
   },
-  // {
-  //   label: 'Water catchment',
-  //   value: 'water-catchment',
-  //   icon: <WaterCatchment />,
-  // },
-  // {
-  //   label: 'Flood catchments',
-  //   value: 'flood-catchments',
-  //   icon: <FloodCatchments />,
-  // },
 ];
 
 export const oneAEPAffluxFiltersToShow = [

@@ -169,6 +169,9 @@ export const esriSatelliteStyle: MapboxStyle = {
 };
 
 export const listOfTopicsToOrderLayer = [
+  'state-forests',
+  'national-parks',
+
   // Basemap area (lowest z-index, added first, rendered on bottom)
   'suburbs-and-localities',
   'hydro-area',
@@ -218,8 +221,8 @@ export const listOfTopicsToOrderLayer = [
   'W2 - Recreational waterways',
 
   // Biodiversity – study areas
-  'study-area',
   'plant-community-types',
+  'study-area',
 
   // Plant community types (PCTs)
   'pct-3267',
@@ -231,22 +234,22 @@ export const listOfTopicsToOrderLayer = [
   'critically-endangered',
 
   // Proposal and construction elements
-  'visual-envelope-map',
+  'fauna-connectivity-zones',
+  'tuflow-model-extent-study-area',
+  'Forested land',
+  'Road infrastructure',
+  'Rural residential',
+  'landscape-and-visual-study-area',
+  'cut',
+  'fill',
   'construction-zones',
   'noise-receivers',
-  'cut',
-  'fill', //fill
-  'pavement',
   'concept-design',
   'drainage-basins',
   'drainage-basins-22-9',
   'drainage-basins-15-9',
   'proposed-ancillary-facility',
-  'state-forests',
-  'national-parks',
-  'Forested land',
-  'Road infrastructure',
-  'Rural residential',
+  'pavement',
 
   // Hydrology
   'water-courses',
@@ -257,17 +260,21 @@ export const listOfTopicsToOrderLayer = [
   'design-culverts',
   'drainage',
   'new-culverts',
-  'tuflow-model-extent-study-area',
 
+  // Traffic and transport
   // Noise and study areas
-
+  'one-aep-afflux-operational-vs-existing-0',
+  'one-aep-afflux-operational-vs-existing-1',
+  'one-aep-afflux-operational-vs-existing-2',
+  'one-aep-afflux-operational-vs-existing-3',
+  'one-aep-afflux-operational-vs-existing-4',
+  'one-aep-afflux-operational-vs-existing-5',
   'proposed-fauna-underpass',
   'assessment-area',
   'construction-study-area',
   'human-comfort-working-distance',
   'operational-noise-study-area',
   'subject-land',
-  'connectivity-zones',
   'lilo-intersections',
 
   // Boundaries and linear features

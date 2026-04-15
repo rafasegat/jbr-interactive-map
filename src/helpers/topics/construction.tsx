@@ -1,9 +1,4 @@
-import {
-  SiteAccessGates,
-  ProposalBoundary,
-  ProposedAncillaryFacility,
-  CutAndFill,
-} from '../../components/Icons/Legends';
+import { ProposedAncillaryFacility } from '../../components/Icons/Legends';
 import { defaultFilters } from './default';
 
 export const constructionFiltersToShow = [

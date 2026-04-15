@@ -209,17 +209,6 @@ export const Pavement = () => (
     <path d="M0 6H24" stroke="#A4A7A9" />
   </svg>
 );
-export const CutAndFill = () => (
-  <svg
-    width="24"
-    height="12"
-    viewBox="0 0 24 12"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect width="24" height="12" fill="#FAAF05" fillOpacity="0.6" />
-  </svg>
-);
 export const VisualEnvelopeMap = () => (
   <svg
     width="24"
