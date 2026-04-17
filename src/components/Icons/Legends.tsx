@@ -1269,6 +1269,65 @@ export const LILOIntersections = () => (
     </defs>
   </svg>
 );
+export const LILOIntersectionsRight = () => (
+  <svg
+    width="32"
+    height="32"
+    viewBox="0 0 32 32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clipPath="url(#clip0_4255_164884)">
+      <mask
+        id="mask0_4255_164884"
+        maskUnits="userSpaceOnUse"
+        x="0"
+        y="0"
+        width="32"
+        height="32"
+      >
+        <path
+          d="M0 32L32 32L32 4.70488e-06L2.79753e-06 1.90735e-06L0 32Z"
+          fill="white"
+        />
+      </mask>
+      <g mask="url(#mask0_4255_164884)">
+        <path
+          d="M16 1.2353C24.1177 1.2353 30.7647 7.88236 30.7647 16C30.7647 24.1176 24.1177 30.7647 16 30.7647C7.88236 30.7647 1.2353 24.1176 1.2353 16C1.2353 7.88235 7.88236 1.2353 16 1.2353Z"
+          fill="#002664"
+        />
+        <path
+          d="M16 29.4706C8.52941 29.4706 2.52941 23.4118 2.52941 16C2.52941 8.58824 8.58824 2.52941 16 2.52941C23.4118 2.52941 29.4706 8.52941 29.4706 16C29.4706 23.4706 23.4118 29.4706 16 29.4706ZM16 32C24.8235 32 32 24.8235 32 16C32 7.17647 24.8235 4.07749e-06 16 3.30611e-06C7.17647 2.53474e-06 2.17014e-06 7.17647 1.39876e-06 16C6.27387e-07 24.8235 7.17647 32 16 32Z"
+          fill="white"
+        />
+      </g>
+      <path
+        d="M13 5L13 9C13 11.2091 14.7909 13 17 13L21 13"
+        stroke="white"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <path d="M19 10L19 16L23 13L19 10Z" fill="white" />
+      <path
+        d="M22 18L18 18C15.7909 18 14 19.7909 14 22L14 26"
+        stroke="white"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <path d="M17 24L11 24L14 28L17 24Z" fill="white" />
+    </g>
+    <defs>
+      <clipPath id="clip0_4255_164884">
+        <rect
+          width="32"
+          height="32"
+          fill="white"
+          transform="translate(32 32) rotate(-180)"
+        />
+      </clipPath>
+    </defs>
+  </svg>
+);
 export const LILOIntersectionsIcon = () => (
   <svg
     width="24"
@@ -1301,15 +1360,15 @@ export const LILOIntersectionsIcon = () => (
       <path
         d="M14.25 20.25V18.25C14.25 16.0409 12.4591 14.25 10.25 14.25H8.25"
         stroke="white"
-        stroke-width="2"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinejoin="round"
       />
       <path d="M9.75 16.5V12L6.75 14.25L9.75 16.5Z" fill="white" />
       <path
         d="M7.5 10.5L9.5 10.5C11.7091 10.5 13.5 8.70914 13.5 6.5L13.5 4.5"
         stroke="white"
-        stroke-width="2"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinejoin="round"
       />
       <path d="M11.25 6L15.75 6L13.5 3L11.25 6Z" fill="white" />
     </g>

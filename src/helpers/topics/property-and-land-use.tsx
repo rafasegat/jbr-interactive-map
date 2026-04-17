@@ -228,7 +228,7 @@ const lcaLegends = [
     value: 'title-lcas',
   },
   {
-    label: 'LCZ 1 - Road infrastructure',
+    label: 'LCZ 1 - Road infrastructure and mixed use',
     value: 'Road infrastructure',
     icon: rectangleIcon('#D7153AB2'),
   },

@@ -4,6 +4,7 @@ import {
   SpeedLimit60,
   LILOIntersections,
   LILOIntersectionsIcon,
+  LILOIntersectionsRight,
 } from '../../components/Icons/Legends';
 import { defaultFilters } from './default';
 
@@ -90,7 +91,7 @@ export const trafficAndTransportFiltersToShow = [
       {
         id: '2',
         coordinates: [150.583398, -35.0017733],
-        iconComponent: <LILOIntersections />,
+        iconComponent: <LILOIntersectionsRight />,
         stackPriority: 10,
       },
       {
@@ -102,7 +103,7 @@ export const trafficAndTransportFiltersToShow = [
       {
         id: '4',
         coordinates: [150.5806353, -35.0148864],
-        iconComponent: <LILOIntersections />,
+        iconComponent: <LILOIntersectionsRight />,
         stackPriority: 10,
       },
     ],
