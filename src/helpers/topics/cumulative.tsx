@@ -37,16 +37,3 @@ export const cumulativeFilters = [
     defaultSelected: true,
   },
 ];
-
-// export const cumulativeLegends = [
-//   {
-//     title: 'Cumulative',
-//     label: 'Cumulative',
-//     value: 'title-cumulative',
-//   },
-//   {
-//     label: 'Cumulative',
-//     value: 'cumulative',
-//     icon: <CumulativeIcon />,
-//   },
-// ];

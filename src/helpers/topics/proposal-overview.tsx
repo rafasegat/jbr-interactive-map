@@ -17,7 +17,6 @@ import {
   TruckParking,
   BusStop,
   InfoIcon2,
-  InfoIcon,
 } from '../../components/Icons/Legends';
 
 export const keyFeaturesFilters = [
@@ -237,7 +236,6 @@ export const keyFeaturesFilters = [
         paint: {
           'line-color': '#D912AE',
           'line-width': 4,
-          // 'line-dasharray': [4, 4],
         },
       },
     ],
