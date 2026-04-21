@@ -3,7 +3,7 @@ import type { Style as MapboxStyle } from 'mapbox-gl';
 export const esriSatelliteStyle: MapboxStyle = {
   version: 8 as const,
   // Mapbox-hosted glyphs and sprite are still used for rendering the label layers
-  glyphs: 'mapbox://fonts/mapbox/{fontstack}/{range}',
+  glyphs: 'mapbox://fonts/mapbox/{fontstack}/{range}.pbf',
   sprite: 'mapbox://sprites/mapbox/satellite-v9',
   sources: {
     'esri-imagery': {
@@ -59,7 +59,7 @@ export const esriSatelliteStyle: MapboxStyle = {
       filter: ['has', 'name'],
       layout: {
         'text-field': ['get', 'name'],
-        'text-font': ['DIN Pro Italic', 'Arial Unicode MS Regular'],
+        'text-font': ['Open Sans Italic', 'Arial Unicode MS Regular'],
         'text-max-width': 6.25,
         'text-size': [
           'interpolate',
@@ -86,7 +86,7 @@ export const esriSatelliteStyle: MapboxStyle = {
       filter: ['has', 'name'],
       layout: {
         'text-field': ['get', 'name'],
-        'text-font': ['DIN Pro Italic', 'Arial Unicode MS Regular'],
+        'text-font': ['Open Sans Italic', 'Arial Unicode MS Regular'],
         'text-max-width': 8,
         'text-size': [
           'interpolate',
@@ -120,7 +120,7 @@ export const esriSatelliteStyle: MapboxStyle = {
       ],
       layout: {
         'text-field': ['get', 'name'],
-        'text-font': ['DIN Pro Regular', 'Arial Unicode MS Regular'],
+        'text-font': ['Open Sans Regular', 'Arial Unicode MS Regular'],
         'text-max-width': 8,
         'text-size': [
           'interpolate',
@@ -147,7 +147,7 @@ export const esriSatelliteStyle: MapboxStyle = {
       filter: ['match', ['get', 'class'], ['settlement'], true, false],
       layout: {
         'text-field': ['get', 'name'],
-        'text-font': ['DIN Pro Bold', 'Arial Unicode MS Bold'],
+        'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
         'text-max-width': 8,
         'text-size': [
           'interpolate',
